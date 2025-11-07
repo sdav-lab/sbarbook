@@ -1,6 +1,7 @@
 fig:timeline
 fig:skills
 fig:tech-stack
+fig:sampling-diagram
 intro
 what-is-sport-business-analytics
 key-components
@@ -39,9 +40,11 @@ r-basics
 r-data-types
 r-functions
 essential-packages-for-sport-analytics
+understanding-r-packages
 data-import-and-manipulation
 loading-and-exploring-data
 basic-data-manipulation
+understanding-the-pipe-operator
 working-with-the-lahman-database
 data-management-best-practices
 handling-missing-data
@@ -62,6 +65,7 @@ web-scraping-for-sport-data
 using-rvest-for-web-scraping
 example-scraping-espn-data
 api-integration-for-real-time-data
+what-is-an-api
 sportradar-api
 espn-api-access
 data-quality-and-cleaning-considerations
