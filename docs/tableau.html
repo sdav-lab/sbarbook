@@ -4,24 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Introduction to Tableau | _main.knit</title>
-  <meta name="description" content="" />
+  <title>10 Introduction to Tableau | Sport Business Analytics with R</title>
+  <meta name="description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Introduction to Tableau | _main.knit" />
+  <meta property="og:title" content="10 Introduction to Tableau | Sport Business Analytics with R" />
   <meta property="og:type" content="book" />
   
-  
+  <meta property="og:description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Introduction to Tableau | _main.knit" />
+  <meta name="twitter:title" content="10 Introduction to Tableau | Sport Business Analytics with R" />
   
-  
+  <meta name="twitter:description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   
 
+<meta name="author" content="Sean Davis, Ph.D." />
 
 
+<meta name="date" content="2025-11-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,6 +137,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Sport Business Analytics with R</a></li>
 
 <li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-sport-business-analytics"><i class="fa fa-check"></i>Why Sport Business Analytics?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-book"><i class="fa fa-check"></i>About This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-youll-learn"><i class="fa fa-check"></i>What You’ll Learn</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-structure"><i class="fa fa-check"></i>Course Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-requirements"><i class="fa fa-check"></i>Software Requirements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-book"><i class="fa fa-check"></i>How to Use This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dataset-information"><i class="fa fa-check"></i>Dataset Information</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-help"><i class="fa fa-check"></i>Getting Help</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license-and-usage"><i class="fa fa-check"></i>License and Usage</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Sport Business Analytics</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-sport-business-analytics"><i class="fa fa-check"></i><b>1.1</b> What is Sport Business Analytics?</a>
@@ -749,7 +768,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sport Business Analytics with R</a>
           </h1>
         </div>
 
@@ -900,30 +919,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="loading-a-csv-file" class="section level3 hasAnchor" number="10.3.1">
 <h3><span class="header-section-number">10.3.1</span> Loading a CSV File<a href="tableau.html#loading-a-csv-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let’s create a sample dataset and load it into Tableau:</p>
-<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb605-1"><a href="tableau.html#cb605-1" tabindex="-1"></a><span class="co"># Create sample sport business data</span></span>
-<span id="cb605-2"><a href="tableau.html#cb605-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb605-3"><a href="tableau.html#cb605-3" tabindex="-1"></a></span>
-<span id="cb605-4"><a href="tableau.html#cb605-4" tabindex="-1"></a><span class="co"># Sample ticket sales data</span></span>
-<span id="cb605-5"><a href="tableau.html#cb605-5" tabindex="-1"></a>ticket_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb605-6"><a href="tableau.html#cb605-6" tabindex="-1"></a>  <span class="at">Date =</span> <span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
-<span id="cb605-7"><a href="tableau.html#cb605-7" tabindex="-1"></a>                  <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
-<span id="cb605-8"><a href="tableau.html#cb605-8" tabindex="-1"></a>                  <span class="at">by =</span> <span class="st">&quot;day&quot;</span>),</span>
-<span id="cb605-9"><a href="tableau.html#cb605-9" tabindex="-1"></a>  <span class="at">Day_of_Week =</span> <span class="fu">weekdays</span>(<span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
-<span id="cb605-10"><a href="tableau.html#cb605-10" tabindex="-1"></a>                                   <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
-<span id="cb605-11"><a href="tableau.html#cb605-11" tabindex="-1"></a>                                   <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)),</span>
-<span id="cb605-12"><a href="tableau.html#cb605-12" tabindex="-1"></a>  <span class="at">Month =</span> month.name[<span class="fu">month</span>(<span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
-<span id="cb605-13"><a href="tableau.html#cb605-13" tabindex="-1"></a>                                     <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
-<span id="cb605-14"><a href="tableau.html#cb605-14" tabindex="-1"></a>                                     <span class="at">by =</span> <span class="st">&quot;day&quot;</span>))],</span>
-<span id="cb605-15"><a href="tableau.html#cb605-15" tabindex="-1"></a>  <span class="at">Tickets_Sold =</span> <span class="fu">sample</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">500</span>, <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb605-16"><a href="tableau.html#cb605-16" tabindex="-1"></a>  <span class="at">Revenue =</span> <span class="fu">sample</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">500</span>, <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fu">runif</span>(<span class="dv">365</span>, <span class="dv">35</span>, <span class="dv">85</span>),</span>
-<span id="cb605-17"><a href="tableau.html#cb605-17" tabindex="-1"></a>  <span class="at">Category =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Season Tickets&quot;</span>, <span class="st">&quot;Single Game&quot;</span>, <span class="st">&quot;Group Sales&quot;</span>),</span>
-<span id="cb605-18"><a href="tableau.html#cb605-18" tabindex="-1"></a>                    <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb605-19"><a href="tableau.html#cb605-19" tabindex="-1"></a>  <span class="at">Section =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Lower Bowl&quot;</span>, <span class="st">&quot;Upper Bowl&quot;</span>, <span class="st">&quot;Club&quot;</span>, <span class="st">&quot;Suite&quot;</span>),</span>
-<span id="cb605-20"><a href="tableau.html#cb605-20" tabindex="-1"></a>                   <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb605-21"><a href="tableau.html#cb605-21" tabindex="-1"></a>)</span>
-<span id="cb605-22"><a href="tableau.html#cb605-22" tabindex="-1"></a></span>
-<span id="cb605-23"><a href="tableau.html#cb605-23" tabindex="-1"></a><span class="co"># Save to CSV</span></span>
-<span id="cb605-24"><a href="tableau.html#cb605-24" tabindex="-1"></a><span class="fu">write.csv</span>(ticket_data, <span class="st">&quot;sport_ticket_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="tableau.html#cb590-1" tabindex="-1"></a><span class="co"># Create sample sport business data</span></span>
+<span id="cb590-2"><a href="tableau.html#cb590-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb590-3"><a href="tableau.html#cb590-3" tabindex="-1"></a></span>
+<span id="cb590-4"><a href="tableau.html#cb590-4" tabindex="-1"></a><span class="co"># Sample ticket sales data</span></span>
+<span id="cb590-5"><a href="tableau.html#cb590-5" tabindex="-1"></a>ticket_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb590-6"><a href="tableau.html#cb590-6" tabindex="-1"></a>  <span class="at">Date =</span> <span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
+<span id="cb590-7"><a href="tableau.html#cb590-7" tabindex="-1"></a>                  <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
+<span id="cb590-8"><a href="tableau.html#cb590-8" tabindex="-1"></a>                  <span class="at">by =</span> <span class="st">&quot;day&quot;</span>),</span>
+<span id="cb590-9"><a href="tableau.html#cb590-9" tabindex="-1"></a>  <span class="at">Day_of_Week =</span> <span class="fu">weekdays</span>(<span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
+<span id="cb590-10"><a href="tableau.html#cb590-10" tabindex="-1"></a>                                   <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
+<span id="cb590-11"><a href="tableau.html#cb590-11" tabindex="-1"></a>                                   <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)),</span>
+<span id="cb590-12"><a href="tableau.html#cb590-12" tabindex="-1"></a>  <span class="at">Month =</span> month.name[<span class="fu">month</span>(<span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
+<span id="cb590-13"><a href="tableau.html#cb590-13" tabindex="-1"></a>                                     <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
+<span id="cb590-14"><a href="tableau.html#cb590-14" tabindex="-1"></a>                                     <span class="at">by =</span> <span class="st">&quot;day&quot;</span>))],</span>
+<span id="cb590-15"><a href="tableau.html#cb590-15" tabindex="-1"></a>  <span class="at">Tickets_Sold =</span> <span class="fu">sample</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">500</span>, <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb590-16"><a href="tableau.html#cb590-16" tabindex="-1"></a>  <span class="at">Revenue =</span> <span class="fu">sample</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">500</span>, <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fu">runif</span>(<span class="dv">365</span>, <span class="dv">35</span>, <span class="dv">85</span>),</span>
+<span id="cb590-17"><a href="tableau.html#cb590-17" tabindex="-1"></a>  <span class="at">Category =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Season Tickets&quot;</span>, <span class="st">&quot;Single Game&quot;</span>, <span class="st">&quot;Group Sales&quot;</span>),</span>
+<span id="cb590-18"><a href="tableau.html#cb590-18" tabindex="-1"></a>                    <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb590-19"><a href="tableau.html#cb590-19" tabindex="-1"></a>  <span class="at">Section =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Lower Bowl&quot;</span>, <span class="st">&quot;Upper Bowl&quot;</span>, <span class="st">&quot;Club&quot;</span>, <span class="st">&quot;Suite&quot;</span>),</span>
+<span id="cb590-20"><a href="tableau.html#cb590-20" tabindex="-1"></a>                   <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb590-21"><a href="tableau.html#cb590-21" tabindex="-1"></a>)</span>
+<span id="cb590-22"><a href="tableau.html#cb590-22" tabindex="-1"></a></span>
+<span id="cb590-23"><a href="tableau.html#cb590-23" tabindex="-1"></a><span class="co"># Save to CSV</span></span>
+<span id="cb590-24"><a href="tableau.html#cb590-24" tabindex="-1"></a><span class="fu">write.csv</span>(ticket_data, <span class="st">&quot;sport_ticket_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>In Tableau</strong>:
 1. Open Tableau Public
 2. Click “Connect” → “Text file”

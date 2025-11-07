@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Sport Data Sources | Sport Business Analytics with R</title>
+  <title>Sport Business Analytics with R</title>
   <meta name="description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Sport Data Sources | Sport Business Analytics with R" />
+  <meta property="og:title" content="Sport Business Analytics with R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Sport Data Sources | Sport Business Analytics with R" />
+  <meta name="twitter:title" content="Sport Business Analytics with R" />
   
   <meta name="twitter:description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="r-setup.html"/>
-<link rel="next" href="sampling.html"/>
+
+<link rel="next" href="intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -776,284 +776,155 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-sources" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Sport Data Sources<a href="data-sources.html#data-sources" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="public-sport-databases" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Public Sport Databases<a href="data-sources.html#public-sport-databases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The foundation of sport analytics lies in accessing quality data. Fortunately, numerous public databases exist that provide rich datasets for analysis.</p>
-<div id="lahman-baseball-database" class="section level3 hasAnchor" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Lahman Baseball Database<a href="data-sources.html#lahman-baseball-database" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The Lahman Baseball Database is one of the most comprehensive collections of baseball data available. It contains:</p>
+<div id="header">
+<h1 class="title">Sport Business Analytics with R</h1>
+<p class="author"><em>Sean Davis, Ph.D.</em></p>
+<p class="date"><em>2025-11-06</em></p>
+</div>
+<div id="welcome-to-sport-business-analytics-with-r" class="section level1 unnumbered hasAnchor">
+<h1>Welcome to Sport Business Analytics with R<a href="index.html#welcome-to-sport-business-analytics-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div style="text-align: center; padding: 20px; background-color: #f8f9fa; border-radius: 5px; margin: 20px 0;">
+<h2>
+SPM 4703 - Sport Business Analytics
+</h2>
+<h3>
+University of North Florida
+</h3>
+<p>
+<strong>Author:</strong> Sean Davis, Ph.D.
+</p>
+</div>
+<div id="about-this-textbook" class="section level2 unnumbered hasAnchor">
+<h2>About This Textbook<a href="index.html#about-this-textbook" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Welcome! This book provides a comprehensive introduction to <strong>data analysis and visualization in the sports industry</strong> using the R programming language. Whether you’re interested in working for a professional sports team, analyzing athletic department finances, or understanding fan engagement metrics, this book will equip you with the essential analytical skills needed in today’s data-driven sport business landscape.</p>
+<div id="why-sport-business-analytics" class="section level3 unnumbered hasAnchor">
+<h3>Why Sport Business Analytics?<a href="index.html#why-sport-business-analytics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The sport industry has undergone a dramatic transformation in recent years. Organizations now rely on data-driven insights to:</p>
 <ul>
-<li>Player statistics from 1871 to 2022</li>
-<li>Team rosters and records<br />
-</li>
-<li>Manager and umpire data</li>
-<li>Salaries and contracts</li>
+<li><strong>Optimize player performance and scouting decisions</strong></li>
+<li><strong>Maximize ticket sales and revenue</strong></li>
+<li><strong>Enhance fan engagement and marketing strategies</strong></li>
+<li><strong>Improve facility operations and event management</strong></li>
+<li><strong>Make strategic business decisions backed by evidence</strong></li>
 </ul>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-sources.html#cb52-1" tabindex="-1"></a><span class="co"># Install the Lahman package</span></span>
-<span id="cb52-2"><a href="data-sources.html#cb52-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;Lahman&quot;</span>)</span>
-<span id="cb52-3"><a href="data-sources.html#cb52-3" tabindex="-1"></a></span>
-<span id="cb52-4"><a href="data-sources.html#cb52-4" tabindex="-1"></a><span class="co"># Load the package</span></span>
-<span id="cb52-5"><a href="data-sources.html#cb52-5" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span></code></pre></div>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="data-sources.html#cb53-1" tabindex="-1"></a><span class="co"># Load sample data</span></span>
-<span id="cb53-2"><a href="data-sources.html#cb53-2" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span>
-<span id="cb53-3"><a href="data-sources.html#cb53-3" tabindex="-1"></a><span class="fu">data</span>(People)</span>
-<span id="cb53-4"><a href="data-sources.html#cb53-4" tabindex="-1"></a><span class="fu">head</span>(People[, <span class="fu">c</span>(<span class="st">&quot;playerID&quot;</span>, <span class="st">&quot;nameFirst&quot;</span>, <span class="st">&quot;nameLast&quot;</span>, <span class="st">&quot;birthYear&quot;</span>)])</span></code></pre></div>
-<pre><code>##    playerID nameFirst nameLast birthYear
-## 1 aardsda01     David  Aardsma      1981
-## 2 aaronha01      Hank    Aaron      1934
-## 3 aaronto01    Tommie    Aaron      1939
-## 4  aasedo01       Don     Aase      1954
-## 5  abadan01      Andy     Abad      1972
-## 6  abadfe01  Fernando     Abad      1985</code></pre>
-</div>
-<div id="nba-stats-database" class="section level3 hasAnchor" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> NBA Stats Database<a href="data-sources.html#nba-stats-database" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>For basketball analytics, several data sources provide comprehensive information:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-sources.html#cb55-1" tabindex="-1"></a><span class="co"># Sample NBA data structure</span></span>
-<span id="cb55-2"><a href="data-sources.html#cb55-2" tabindex="-1"></a>nba_sample <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb55-3"><a href="data-sources.html#cb55-3" tabindex="-1"></a>  <span class="at">player =</span> <span class="fu">c</span>(<span class="st">&quot;LeBron James&quot;</span>, <span class="st">&quot;Stephen Curry&quot;</span>, <span class="st">&quot;Kevin Durant&quot;</span>),</span>
-<span id="cb55-4"><a href="data-sources.html#cb55-4" tabindex="-1"></a>  <span class="at">team =</span> <span class="fu">c</span>(<span class="st">&quot;LAL&quot;</span>, <span class="st">&quot;GSW&quot;</span>, <span class="st">&quot;PHX&quot;</span>),</span>
-<span id="cb55-5"><a href="data-sources.html#cb55-5" tabindex="-1"></a>  <span class="at">points_per_game =</span> <span class="fu">c</span>(<span class="fl">25.7</span>, <span class="fl">26.3</span>, <span class="fl">27.1</span>),</span>
-<span id="cb55-6"><a href="data-sources.html#cb55-6" tabindex="-1"></a>  <span class="at">assists_per_game =</span> <span class="fu">c</span>(<span class="fl">7.4</span>, <span class="fl">5.8</span>, <span class="fl">4.4</span>),</span>
-<span id="cb55-7"><a href="data-sources.html#cb55-7" tabindex="-1"></a>  <span class="at">rebounds_per_game =</span> <span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">4.9</span>, <span class="fl">8.0</span>),</span>
-<span id="cb55-8"><a href="data-sources.html#cb55-8" tabindex="-1"></a>  <span class="at">games_played =</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">79</span>, <span class="dv">75</span>)</span>
-<span id="cb55-9"><a href="data-sources.html#cb55-9" tabindex="-1"></a>)</span>
-<span id="cb55-10"><a href="data-sources.html#cb55-10" tabindex="-1"></a></span>
-<span id="cb55-11"><a href="data-sources.html#cb55-11" tabindex="-1"></a><span class="fu">head</span>(nba_sample)</span></code></pre></div>
-<pre><code>##          player team points_per_game assists_per_game rebounds_per_game games_played
-## 1  LeBron James  LAL            25.7              7.4               7.5           78
-## 2 Stephen Curry  GSW            26.3              5.8               4.9           79
-## 3  Kevin Durant  PHX            27.1              4.4               8.0           75</code></pre>
+<p>This course prepares you to be part of this exciting evolution by teaching you how to collect, analyze, visualize, and communicate insights from sport-related data.</p>
 </div>
 </div>
-<div id="web-scraping-for-sport-data" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Web Scraping for Sport Data<a href="data-sources.html#web-scraping-for-sport-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Many sports statistics are not available in structured databases and require web scraping to extract. R provides several packages for this purpose.</p>
-<div id="using-rvest-for-web-scraping" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Using rvest for Web Scraping<a href="data-sources.html#using-rvest-for-web-scraping" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The rvest package facilitates web scraping:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-sources.html#cb57-1" tabindex="-1"></a><span class="co"># Install and load required packages</span></span>
-<span id="cb57-2"><a href="data-sources.html#cb57-2" tabindex="-1"></a><span class="co"># install.packages(c(&quot;rvest&quot;, &quot;xml2&quot;, &quot;dplyr&quot;))</span></span>
-<span id="cb57-3"><a href="data-sources.html#cb57-3" tabindex="-1"></a></span>
-<span id="cb57-4"><a href="data-sources.html#cb57-4" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
-<span id="cb57-5"><a href="data-sources.html#cb57-5" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div id="about-this-book" class="section level2 unnumbered hasAnchor">
+<h2>About This Book<a href="index.html#about-this-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This textbook is designed for SPM 4703 - Sport Business Analytics at the University of North Florida. The book combines theoretical foundations with hands-on practical applications, preparing you for careers in sport analytics, business intelligence, and data-driven decision making in the sports industry.</p>
 </div>
-<div id="example-scraping-espn-data" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Example: Scraping ESPN Data<a href="data-sources.html#example-scraping-espn-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-sources.html#cb58-1" tabindex="-1"></a><span class="co"># Example of scraping player stats from ESPN</span></span>
-<span id="cb58-2"><a href="data-sources.html#cb58-2" tabindex="-1"></a><span class="co"># Note: This is pseudocode - actual implementation would need to adapt </span></span>
-<span id="cb58-3"><a href="data-sources.html#cb58-3" tabindex="-1"></a><span class="co"># to ESPN&#39;s current HTML structure</span></span>
-<span id="cb58-4"><a href="data-sources.html#cb58-4" tabindex="-1"></a></span>
-<span id="cb58-5"><a href="data-sources.html#cb58-5" tabindex="-1"></a><span class="co"># url &lt;- &quot;https://www.espn.com/nba/players/_/id/1966/lebron-james&quot;</span></span>
-<span id="cb58-6"><a href="data-sources.html#cb58-6" tabindex="-1"></a><span class="co"># webpage &lt;- read_html(url)</span></span>
-<span id="cb58-7"><a href="data-sources.html#cb58-7" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb58-8"><a href="data-sources.html#cb58-8" tabindex="-1"></a><span class="co"># player_name &lt;- html_nodes(webpage, &quot;h1&quot;) %&gt;% html_text()</span></span>
-<span id="cb58-9"><a href="data-sources.html#cb58-9" tabindex="-1"></a><span class="co"># stats &lt;- html_nodes(webpage, &quot;.stats-table&quot;) %&gt;% html_text()</span></span></code></pre></div>
-</div>
-</div>
-<div id="api-integration-for-real-time-data" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> API Integration for Real-time Data<a href="data-sources.html#api-integration-for-real-time-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Application Programming Interfaces (APIs) provide direct access to sports data from various providers.</p>
-<div id="sportradar-api" class="section level3 hasAnchor" number="3.3.1">
-<h3><span class="header-section-number">3.3.1</span> Sportradar API<a href="data-sources.html#sportradar-api" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Sportradar provides APIs for real-time sports data including:</p>
+<div id="what-youll-learn" class="section level2 unnumbered hasAnchor">
+<h2>What You’ll Learn<a href="index.html#what-youll-learn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Throughout this book, you will:</p>
 <ul>
-<li>Live scores and statistics</li>
-<li>Player and team information</li>
-<li>Historical data sets</li>
+<li>Master the fundamentals of R programming and RStudio</li>
+<li>Collect and manage sport-related data from various sources</li>
+<li>Apply statistical methods to analyze sport business problems</li>
+<li>Create compelling data visualizations using R and Tableau</li>
+<li>Conduct descriptive and predictive analytics</li>
+<li>Communicate findings effectively to stakeholders</li>
+<li>Complete a real-world sport analytics project</li>
 </ul>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data-sources.html#cb59-1" tabindex="-1"></a><span class="co"># Example API call structure (pseudocode)</span></span>
-<span id="cb59-2"><a href="data-sources.html#cb59-2" tabindex="-1"></a><span class="co"># library(httr)</span></span>
-<span id="cb59-3"><a href="data-sources.html#cb59-3" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb59-4"><a href="data-sources.html#cb59-4" tabindex="-1"></a><span class="co"># # Get player data from Sportradar API</span></span>
-<span id="cb59-5"><a href="data-sources.html#cb59-5" tabindex="-1"></a><span class="co"># response &lt;- GET(&quot;https://api.sportradar.com/nba/players/12345.json&quot;)</span></span>
-<span id="cb59-6"><a href="data-sources.html#cb59-6" tabindex="-1"></a><span class="co"># player_data &lt;- content(response, &quot;parsed&quot;)</span></span></code></pre></div>
 </div>
-<div id="espn-api-access" class="section level3 hasAnchor" number="3.3.2">
-<h3><span class="header-section-number">3.3.2</span> ESPN API Access<a href="data-sources.html#espn-api-access" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>ESPN also offers some public APIs for accessing sports data:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-sources.html#cb60-1" tabindex="-1"></a><span class="co"># Example structure for ESPN API access</span></span>
-<span id="cb60-2"><a href="data-sources.html#cb60-2" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb60-3"><a href="data-sources.html#cb60-3" tabindex="-1"></a><span class="co"># # Using curl to fetch data</span></span>
-<span id="cb60-4"><a href="data-sources.html#cb60-4" tabindex="-1"></a><span class="co"># url &lt;- &quot;https://api.espn.com/v1/sports/basketball/nba/teams/123&quot;</span></span>
-<span id="cb60-5"><a href="data-sources.html#cb60-5" tabindex="-1"></a><span class="co"># data &lt;- fromJSON(url)</span></span></code></pre></div>
+<div id="course-structure" class="section level2 unnumbered hasAnchor">
+<h2>Course Structure<a href="index.html#course-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The book is organized to match the progression of topics in SPM 4703:</p>
+<p><strong>Part I: Foundations</strong>
+Introduction to sport analytics, R programming basics, and data collection methods</p>
+<p><strong>Part II: Research Methods</strong>
+Sampling techniques, validity, reliability, and research design</p>
+<p><strong>Part III: Data Analysis</strong>
+Descriptive statistics, statistical testing (t-tests, ANOVA), correlation, and regression</p>
+<p><strong>Part IV: Visualization</strong>
+Data visualization principles using R (ggplot2) and Tableau</p>
+<p><strong>Part V: Applications</strong>
+Case studies and real-world applications in sport business</p>
 </div>
+<div id="prerequisites" class="section level2 unnumbered hasAnchor">
+<h2>Prerequisites<a href="index.html#prerequisites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This book assumes:</p>
+<ul>
+<li>Basic understanding of sports and sport business operations</li>
+<li>No prior programming experience (we’ll teach you R from scratch!)</li>
+<li>Basic statistics knowledge is helpful but not required</li>
+<li>Access to a computer with R and RStudio installed</li>
+</ul>
 </div>
-<div id="data-quality-and-cleaning-considerations" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Data Quality and Cleaning Considerations<a href="data-sources.html#data-quality-and-cleaning-considerations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>When working with sport data, several quality considerations must be addressed:</p>
-<div id="missing-data-issues" class="section level3 hasAnchor" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> Missing Data Issues<a href="data-sources.html#missing-data-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-sources.html#cb61-1" tabindex="-1"></a><span class="co"># Create sample data with missing values</span></span>
-<span id="cb61-2"><a href="data-sources.html#cb61-2" tabindex="-1"></a>sample_player_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb61-3"><a href="data-sources.html#cb61-3" tabindex="-1"></a>  <span class="at">player =</span> <span class="fu">c</span>(<span class="st">&quot;Player A&quot;</span>, <span class="st">&quot;Player B&quot;</span>, <span class="st">&quot;Player C&quot;</span>, <span class="st">&quot;Player D&quot;</span>),</span>
-<span id="cb61-4"><a href="data-sources.html#cb61-4" tabindex="-1"></a>  <span class="at">points =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">18</span>, <span class="cn">NA</span>, <span class="dv">25</span>),</span>
-<span id="cb61-5"><a href="data-sources.html#cb61-5" tabindex="-1"></a>  <span class="at">assists =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="dv">6</span>),</span>
-<span id="cb61-6"><a href="data-sources.html#cb61-6" tabindex="-1"></a>  <span class="at">rebounds =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="cn">NA</span>),</span>
-<span id="cb61-7"><a href="data-sources.html#cb61-7" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
-<span id="cb61-8"><a href="data-sources.html#cb61-8" tabindex="-1"></a>)</span>
-<span id="cb61-9"><a href="data-sources.html#cb61-9" tabindex="-1"></a></span>
-<span id="cb61-10"><a href="data-sources.html#cb61-10" tabindex="-1"></a><span class="co"># View missing values</span></span>
-<span id="cb61-11"><a href="data-sources.html#cb61-11" tabindex="-1"></a><span class="fu">is.na</span>(sample_player_data)</span></code></pre></div>
-<pre><code>##      player points assists rebounds
-## [1,]  FALSE  FALSE   FALSE    FALSE
-## [2,]  FALSE  FALSE    TRUE    FALSE
-## [3,]  FALSE   TRUE   FALSE    FALSE
-## [4,]  FALSE  FALSE   FALSE     TRUE</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-sources.html#cb63-1" tabindex="-1"></a><span class="co"># Remove rows with missing data</span></span>
-<span id="cb63-2"><a href="data-sources.html#cb63-2" tabindex="-1"></a>complete_cases <span class="ot">&lt;-</span> sample_player_data[<span class="fu">complete.cases</span>(sample_player_data), ]</span>
-<span id="cb63-3"><a href="data-sources.html#cb63-3" tabindex="-1"></a>complete_cases</span></code></pre></div>
-<pre><code>##     player points assists rebounds
-## 1 Player A     22       5        4</code></pre>
-</div>
-<div id="data-type-consistency" class="section level3 hasAnchor" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> Data Type Consistency<a href="data-sources.html#data-type-consistency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-sources.html#cb65-1" tabindex="-1"></a><span class="co"># Check and convert data types</span></span>
-<span id="cb65-2"><a href="data-sources.html#cb65-2" tabindex="-1"></a><span class="fu">str</span>(sample_player_data)</span></code></pre></div>
-<pre><code>## &#39;data.frame&#39;:    4 obs. of  4 variables:
-##  $ player  : chr  &quot;Player A&quot; &quot;Player B&quot; &quot;Player C&quot; &quot;Player D&quot;
-##  $ points  : num  22 18 NA 25
-##  $ assists : num  5 NA 8 6
-##  $ rebounds: num  4 6 3 NA</code></pre>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-sources.html#cb67-1" tabindex="-1"></a><span class="co"># Convert character to numeric</span></span>
-<span id="cb67-2"><a href="data-sources.html#cb67-2" tabindex="-1"></a>sample_player_data<span class="sc">$</span>points <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(sample_player_data<span class="sc">$</span>points)</span>
-<span id="cb67-3"><a href="data-sources.html#cb67-3" tabindex="-1"></a></span>
-<span id="cb67-4"><a href="data-sources.html#cb67-4" tabindex="-1"></a><span class="co"># Check for inconsistent data</span></span>
-<span id="cb67-5"><a href="data-sources.html#cb67-5" tabindex="-1"></a><span class="co"># Example: Check for unusual values</span></span>
-<span id="cb67-6"><a href="data-sources.html#cb67-6" tabindex="-1"></a><span class="fu">summary</span>(sample_player_data)</span></code></pre></div>
-<pre><code>##     player              points         assists         rebounds    
-##  Length:4           Min.   :18.00   Min.   :5.000   Min.   :3.000  
-##  Class :character   1st Qu.:20.00   1st Qu.:5.500   1st Qu.:3.500  
-##  Mode  :character   Median :22.00   Median :6.000   Median :4.000  
-##                     Mean   :21.67   Mean   :6.333   Mean   :4.333  
-##                     3rd Qu.:23.50   3rd Qu.:7.000   3rd Qu.:5.000  
-##                     Max.   :25.00   Max.   :8.000   Max.   :6.000  
-##                     NA&#39;s   :1       NA&#39;s   :1       NA&#39;s   :1</code></pre>
-</div>
-</div>
-<div id="data-storage-and-management" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Data Storage and Management<a href="data-sources.html#data-storage-and-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Proper data management is crucial for effective sport analytics:</p>
-<div id="database-connections" class="section level3 hasAnchor" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Database Connections<a href="data-sources.html#database-connections" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data-sources.html#cb69-1" tabindex="-1"></a><span class="co"># Using RSQLite for database connections</span></span>
-<span id="cb69-2"><a href="data-sources.html#cb69-2" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
-<span id="cb69-3"><a href="data-sources.html#cb69-3" tabindex="-1"></a></span>
-<span id="cb69-4"><a href="data-sources.html#cb69-4" tabindex="-1"></a><span class="co"># Create connection to SQLite database</span></span>
-<span id="cb69-5"><a href="data-sources.html#cb69-5" tabindex="-1"></a><span class="co"># con &lt;- dbConnect(RSQLite::SQLite(), &quot;sport_data.db&quot;)</span></span>
-<span id="cb69-6"><a href="data-sources.html#cb69-6" tabindex="-1"></a></span>
-<span id="cb69-7"><a href="data-sources.html#cb69-7" tabindex="-1"></a><span class="co"># Query data</span></span>
-<span id="cb69-8"><a href="data-sources.html#cb69-8" tabindex="-1"></a><span class="co"># player_stats &lt;- dbGetQuery(con, &quot;SELECT * FROM players WHERE team = &#39;LAL&#39;&quot;)</span></span></code></pre></div>
-</div>
-<div id="data-import-functions" class="section level3 hasAnchor" number="3.5.2">
-<h3><span class="header-section-number">3.5.2</span> Data Import Functions<a href="data-sources.html#data-import-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-sources.html#cb70-1" tabindex="-1"></a><span class="co"># Create a simple function to import CSV files with error handling</span></span>
-<span id="cb70-2"><a href="data-sources.html#cb70-2" tabindex="-1"></a>import_sport_data <span class="ot">&lt;-</span> <span class="cf">function</span>(file_path) {</span>
-<span id="cb70-3"><a href="data-sources.html#cb70-3" tabindex="-1"></a>  <span class="fu">tryCatch</span>({</span>
-<span id="cb70-4"><a href="data-sources.html#cb70-4" tabindex="-1"></a>    data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(file_path, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb70-5"><a href="data-sources.html#cb70-5" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">&quot;Data imported successfully&quot;</span>)</span>
-<span id="cb70-6"><a href="data-sources.html#cb70-6" tabindex="-1"></a>    <span class="fu">return</span>(data)</span>
-<span id="cb70-7"><a href="data-sources.html#cb70-7" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
-<span id="cb70-8"><a href="data-sources.html#cb70-8" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">&quot;Error importing data: &quot;</span>, e<span class="sc">$</span>message)</span>
-<span id="cb70-9"><a href="data-sources.html#cb70-9" tabindex="-1"></a>    <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
-<span id="cb70-10"><a href="data-sources.html#cb70-10" tabindex="-1"></a>  })</span>
-<span id="cb70-11"><a href="data-sources.html#cb70-11" tabindex="-1"></a>}</span></code></pre></div>
-</div>
-</div>
-<div id="practical-examples" class="section level2 hasAnchor" number="3.6">
-<h2><span class="header-section-number">3.6</span> Practical Examples<a href="data-sources.html#practical-examples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="loading-real-sport-data" class="section level3 hasAnchor" number="3.6.1">
-<h3><span class="header-section-number">3.6.1</span> Loading Real Sport Data<a href="data-sources.html#loading-real-sport-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-sources.html#cb71-1" tabindex="-1"></a><span class="co"># Load sample baseball data</span></span>
-<span id="cb71-2"><a href="data-sources.html#cb71-2" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span>
-<span id="cb71-3"><a href="data-sources.html#cb71-3" tabindex="-1"></a></span>
-<span id="cb71-4"><a href="data-sources.html#cb71-4" tabindex="-1"></a><span class="co"># Get batting statistics</span></span>
-<span id="cb71-5"><a href="data-sources.html#cb71-5" tabindex="-1"></a>batting <span class="ot">&lt;-</span> Batting[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="fu">c</span>(<span class="st">&quot;playerID&quot;</span>, <span class="st">&quot;yearID&quot;</span>, <span class="st">&quot;teamID&quot;</span>, <span class="st">&quot;AB&quot;</span>, <span class="st">&quot;R&quot;</span>, <span class="st">&quot;H&quot;</span>)]</span>
-<span id="cb71-6"><a href="data-sources.html#cb71-6" tabindex="-1"></a></span>
-<span id="cb71-7"><a href="data-sources.html#cb71-7" tabindex="-1"></a><span class="co"># View sample data</span></span>
-<span id="cb71-8"><a href="data-sources.html#cb71-8" tabindex="-1"></a><span class="fu">head</span>(batting)</span></code></pre></div>
-<pre><code>##    playerID yearID teamID AB R H
-## 1 aardsda01   2004    SFN  0 0 0
-## 2 aardsda01   2006    CHN  2 0 0
-## 3 aardsda01   2007    CHA  0 0 0
-## 4 aardsda01   2008    BOS  1 0 0
-## 5 aardsda01   2009    SEA  0 0 0
-## 6 aardsda01   2010    SEA  0 0 0</code></pre>
-</div>
-<div id="data-transformation" class="section level3 hasAnchor" number="3.6.2">
-<h3><span class="header-section-number">3.6.2</span> Data Transformation<a href="data-sources.html#data-transformation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data-sources.html#cb73-1" tabindex="-1"></a><span class="co"># Example: Calculate batting average</span></span>
-<span id="cb73-2"><a href="data-sources.html#cb73-2" tabindex="-1"></a>batting<span class="sc">$</span>avg <span class="ot">&lt;-</span> batting<span class="sc">$</span>H <span class="sc">/</span> batting<span class="sc">$</span>AB</span>
-<span id="cb73-3"><a href="data-sources.html#cb73-3" tabindex="-1"></a></span>
-<span id="cb73-4"><a href="data-sources.html#cb73-4" tabindex="-1"></a><span class="co"># View transformed data</span></span>
-<span id="cb73-5"><a href="data-sources.html#cb73-5" tabindex="-1"></a><span class="fu">head</span>(batting[, <span class="fu">c</span>(<span class="st">&quot;playerID&quot;</span>, <span class="st">&quot;yearID&quot;</span>, <span class="st">&quot;avg&quot;</span>)])</span></code></pre></div>
-<pre><code>##    playerID yearID avg
-## 1 aardsda01   2004 NaN
-## 2 aardsda01   2006   0
-## 3 aardsda01   2007 NaN
-## 4 aardsda01   2008   0
-## 5 aardsda01   2009 NaN
-## 6 aardsda01   2010 NaN</code></pre>
-</div>
-</div>
-<div id="practice-exercises-2" class="section level2 hasAnchor" number="3.7">
-<h2><span class="header-section-number">3.7</span> Practice Exercises<a href="data-sources.html#practice-exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="software-requirements" class="section level2 unnumbered hasAnchor">
+<h2>Software Requirements<a href="index.html#software-requirements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You will need to install the following free software:</p>
 <ol style="list-style-type: decimal">
-<li><strong>Data Access Practice</strong>:
-<ul>
-<li>Install and load the Lahman package</li>
-<li>Download sample player data</li>
-<li>Explore the structure of the data</li>
-</ul></li>
-<li><strong>Data Quality Assessment</strong>:
-<ul>
-<li>Create a data frame with missing values</li>
-<li>Identify missing values using <code>is.na()</code></li>
-<li>Remove rows with complete cases</li>
-</ul></li>
-<li><strong>Web Scraping Exploration</strong>:
-<ul>
-<li>Research a sports website</li>
-<li>Identify potential data sources</li>
-<li>Plan how you would extract specific information</li>
-</ul></li>
-<li><strong>API Integration</strong>:
-<ul>
-<li>Look for a public sports API</li>
-<li>Identify what data is available</li>
-<li>Plan a simple data extraction strategy</li>
-</ul></li>
+<li><strong>R</strong> (version 4.0 or higher): Download from <a href="https://cran.r-project.org/">CRAN</a></li>
+<li><strong>RStudio Desktop</strong>: Download from <a href="https://posit.co/download/rstudio-desktop/">Posit</a></li>
+<li><strong>Tableau Public</strong> (free version): Download from <a href="https://public.tableau.com/">Tableau</a></li>
 </ol>
 </div>
-<div id="chapter-summary-2" class="section level2 hasAnchor" number="3.8">
-<h2><span class="header-section-number">3.8</span> Chapter Summary<a href="data-sources.html#chapter-summary-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Sport data sources are diverse and can be broadly categorized into:</p>
-<div id="key-takeaways-2" class="section level3 hasAnchor" number="3.8.1">
-<h3><span class="header-section-number">3.8.1</span> Key Takeaways<a href="data-sources.html#key-takeaways-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="how-to-use-this-book" class="section level2 unnumbered hasAnchor">
+<h2>How to Use This Book<a href="index.html#how-to-use-this-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Each chapter includes:</p>
+<ul>
+<li><strong>Conceptual explanations</strong> of key topics</li>
+<li><strong>R code examples</strong> that you can run yourself</li>
+<li><strong>Practice exercises</strong> to reinforce learning</li>
+<li><strong>Real sport data</strong> from sources like the Lahman baseball database</li>
+<li><strong>Case studies</strong> from professional sports organizations</li>
+</ul>
+<p><strong>Important</strong>: All code in this book is designed to be copied and executed in your own R environment. We encourage you to:</p>
 <ol style="list-style-type: decimal">
-<li><strong>Public Databases</strong>: Lahman, NBA, MLB databases provide structured datasets for analysis</li>
-<li><strong>Web Scraping</strong>: rvest and related packages enable access to data not available in structured formats</li>
-<li><strong>API Integration</strong>: Direct access to real-time data through various sports APIs</li>
-<li><strong>Data Quality</strong>: Understanding and addressing missing data, inconsistencies, and data validation</li>
-<li><strong>Data Management</strong>: Proper storage and access methods for efficient analysis</li>
+<li>Type out the code yourself (don’t just copy-paste) to build muscle memory</li>
+<li>Experiment by modifying the code to see what happens</li>
+<li>Complete all practice exercises</li>
+<li>Work through examples with your own sport data when possible</li>
 </ol>
 </div>
-<div id="next-steps-2" class="section level3 hasAnchor" number="3.8.2">
-<h3><span class="header-section-number">3.8.2</span> Next Steps<a href="data-sources.html#next-steps-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In Chapter 4, we’ll explore how to clean, transform, and manage sport data for effective analytical work.</p>
-</div>
-</div>
-<div id="references-2" class="section level2 hasAnchor" number="3.9">
-<h2><span class="header-section-number">3.9</span> References<a href="data-sources.html#references-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dataset-information" class="section level2 unnumbered hasAnchor">
+<h2>Dataset Information<a href="index.html#dataset-information" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Throughout the book, we’ll work with several datasets:</p>
 <ul>
-<li>Baseball-Reference.com. (2023). <em>Baseball Data</em>. Retrieved from <a href="https://www.baseball-reference.com/" class="uri">https://www.baseball-reference.com/</a></li>
-<li>Lahman, S. (2023). <em>Lahman’s Baseball Database</em>. Retrieved from <a href="https://github.com/jknecht/baseball4r" class="uri">https://github.com/jknecht/baseball4r</a></li>
-<li>ESPN. (2023). <em>ESPN API Documentation</em>. Retrieved from <a href="https://developer.espn.com/" class="uri">https://developer.espn.com/</a></li>
-<li>Sportradar. (2023). <em>Sports Data APIs</em>. Retrieved from <a href="https://www.sportradar.com/" class="uri">https://www.sportradar.com/</a></li>
-<li>Wickham, H. (2016). <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. O’Reilly Media.</li>
+<li>NCAA Division I athletic department financial data</li>
+<li>Lahman baseball database (historical MLB statistics)</li>
+<li>Custom sport business datasets (ticket sales, attendance, etc.)</li>
+<li>Sample data for practice exercises</li>
 </ul>
+<p>All datasets are either:
+- Included in R packages
+- Available for download from the course Canvas site
+- Fictional data created for educational purposes</p>
+</div>
+<div id="acknowledgments" class="section level2 unnumbered hasAnchor">
+<h2>Acknowledgments<a href="index.html#acknowledgments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This book draws upon excellent resources in the R and sport analytics communities, including:</p>
+<ul>
+<li><em>Analyzing Baseball Data with R</em> by Max Marchi and Jim Albert</li>
+<li><em>Sport Business Analytics</em> by C. Keith Harrison</li>
+<li><em>Statistics Using R</em> by Sarah Weinberg</li>
+<li><em>Learning Tableau 2020</em> by Joshua Milligan</li>
+</ul>
+<p>Special thanks to the students of SPM 4703 whose feedback has shaped this book.</p>
+</div>
+<div id="getting-help" class="section level2 unnumbered hasAnchor">
+<h2>Getting Help<a href="index.html#getting-help" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you encounter issues:</p>
+<ol style="list-style-type: decimal">
+<li>Check the relevant chapter’s troubleshooting section</li>
+<li>Review error messages carefully - they often tell you what’s wrong</li>
+<li>Use R’s built-in help: <code>?function_name</code> or <code>help(function_name)</code></li>
+<li>Search online - R has an excellent community</li>
+<li>Ask during class or office hours</li>
+</ol>
+</div>
+<div id="license-and-usage" class="section level2 unnumbered hasAnchor">
+<h2>License and Usage<a href="index.html#license-and-usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You are free to:</p>
+<ul>
+<li>Share and adapt the material for non-commercial purposes</li>
+<li>Give appropriate credit to the author</li>
+<li>Share adaptations under the same license</li>
+</ul>
+<hr />
+<p><strong>Note</strong>: Sample data used in this book is fictional unless otherwise noted. Real-world examples are used for educational purposes only.</p>
+<p>Let’s get started with Chapter 1: Introduction to Sport Business Analytics!</p>
 
 </div>
 </div>
@@ -1062,8 +933,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="r-setup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sampling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

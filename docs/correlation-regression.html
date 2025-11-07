@@ -4,24 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Correlation and Regression | _main.knit</title>
-  <meta name="description" content="" />
+  <title>8 Correlation and Regression | Sport Business Analytics with R</title>
+  <meta name="description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Correlation and Regression | _main.knit" />
+  <meta property="og:title" content="8 Correlation and Regression | Sport Business Analytics with R" />
   <meta property="og:type" content="book" />
   
-  
+  <meta property="og:description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Correlation and Regression | _main.knit" />
+  <meta name="twitter:title" content="8 Correlation and Regression | Sport Business Analytics with R" />
   
-  
+  <meta name="twitter:description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   
 
+<meta name="author" content="Sean Davis, Ph.D." />
 
 
+<meta name="date" content="2025-11-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,6 +137,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Sport Business Analytics with R</a></li>
 
 <li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-sport-business-analytics"><i class="fa fa-check"></i>Why Sport Business Analytics?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-book"><i class="fa fa-check"></i>About This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-youll-learn"><i class="fa fa-check"></i>What You’ll Learn</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-structure"><i class="fa fa-check"></i>Course Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-requirements"><i class="fa fa-check"></i>Software Requirements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-book"><i class="fa fa-check"></i>How to Use This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dataset-information"><i class="fa fa-check"></i>Dataset Information</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-help"><i class="fa fa-check"></i>Getting Help</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license-and-usage"><i class="fa fa-check"></i>License and Usage</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Sport Business Analytics</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-sport-business-analytics"><i class="fa fa-check"></i><b>1.1</b> What is Sport Business Analytics?</a>
@@ -749,7 +768,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sport Business Analytics with R</a>
           </h1>
         </div>
 
@@ -768,11 +787,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Regression</strong>: Predicts the value of one variable based on one or more other variables</li>
 </ul>
 <p>These techniques are essential for data-driven decision making in sport organizations, allowing analysts to identify patterns, make predictions, and inform strategic decisions.</p>
-<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="correlation-regression.html#cb477-1" tabindex="-1"></a><span class="co"># Load required packages</span></span>
-<span id="cb477-2"><a href="correlation-regression.html#cb477-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb477-3"><a href="correlation-regression.html#cb477-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb477-4"><a href="correlation-regression.html#cb477-4" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span>
-<span id="cb477-5"><a href="correlation-regression.html#cb477-5" tabindex="-1"></a><span class="fu">library</span>(car)       <span class="co"># For additional regression diagnostics</span></span></code></pre></div>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="correlation-regression.html#cb473-1" tabindex="-1"></a><span class="co"># Load required packages</span></span>
+<span id="cb473-2"><a href="correlation-regression.html#cb473-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb473-3"><a href="correlation-regression.html#cb473-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb473-4"><a href="correlation-regression.html#cb473-4" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span>
+<span id="cb473-5"><a href="correlation-regression.html#cb473-5" tabindex="-1"></a><span class="fu">library</span>(car)       <span class="co"># For additional regression diagnostics</span></span></code></pre></div>
 </div>
 <div id="understanding-correlation" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Understanding Correlation<a href="correlation-regression.html#understanding-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -793,48 +812,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>r = 0</strong>: No linear correlation (no predictable relationship)</li>
 <li><strong>r = -1</strong>: Perfect negative correlation (as one variable increases, the other decreases proportionally)</li>
 </ul>
-<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="correlation-regression.html#cb478-1" tabindex="-1"></a><span class="co"># Create examples of different correlation strengths</span></span>
-<span id="cb478-2"><a href="correlation-regression.html#cb478-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb478-3"><a href="correlation-regression.html#cb478-3" tabindex="-1"></a></span>
-<span id="cb478-4"><a href="correlation-regression.html#cb478-4" tabindex="-1"></a><span class="co"># Perfect positive correlation</span></span>
-<span id="cb478-5"><a href="correlation-regression.html#cb478-5" tabindex="-1"></a>perfect_pos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb478-6"><a href="correlation-regression.html#cb478-6" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
-<span id="cb478-7"><a href="correlation-regression.html#cb478-7" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
-<span id="cb478-8"><a href="correlation-regression.html#cb478-8" tabindex="-1"></a>)</span>
-<span id="cb478-9"><a href="correlation-regression.html#cb478-9" tabindex="-1"></a></span>
-<span id="cb478-10"><a href="correlation-regression.html#cb478-10" tabindex="-1"></a><span class="co"># Moderate positive correlation</span></span>
-<span id="cb478-11"><a href="correlation-regression.html#cb478-11" tabindex="-1"></a>moderate_pos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb478-12"><a href="correlation-regression.html#cb478-12" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
-<span id="cb478-13"><a href="correlation-regression.html#cb478-13" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb478-14"><a href="correlation-regression.html#cb478-14" tabindex="-1"></a>)</span>
-<span id="cb478-15"><a href="correlation-regression.html#cb478-15" tabindex="-1"></a></span>
-<span id="cb478-16"><a href="correlation-regression.html#cb478-16" tabindex="-1"></a><span class="co"># No correlation</span></span>
-<span id="cb478-17"><a href="correlation-regression.html#cb478-17" tabindex="-1"></a>no_corr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb478-18"><a href="correlation-regression.html#cb478-18" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
-<span id="cb478-19"><a href="correlation-regression.html#cb478-19" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">25</span>, <span class="dv">10</span>)</span>
-<span id="cb478-20"><a href="correlation-regression.html#cb478-20" tabindex="-1"></a>)</span>
-<span id="cb478-21"><a href="correlation-regression.html#cb478-21" tabindex="-1"></a></span>
-<span id="cb478-22"><a href="correlation-regression.html#cb478-22" tabindex="-1"></a><span class="co"># Negative correlation</span></span>
-<span id="cb478-23"><a href="correlation-regression.html#cb478-23" tabindex="-1"></a>negative_corr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb478-24"><a href="correlation-regression.html#cb478-24" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
-<span id="cb478-25"><a href="correlation-regression.html#cb478-25" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">50</span><span class="sc">:</span><span class="dv">1</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
-<span id="cb478-26"><a href="correlation-regression.html#cb478-26" tabindex="-1"></a>)</span>
-<span id="cb478-27"><a href="correlation-regression.html#cb478-27" tabindex="-1"></a></span>
-<span id="cb478-28"><a href="correlation-regression.html#cb478-28" tabindex="-1"></a><span class="co"># Create visualizations</span></span>
-<span id="cb478-29"><a href="correlation-regression.html#cb478-29" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>))</span>
-<span id="cb478-30"><a href="correlation-regression.html#cb478-30" tabindex="-1"></a></span>
-<span id="cb478-31"><a href="correlation-regression.html#cb478-31" tabindex="-1"></a><span class="fu">plot</span>(perfect_pos<span class="sc">$</span>x, perfect_pos<span class="sc">$</span>y, <span class="at">main =</span> <span class="st">&quot;Strong Positive (r ≈ 1.0)&quot;</span>,</span>
-<span id="cb478-32"><a href="correlation-regression.html#cb478-32" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Variable X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variable Y&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb478-33"><a href="correlation-regression.html#cb478-33" tabindex="-1"></a></span>
-<span id="cb478-34"><a href="correlation-regression.html#cb478-34" tabindex="-1"></a><span class="fu">plot</span>(moderate_pos<span class="sc">$</span>x, moderate_pos<span class="sc">$</span>y, <span class="at">main =</span> <span class="st">&quot;Moderate Positive (r ≈ 0.6)&quot;</span>,</span>
-<span id="cb478-35"><a href="correlation-regression.html#cb478-35" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Variable X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variable Y&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>)</span>
-<span id="cb478-36"><a href="correlation-regression.html#cb478-36" tabindex="-1"></a></span>
-<span id="cb478-37"><a href="correlation-regression.html#cb478-37" tabindex="-1"></a><span class="fu">plot</span>(no_corr<span class="sc">$</span>x, no_corr<span class="sc">$</span>y, <span class="at">main =</span> <span class="st">&quot;No Correlation (r ≈ 0)&quot;</span>,</span>
-<span id="cb478-38"><a href="correlation-regression.html#cb478-38" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Variable X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variable Y&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>)</span>
-<span id="cb478-39"><a href="correlation-regression.html#cb478-39" tabindex="-1"></a></span>
-<span id="cb478-40"><a href="correlation-regression.html#cb478-40" tabindex="-1"></a><span class="fu">plot</span>(negative_corr<span class="sc">$</span>x, negative_corr<span class="sc">$</span>y, <span class="at">main =</span> <span class="st">&quot;Negative (r ≈ -0.9)&quot;</span>,</span>
-<span id="cb478-41"><a href="correlation-regression.html#cb478-41" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Variable X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variable Y&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/correlation-visualization-1.png" width="960" /></p>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="correlation-regression.html#cb474-1" tabindex="-1"></a><span class="co"># Create examples of different correlation strengths</span></span>
+<span id="cb474-2"><a href="correlation-regression.html#cb474-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb474-3"><a href="correlation-regression.html#cb474-3" tabindex="-1"></a></span>
+<span id="cb474-4"><a href="correlation-regression.html#cb474-4" tabindex="-1"></a><span class="co"># Perfect positive correlation</span></span>
+<span id="cb474-5"><a href="correlation-regression.html#cb474-5" tabindex="-1"></a>perfect_pos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb474-6"><a href="correlation-regression.html#cb474-6" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
+<span id="cb474-7"><a href="correlation-regression.html#cb474-7" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb474-8"><a href="correlation-regression.html#cb474-8" tabindex="-1"></a>)</span>
+<span id="cb474-9"><a href="correlation-regression.html#cb474-9" tabindex="-1"></a></span>
+<span id="cb474-10"><a href="correlation-regression.html#cb474-10" tabindex="-1"></a><span class="co"># Moderate positive correlation</span></span>
+<span id="cb474-11"><a href="correlation-regression.html#cb474-11" tabindex="-1"></a>moderate_pos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb474-12"><a href="correlation-regression.html#cb474-12" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
+<span id="cb474-13"><a href="correlation-regression.html#cb474-13" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb474-14"><a href="correlation-regression.html#cb474-14" tabindex="-1"></a>)</span>
+<span id="cb474-15"><a href="correlation-regression.html#cb474-15" tabindex="-1"></a></span>
+<span id="cb474-16"><a href="correlation-regression.html#cb474-16" tabindex="-1"></a><span class="co"># No correlation</span></span>
+<span id="cb474-17"><a href="correlation-regression.html#cb474-17" tabindex="-1"></a>no_corr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb474-18"><a href="correlation-regression.html#cb474-18" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
+<span id="cb474-19"><a href="correlation-regression.html#cb474-19" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">25</span>, <span class="dv">10</span>)</span>
+<span id="cb474-20"><a href="correlation-regression.html#cb474-20" tabindex="-1"></a>)</span>
+<span id="cb474-21"><a href="correlation-regression.html#cb474-21" tabindex="-1"></a></span>
+<span id="cb474-22"><a href="correlation-regression.html#cb474-22" tabindex="-1"></a><span class="co"># Negative correlation</span></span>
+<span id="cb474-23"><a href="correlation-regression.html#cb474-23" tabindex="-1"></a>negative_corr <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb474-24"><a href="correlation-regression.html#cb474-24" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
+<span id="cb474-25"><a href="correlation-regression.html#cb474-25" tabindex="-1"></a>  <span class="at">y =</span> <span class="dv">50</span><span class="sc">:</span><span class="dv">1</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb474-26"><a href="correlation-regression.html#cb474-26" tabindex="-1"></a>)</span>
+<span id="cb474-27"><a href="correlation-regression.html#cb474-27" tabindex="-1"></a></span>
+<span id="cb474-28"><a href="correlation-regression.html#cb474-28" tabindex="-1"></a><span class="co"># Create visualizations</span></span>
+<span id="cb474-29"><a href="correlation-regression.html#cb474-29" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>))</span>
+<span id="cb474-30"><a href="correlation-regression.html#cb474-30" tabindex="-1"></a></span>
+<span id="cb474-31"><a href="correlation-regression.html#cb474-31" tabindex="-1"></a><span class="fu">plot</span>(perfect_pos<span class="sc">$</span>x, perfect_pos<span class="sc">$</span>y, <span class="at">main =</span> <span class="st">&quot;Strong Positive (r ≈ 1.0)&quot;</span>,</span>
+<span id="cb474-32"><a href="correlation-regression.html#cb474-32" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Variable X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variable Y&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb474-33"><a href="correlation-regression.html#cb474-33" tabindex="-1"></a></span>
+<span id="cb474-34"><a href="correlation-regression.html#cb474-34" tabindex="-1"></a><span class="fu">plot</span>(moderate_pos<span class="sc">$</span>x, moderate_pos<span class="sc">$</span>y, <span class="at">main =</span> <span class="st">&quot;Moderate Positive (r ≈ 0.6)&quot;</span>,</span>
+<span id="cb474-35"><a href="correlation-regression.html#cb474-35" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Variable X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variable Y&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>)</span>
+<span id="cb474-36"><a href="correlation-regression.html#cb474-36" tabindex="-1"></a></span>
+<span id="cb474-37"><a href="correlation-regression.html#cb474-37" tabindex="-1"></a><span class="fu">plot</span>(no_corr<span class="sc">$</span>x, no_corr<span class="sc">$</span>y, <span class="at">main =</span> <span class="st">&quot;No Correlation (r ≈ 0)&quot;</span>,</span>
+<span id="cb474-38"><a href="correlation-regression.html#cb474-38" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Variable X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variable Y&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>)</span>
+<span id="cb474-39"><a href="correlation-regression.html#cb474-39" tabindex="-1"></a></span>
+<span id="cb474-40"><a href="correlation-regression.html#cb474-40" tabindex="-1"></a><span class="fu">plot</span>(negative_corr<span class="sc">$</span>x, negative_corr<span class="sc">$</span>y, <span class="at">main =</span> <span class="st">&quot;Negative (r ≈ -0.9)&quot;</span>,</span>
+<span id="cb474-41"><a href="correlation-regression.html#cb474-41" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Variable X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Variable Y&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/correlation-visualization-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="interpreting-correlation-strength" class="section level3 hasAnchor" number="8.2.3">
 <h3><span class="header-section-number">8.2.3</span> Interpreting Correlation Strength<a href="correlation-regression.html#interpreting-correlation-strength" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -881,22 +900,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - The relationship is linear
 - Data is normally distributed
 - No significant outliers</p>
-<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="correlation-regression.html#cb479-1" tabindex="-1"></a><span class="co"># Example: Relationship between study time and exam scores</span></span>
-<span id="cb479-2"><a href="correlation-regression.html#cb479-2" tabindex="-1"></a>study_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb479-3"><a href="correlation-regression.html#cb479-3" tabindex="-1"></a>  <span class="at">student_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,</span>
-<span id="cb479-4"><a href="correlation-regression.html#cb479-4" tabindex="-1"></a>  <span class="at">study_hours =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">9</span>,</span>
-<span id="cb479-5"><a href="correlation-regression.html#cb479-5" tabindex="-1"></a>                  <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">12</span>),</span>
-<span id="cb479-6"><a href="correlation-regression.html#cb479-6" tabindex="-1"></a>  <span class="at">exam_score =</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">68</span>, <span class="dv">75</span>, <span class="dv">72</span>, <span class="dv">78</span>, <span class="dv">82</span>, <span class="dv">70</span>, <span class="dv">85</span>, <span class="dv">76</span>, <span class="dv">88</span>,</span>
-<span id="cb479-7"><a href="correlation-regression.html#cb479-7" tabindex="-1"></a>                 <span class="dv">79</span>, <span class="dv">90</span>, <span class="dv">73</span>, <span class="dv">86</span>, <span class="dv">81</span>, <span class="dv">87</span>, <span class="dv">92</span>, <span class="dv">77</span>, <span class="dv">89</span>, <span class="dv">94</span>)</span>
-<span id="cb479-8"><a href="correlation-regression.html#cb479-8" tabindex="-1"></a>)</span>
-<span id="cb479-9"><a href="correlation-regression.html#cb479-9" tabindex="-1"></a></span>
-<span id="cb479-10"><a href="correlation-regression.html#cb479-10" tabindex="-1"></a><span class="co"># Calculate Pearson correlation</span></span>
-<span id="cb479-11"><a href="correlation-regression.html#cb479-11" tabindex="-1"></a>pearson_result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(study_data<span class="sc">$</span>study_hours,</span>
-<span id="cb479-12"><a href="correlation-regression.html#cb479-12" tabindex="-1"></a>                           study_data<span class="sc">$</span>exam_score,</span>
-<span id="cb479-13"><a href="correlation-regression.html#cb479-13" tabindex="-1"></a>                           <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
-<span id="cb479-14"><a href="correlation-regression.html#cb479-14" tabindex="-1"></a></span>
-<span id="cb479-15"><a href="correlation-regression.html#cb479-15" tabindex="-1"></a><span class="co"># Display results</span></span>
-<span id="cb479-16"><a href="correlation-regression.html#cb479-16" tabindex="-1"></a><span class="fu">print</span>(pearson_result)</span></code></pre></div>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="correlation-regression.html#cb475-1" tabindex="-1"></a><span class="co"># Example: Relationship between study time and exam scores</span></span>
+<span id="cb475-2"><a href="correlation-regression.html#cb475-2" tabindex="-1"></a>study_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb475-3"><a href="correlation-regression.html#cb475-3" tabindex="-1"></a>  <span class="at">student_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,</span>
+<span id="cb475-4"><a href="correlation-regression.html#cb475-4" tabindex="-1"></a>  <span class="at">study_hours =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">9</span>,</span>
+<span id="cb475-5"><a href="correlation-regression.html#cb475-5" tabindex="-1"></a>                  <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">6</span>, <span class="dv">10</span>, <span class="dv">12</span>),</span>
+<span id="cb475-6"><a href="correlation-regression.html#cb475-6" tabindex="-1"></a>  <span class="at">exam_score =</span> <span class="fu">c</span>(<span class="dv">65</span>, <span class="dv">68</span>, <span class="dv">75</span>, <span class="dv">72</span>, <span class="dv">78</span>, <span class="dv">82</span>, <span class="dv">70</span>, <span class="dv">85</span>, <span class="dv">76</span>, <span class="dv">88</span>,</span>
+<span id="cb475-7"><a href="correlation-regression.html#cb475-7" tabindex="-1"></a>                 <span class="dv">79</span>, <span class="dv">90</span>, <span class="dv">73</span>, <span class="dv">86</span>, <span class="dv">81</span>, <span class="dv">87</span>, <span class="dv">92</span>, <span class="dv">77</span>, <span class="dv">89</span>, <span class="dv">94</span>)</span>
+<span id="cb475-8"><a href="correlation-regression.html#cb475-8" tabindex="-1"></a>)</span>
+<span id="cb475-9"><a href="correlation-regression.html#cb475-9" tabindex="-1"></a></span>
+<span id="cb475-10"><a href="correlation-regression.html#cb475-10" tabindex="-1"></a><span class="co"># Calculate Pearson correlation</span></span>
+<span id="cb475-11"><a href="correlation-regression.html#cb475-11" tabindex="-1"></a>pearson_result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(study_data<span class="sc">$</span>study_hours,</span>
+<span id="cb475-12"><a href="correlation-regression.html#cb475-12" tabindex="-1"></a>                           study_data<span class="sc">$</span>exam_score,</span>
+<span id="cb475-13"><a href="correlation-regression.html#cb475-13" tabindex="-1"></a>                           <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb475-14"><a href="correlation-regression.html#cb475-14" tabindex="-1"></a></span>
+<span id="cb475-15"><a href="correlation-regression.html#cb475-15" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb475-16"><a href="correlation-regression.html#cb475-16" tabindex="-1"></a><span class="fu">print</span>(pearson_result)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -908,18 +927,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## sample estimates:
 ##       cor 
 ## 0.9928787</code></pre>
-<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="correlation-regression.html#cb481-1" tabindex="-1"></a><span class="co"># Visualize the relationship</span></span>
-<span id="cb481-2"><a href="correlation-regression.html#cb481-2" tabindex="-1"></a><span class="fu">ggplot</span>(study_data, <span class="fu">aes</span>(<span class="at">x =</span> study_hours, <span class="at">y =</span> exam_score)) <span class="sc">+</span></span>
-<span id="cb481-3"><a href="correlation-regression.html#cb481-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb481-4"><a href="correlation-regression.html#cb481-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb481-5"><a href="correlation-regression.html#cb481-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship Between Study Hours and Exam Scores&quot;</span>,</span>
-<span id="cb481-6"><a href="correlation-regression.html#cb481-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">&quot;Pearson&#39;s r =&quot;</span>, <span class="fu">round</span>(pearson_result<span class="sc">$</span>estimate, <span class="dv">3</span>),</span>
-<span id="cb481-7"><a href="correlation-regression.html#cb481-7" tabindex="-1"></a>                       <span class="st">&quot;, p-value =&quot;</span>, <span class="fu">round</span>(pearson_result<span class="sc">$</span>p.value, <span class="dv">4</span>)),</span>
-<span id="cb481-8"><a href="correlation-regression.html#cb481-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Study Hours&quot;</span>,</span>
-<span id="cb481-9"><a href="correlation-regression.html#cb481-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Exam Score&quot;</span>) <span class="sc">+</span></span>
-<span id="cb481-10"><a href="correlation-regression.html#cb481-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="_main_files/figure-html/pearson-example-1.png" width="672" /></p>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="correlation-regression.html#cb477-1" tabindex="-1"></a><span class="co"># Visualize the relationship</span></span>
+<span id="cb477-2"><a href="correlation-regression.html#cb477-2" tabindex="-1"></a><span class="fu">ggplot</span>(study_data, <span class="fu">aes</span>(<span class="at">x =</span> study_hours, <span class="at">y =</span> exam_score)) <span class="sc">+</span></span>
+<span id="cb477-3"><a href="correlation-regression.html#cb477-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb477-4"><a href="correlation-regression.html#cb477-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb477-5"><a href="correlation-regression.html#cb477-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship Between Study Hours and Exam Scores&quot;</span>,</span>
+<span id="cb477-6"><a href="correlation-regression.html#cb477-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">&quot;Pearson&#39;s r =&quot;</span>, <span class="fu">round</span>(pearson_result<span class="sc">$</span>estimate, <span class="dv">3</span>),</span>
+<span id="cb477-7"><a href="correlation-regression.html#cb477-7" tabindex="-1"></a>                       <span class="st">&quot;, p-value =&quot;</span>, <span class="fu">round</span>(pearson_result<span class="sc">$</span>p.value, <span class="dv">4</span>)),</span>
+<span id="cb477-8"><a href="correlation-regression.html#cb477-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Study Hours&quot;</span>,</span>
+<span id="cb477-9"><a href="correlation-regression.html#cb477-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Exam Score&quot;</span>) <span class="sc">+</span></span>
+<span id="cb477-10"><a href="correlation-regression.html#cb477-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/pearson-example-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="spearman-correlation" class="section level4 hasAnchor" number="8.2.4.2">
 <h4><span class="header-section-number">8.2.4.2</span> Spearman Correlation<a href="correlation-regression.html#spearman-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -929,19 +947,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - The relationship is monotonic but not necessarily linear
 - Data contains outliers
 - Data is not normally distributed</p>
-<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="correlation-regression.html#cb483-1" tabindex="-1"></a><span class="co"># Example: Team rankings vs. revenue rankings</span></span>
-<span id="cb483-2"><a href="correlation-regression.html#cb483-2" tabindex="-1"></a>team_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb483-3"><a href="correlation-regression.html#cb483-3" tabindex="-1"></a>  <span class="at">team =</span> <span class="fu">paste</span>(<span class="st">&quot;Team&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>),</span>
-<span id="cb483-4"><a href="correlation-regression.html#cb483-4" tabindex="-1"></a>  <span class="at">performance_rank =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>),</span>
-<span id="cb483-5"><a href="correlation-regression.html#cb483-5" tabindex="-1"></a>  <span class="at">revenue_rank =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
-<span id="cb483-6"><a href="correlation-regression.html#cb483-6" tabindex="-1"></a>)</span>
-<span id="cb483-7"><a href="correlation-regression.html#cb483-7" tabindex="-1"></a></span>
-<span id="cb483-8"><a href="correlation-regression.html#cb483-8" tabindex="-1"></a><span class="co"># Calculate Spearman correlation</span></span>
-<span id="cb483-9"><a href="correlation-regression.html#cb483-9" tabindex="-1"></a>spearman_result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(team_data<span class="sc">$</span>performance_rank,</span>
-<span id="cb483-10"><a href="correlation-regression.html#cb483-10" tabindex="-1"></a>                            team_data<span class="sc">$</span>revenue_rank,</span>
-<span id="cb483-11"><a href="correlation-regression.html#cb483-11" tabindex="-1"></a>                            <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span>
-<span id="cb483-12"><a href="correlation-regression.html#cb483-12" tabindex="-1"></a></span>
-<span id="cb483-13"><a href="correlation-regression.html#cb483-13" tabindex="-1"></a><span class="fu">print</span>(spearman_result)</span></code></pre></div>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="correlation-regression.html#cb478-1" tabindex="-1"></a><span class="co"># Example: Team rankings vs. revenue rankings</span></span>
+<span id="cb478-2"><a href="correlation-regression.html#cb478-2" tabindex="-1"></a>team_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb478-3"><a href="correlation-regression.html#cb478-3" tabindex="-1"></a>  <span class="at">team =</span> <span class="fu">paste</span>(<span class="st">&quot;Team&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>),</span>
+<span id="cb478-4"><a href="correlation-regression.html#cb478-4" tabindex="-1"></a>  <span class="at">performance_rank =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>),</span>
+<span id="cb478-5"><a href="correlation-regression.html#cb478-5" tabindex="-1"></a>  <span class="at">revenue_rank =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
+<span id="cb478-6"><a href="correlation-regression.html#cb478-6" tabindex="-1"></a>)</span>
+<span id="cb478-7"><a href="correlation-regression.html#cb478-7" tabindex="-1"></a></span>
+<span id="cb478-8"><a href="correlation-regression.html#cb478-8" tabindex="-1"></a><span class="co"># Calculate Spearman correlation</span></span>
+<span id="cb478-9"><a href="correlation-regression.html#cb478-9" tabindex="-1"></a>spearman_result <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(team_data<span class="sc">$</span>performance_rank,</span>
+<span id="cb478-10"><a href="correlation-regression.html#cb478-10" tabindex="-1"></a>                            team_data<span class="sc">$</span>revenue_rank,</span>
+<span id="cb478-11"><a href="correlation-regression.html#cb478-11" tabindex="-1"></a>                            <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span>
+<span id="cb478-12"><a href="correlation-regression.html#cb478-12" tabindex="-1"></a></span>
+<span id="cb478-13"><a href="correlation-regression.html#cb478-13" tabindex="-1"></a><span class="fu">print</span>(spearman_result)</span></code></pre></div>
 <pre><code>## 
 ##  Spearman&#39;s rank correlation rho
 ## 
@@ -962,48 +980,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - <strong>r</strong>: The correlation coefficient
 - <strong>p-value</strong>: The probability of observing this correlation if there truly is no relationship
 - <strong>95% confidence interval</strong>: Range of plausible values for the true correlation</p>
-<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="correlation-regression.html#cb485-1" tabindex="-1"></a><span class="co"># Sport business example: Ticket price vs. attendance</span></span>
-<span id="cb485-2"><a href="correlation-regression.html#cb485-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb485-3"><a href="correlation-regression.html#cb485-3" tabindex="-1"></a>ticket_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb485-4"><a href="correlation-regression.html#cb485-4" tabindex="-1"></a>  <span class="at">game =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>,</span>
-<span id="cb485-5"><a href="correlation-regression.html#cb485-5" tabindex="-1"></a>  <span class="at">avg_ticket_price =</span> <span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">80</span>), <span class="dv">2</span>),</span>
-<span id="cb485-6"><a href="correlation-regression.html#cb485-6" tabindex="-1"></a>  <span class="at">attendance =</span> <span class="fu">round</span>(<span class="dv">15000</span> <span class="sc">-</span> (<span class="fu">runif</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">80</span>) <span class="sc">*</span> <span class="dv">50</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">1000</span>))</span>
-<span id="cb485-7"><a href="correlation-regression.html#cb485-7" tabindex="-1"></a>)</span>
-<span id="cb485-8"><a href="correlation-regression.html#cb485-8" tabindex="-1"></a></span>
-<span id="cb485-9"><a href="correlation-regression.html#cb485-9" tabindex="-1"></a><span class="co"># Test correlation</span></span>
-<span id="cb485-10"><a href="correlation-regression.html#cb485-10" tabindex="-1"></a>correlation_test <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(ticket_data<span class="sc">$</span>avg_ticket_price,</span>
-<span id="cb485-11"><a href="correlation-regression.html#cb485-11" tabindex="-1"></a>                             ticket_data<span class="sc">$</span>attendance,</span>
-<span id="cb485-12"><a href="correlation-regression.html#cb485-12" tabindex="-1"></a>                             <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
-<span id="cb485-13"><a href="correlation-regression.html#cb485-13" tabindex="-1"></a></span>
-<span id="cb485-14"><a href="correlation-regression.html#cb485-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Correlation coefficient (r):&quot;</span>, <span class="fu">round</span>(correlation_test<span class="sc">$</span>estimate, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="correlation-regression.html#cb480-1" tabindex="-1"></a><span class="co"># Sport business example: Ticket price vs. attendance</span></span>
+<span id="cb480-2"><a href="correlation-regression.html#cb480-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb480-3"><a href="correlation-regression.html#cb480-3" tabindex="-1"></a>ticket_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb480-4"><a href="correlation-regression.html#cb480-4" tabindex="-1"></a>  <span class="at">game =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>,</span>
+<span id="cb480-5"><a href="correlation-regression.html#cb480-5" tabindex="-1"></a>  <span class="at">avg_ticket_price =</span> <span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">80</span>), <span class="dv">2</span>),</span>
+<span id="cb480-6"><a href="correlation-regression.html#cb480-6" tabindex="-1"></a>  <span class="at">attendance =</span> <span class="fu">round</span>(<span class="dv">15000</span> <span class="sc">-</span> (<span class="fu">runif</span>(<span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">80</span>) <span class="sc">*</span> <span class="dv">50</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">1000</span>))</span>
+<span id="cb480-7"><a href="correlation-regression.html#cb480-7" tabindex="-1"></a>)</span>
+<span id="cb480-8"><a href="correlation-regression.html#cb480-8" tabindex="-1"></a></span>
+<span id="cb480-9"><a href="correlation-regression.html#cb480-9" tabindex="-1"></a><span class="co"># Test correlation</span></span>
+<span id="cb480-10"><a href="correlation-regression.html#cb480-10" tabindex="-1"></a>correlation_test <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(ticket_data<span class="sc">$</span>avg_ticket_price,</span>
+<span id="cb480-11"><a href="correlation-regression.html#cb480-11" tabindex="-1"></a>                             ticket_data<span class="sc">$</span>attendance,</span>
+<span id="cb480-12"><a href="correlation-regression.html#cb480-12" tabindex="-1"></a>                             <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb480-13"><a href="correlation-regression.html#cb480-13" tabindex="-1"></a></span>
+<span id="cb480-14"><a href="correlation-regression.html#cb480-14" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Correlation coefficient (r):&quot;</span>, <span class="fu">round</span>(correlation_test<span class="sc">$</span>estimate, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Correlation coefficient (r): 0.149</code></pre>
-<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="correlation-regression.html#cb487-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;p-value:&quot;</span>, <span class="fu">round</span>(correlation_test<span class="sc">$</span>p.value, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="correlation-regression.html#cb482-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;p-value:&quot;</span>, <span class="fu">round</span>(correlation_test<span class="sc">$</span>p.value, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## p-value: 0.4307</code></pre>
-<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="correlation-regression.html#cb489-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;95% Confidence Interval:&quot;</span>,</span>
-<span id="cb489-2"><a href="correlation-regression.html#cb489-2" tabindex="-1"></a>    <span class="fu">round</span>(correlation_test<span class="sc">$</span>conf.int[<span class="dv">1</span>], <span class="dv">3</span>), <span class="st">&quot;to&quot;</span>,</span>
-<span id="cb489-3"><a href="correlation-regression.html#cb489-3" tabindex="-1"></a>    <span class="fu">round</span>(correlation_test<span class="sc">$</span>conf.int[<span class="dv">2</span>], <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="correlation-regression.html#cb484-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;95% Confidence Interval:&quot;</span>,</span>
+<span id="cb484-2"><a href="correlation-regression.html#cb484-2" tabindex="-1"></a>    <span class="fu">round</span>(correlation_test<span class="sc">$</span>conf.int[<span class="dv">1</span>], <span class="dv">3</span>), <span class="st">&quot;to&quot;</span>,</span>
+<span id="cb484-3"><a href="correlation-regression.html#cb484-3" tabindex="-1"></a>    <span class="fu">round</span>(correlation_test<span class="sc">$</span>conf.int[<span class="dv">2</span>], <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 95% Confidence Interval: -0.223 to 0.484</code></pre>
-<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="correlation-regression.html#cb491-1" tabindex="-1"></a><span class="co"># Interpretation</span></span>
-<span id="cb491-2"><a href="correlation-regression.html#cb491-2" tabindex="-1"></a><span class="cf">if</span> (correlation_test<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>) {</span>
-<span id="cb491-3"><a href="correlation-regression.html#cb491-3" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Conclusion: The correlation is statistically significant (p &lt; 0.05).</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb491-4"><a href="correlation-regression.html#cb491-4" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;There is a significant relationship between ticket price and attendance.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb491-5"><a href="correlation-regression.html#cb491-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb491-6"><a href="correlation-regression.html#cb491-6" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Conclusion: The correlation is not statistically significant (p &gt;= 0.05).</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb491-7"><a href="correlation-regression.html#cb491-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="correlation-regression.html#cb486-1" tabindex="-1"></a><span class="co"># Interpretation</span></span>
+<span id="cb486-2"><a href="correlation-regression.html#cb486-2" tabindex="-1"></a><span class="cf">if</span> (correlation_test<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>) {</span>
+<span id="cb486-3"><a href="correlation-regression.html#cb486-3" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Conclusion: The correlation is statistically significant (p &lt; 0.05).</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb486-4"><a href="correlation-regression.html#cb486-4" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;There is a significant relationship between ticket price and attendance.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb486-5"><a href="correlation-regression.html#cb486-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb486-6"><a href="correlation-regression.html#cb486-6" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Conclusion: The correlation is not statistically significant (p &gt;= 0.05).</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb486-7"><a href="correlation-regression.html#cb486-7" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## 
 ## Conclusion: The correlation is not statistically significant (p &gt;= 0.05).</code></pre>
-<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="correlation-regression.html#cb493-1" tabindex="-1"></a><span class="co"># Visualize</span></span>
-<span id="cb493-2"><a href="correlation-regression.html#cb493-2" tabindex="-1"></a><span class="fu">ggplot</span>(ticket_data, <span class="fu">aes</span>(<span class="at">x =</span> avg_ticket_price, <span class="at">y =</span> attendance)) <span class="sc">+</span></span>
-<span id="cb493-3"><a href="correlation-regression.html#cb493-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb493-4"><a href="correlation-regression.html#cb493-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb493-5"><a href="correlation-regression.html#cb493-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ticket Price vs. Attendance&quot;</span>,</span>
-<span id="cb493-6"><a href="correlation-regression.html#cb493-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">&quot;r =&quot;</span>, <span class="fu">round</span>(correlation_test<span class="sc">$</span>estimate, <span class="dv">3</span>),</span>
-<span id="cb493-7"><a href="correlation-regression.html#cb493-7" tabindex="-1"></a>                       <span class="st">&quot;, p =&quot;</span>, <span class="fu">round</span>(correlation_test<span class="sc">$</span>p.value, <span class="dv">4</span>)),</span>
-<span id="cb493-8"><a href="correlation-regression.html#cb493-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Average Ticket Price ($)&quot;</span>,</span>
-<span id="cb493-9"><a href="correlation-regression.html#cb493-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Attendance&quot;</span>) <span class="sc">+</span></span>
-<span id="cb493-10"><a href="correlation-regression.html#cb493-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="_main_files/figure-html/correlation-hypothesis-test-1.png" width="672" /></p>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="correlation-regression.html#cb488-1" tabindex="-1"></a><span class="co"># Visualize</span></span>
+<span id="cb488-2"><a href="correlation-regression.html#cb488-2" tabindex="-1"></a><span class="fu">ggplot</span>(ticket_data, <span class="fu">aes</span>(<span class="at">x =</span> avg_ticket_price, <span class="at">y =</span> attendance)) <span class="sc">+</span></span>
+<span id="cb488-3"><a href="correlation-regression.html#cb488-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb488-4"><a href="correlation-regression.html#cb488-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb488-5"><a href="correlation-regression.html#cb488-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ticket Price vs. Attendance&quot;</span>,</span>
+<span id="cb488-6"><a href="correlation-regression.html#cb488-6" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">&quot;r =&quot;</span>, <span class="fu">round</span>(correlation_test<span class="sc">$</span>estimate, <span class="dv">3</span>),</span>
+<span id="cb488-7"><a href="correlation-regression.html#cb488-7" tabindex="-1"></a>                       <span class="st">&quot;, p =&quot;</span>, <span class="fu">round</span>(correlation_test<span class="sc">$</span>p.value, <span class="dv">4</span>)),</span>
+<span id="cb488-8"><a href="correlation-regression.html#cb488-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Average Ticket Price ($)&quot;</span>,</span>
+<span id="cb488-9"><a href="correlation-regression.html#cb488-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Attendance&quot;</span>) <span class="sc">+</span></span>
+<span id="cb488-10"><a href="correlation-regression.html#cb488-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/correlation-hypothesis-test-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="simple-linear-regression" class="section level2 hasAnchor" number="8.3">
@@ -1023,23 +1040,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="conducting-simple-regression-in-r" class="section level3 hasAnchor" number="8.3.2">
 <h3><span class="header-section-number">8.3.2</span> Conducting Simple Regression in R<a href="correlation-regression.html#conducting-simple-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="correlation-regression.html#cb495-1" tabindex="-1"></a><span class="co"># Example: Predicting game attendance from team wins</span></span>
-<span id="cb495-2"><a href="correlation-regression.html#cb495-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
-<span id="cb495-3"><a href="correlation-regression.html#cb495-3" tabindex="-1"></a>team_performance <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb495-4"><a href="correlation-regression.html#cb495-4" tabindex="-1"></a>  <span class="at">team =</span> <span class="fu">paste</span>(<span class="st">&quot;Team&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>),</span>
-<span id="cb495-5"><a href="correlation-regression.html#cb495-5" tabindex="-1"></a>  <span class="at">wins =</span> <span class="fu">sample</span>(<span class="dv">40</span><span class="sc">:</span><span class="dv">90</span>, <span class="dv">25</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb495-6"><a href="correlation-regression.html#cb495-6" tabindex="-1"></a>  <span class="at">avg_attendance =</span> <span class="fu">sample</span>(<span class="dv">12000</span><span class="sc">:</span><span class="dv">28000</span>, <span class="dv">25</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb495-7"><a href="correlation-regression.html#cb495-7" tabindex="-1"></a>)</span>
-<span id="cb495-8"><a href="correlation-regression.html#cb495-8" tabindex="-1"></a></span>
-<span id="cb495-9"><a href="correlation-regression.html#cb495-9" tabindex="-1"></a><span class="co"># Add some relationship</span></span>
-<span id="cb495-10"><a href="correlation-regression.html#cb495-10" tabindex="-1"></a>team_performance<span class="sc">$</span>avg_attendance <span class="ot">&lt;-</span> <span class="dv">8000</span> <span class="sc">+</span> (team_performance<span class="sc">$</span>wins <span class="sc">*</span> <span class="dv">200</span>) <span class="sc">+</span></span>
-<span id="cb495-11"><a href="correlation-regression.html#cb495-11" tabindex="-1"></a>                                   <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="dv">0</span>, <span class="dv">2000</span>)</span>
-<span id="cb495-12"><a href="correlation-regression.html#cb495-12" tabindex="-1"></a></span>
-<span id="cb495-13"><a href="correlation-regression.html#cb495-13" tabindex="-1"></a><span class="co"># Build regression model</span></span>
-<span id="cb495-14"><a href="correlation-regression.html#cb495-14" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(avg_attendance <span class="sc">~</span> wins, <span class="at">data =</span> team_performance)</span>
-<span id="cb495-15"><a href="correlation-regression.html#cb495-15" tabindex="-1"></a></span>
-<span id="cb495-16"><a href="correlation-regression.html#cb495-16" tabindex="-1"></a><span class="co"># Display summary</span></span>
-<span id="cb495-17"><a href="correlation-regression.html#cb495-17" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="correlation-regression.html#cb489-1" tabindex="-1"></a><span class="co"># Example: Predicting game attendance from team wins</span></span>
+<span id="cb489-2"><a href="correlation-regression.html#cb489-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb489-3"><a href="correlation-regression.html#cb489-3" tabindex="-1"></a>team_performance <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb489-4"><a href="correlation-regression.html#cb489-4" tabindex="-1"></a>  <span class="at">team =</span> <span class="fu">paste</span>(<span class="st">&quot;Team&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">25</span>),</span>
+<span id="cb489-5"><a href="correlation-regression.html#cb489-5" tabindex="-1"></a>  <span class="at">wins =</span> <span class="fu">sample</span>(<span class="dv">40</span><span class="sc">:</span><span class="dv">90</span>, <span class="dv">25</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb489-6"><a href="correlation-regression.html#cb489-6" tabindex="-1"></a>  <span class="at">avg_attendance =</span> <span class="fu">sample</span>(<span class="dv">12000</span><span class="sc">:</span><span class="dv">28000</span>, <span class="dv">25</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb489-7"><a href="correlation-regression.html#cb489-7" tabindex="-1"></a>)</span>
+<span id="cb489-8"><a href="correlation-regression.html#cb489-8" tabindex="-1"></a></span>
+<span id="cb489-9"><a href="correlation-regression.html#cb489-9" tabindex="-1"></a><span class="co"># Add some relationship</span></span>
+<span id="cb489-10"><a href="correlation-regression.html#cb489-10" tabindex="-1"></a>team_performance<span class="sc">$</span>avg_attendance <span class="ot">&lt;-</span> <span class="dv">8000</span> <span class="sc">+</span> (team_performance<span class="sc">$</span>wins <span class="sc">*</span> <span class="dv">200</span>) <span class="sc">+</span></span>
+<span id="cb489-11"><a href="correlation-regression.html#cb489-11" tabindex="-1"></a>                                   <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="dv">0</span>, <span class="dv">2000</span>)</span>
+<span id="cb489-12"><a href="correlation-regression.html#cb489-12" tabindex="-1"></a></span>
+<span id="cb489-13"><a href="correlation-regression.html#cb489-13" tabindex="-1"></a><span class="co"># Build regression model</span></span>
+<span id="cb489-14"><a href="correlation-regression.html#cb489-14" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(avg_attendance <span class="sc">~</span> wins, <span class="at">data =</span> team_performance)</span>
+<span id="cb489-15"><a href="correlation-regression.html#cb489-15" tabindex="-1"></a></span>
+<span id="cb489-16"><a href="correlation-regression.html#cb489-16" tabindex="-1"></a><span class="co"># Display summary</span></span>
+<span id="cb489-17"><a href="correlation-regression.html#cb489-17" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = avg_attendance ~ wins, data = team_performance)
@@ -1064,8 +1081,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The regression output provides several key pieces of information:</p>
 <div id="coefficients" class="section level4 hasAnchor" number="8.3.3.1">
 <h4><span class="header-section-number">8.3.3.1</span> 1. Coefficients<a href="correlation-regression.html#coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="correlation-regression.html#cb497-1" tabindex="-1"></a><span class="co"># Extract coefficients</span></span>
-<span id="cb497-2"><a href="correlation-regression.html#cb497-2" tabindex="-1"></a><span class="fu">coefficients</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="correlation-regression.html#cb491-1" tabindex="-1"></a><span class="co"># Extract coefficients</span></span>
+<span id="cb491-2"><a href="correlation-regression.html#cb491-2" tabindex="-1"></a><span class="fu">coefficients</span>(model1)</span></code></pre></div>
 <pre><code>## (Intercept)        wins 
 ##   8451.0739    193.8569</code></pre>
 <ul>
@@ -1076,16 +1093,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="r-squared-r²" class="section level4 hasAnchor" number="8.3.3.2">
 <h4><span class="header-section-number">8.3.3.2</span> 2. R-squared (R²)<a href="#r-squared-r%C2%B2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>R-squared indicates the proportion of variance in the dependent variable explained by the independent variable.</p>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="correlation-regression.html#cb499-1" tabindex="-1"></a><span class="co"># Extract R-squared</span></span>
-<span id="cb499-2"><a href="correlation-regression.html#cb499-2" tabindex="-1"></a>r_squared <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)<span class="sc">$</span>r.squared</span>
-<span id="cb499-3"><a href="correlation-regression.html#cb499-3" tabindex="-1"></a>adj_r_squared <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)<span class="sc">$</span>adj.r.squared</span>
-<span id="cb499-4"><a href="correlation-regression.html#cb499-4" tabindex="-1"></a></span>
-<span id="cb499-5"><a href="correlation-regression.html#cb499-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;R-squared:&quot;</span>, <span class="fu">round</span>(r_squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="correlation-regression.html#cb493-1" tabindex="-1"></a><span class="co"># Extract R-squared</span></span>
+<span id="cb493-2"><a href="correlation-regression.html#cb493-2" tabindex="-1"></a>r_squared <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)<span class="sc">$</span>r.squared</span>
+<span id="cb493-3"><a href="correlation-regression.html#cb493-3" tabindex="-1"></a>adj_r_squared <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)<span class="sc">$</span>adj.r.squared</span>
+<span id="cb493-4"><a href="correlation-regression.html#cb493-4" tabindex="-1"></a></span>
+<span id="cb493-5"><a href="correlation-regression.html#cb493-5" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;R-squared:&quot;</span>, <span class="fu">round</span>(r_squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## R-squared: 0.6935</code></pre>
-<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="correlation-regression.html#cb501-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Adjusted R-squared:&quot;</span>, <span class="fu">round</span>(adj_r_squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="correlation-regression.html#cb495-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Adjusted R-squared:&quot;</span>, <span class="fu">round</span>(adj_r_squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Adjusted R-squared: 0.6802</code></pre>
-<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="correlation-regression.html#cb503-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:&quot;</span>, <span class="fu">round</span>(r_squared <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
-<span id="cb503-2"><a href="correlation-regression.html#cb503-2" tabindex="-1"></a>    <span class="st">&quot;% of the variance in attendance is explained by wins.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="correlation-regression.html#cb497-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:&quot;</span>, <span class="fu">round</span>(r_squared <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb497-2"><a href="correlation-regression.html#cb497-2" tabindex="-1"></a>    <span class="st">&quot;% of the variance in attendance is explained by wins.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Interpretation: 69.35 % of the variance in attendance is explained by wins.</code></pre>
 <p><strong>R² ranges from 0 to 1</strong>:
@@ -1096,8 +1113,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="p-values" class="section level4 hasAnchor" number="8.3.3.3">
 <h4><span class="header-section-number">8.3.3.3</span> 3. P-values<a href="correlation-regression.html#p-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>P-values test whether each coefficient is significantly different from zero.</p>
-<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="correlation-regression.html#cb505-1" tabindex="-1"></a><span class="co"># Extract p-values</span></span>
-<span id="cb505-2"><a href="correlation-regression.html#cb505-2" tabindex="-1"></a><span class="fu">summary</span>(model1)<span class="sc">$</span>coefficients[, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="correlation-regression.html#cb499-1" tabindex="-1"></a><span class="co"># Extract p-values</span></span>
+<span id="cb499-2"><a href="correlation-regression.html#cb499-2" tabindex="-1"></a><span class="fu">summary</span>(model1)<span class="sc">$</span>coefficients[, <span class="st">&quot;Pr(&gt;|t|)&quot;</span>]</span></code></pre></div>
 <pre><code>##  (Intercept)         wins 
 ## 3.008689e-04 2.413920e-07</code></pre>
 <p>If p &lt; 0.05, the predictor has a statistically significant effect on the outcome.</p>
@@ -1106,35 +1123,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="making-predictions" class="section level3 hasAnchor" number="8.3.4">
 <h3><span class="header-section-number">8.3.4</span> Making Predictions<a href="correlation-regression.html#making-predictions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once we have a regression model, we can make predictions:</p>
-<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="correlation-regression.html#cb507-1" tabindex="-1"></a><span class="co"># Predict attendance for teams with specific win totals</span></span>
-<span id="cb507-2"><a href="correlation-regression.html#cb507-2" tabindex="-1"></a>new_teams <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">wins =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">65</span>, <span class="dv">80</span>))</span>
-<span id="cb507-3"><a href="correlation-regression.html#cb507-3" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model1, <span class="at">newdata =</span> new_teams, <span class="at">interval =</span> <span class="st">&quot;confidence&quot;</span>)</span>
-<span id="cb507-4"><a href="correlation-regression.html#cb507-4" tabindex="-1"></a></span>
-<span id="cb507-5"><a href="correlation-regression.html#cb507-5" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">cbind</span>(new_teams, predictions)</span>
-<span id="cb507-6"><a href="correlation-regression.html#cb507-6" tabindex="-1"></a><span class="fu">print</span>(results)</span></code></pre></div>
+<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="correlation-regression.html#cb501-1" tabindex="-1"></a><span class="co"># Predict attendance for teams with specific win totals</span></span>
+<span id="cb501-2"><a href="correlation-regression.html#cb501-2" tabindex="-1"></a>new_teams <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">wins =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">65</span>, <span class="dv">80</span>))</span>
+<span id="cb501-3"><a href="correlation-regression.html#cb501-3" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model1, <span class="at">newdata =</span> new_teams, <span class="at">interval =</span> <span class="st">&quot;confidence&quot;</span>)</span>
+<span id="cb501-4"><a href="correlation-regression.html#cb501-4" tabindex="-1"></a></span>
+<span id="cb501-5"><a href="correlation-regression.html#cb501-5" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">cbind</span>(new_teams, predictions)</span>
+<span id="cb501-6"><a href="correlation-regression.html#cb501-6" tabindex="-1"></a><span class="fu">print</span>(results)</span></code></pre></div>
 <pre><code>##   wins      fit      lwr      upr
 ## 1   50 18143.92 16608.03 19679.81
 ## 2   65 21051.77 20048.20 22055.34
 ## 3   80 23959.62 22936.84 24982.41</code></pre>
-<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="correlation-regression.html#cb509-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Example interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="correlation-regression.html#cb503-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Example interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Example interpretation:</code></pre>
-<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="correlation-regression.html#cb511-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;A team with 65 wins is predicted to have an average attendance of&quot;</span>,</span>
-<span id="cb511-2"><a href="correlation-regression.html#cb511-2" tabindex="-1"></a>    <span class="fu">round</span>(results[<span class="dv">2</span>, <span class="st">&quot;fit&quot;</span>]), <span class="st">&quot;fans.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="correlation-regression.html#cb505-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;A team with 65 wins is predicted to have an average attendance of&quot;</span>,</span>
+<span id="cb505-2"><a href="correlation-regression.html#cb505-2" tabindex="-1"></a>    <span class="fu">round</span>(results[<span class="dv">2</span>, <span class="st">&quot;fit&quot;</span>]), <span class="st">&quot;fans.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## A team with 65 wins is predicted to have an average attendance of 21052 fans.</code></pre>
 </div>
 <div id="visualizing-the-regression-line" class="section level3 hasAnchor" number="8.3.5">
 <h3><span class="header-section-number">8.3.5</span> Visualizing the Regression Line<a href="correlation-regression.html#visualizing-the-regression-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="correlation-regression.html#cb513-1" tabindex="-1"></a><span class="fu">ggplot</span>(team_performance, <span class="fu">aes</span>(<span class="at">x =</span> wins, <span class="at">y =</span> avg_attendance)) <span class="sc">+</span></span>
-<span id="cb513-2"><a href="correlation-regression.html#cb513-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb513-3"><a href="correlation-regression.html#cb513-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
-<span id="cb513-4"><a href="correlation-regression.html#cb513-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Simple Linear Regression: Wins vs. Attendance&quot;</span>,</span>
-<span id="cb513-5"><a href="correlation-regression.html#cb513-5" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">&quot;R² =&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model1)<span class="sc">$</span>r.squared, <span class="dv">3</span>)),</span>
-<span id="cb513-6"><a href="correlation-regression.html#cb513-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Number of Wins&quot;</span>,</span>
-<span id="cb513-7"><a href="correlation-regression.html#cb513-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Attendance&quot;</span>) <span class="sc">+</span></span>
-<span id="cb513-8"><a href="correlation-regression.html#cb513-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="_main_files/figure-html/regression-visualization-1.png" width="672" /></p>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="correlation-regression.html#cb507-1" tabindex="-1"></a><span class="fu">ggplot</span>(team_performance, <span class="fu">aes</span>(<span class="at">x =</span> wins, <span class="at">y =</span> avg_attendance)) <span class="sc">+</span></span>
+<span id="cb507-2"><a href="correlation-regression.html#cb507-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb507-3"><a href="correlation-regression.html#cb507-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
+<span id="cb507-4"><a href="correlation-regression.html#cb507-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Simple Linear Regression: Wins vs. Attendance&quot;</span>,</span>
+<span id="cb507-5"><a href="correlation-regression.html#cb507-5" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">&quot;R² =&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model1)<span class="sc">$</span>r.squared, <span class="dv">3</span>)),</span>
+<span id="cb507-6"><a href="correlation-regression.html#cb507-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Number of Wins&quot;</span>,</span>
+<span id="cb507-7"><a href="correlation-regression.html#cb507-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Attendance&quot;</span>) <span class="sc">+</span></span>
+<span id="cb507-8"><a href="correlation-regression.html#cb507-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/regression-visualization-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="multiple-regression" class="section level2 hasAnchor" number="8.4">
@@ -1165,31 +1181,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="conducting-multiple-regression-in-r" class="section level3 hasAnchor" number="8.4.3">
 <h3><span class="header-section-number">8.4.3</span> Conducting Multiple Regression in R<a href="correlation-regression.html#conducting-multiple-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="correlation-regression.html#cb515-1" tabindex="-1"></a><span class="co"># Example: Predicting ticket sales from multiple factors</span></span>
-<span id="cb515-2"><a href="correlation-regression.html#cb515-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
-<span id="cb515-3"><a href="correlation-regression.html#cb515-3" tabindex="-1"></a>ticket_sales_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb515-4"><a href="correlation-regression.html#cb515-4" tabindex="-1"></a>  <span class="at">game_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
-<span id="cb515-5"><a href="correlation-regression.html#cb515-5" tabindex="-1"></a>  <span class="at">team_wins =</span> <span class="fu">sample</span>(<span class="dv">35</span><span class="sc">:</span><span class="dv">85</span>, <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb515-6"><a href="correlation-regression.html#cb515-6" tabindex="-1"></a>  <span class="at">opponent_rank =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb515-7"><a href="correlation-regression.html#cb515-7" tabindex="-1"></a>  <span class="at">ticket_price =</span> <span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">50</span>, <span class="dv">25</span>, <span class="dv">75</span>), <span class="dv">2</span>),</span>
-<span id="cb515-8"><a href="correlation-regression.html#cb515-8" tabindex="-1"></a>  <span class="at">day_of_week =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Weekday&quot;</span>, <span class="st">&quot;Weekend&quot;</span>), <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb515-9"><a href="correlation-regression.html#cb515-9" tabindex="-1"></a>)</span>
-<span id="cb515-10"><a href="correlation-regression.html#cb515-10" tabindex="-1"></a></span>
-<span id="cb515-11"><a href="correlation-regression.html#cb515-11" tabindex="-1"></a><span class="co"># Create dependent variable with multiple influences</span></span>
-<span id="cb515-12"><a href="correlation-regression.html#cb515-12" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>tickets_sold <span class="ot">&lt;-</span></span>
-<span id="cb515-13"><a href="correlation-regression.html#cb515-13" tabindex="-1"></a>  <span class="dv">5000</span> <span class="sc">+</span>                                          <span class="co"># Baseline</span></span>
-<span id="cb515-14"><a href="correlation-regression.html#cb515-14" tabindex="-1"></a>  (ticket_sales_data<span class="sc">$</span>team_wins <span class="sc">*</span> <span class="dv">50</span>) <span class="sc">+</span>           <span class="co"># Effect of team performance</span></span>
-<span id="cb515-15"><a href="correlation-regression.html#cb515-15" tabindex="-1"></a>  (<span class="sc">-</span>ticket_sales_data<span class="sc">$</span>opponent_rank <span class="sc">*</span> <span class="dv">20</span>) <span class="sc">+</span>      <span class="co"># Effect of opponent quality</span></span>
-<span id="cb515-16"><a href="correlation-regression.html#cb515-16" tabindex="-1"></a>  (<span class="sc">-</span>ticket_sales_data<span class="sc">$</span>ticket_price <span class="sc">*</span> <span class="dv">30</span>) <span class="sc">+</span>       <span class="co"># Effect of price</span></span>
-<span id="cb515-17"><a href="correlation-regression.html#cb515-17" tabindex="-1"></a>  <span class="fu">ifelse</span>(ticket_sales_data<span class="sc">$</span>day_of_week <span class="sc">==</span> <span class="st">&quot;Weekend&quot;</span>, <span class="dv">2000</span>, <span class="dv">0</span>) <span class="sc">+</span> <span class="co"># Weekend boost</span></span>
-<span id="cb515-18"><a href="correlation-regression.html#cb515-18" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">1000</span>)                             <span class="co"># Random variation</span></span>
-<span id="cb515-19"><a href="correlation-regression.html#cb515-19" tabindex="-1"></a></span>
-<span id="cb515-20"><a href="correlation-regression.html#cb515-20" tabindex="-1"></a><span class="co"># Build multiple regression model</span></span>
-<span id="cb515-21"><a href="correlation-regression.html#cb515-21" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(tickets_sold <span class="sc">~</span> team_wins <span class="sc">+</span> opponent_rank <span class="sc">+</span> ticket_price <span class="sc">+</span> day_of_week,</span>
-<span id="cb515-22"><a href="correlation-regression.html#cb515-22" tabindex="-1"></a>             <span class="at">data =</span> ticket_sales_data)</span>
-<span id="cb515-23"><a href="correlation-regression.html#cb515-23" tabindex="-1"></a></span>
-<span id="cb515-24"><a href="correlation-regression.html#cb515-24" tabindex="-1"></a><span class="co"># Display summary</span></span>
-<span id="cb515-25"><a href="correlation-regression.html#cb515-25" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code></pre></div>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="correlation-regression.html#cb508-1" tabindex="-1"></a><span class="co"># Example: Predicting ticket sales from multiple factors</span></span>
+<span id="cb508-2"><a href="correlation-regression.html#cb508-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb508-3"><a href="correlation-regression.html#cb508-3" tabindex="-1"></a>ticket_sales_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb508-4"><a href="correlation-regression.html#cb508-4" tabindex="-1"></a>  <span class="at">game_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
+<span id="cb508-5"><a href="correlation-regression.html#cb508-5" tabindex="-1"></a>  <span class="at">team_wins =</span> <span class="fu">sample</span>(<span class="dv">35</span><span class="sc">:</span><span class="dv">85</span>, <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb508-6"><a href="correlation-regression.html#cb508-6" tabindex="-1"></a>  <span class="at">opponent_rank =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>, <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb508-7"><a href="correlation-regression.html#cb508-7" tabindex="-1"></a>  <span class="at">ticket_price =</span> <span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">50</span>, <span class="dv">25</span>, <span class="dv">75</span>), <span class="dv">2</span>),</span>
+<span id="cb508-8"><a href="correlation-regression.html#cb508-8" tabindex="-1"></a>  <span class="at">day_of_week =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Weekday&quot;</span>, <span class="st">&quot;Weekend&quot;</span>), <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb508-9"><a href="correlation-regression.html#cb508-9" tabindex="-1"></a>)</span>
+<span id="cb508-10"><a href="correlation-regression.html#cb508-10" tabindex="-1"></a></span>
+<span id="cb508-11"><a href="correlation-regression.html#cb508-11" tabindex="-1"></a><span class="co"># Create dependent variable with multiple influences</span></span>
+<span id="cb508-12"><a href="correlation-regression.html#cb508-12" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>tickets_sold <span class="ot">&lt;-</span></span>
+<span id="cb508-13"><a href="correlation-regression.html#cb508-13" tabindex="-1"></a>  <span class="dv">5000</span> <span class="sc">+</span>                                          <span class="co"># Baseline</span></span>
+<span id="cb508-14"><a href="correlation-regression.html#cb508-14" tabindex="-1"></a>  (ticket_sales_data<span class="sc">$</span>team_wins <span class="sc">*</span> <span class="dv">50</span>) <span class="sc">+</span>           <span class="co"># Effect of team performance</span></span>
+<span id="cb508-15"><a href="correlation-regression.html#cb508-15" tabindex="-1"></a>  (<span class="sc">-</span>ticket_sales_data<span class="sc">$</span>opponent_rank <span class="sc">*</span> <span class="dv">20</span>) <span class="sc">+</span>      <span class="co"># Effect of opponent quality</span></span>
+<span id="cb508-16"><a href="correlation-regression.html#cb508-16" tabindex="-1"></a>  (<span class="sc">-</span>ticket_sales_data<span class="sc">$</span>ticket_price <span class="sc">*</span> <span class="dv">30</span>) <span class="sc">+</span>       <span class="co"># Effect of price</span></span>
+<span id="cb508-17"><a href="correlation-regression.html#cb508-17" tabindex="-1"></a>  <span class="fu">ifelse</span>(ticket_sales_data<span class="sc">$</span>day_of_week <span class="sc">==</span> <span class="st">&quot;Weekend&quot;</span>, <span class="dv">2000</span>, <span class="dv">0</span>) <span class="sc">+</span> <span class="co"># Weekend boost</span></span>
+<span id="cb508-18"><a href="correlation-regression.html#cb508-18" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="dv">0</span>, <span class="dv">1000</span>)                             <span class="co"># Random variation</span></span>
+<span id="cb508-19"><a href="correlation-regression.html#cb508-19" tabindex="-1"></a></span>
+<span id="cb508-20"><a href="correlation-regression.html#cb508-20" tabindex="-1"></a><span class="co"># Build multiple regression model</span></span>
+<span id="cb508-21"><a href="correlation-regression.html#cb508-21" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(tickets_sold <span class="sc">~</span> team_wins <span class="sc">+</span> opponent_rank <span class="sc">+</span> ticket_price <span class="sc">+</span> day_of_week,</span>
+<span id="cb508-22"><a href="correlation-regression.html#cb508-22" tabindex="-1"></a>             <span class="at">data =</span> ticket_sales_data)</span>
+<span id="cb508-23"><a href="correlation-regression.html#cb508-23" tabindex="-1"></a></span>
+<span id="cb508-24"><a href="correlation-regression.html#cb508-24" tabindex="-1"></a><span class="co"># Display summary</span></span>
+<span id="cb508-25"><a href="correlation-regression.html#cb508-25" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = tickets_sold ~ team_wins + opponent_rank + ticket_price + 
@@ -1218,38 +1234,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="coefficients-in-multiple-regression" class="section level4 hasAnchor" number="8.4.4.1">
 <h4><span class="header-section-number">8.4.4.1</span> Coefficients in Multiple Regression<a href="correlation-regression.html#coefficients-in-multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Each coefficient represents the change in Y associated with a one-unit change in that predictor, <strong>holding all other predictors constant</strong>.</p>
-<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="correlation-regression.html#cb517-1" tabindex="-1"></a><span class="co"># Extract and display coefficients</span></span>
-<span id="cb517-2"><a href="correlation-regression.html#cb517-2" tabindex="-1"></a>coef_table <span class="ot">&lt;-</span> <span class="fu">summary</span>(model2)<span class="sc">$</span>coefficients</span>
-<span id="cb517-3"><a href="correlation-regression.html#cb517-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(coef_table, <span class="dv">4</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="correlation-regression.html#cb510-1" tabindex="-1"></a><span class="co"># Extract and display coefficients</span></span>
+<span id="cb510-2"><a href="correlation-regression.html#cb510-2" tabindex="-1"></a>coef_table <span class="ot">&lt;-</span> <span class="fu">summary</span>(model2)<span class="sc">$</span>coefficients</span>
+<span id="cb510-3"><a href="correlation-regression.html#cb510-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(coef_table, <span class="dv">4</span>))</span></code></pre></div>
 <pre><code>##                     Estimate Std. Error t value Pr(&gt;|t|)
 ## (Intercept)        4483.6651   721.0870  6.2179   0.0000
 ## team_wins            64.0656    10.0624  6.3668   0.0000
 ## opponent_rank       -14.3526    14.3734 -0.9986   0.3234
 ## ticket_price        -38.0106     9.0752 -4.1884   0.0001
 ## day_of_weekWeekend 1859.4750   265.5307  7.0029   0.0000</code></pre>
-<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="correlation-regression.html#cb519-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="correlation-regression.html#cb512-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Interpretation:</code></pre>
-<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="correlation-regression.html#cb521-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- For each additional team win, ticket sales increase by&quot;</span>,</span>
-<span id="cb521-2"><a href="correlation-regression.html#cb521-2" tabindex="-1"></a>    <span class="fu">round</span>(coef_table[<span class="st">&quot;team_wins&quot;</span>, <span class="st">&quot;Estimate&quot;</span>]), <span class="st">&quot;tickets (holding other factors constant)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="correlation-regression.html#cb514-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- For each additional team win, ticket sales increase by&quot;</span>,</span>
+<span id="cb514-2"><a href="correlation-regression.html#cb514-2" tabindex="-1"></a>    <span class="fu">round</span>(coef_table[<span class="st">&quot;team_wins&quot;</span>, <span class="st">&quot;Estimate&quot;</span>]), <span class="st">&quot;tickets (holding other factors constant)</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## - For each additional team win, ticket sales increase by 64 tickets (holding other factors constant)</code></pre>
-<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="correlation-regression.html#cb523-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- For each $1 increase in ticket price, ticket sales decrease by&quot;</span>,</span>
-<span id="cb523-2"><a href="correlation-regression.html#cb523-2" tabindex="-1"></a>    <span class="fu">abs</span>(<span class="fu">round</span>(coef_table[<span class="st">&quot;ticket_price&quot;</span>, <span class="st">&quot;Estimate&quot;</span>])), <span class="st">&quot;tickets</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="correlation-regression.html#cb516-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- For each $1 increase in ticket price, ticket sales decrease by&quot;</span>,</span>
+<span id="cb516-2"><a href="correlation-regression.html#cb516-2" tabindex="-1"></a>    <span class="fu">abs</span>(<span class="fu">round</span>(coef_table[<span class="st">&quot;ticket_price&quot;</span>, <span class="st">&quot;Estimate&quot;</span>])), <span class="st">&quot;tickets</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## - For each $1 increase in ticket price, ticket sales decrease by 38 tickets</code></pre>
-<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="correlation-regression.html#cb525-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- Weekend games sell&quot;</span>,</span>
-<span id="cb525-2"><a href="correlation-regression.html#cb525-2" tabindex="-1"></a>    <span class="fu">round</span>(coef_table[<span class="st">&quot;day_of_weekWeekend&quot;</span>, <span class="st">&quot;Estimate&quot;</span>]),</span>
-<span id="cb525-3"><a href="correlation-regression.html#cb525-3" tabindex="-1"></a>    <span class="st">&quot;more tickets than weekday games</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="correlation-regression.html#cb518-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- Weekend games sell&quot;</span>,</span>
+<span id="cb518-2"><a href="correlation-regression.html#cb518-2" tabindex="-1"></a>    <span class="fu">round</span>(coef_table[<span class="st">&quot;day_of_weekWeekend&quot;</span>, <span class="st">&quot;Estimate&quot;</span>]),</span>
+<span id="cb518-3"><a href="correlation-regression.html#cb518-3" tabindex="-1"></a>    <span class="st">&quot;more tickets than weekday games</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## - Weekend games sell 1859 more tickets than weekday games</code></pre>
 </div>
 <div id="r-squared-in-multiple-regression" class="section level4 hasAnchor" number="8.4.4.2">
 <h4><span class="header-section-number">8.4.4.2</span> R-squared in Multiple Regression<a href="correlation-regression.html#r-squared-in-multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="correlation-regression.html#cb527-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;R-squared:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model2)<span class="sc">$</span>r.squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="correlation-regression.html#cb520-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;R-squared:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model2)<span class="sc">$</span>r.squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## R-squared: 0.7579</code></pre>
-<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="correlation-regression.html#cb529-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Adjusted R-squared:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model2)<span class="sc">$</span>adj.r.squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb522"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb522-1"><a href="correlation-regression.html#cb522-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Adjusted R-squared:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model2)<span class="sc">$</span>adj.r.squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Adjusted R-squared: 0.7364</code></pre>
-<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="correlation-regression.html#cb531-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:&quot;</span>,</span>
-<span id="cb531-2"><a href="correlation-regression.html#cb531-2" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">summary</span>(model2)<span class="sc">$</span>r.squared <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
-<span id="cb531-3"><a href="correlation-regression.html#cb531-3" tabindex="-1"></a>    <span class="st">&quot;% of the variance in ticket sales is explained by the model.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb524"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb524-1"><a href="correlation-regression.html#cb524-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:&quot;</span>,</span>
+<span id="cb524-2"><a href="correlation-regression.html#cb524-2" tabindex="-1"></a>    <span class="fu">round</span>(<span class="fu">summary</span>(model2)<span class="sc">$</span>r.squared <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb524-3"><a href="correlation-regression.html#cb524-3" tabindex="-1"></a>    <span class="st">&quot;% of the variance in ticket sales is explained by the model.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Interpretation: 75.79 % of the variance in ticket sales is explained by the model.</code></pre>
 <p><strong>Note</strong>: Use <strong>Adjusted R²</strong> when comparing models with different numbers of predictors, as it penalizes for adding unnecessary variables.</p>
@@ -1258,36 +1274,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="standardized-coefficients" class="section level3 hasAnchor" number="8.4.5">
 <h3><span class="header-section-number">8.4.5</span> Standardized Coefficients<a href="correlation-regression.html#standardized-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When predictors are on different scales, we can standardize them to compare their relative importance:</p>
-<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="correlation-regression.html#cb533-1" tabindex="-1"></a><span class="co"># Standardize continuous predictors</span></span>
-<span id="cb533-2"><a href="correlation-regression.html#cb533-2" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>team_wins_z <span class="ot">&lt;-</span> <span class="fu">scale</span>(ticket_sales_data<span class="sc">$</span>team_wins)</span>
-<span id="cb533-3"><a href="correlation-regression.html#cb533-3" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>opponent_rank_z <span class="ot">&lt;-</span> <span class="fu">scale</span>(ticket_sales_data<span class="sc">$</span>opponent_rank)</span>
-<span id="cb533-4"><a href="correlation-regression.html#cb533-4" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>ticket_price_z <span class="ot">&lt;-</span> <span class="fu">scale</span>(ticket_sales_data<span class="sc">$</span>ticket_price)</span>
-<span id="cb533-5"><a href="correlation-regression.html#cb533-5" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>tickets_sold_z <span class="ot">&lt;-</span> <span class="fu">scale</span>(ticket_sales_data<span class="sc">$</span>tickets_sold)</span>
-<span id="cb533-6"><a href="correlation-regression.html#cb533-6" tabindex="-1"></a></span>
-<span id="cb533-7"><a href="correlation-regression.html#cb533-7" tabindex="-1"></a><span class="co"># Run standardized regression</span></span>
-<span id="cb533-8"><a href="correlation-regression.html#cb533-8" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(tickets_sold_z <span class="sc">~</span> team_wins_z <span class="sc">+</span> opponent_rank_z <span class="sc">+</span> ticket_price_z <span class="sc">+</span> day_of_week,</span>
-<span id="cb533-9"><a href="correlation-regression.html#cb533-9" tabindex="-1"></a>             <span class="at">data =</span> ticket_sales_data)</span>
-<span id="cb533-10"><a href="correlation-regression.html#cb533-10" tabindex="-1"></a></span>
-<span id="cb533-11"><a href="correlation-regression.html#cb533-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Standardized Coefficients:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb526"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb526-1"><a href="correlation-regression.html#cb526-1" tabindex="-1"></a><span class="co"># Standardize continuous predictors</span></span>
+<span id="cb526-2"><a href="correlation-regression.html#cb526-2" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>team_wins_z <span class="ot">&lt;-</span> <span class="fu">scale</span>(ticket_sales_data<span class="sc">$</span>team_wins)</span>
+<span id="cb526-3"><a href="correlation-regression.html#cb526-3" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>opponent_rank_z <span class="ot">&lt;-</span> <span class="fu">scale</span>(ticket_sales_data<span class="sc">$</span>opponent_rank)</span>
+<span id="cb526-4"><a href="correlation-regression.html#cb526-4" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>ticket_price_z <span class="ot">&lt;-</span> <span class="fu">scale</span>(ticket_sales_data<span class="sc">$</span>ticket_price)</span>
+<span id="cb526-5"><a href="correlation-regression.html#cb526-5" tabindex="-1"></a>ticket_sales_data<span class="sc">$</span>tickets_sold_z <span class="ot">&lt;-</span> <span class="fu">scale</span>(ticket_sales_data<span class="sc">$</span>tickets_sold)</span>
+<span id="cb526-6"><a href="correlation-regression.html#cb526-6" tabindex="-1"></a></span>
+<span id="cb526-7"><a href="correlation-regression.html#cb526-7" tabindex="-1"></a><span class="co"># Run standardized regression</span></span>
+<span id="cb526-8"><a href="correlation-regression.html#cb526-8" tabindex="-1"></a>model3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(tickets_sold_z <span class="sc">~</span> team_wins_z <span class="sc">+</span> opponent_rank_z <span class="sc">+</span> ticket_price_z <span class="sc">+</span> day_of_week,</span>
+<span id="cb526-9"><a href="correlation-regression.html#cb526-9" tabindex="-1"></a>             <span class="at">data =</span> ticket_sales_data)</span>
+<span id="cb526-10"><a href="correlation-regression.html#cb526-10" tabindex="-1"></a></span>
+<span id="cb526-11"><a href="correlation-regression.html#cb526-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Standardized Coefficients:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Standardized Coefficients:</code></pre>
-<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="correlation-regression.html#cb535-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(<span class="fu">coef</span>(model3), <span class="dv">4</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="correlation-regression.html#cb528-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(<span class="fu">coef</span>(model3), <span class="dv">4</span>))</span></code></pre></div>
 <pre><code>##        (Intercept)        team_wins_z    opponent_rank_z     ticket_price_z day_of_weekWeekend 
 ##            -0.4314             0.4899            -0.0747            -0.3119             1.0785</code></pre>
-<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="correlation-regression.html#cb537-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="correlation-regression.html#cb530-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Interpretation:</code></pre>
-<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="correlation-regression.html#cb539-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The standardized coefficients show which predictors have the strongest effect.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="correlation-regression.html#cb532-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;The standardized coefficients show which predictors have the strongest effect.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## The standardized coefficients show which predictors have the strongest effect.</code></pre>
-<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="correlation-regression.html#cb541-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Larger absolute values indicate stronger predictors.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="correlation-regression.html#cb534-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Larger absolute values indicate stronger predictors.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Larger absolute values indicate stronger predictors.</code></pre>
 </div>
 <div id="model-diagnostics" class="section level3 hasAnchor" number="8.4.6">
 <h3><span class="header-section-number">8.4.6</span> Model Diagnostics<a href="correlation-regression.html#model-diagnostics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It’s important to check whether regression assumptions are met:</p>
-<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="correlation-regression.html#cb543-1" tabindex="-1"></a><span class="co"># Create diagnostic plots</span></span>
-<span id="cb543-2"><a href="correlation-regression.html#cb543-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb543-3"><a href="correlation-regression.html#cb543-3" tabindex="-1"></a><span class="fu">plot</span>(model2)</span></code></pre></div>
-<p><img src="_main_files/figure-html/regression-diagnostics-1.png" width="960" /></p>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="correlation-regression.html#cb536-1" tabindex="-1"></a><span class="co"># Create diagnostic plots</span></span>
+<span id="cb536-2"><a href="correlation-regression.html#cb536-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb536-3"><a href="correlation-regression.html#cb536-3" tabindex="-1"></a><span class="fu">plot</span>(model2)</span></code></pre></div>
+<p><img src="_main_files/figure-html/regression-diagnostics-1.png" width="80%" style="display: block; margin: auto;" /></p>
 <p><strong>Key diagnostics</strong>:
 1. <strong>Residuals vs Fitted</strong>: Check for linearity (should be randomly scattered)
 2. <strong>Q-Q Plot</strong>: Check for normality of residuals (should follow diagonal line)
@@ -1296,13 +1312,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="comparing-models" class="section level3 hasAnchor" number="8.4.7">
 <h3><span class="header-section-number">8.4.7</span> Comparing Models<a href="correlation-regression.html#comparing-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="correlation-regression.html#cb544-1" tabindex="-1"></a><span class="co"># Compare simple vs. multiple regression</span></span>
-<span id="cb544-2"><a href="correlation-regression.html#cb544-2" tabindex="-1"></a>model_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(tickets_sold <span class="sc">~</span> team_wins, <span class="at">data =</span> ticket_sales_data)</span>
-<span id="cb544-3"><a href="correlation-regression.html#cb544-3" tabindex="-1"></a>model_multiple <span class="ot">&lt;-</span> <span class="fu">lm</span>(tickets_sold <span class="sc">~</span> team_wins <span class="sc">+</span> opponent_rank <span class="sc">+</span> ticket_price <span class="sc">+</span> day_of_week,</span>
-<span id="cb544-4"><a href="correlation-regression.html#cb544-4" tabindex="-1"></a>                     <span class="at">data =</span> ticket_sales_data)</span>
-<span id="cb544-5"><a href="correlation-regression.html#cb544-5" tabindex="-1"></a></span>
-<span id="cb544-6"><a href="correlation-regression.html#cb544-6" tabindex="-1"></a><span class="co"># ANOVA comparison</span></span>
-<span id="cb544-7"><a href="correlation-regression.html#cb544-7" tabindex="-1"></a><span class="fu">anova</span>(model_simple, model_multiple)</span></code></pre></div>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="correlation-regression.html#cb537-1" tabindex="-1"></a><span class="co"># Compare simple vs. multiple regression</span></span>
+<span id="cb537-2"><a href="correlation-regression.html#cb537-2" tabindex="-1"></a>model_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(tickets_sold <span class="sc">~</span> team_wins, <span class="at">data =</span> ticket_sales_data)</span>
+<span id="cb537-3"><a href="correlation-regression.html#cb537-3" tabindex="-1"></a>model_multiple <span class="ot">&lt;-</span> <span class="fu">lm</span>(tickets_sold <span class="sc">~</span> team_wins <span class="sc">+</span> opponent_rank <span class="sc">+</span> ticket_price <span class="sc">+</span> day_of_week,</span>
+<span id="cb537-4"><a href="correlation-regression.html#cb537-4" tabindex="-1"></a>                     <span class="at">data =</span> ticket_sales_data)</span>
+<span id="cb537-5"><a href="correlation-regression.html#cb537-5" tabindex="-1"></a></span>
+<span id="cb537-6"><a href="correlation-regression.html#cb537-6" tabindex="-1"></a><span class="co"># ANOVA comparison</span></span>
+<span id="cb537-7"><a href="correlation-regression.html#cb537-7" tabindex="-1"></a><span class="fu">anova</span>(model_simple, model_multiple)</span></code></pre></div>
 <pre><code>## Analysis of Variance Table
 ## 
 ## Model 1: tickets_sold ~ team_wins
@@ -1312,15 +1328,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2     45 35259513  3  60063722 25.552 8.365e-10 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="correlation-regression.html#cb546-1" tabindex="-1"></a><span class="co"># Compare R-squared values</span></span>
-<span id="cb546-2"><a href="correlation-regression.html#cb546-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Simple Model R²:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model_simple)<span class="sc">$</span>r.squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="correlation-regression.html#cb539-1" tabindex="-1"></a><span class="co"># Compare R-squared values</span></span>
+<span id="cb539-2"><a href="correlation-regression.html#cb539-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Simple Model R²:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model_simple)<span class="sc">$</span>r.squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Simple Model R²: 0.3455</code></pre>
-<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="correlation-regression.html#cb548-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Multiple Model R²:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model_multiple)<span class="sc">$</span>r.squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="correlation-regression.html#cb541-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Multiple Model R²:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(model_multiple)<span class="sc">$</span>r.squared, <span class="dv">4</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Multiple Model R²: 0.7579</code></pre>
-<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="correlation-regression.html#cb550-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">The multiple regression model explains&quot;</span>,</span>
-<span id="cb550-2"><a href="correlation-regression.html#cb550-2" tabindex="-1"></a>    <span class="fu">round</span>((<span class="fu">summary</span>(model_multiple)<span class="sc">$</span>r.squared <span class="sc">-</span> <span class="fu">summary</span>(model_simple)<span class="sc">$</span>r.squared) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
-<span id="cb550-3"><a href="correlation-regression.html#cb550-3" tabindex="-1"></a>    <span class="st">&quot;% more variance than the simple model.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="correlation-regression.html#cb543-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">The multiple regression model explains&quot;</span>,</span>
+<span id="cb543-2"><a href="correlation-regression.html#cb543-2" tabindex="-1"></a>    <span class="fu">round</span>((<span class="fu">summary</span>(model_multiple)<span class="sc">$</span>r.squared <span class="sc">-</span> <span class="fu">summary</span>(model_simple)<span class="sc">$</span>r.squared) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb543-3"><a href="correlation-regression.html#cb543-3" tabindex="-1"></a>    <span class="st">&quot;% more variance than the simple model.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## The multiple regression model explains 41.24 % more variance than the simple model.</code></pre>
 </div>
@@ -1329,26 +1345,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.5</span> Sport Business Applications<a href="correlation-regression.html#sport-business-applications-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="example-1-player-performance-analysis" class="section level3 hasAnchor" number="8.5.1">
 <h3><span class="header-section-number">8.5.1</span> Example 1: Player Performance Analysis<a href="correlation-regression.html#example-1-player-performance-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="correlation-regression.html#cb552-1" tabindex="-1"></a><span class="co"># Analyze relationship between training metrics and game performance</span></span>
-<span id="cb552-2"><a href="correlation-regression.html#cb552-2" tabindex="-1"></a><span class="co"># Using Lahman baseball data</span></span>
-<span id="cb552-3"><a href="correlation-regression.html#cb552-3" tabindex="-1"></a><span class="fu">data</span>(Batting)</span>
-<span id="cb552-4"><a href="correlation-regression.html#cb552-4" tabindex="-1"></a></span>
-<span id="cb552-5"><a href="correlation-regression.html#cb552-5" tabindex="-1"></a><span class="co"># Filter recent seasons and regular players</span></span>
-<span id="cb552-6"><a href="correlation-regression.html#cb552-6" tabindex="-1"></a>recent_batting <span class="ot">&lt;-</span> Batting <span class="sc">%&gt;%</span></span>
-<span id="cb552-7"><a href="correlation-regression.html#cb552-7" tabindex="-1"></a>  <span class="fu">filter</span>(yearID <span class="sc">&gt;=</span> <span class="dv">2015</span>, AB <span class="sc">&gt;=</span> <span class="dv">400</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb552-8"><a href="correlation-regression.html#cb552-8" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb552-9"><a href="correlation-regression.html#cb552-9" tabindex="-1"></a>    <span class="at">batting_avg =</span> H <span class="sc">/</span> AB,</span>
-<span id="cb552-10"><a href="correlation-regression.html#cb552-10" tabindex="-1"></a>    <span class="at">slugging =</span> (H <span class="sc">+</span> X2B <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>X3B <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>HR) <span class="sc">/</span> AB,</span>
-<span id="cb552-11"><a href="correlation-regression.html#cb552-11" tabindex="-1"></a>    <span class="at">obp =</span> (H <span class="sc">+</span> BB <span class="sc">+</span> HBP) <span class="sc">/</span> (AB <span class="sc">+</span> BB <span class="sc">+</span> HBP <span class="sc">+</span> SF)</span>
-<span id="cb552-12"><a href="correlation-regression.html#cb552-12" tabindex="-1"></a>  )</span>
-<span id="cb552-13"><a href="correlation-regression.html#cb552-13" tabindex="-1"></a></span>
-<span id="cb552-14"><a href="correlation-regression.html#cb552-14" tabindex="-1"></a><span class="co"># Correlation matrix</span></span>
-<span id="cb552-15"><a href="correlation-regression.html#cb552-15" tabindex="-1"></a>performance_vars <span class="ot">&lt;-</span> recent_batting <span class="sc">%&gt;%</span></span>
-<span id="cb552-16"><a href="correlation-regression.html#cb552-16" tabindex="-1"></a>  <span class="fu">select</span>(batting_avg, HR, RBI, SB, slugging, obp) <span class="sc">%&gt;%</span></span>
-<span id="cb552-17"><a href="correlation-regression.html#cb552-17" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb552-18"><a href="correlation-regression.html#cb552-18" tabindex="-1"></a></span>
-<span id="cb552-19"><a href="correlation-regression.html#cb552-19" tabindex="-1"></a>correlation_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(performance_vars)</span>
-<span id="cb552-20"><a href="correlation-regression.html#cb552-20" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(correlation_matrix, <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="correlation-regression.html#cb545-1" tabindex="-1"></a><span class="co"># Analyze relationship between training metrics and game performance</span></span>
+<span id="cb545-2"><a href="correlation-regression.html#cb545-2" tabindex="-1"></a><span class="co"># Using Lahman baseball data</span></span>
+<span id="cb545-3"><a href="correlation-regression.html#cb545-3" tabindex="-1"></a><span class="fu">data</span>(Batting)</span>
+<span id="cb545-4"><a href="correlation-regression.html#cb545-4" tabindex="-1"></a></span>
+<span id="cb545-5"><a href="correlation-regression.html#cb545-5" tabindex="-1"></a><span class="co"># Filter recent seasons and regular players</span></span>
+<span id="cb545-6"><a href="correlation-regression.html#cb545-6" tabindex="-1"></a>recent_batting <span class="ot">&lt;-</span> Batting <span class="sc">%&gt;%</span></span>
+<span id="cb545-7"><a href="correlation-regression.html#cb545-7" tabindex="-1"></a>  <span class="fu">filter</span>(yearID <span class="sc">&gt;=</span> <span class="dv">2015</span>, AB <span class="sc">&gt;=</span> <span class="dv">400</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb545-8"><a href="correlation-regression.html#cb545-8" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb545-9"><a href="correlation-regression.html#cb545-9" tabindex="-1"></a>    <span class="at">batting_avg =</span> H <span class="sc">/</span> AB,</span>
+<span id="cb545-10"><a href="correlation-regression.html#cb545-10" tabindex="-1"></a>    <span class="at">slugging =</span> (H <span class="sc">+</span> X2B <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>X3B <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>HR) <span class="sc">/</span> AB,</span>
+<span id="cb545-11"><a href="correlation-regression.html#cb545-11" tabindex="-1"></a>    <span class="at">obp =</span> (H <span class="sc">+</span> BB <span class="sc">+</span> HBP) <span class="sc">/</span> (AB <span class="sc">+</span> BB <span class="sc">+</span> HBP <span class="sc">+</span> SF)</span>
+<span id="cb545-12"><a href="correlation-regression.html#cb545-12" tabindex="-1"></a>  )</span>
+<span id="cb545-13"><a href="correlation-regression.html#cb545-13" tabindex="-1"></a></span>
+<span id="cb545-14"><a href="correlation-regression.html#cb545-14" tabindex="-1"></a><span class="co"># Correlation matrix</span></span>
+<span id="cb545-15"><a href="correlation-regression.html#cb545-15" tabindex="-1"></a>performance_vars <span class="ot">&lt;-</span> recent_batting <span class="sc">%&gt;%</span></span>
+<span id="cb545-16"><a href="correlation-regression.html#cb545-16" tabindex="-1"></a>  <span class="fu">select</span>(batting_avg, HR, RBI, SB, slugging, obp) <span class="sc">%&gt;%</span></span>
+<span id="cb545-17"><a href="correlation-regression.html#cb545-17" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb545-18"><a href="correlation-regression.html#cb545-18" tabindex="-1"></a></span>
+<span id="cb545-19"><a href="correlation-regression.html#cb545-19" tabindex="-1"></a>correlation_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(performance_vars)</span>
+<span id="cb545-20"><a href="correlation-regression.html#cb545-20" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(correlation_matrix, <span class="dv">3</span>))</span></code></pre></div>
 <pre><code>##             batting_avg     HR    RBI     SB slugging   obp
 ## batting_avg       1.000  0.123  0.315  0.146    0.549 0.714
 ## HR                0.123  1.000  0.832 -0.130    0.840 0.380
@@ -1356,53 +1372,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## SB                0.146 -0.130 -0.111  1.000   -0.061 0.063
 ## slugging          0.549  0.840  0.756 -0.061    1.000 0.653
 ## obp               0.714  0.380  0.443  0.063    0.653 1.000</code></pre>
-<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="correlation-regression.html#cb554-1" tabindex="-1"></a><span class="co"># Visualize correlation matrix</span></span>
-<span id="cb554-2"><a href="correlation-regression.html#cb554-2" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb554-3"><a href="correlation-regression.html#cb554-3" tabindex="-1"></a>melted_corr <span class="ot">&lt;-</span> <span class="fu">melt</span>(correlation_matrix)</span>
-<span id="cb554-4"><a href="correlation-regression.html#cb554-4" tabindex="-1"></a></span>
-<span id="cb554-5"><a href="correlation-regression.html#cb554-5" tabindex="-1"></a><span class="fu">ggplot</span>(melted_corr, <span class="fu">aes</span>(<span class="at">x =</span> Var1, <span class="at">y =</span> Var2, <span class="at">fill =</span> value)) <span class="sc">+</span></span>
-<span id="cb554-6"><a href="correlation-regression.html#cb554-6" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
-<span id="cb554-7"><a href="correlation-regression.html#cb554-7" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(value, <span class="dv">2</span>)), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb554-8"><a href="correlation-regression.html#cb554-8" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span> <span class="st">&quot;red&quot;</span>,</span>
-<span id="cb554-9"><a href="correlation-regression.html#cb554-9" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="dv">0</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb554-10"><a href="correlation-regression.html#cb554-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Correlation Matrix: Baseball Performance Metrics&quot;</span>,</span>
-<span id="cb554-11"><a href="correlation-regression.html#cb554-11" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Correlation&quot;</span>) <span class="sc">+</span></span>
-<span id="cb554-12"><a href="correlation-regression.html#cb554-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb554-13"><a href="correlation-regression.html#cb554-13" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/player-performance-correlation-1.png" width="672" /></p>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="correlation-regression.html#cb547-1" tabindex="-1"></a><span class="co"># Visualize correlation matrix</span></span>
+<span id="cb547-2"><a href="correlation-regression.html#cb547-2" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb547-3"><a href="correlation-regression.html#cb547-3" tabindex="-1"></a>melted_corr <span class="ot">&lt;-</span> <span class="fu">melt</span>(correlation_matrix)</span>
+<span id="cb547-4"><a href="correlation-regression.html#cb547-4" tabindex="-1"></a></span>
+<span id="cb547-5"><a href="correlation-regression.html#cb547-5" tabindex="-1"></a><span class="fu">ggplot</span>(melted_corr, <span class="fu">aes</span>(<span class="at">x =</span> Var1, <span class="at">y =</span> Var2, <span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb547-6"><a href="correlation-regression.html#cb547-6" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb547-7"><a href="correlation-regression.html#cb547-7" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(value, <span class="dv">2</span>)), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb547-8"><a href="correlation-regression.html#cb547-8" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">high =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb547-9"><a href="correlation-regression.html#cb547-9" tabindex="-1"></a>                       <span class="at">midpoint =</span> <span class="dv">0</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb547-10"><a href="correlation-regression.html#cb547-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Correlation Matrix: Baseball Performance Metrics&quot;</span>,</span>
+<span id="cb547-11"><a href="correlation-regression.html#cb547-11" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Correlation&quot;</span>) <span class="sc">+</span></span>
+<span id="cb547-12"><a href="correlation-regression.html#cb547-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb547-13"><a href="correlation-regression.html#cb547-13" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/player-performance-correlation-1.png" width="80%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="example-2-predicting-attendance" class="section level3 hasAnchor" number="8.5.2">
 <h3><span class="header-section-number">8.5.2</span> Example 2: Predicting Attendance<a href="correlation-regression.html#example-2-predicting-attendance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="correlation-regression.html#cb555-1" tabindex="-1"></a><span class="co"># Comprehensive attendance prediction model</span></span>
-<span id="cb555-2"><a href="correlation-regression.html#cb555-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
-<span id="cb555-3"><a href="correlation-regression.html#cb555-3" tabindex="-1"></a>season_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb555-4"><a href="correlation-regression.html#cb555-4" tabindex="-1"></a>  <span class="at">game_number =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">81</span>,</span>
-<span id="cb555-5"><a href="correlation-regression.html#cb555-5" tabindex="-1"></a>  <span class="at">wins_to_date =</span> <span class="fu">cumsum</span>(<span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">81</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.45</span>, <span class="fl">0.55</span>))),</span>
-<span id="cb555-6"><a href="correlation-regression.html#cb555-6" tabindex="-1"></a>  <span class="at">temperature =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">81</span>, <span class="dv">75</span>, <span class="dv">10</span>)),</span>
-<span id="cb555-7"><a href="correlation-regression.html#cb555-7" tabindex="-1"></a>  <span class="at">day_of_week =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Weekday&quot;</span>, <span class="st">&quot;Weekend&quot;</span>), <span class="dv">81</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.7</span>, <span class="fl">0.3</span>)),</span>
-<span id="cb555-8"><a href="correlation-regression.html#cb555-8" tabindex="-1"></a>  <span class="at">promotion =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>), <span class="dv">81</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.8</span>)),</span>
-<span id="cb555-9"><a href="correlation-regression.html#cb555-9" tabindex="-1"></a>  <span class="at">opponent_quality =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">81</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb555-10"><a href="correlation-regression.html#cb555-10" tabindex="-1"></a>)</span>
-<span id="cb555-11"><a href="correlation-regression.html#cb555-11" tabindex="-1"></a></span>
-<span id="cb555-12"><a href="correlation-regression.html#cb555-12" tabindex="-1"></a><span class="co"># Calculate winning percentage</span></span>
-<span id="cb555-13"><a href="correlation-regression.html#cb555-13" tabindex="-1"></a>season_data<span class="sc">$</span>win_pct <span class="ot">&lt;-</span> season_data<span class="sc">$</span>wins_to_date <span class="sc">/</span> season_data<span class="sc">$</span>game_number</span>
-<span id="cb555-14"><a href="correlation-regression.html#cb555-14" tabindex="-1"></a></span>
-<span id="cb555-15"><a href="correlation-regression.html#cb555-15" tabindex="-1"></a><span class="co"># Generate attendance with realistic influences</span></span>
-<span id="cb555-16"><a href="correlation-regression.html#cb555-16" tabindex="-1"></a>season_data<span class="sc">$</span>attendance <span class="ot">&lt;-</span></span>
-<span id="cb555-17"><a href="correlation-regression.html#cb555-17" tabindex="-1"></a>  <span class="dv">15000</span> <span class="sc">+</span>                                                        <span class="co"># Baseline</span></span>
-<span id="cb555-18"><a href="correlation-regression.html#cb555-18" tabindex="-1"></a>  (season_data<span class="sc">$</span>win_pct <span class="sc">*</span> <span class="dv">10000</span>) <span class="sc">+</span>                               <span class="co"># Team performance</span></span>
-<span id="cb555-19"><a href="correlation-regression.html#cb555-19" tabindex="-1"></a>  (season_data<span class="sc">$</span>temperature <span class="sc">*</span> <span class="dv">20</span>) <span class="sc">+</span>                              <span class="co"># Weather effect</span></span>
-<span id="cb555-20"><a href="correlation-regression.html#cb555-20" tabindex="-1"></a>  <span class="fu">ifelse</span>(season_data<span class="sc">$</span>day_of_week <span class="sc">==</span> <span class="st">&quot;Weekend&quot;</span>, <span class="dv">3000</span>, <span class="dv">0</span>) <span class="sc">+</span>      <span class="co"># Weekend boost</span></span>
-<span id="cb555-21"><a href="correlation-regression.html#cb555-21" tabindex="-1"></a>  <span class="fu">ifelse</span>(season_data<span class="sc">$</span>promotion <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>, <span class="dv">2500</span>, <span class="dv">0</span>) <span class="sc">+</span>            <span class="co"># Promotion effect</span></span>
-<span id="cb555-22"><a href="correlation-regression.html#cb555-22" tabindex="-1"></a>  (season_data<span class="sc">$</span>opponent_quality <span class="sc">*</span> <span class="dv">300</span>) <span class="sc">+</span>                        <span class="co"># Opponent draw</span></span>
-<span id="cb555-23"><a href="correlation-regression.html#cb555-23" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">81</span>, <span class="dv">0</span>, <span class="dv">1500</span>)                                           <span class="co"># Random variation</span></span>
-<span id="cb555-24"><a href="correlation-regression.html#cb555-24" tabindex="-1"></a></span>
-<span id="cb555-25"><a href="correlation-regression.html#cb555-25" tabindex="-1"></a><span class="co"># Build prediction model</span></span>
-<span id="cb555-26"><a href="correlation-regression.html#cb555-26" tabindex="-1"></a>attendance_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(attendance <span class="sc">~</span> win_pct <span class="sc">+</span> temperature <span class="sc">+</span> day_of_week <span class="sc">+</span></span>
-<span id="cb555-27"><a href="correlation-regression.html#cb555-27" tabindex="-1"></a>                         promotion <span class="sc">+</span> opponent_quality,</span>
-<span id="cb555-28"><a href="correlation-regression.html#cb555-28" tabindex="-1"></a>                       <span class="at">data =</span> season_data)</span>
-<span id="cb555-29"><a href="correlation-regression.html#cb555-29" tabindex="-1"></a></span>
-<span id="cb555-30"><a href="correlation-regression.html#cb555-30" tabindex="-1"></a><span class="fu">summary</span>(attendance_model)</span></code></pre></div>
+<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="correlation-regression.html#cb548-1" tabindex="-1"></a><span class="co"># Comprehensive attendance prediction model</span></span>
+<span id="cb548-2"><a href="correlation-regression.html#cb548-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb548-3"><a href="correlation-regression.html#cb548-3" tabindex="-1"></a>season_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb548-4"><a href="correlation-regression.html#cb548-4" tabindex="-1"></a>  <span class="at">game_number =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">81</span>,</span>
+<span id="cb548-5"><a href="correlation-regression.html#cb548-5" tabindex="-1"></a>  <span class="at">wins_to_date =</span> <span class="fu">cumsum</span>(<span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">81</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.45</span>, <span class="fl">0.55</span>))),</span>
+<span id="cb548-6"><a href="correlation-regression.html#cb548-6" tabindex="-1"></a>  <span class="at">temperature =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(<span class="dv">81</span>, <span class="dv">75</span>, <span class="dv">10</span>)),</span>
+<span id="cb548-7"><a href="correlation-regression.html#cb548-7" tabindex="-1"></a>  <span class="at">day_of_week =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Weekday&quot;</span>, <span class="st">&quot;Weekend&quot;</span>), <span class="dv">81</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.7</span>, <span class="fl">0.3</span>)),</span>
+<span id="cb548-8"><a href="correlation-regression.html#cb548-8" tabindex="-1"></a>  <span class="at">promotion =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>), <span class="dv">81</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.8</span>)),</span>
+<span id="cb548-9"><a href="correlation-regression.html#cb548-9" tabindex="-1"></a>  <span class="at">opponent_quality =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">81</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb548-10"><a href="correlation-regression.html#cb548-10" tabindex="-1"></a>)</span>
+<span id="cb548-11"><a href="correlation-regression.html#cb548-11" tabindex="-1"></a></span>
+<span id="cb548-12"><a href="correlation-regression.html#cb548-12" tabindex="-1"></a><span class="co"># Calculate winning percentage</span></span>
+<span id="cb548-13"><a href="correlation-regression.html#cb548-13" tabindex="-1"></a>season_data<span class="sc">$</span>win_pct <span class="ot">&lt;-</span> season_data<span class="sc">$</span>wins_to_date <span class="sc">/</span> season_data<span class="sc">$</span>game_number</span>
+<span id="cb548-14"><a href="correlation-regression.html#cb548-14" tabindex="-1"></a></span>
+<span id="cb548-15"><a href="correlation-regression.html#cb548-15" tabindex="-1"></a><span class="co"># Generate attendance with realistic influences</span></span>
+<span id="cb548-16"><a href="correlation-regression.html#cb548-16" tabindex="-1"></a>season_data<span class="sc">$</span>attendance <span class="ot">&lt;-</span></span>
+<span id="cb548-17"><a href="correlation-regression.html#cb548-17" tabindex="-1"></a>  <span class="dv">15000</span> <span class="sc">+</span>                                                        <span class="co"># Baseline</span></span>
+<span id="cb548-18"><a href="correlation-regression.html#cb548-18" tabindex="-1"></a>  (season_data<span class="sc">$</span>win_pct <span class="sc">*</span> <span class="dv">10000</span>) <span class="sc">+</span>                               <span class="co"># Team performance</span></span>
+<span id="cb548-19"><a href="correlation-regression.html#cb548-19" tabindex="-1"></a>  (season_data<span class="sc">$</span>temperature <span class="sc">*</span> <span class="dv">20</span>) <span class="sc">+</span>                              <span class="co"># Weather effect</span></span>
+<span id="cb548-20"><a href="correlation-regression.html#cb548-20" tabindex="-1"></a>  <span class="fu">ifelse</span>(season_data<span class="sc">$</span>day_of_week <span class="sc">==</span> <span class="st">&quot;Weekend&quot;</span>, <span class="dv">3000</span>, <span class="dv">0</span>) <span class="sc">+</span>      <span class="co"># Weekend boost</span></span>
+<span id="cb548-21"><a href="correlation-regression.html#cb548-21" tabindex="-1"></a>  <span class="fu">ifelse</span>(season_data<span class="sc">$</span>promotion <span class="sc">==</span> <span class="st">&quot;Yes&quot;</span>, <span class="dv">2500</span>, <span class="dv">0</span>) <span class="sc">+</span>            <span class="co"># Promotion effect</span></span>
+<span id="cb548-22"><a href="correlation-regression.html#cb548-22" tabindex="-1"></a>  (season_data<span class="sc">$</span>opponent_quality <span class="sc">*</span> <span class="dv">300</span>) <span class="sc">+</span>                        <span class="co"># Opponent draw</span></span>
+<span id="cb548-23"><a href="correlation-regression.html#cb548-23" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">81</span>, <span class="dv">0</span>, <span class="dv">1500</span>)                                           <span class="co"># Random variation</span></span>
+<span id="cb548-24"><a href="correlation-regression.html#cb548-24" tabindex="-1"></a></span>
+<span id="cb548-25"><a href="correlation-regression.html#cb548-25" tabindex="-1"></a><span class="co"># Build prediction model</span></span>
+<span id="cb548-26"><a href="correlation-regression.html#cb548-26" tabindex="-1"></a>attendance_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(attendance <span class="sc">~</span> win_pct <span class="sc">+</span> temperature <span class="sc">+</span> day_of_week <span class="sc">+</span></span>
+<span id="cb548-27"><a href="correlation-regression.html#cb548-27" tabindex="-1"></a>                         promotion <span class="sc">+</span> opponent_quality,</span>
+<span id="cb548-28"><a href="correlation-regression.html#cb548-28" tabindex="-1"></a>                       <span class="at">data =</span> season_data)</span>
+<span id="cb548-29"><a href="correlation-regression.html#cb548-29" tabindex="-1"></a></span>
+<span id="cb548-30"><a href="correlation-regression.html#cb548-30" tabindex="-1"></a><span class="fu">summary</span>(attendance_model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = attendance ~ win_pct + temperature + day_of_week + 
@@ -1426,20 +1442,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residual standard error: 1523 on 75 degrees of freedom
 ## Multiple R-squared:  0.652,  Adjusted R-squared:  0.6288 
 ## F-statistic: 28.11 on 5 and 75 DF,  p-value: 6.27e-16</code></pre>
-<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="correlation-regression.html#cb557-1" tabindex="-1"></a><span class="co"># Predict attendance for upcoming games</span></span>
-<span id="cb557-2"><a href="correlation-regression.html#cb557-2" tabindex="-1"></a>upcoming_games <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb557-3"><a href="correlation-regression.html#cb557-3" tabindex="-1"></a>  <span class="at">win_pct =</span> <span class="fu">c</span>(<span class="fl">0.550</span>, <span class="fl">0.550</span>, <span class="fl">0.550</span>),</span>
-<span id="cb557-4"><a href="correlation-regression.html#cb557-4" tabindex="-1"></a>  <span class="at">temperature =</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">82</span>, <span class="dv">68</span>),</span>
-<span id="cb557-5"><a href="correlation-regression.html#cb557-5" tabindex="-1"></a>  <span class="at">day_of_week =</span> <span class="fu">c</span>(<span class="st">&quot;Weekday&quot;</span>, <span class="st">&quot;Weekend&quot;</span>, <span class="st">&quot;Weekend&quot;</span>),</span>
-<span id="cb557-6"><a href="correlation-regression.html#cb557-6" tabindex="-1"></a>  <span class="at">promotion =</span> <span class="fu">c</span>(<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>),</span>
-<span id="cb557-7"><a href="correlation-regression.html#cb557-7" tabindex="-1"></a>  <span class="at">opponent_quality =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">3</span>)</span>
-<span id="cb557-8"><a href="correlation-regression.html#cb557-8" tabindex="-1"></a>)</span>
-<span id="cb557-9"><a href="correlation-regression.html#cb557-9" tabindex="-1"></a></span>
-<span id="cb557-10"><a href="correlation-regression.html#cb557-10" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(attendance_model, <span class="at">newdata =</span> upcoming_games,</span>
-<span id="cb557-11"><a href="correlation-regression.html#cb557-11" tabindex="-1"></a>                      <span class="at">interval =</span> <span class="st">&quot;prediction&quot;</span>)</span>
-<span id="cb557-12"><a href="correlation-regression.html#cb557-12" tabindex="-1"></a></span>
-<span id="cb557-13"><a href="correlation-regression.html#cb557-13" tabindex="-1"></a>forecast <span class="ot">&lt;-</span> <span class="fu">cbind</span>(upcoming_games, <span class="fu">round</span>(predictions))</span>
-<span id="cb557-14"><a href="correlation-regression.html#cb557-14" tabindex="-1"></a><span class="fu">print</span>(forecast)</span></code></pre></div>
+<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="correlation-regression.html#cb550-1" tabindex="-1"></a><span class="co"># Predict attendance for upcoming games</span></span>
+<span id="cb550-2"><a href="correlation-regression.html#cb550-2" tabindex="-1"></a>upcoming_games <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb550-3"><a href="correlation-regression.html#cb550-3" tabindex="-1"></a>  <span class="at">win_pct =</span> <span class="fu">c</span>(<span class="fl">0.550</span>, <span class="fl">0.550</span>, <span class="fl">0.550</span>),</span>
+<span id="cb550-4"><a href="correlation-regression.html#cb550-4" tabindex="-1"></a>  <span class="at">temperature =</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">82</span>, <span class="dv">68</span>),</span>
+<span id="cb550-5"><a href="correlation-regression.html#cb550-5" tabindex="-1"></a>  <span class="at">day_of_week =</span> <span class="fu">c</span>(<span class="st">&quot;Weekday&quot;</span>, <span class="st">&quot;Weekend&quot;</span>, <span class="st">&quot;Weekend&quot;</span>),</span>
+<span id="cb550-6"><a href="correlation-regression.html#cb550-6" tabindex="-1"></a>  <span class="at">promotion =</span> <span class="fu">c</span>(<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>),</span>
+<span id="cb550-7"><a href="correlation-regression.html#cb550-7" tabindex="-1"></a>  <span class="at">opponent_quality =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">3</span>)</span>
+<span id="cb550-8"><a href="correlation-regression.html#cb550-8" tabindex="-1"></a>)</span>
+<span id="cb550-9"><a href="correlation-regression.html#cb550-9" tabindex="-1"></a></span>
+<span id="cb550-10"><a href="correlation-regression.html#cb550-10" tabindex="-1"></a>predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(attendance_model, <span class="at">newdata =</span> upcoming_games,</span>
+<span id="cb550-11"><a href="correlation-regression.html#cb550-11" tabindex="-1"></a>                      <span class="at">interval =</span> <span class="st">&quot;prediction&quot;</span>)</span>
+<span id="cb550-12"><a href="correlation-regression.html#cb550-12" tabindex="-1"></a></span>
+<span id="cb550-13"><a href="correlation-regression.html#cb550-13" tabindex="-1"></a>forecast <span class="ot">&lt;-</span> <span class="fu">cbind</span>(upcoming_games, <span class="fu">round</span>(predictions))</span>
+<span id="cb550-14"><a href="correlation-regression.html#cb550-14" tabindex="-1"></a><span class="fu">print</span>(forecast)</span></code></pre></div>
 <pre><code>##   win_pct temperature day_of_week promotion opponent_quality   fit   lwr   upr
 ## 1    0.55          78     Weekday        No                5 23560 20467 26653
 ## 2    0.55          82     Weekend       Yes                8 29660 26460 32861
@@ -1447,38 +1463,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="example-3-salary-prediction" class="section level3 hasAnchor" number="8.5.3">
 <h3><span class="header-section-number">8.5.3</span> Example 3: Salary Prediction<a href="correlation-regression.html#example-3-salary-prediction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="correlation-regression.html#cb559-1" tabindex="-1"></a><span class="co"># Predict player salaries based on performance</span></span>
-<span id="cb559-2"><a href="correlation-regression.html#cb559-2" tabindex="-1"></a><span class="co"># Using simulated MLB salary data based on 2016 statistics</span></span>
-<span id="cb559-3"><a href="correlation-regression.html#cb559-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb559-4"><a href="correlation-regression.html#cb559-4" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span>
-<span id="cb559-5"><a href="correlation-regression.html#cb559-5" tabindex="-1"></a></span>
-<span id="cb559-6"><a href="correlation-regression.html#cb559-6" tabindex="-1"></a><span class="co"># Load batting data</span></span>
-<span id="cb559-7"><a href="correlation-regression.html#cb559-7" tabindex="-1"></a><span class="fu">data</span>(Batting)</span>
-<span id="cb559-8"><a href="correlation-regression.html#cb559-8" tabindex="-1"></a>batting_2016 <span class="ot">&lt;-</span> Batting <span class="sc">%&gt;%</span></span>
-<span id="cb559-9"><a href="correlation-regression.html#cb559-9" tabindex="-1"></a>  <span class="fu">filter</span>(yearID <span class="sc">==</span> <span class="dv">2016</span>, AB <span class="sc">&gt;=</span> <span class="dv">400</span>)</span>
-<span id="cb559-10"><a href="correlation-regression.html#cb559-10" tabindex="-1"></a></span>
-<span id="cb559-11"><a href="correlation-regression.html#cb559-11" tabindex="-1"></a><span class="co"># Create simulated salary data based on performance</span></span>
-<span id="cb559-12"><a href="correlation-regression.html#cb559-12" tabindex="-1"></a><span class="co"># (In practice, you would use actual salary data from sources like Spotrac)</span></span>
-<span id="cb559-13"><a href="correlation-regression.html#cb559-13" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb559-14"><a href="correlation-regression.html#cb559-14" tabindex="-1"></a>player_economics <span class="ot">&lt;-</span> batting_2016 <span class="sc">%&gt;%</span></span>
-<span id="cb559-15"><a href="correlation-regression.html#cb559-15" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb559-16"><a href="correlation-regression.html#cb559-16" tabindex="-1"></a>    <span class="at">batting_avg =</span> H <span class="sc">/</span> AB,</span>
-<span id="cb559-17"><a href="correlation-regression.html#cb559-17" tabindex="-1"></a>    <span class="co"># Simulate salaries based on performance metrics plus random variation</span></span>
-<span id="cb559-18"><a href="correlation-regression.html#cb559-18" tabindex="-1"></a>    <span class="at">base_salary =</span> <span class="dv">500000</span>,</span>
-<span id="cb559-19"><a href="correlation-regression.html#cb559-19" tabindex="-1"></a>    <span class="at">hr_bonus =</span> HR <span class="sc">*</span> <span class="dv">50000</span>,</span>
-<span id="cb559-20"><a href="correlation-regression.html#cb559-20" tabindex="-1"></a>    <span class="at">rbi_bonus =</span> RBI <span class="sc">*</span> <span class="dv">10000</span>,</span>
-<span id="cb559-21"><a href="correlation-regression.html#cb559-21" tabindex="-1"></a>    <span class="at">avg_bonus =</span> (batting_avg <span class="sc">-</span> <span class="fl">0.250</span>) <span class="sc">*</span> <span class="dv">5000000</span>,</span>
-<span id="cb559-22"><a href="correlation-regression.html#cb559-22" tabindex="-1"></a>    <span class="at">random_component =</span> <span class="fu">rnorm</span>(<span class="fu">n</span>(), <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1000000</span>),</span>
-<span id="cb559-23"><a href="correlation-regression.html#cb559-23" tabindex="-1"></a>    <span class="at">salary =</span> <span class="fu">pmax</span>(base_salary <span class="sc">+</span> hr_bonus <span class="sc">+</span> rbi_bonus <span class="sc">+</span> avg_bonus <span class="sc">+</span> random_component,</span>
-<span id="cb559-24"><a href="correlation-regression.html#cb559-24" tabindex="-1"></a>                  <span class="dv">500000</span>)</span>
-<span id="cb559-25"><a href="correlation-regression.html#cb559-25" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb559-26"><a href="correlation-regression.html#cb559-26" tabindex="-1"></a>  <span class="fu">select</span>(playerID, salary, AB, H, HR, RBI, batting_avg)</span>
-<span id="cb559-27"><a href="correlation-regression.html#cb559-27" tabindex="-1"></a></span>
-<span id="cb559-28"><a href="correlation-regression.html#cb559-28" tabindex="-1"></a><span class="co"># Build salary prediction model</span></span>
-<span id="cb559-29"><a href="correlation-regression.html#cb559-29" tabindex="-1"></a>salary_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary) <span class="sc">~</span> batting_avg <span class="sc">+</span> HR <span class="sc">+</span> RBI,</span>
-<span id="cb559-30"><a href="correlation-regression.html#cb559-30" tabindex="-1"></a>                   <span class="at">data =</span> player_economics)</span>
-<span id="cb559-31"><a href="correlation-regression.html#cb559-31" tabindex="-1"></a></span>
-<span id="cb559-32"><a href="correlation-regression.html#cb559-32" tabindex="-1"></a><span class="fu">summary</span>(salary_model)</span></code></pre></div>
+<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="correlation-regression.html#cb552-1" tabindex="-1"></a><span class="co"># Predict player salaries based on performance</span></span>
+<span id="cb552-2"><a href="correlation-regression.html#cb552-2" tabindex="-1"></a><span class="co"># Using simulated MLB salary data based on 2016 statistics</span></span>
+<span id="cb552-3"><a href="correlation-regression.html#cb552-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb552-4"><a href="correlation-regression.html#cb552-4" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span>
+<span id="cb552-5"><a href="correlation-regression.html#cb552-5" tabindex="-1"></a></span>
+<span id="cb552-6"><a href="correlation-regression.html#cb552-6" tabindex="-1"></a><span class="co"># Load batting data</span></span>
+<span id="cb552-7"><a href="correlation-regression.html#cb552-7" tabindex="-1"></a><span class="fu">data</span>(Batting)</span>
+<span id="cb552-8"><a href="correlation-regression.html#cb552-8" tabindex="-1"></a>batting_2016 <span class="ot">&lt;-</span> Batting <span class="sc">%&gt;%</span></span>
+<span id="cb552-9"><a href="correlation-regression.html#cb552-9" tabindex="-1"></a>  <span class="fu">filter</span>(yearID <span class="sc">==</span> <span class="dv">2016</span>, AB <span class="sc">&gt;=</span> <span class="dv">400</span>)</span>
+<span id="cb552-10"><a href="correlation-regression.html#cb552-10" tabindex="-1"></a></span>
+<span id="cb552-11"><a href="correlation-regression.html#cb552-11" tabindex="-1"></a><span class="co"># Create simulated salary data based on performance</span></span>
+<span id="cb552-12"><a href="correlation-regression.html#cb552-12" tabindex="-1"></a><span class="co"># (In practice, you would use actual salary data from sources like Spotrac)</span></span>
+<span id="cb552-13"><a href="correlation-regression.html#cb552-13" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb552-14"><a href="correlation-regression.html#cb552-14" tabindex="-1"></a>player_economics <span class="ot">&lt;-</span> batting_2016 <span class="sc">%&gt;%</span></span>
+<span id="cb552-15"><a href="correlation-regression.html#cb552-15" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb552-16"><a href="correlation-regression.html#cb552-16" tabindex="-1"></a>    <span class="at">batting_avg =</span> H <span class="sc">/</span> AB,</span>
+<span id="cb552-17"><a href="correlation-regression.html#cb552-17" tabindex="-1"></a>    <span class="co"># Simulate salaries based on performance metrics plus random variation</span></span>
+<span id="cb552-18"><a href="correlation-regression.html#cb552-18" tabindex="-1"></a>    <span class="at">base_salary =</span> <span class="dv">500000</span>,</span>
+<span id="cb552-19"><a href="correlation-regression.html#cb552-19" tabindex="-1"></a>    <span class="at">hr_bonus =</span> HR <span class="sc">*</span> <span class="dv">50000</span>,</span>
+<span id="cb552-20"><a href="correlation-regression.html#cb552-20" tabindex="-1"></a>    <span class="at">rbi_bonus =</span> RBI <span class="sc">*</span> <span class="dv">10000</span>,</span>
+<span id="cb552-21"><a href="correlation-regression.html#cb552-21" tabindex="-1"></a>    <span class="at">avg_bonus =</span> (batting_avg <span class="sc">-</span> <span class="fl">0.250</span>) <span class="sc">*</span> <span class="dv">5000000</span>,</span>
+<span id="cb552-22"><a href="correlation-regression.html#cb552-22" tabindex="-1"></a>    <span class="at">random_component =</span> <span class="fu">rnorm</span>(<span class="fu">n</span>(), <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1000000</span>),</span>
+<span id="cb552-23"><a href="correlation-regression.html#cb552-23" tabindex="-1"></a>    <span class="at">salary =</span> <span class="fu">pmax</span>(base_salary <span class="sc">+</span> hr_bonus <span class="sc">+</span> rbi_bonus <span class="sc">+</span> avg_bonus <span class="sc">+</span> random_component,</span>
+<span id="cb552-24"><a href="correlation-regression.html#cb552-24" tabindex="-1"></a>                  <span class="dv">500000</span>)</span>
+<span id="cb552-25"><a href="correlation-regression.html#cb552-25" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb552-26"><a href="correlation-regression.html#cb552-26" tabindex="-1"></a>  <span class="fu">select</span>(playerID, salary, AB, H, HR, RBI, batting_avg)</span>
+<span id="cb552-27"><a href="correlation-regression.html#cb552-27" tabindex="-1"></a></span>
+<span id="cb552-28"><a href="correlation-regression.html#cb552-28" tabindex="-1"></a><span class="co"># Build salary prediction model</span></span>
+<span id="cb552-29"><a href="correlation-regression.html#cb552-29" tabindex="-1"></a>salary_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(salary) <span class="sc">~</span> batting_avg <span class="sc">+</span> HR <span class="sc">+</span> RBI,</span>
+<span id="cb552-30"><a href="correlation-regression.html#cb552-30" tabindex="-1"></a>                   <span class="at">data =</span> player_economics)</span>
+<span id="cb552-31"><a href="correlation-regression.html#cb552-31" tabindex="-1"></a></span>
+<span id="cb552-32"><a href="correlation-regression.html#cb552-32" tabindex="-1"></a><span class="fu">summary</span>(salary_model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = log(salary) ~ batting_avg + HR + RBI, data = player_economics)
@@ -1499,14 +1515,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residual standard error: 0.4735 on 171 degrees of freedom
 ## Multiple R-squared:  0.3323, Adjusted R-squared:  0.3206 
 ## F-statistic: 28.37 on 3 and 171 DF,  p-value: 6.149e-15</code></pre>
-<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb561-1"><a href="correlation-regression.html#cb561-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Key insights from salary prediction model:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="correlation-regression.html#cb554-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Key insights from salary prediction model:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Key insights from salary prediction model:</code></pre>
-<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="correlation-regression.html#cb563-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- Each additional home run is associated with approximately a&quot;</span>,</span>
-<span id="cb563-2"><a href="correlation-regression.html#cb563-2" tabindex="-1"></a>    <span class="fu">round</span>((<span class="fu">exp</span>(<span class="fu">coef</span>(salary_model)[<span class="st">&quot;HR&quot;</span>]) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
-<span id="cb563-3"><a href="correlation-regression.html#cb563-3" tabindex="-1"></a>    <span class="st">&quot;% increase in salary</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="correlation-regression.html#cb556-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- Each additional home run is associated with approximately a&quot;</span>,</span>
+<span id="cb556-2"><a href="correlation-regression.html#cb556-2" tabindex="-1"></a>    <span class="fu">round</span>((<span class="fu">exp</span>(<span class="fu">coef</span>(salary_model)[<span class="st">&quot;HR&quot;</span>]) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>),</span>
+<span id="cb556-3"><a href="correlation-regression.html#cb556-3" tabindex="-1"></a>    <span class="st">&quot;% increase in salary</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## - Each additional home run is associated with approximately a 3.13 % increase in salary</code></pre>
-<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="correlation-regression.html#cb565-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- R-squared:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(salary_model)<span class="sc">$</span>r.squared, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb558-1"><a href="correlation-regression.html#cb558-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- R-squared:&quot;</span>, <span class="fu">round</span>(<span class="fu">summary</span>(salary_model)<span class="sc">$</span>r.squared, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## - R-squared: 0.332</code></pre>
 </div>
 </div>
@@ -1515,43 +1531,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="exercise-1-correlation-analysis" class="section level3 hasAnchor" number="8.6.1">
 <h3><span class="header-section-number">8.6.1</span> Exercise 1: Correlation Analysis<a href="correlation-regression.html#exercise-1-correlation-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using the Lahman baseball database, analyze the relationship between team payroll and wins:</p>
-<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="correlation-regression.html#cb567-1" tabindex="-1"></a><span class="co"># Load data</span></span>
-<span id="cb567-2"><a href="correlation-regression.html#cb567-2" tabindex="-1"></a><span class="fu">data</span>(Salaries)</span>
-<span id="cb567-3"><a href="correlation-regression.html#cb567-3" tabindex="-1"></a><span class="fu">data</span>(Teams)</span>
-<span id="cb567-4"><a href="correlation-regression.html#cb567-4" tabindex="-1"></a></span>
-<span id="cb567-5"><a href="correlation-regression.html#cb567-5" tabindex="-1"></a><span class="co"># Calculate team payroll by year</span></span>
-<span id="cb567-6"><a href="correlation-regression.html#cb567-6" tabindex="-1"></a>team_payroll <span class="ot">&lt;-</span> Salaries <span class="sc">%&gt;%</span></span>
-<span id="cb567-7"><a href="correlation-regression.html#cb567-7" tabindex="-1"></a>  <span class="fu">group_by</span>(teamID, yearID) <span class="sc">%&gt;%</span></span>
-<span id="cb567-8"><a href="correlation-regression.html#cb567-8" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_payroll =</span> <span class="fu">sum</span>(salary))</span>
-<span id="cb567-9"><a href="correlation-regression.html#cb567-9" tabindex="-1"></a></span>
-<span id="cb567-10"><a href="correlation-regression.html#cb567-10" tabindex="-1"></a><span class="co"># Merge with team performance</span></span>
-<span id="cb567-11"><a href="correlation-regression.html#cb567-11" tabindex="-1"></a>team_data <span class="ot">&lt;-</span> Teams <span class="sc">%&gt;%</span></span>
-<span id="cb567-12"><a href="correlation-regression.html#cb567-12" tabindex="-1"></a>  <span class="fu">inner_join</span>(team_payroll, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;teamID&quot;</span>, <span class="st">&quot;yearID&quot;</span>))</span>
-<span id="cb567-13"><a href="correlation-regression.html#cb567-13" tabindex="-1"></a></span>
-<span id="cb567-14"><a href="correlation-regression.html#cb567-14" tabindex="-1"></a><span class="co"># Test correlation between payroll and wins</span></span>
-<span id="cb567-15"><a href="correlation-regression.html#cb567-15" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span></code></pre></div>
+<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="correlation-regression.html#cb560-1" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb560-2"><a href="correlation-regression.html#cb560-2" tabindex="-1"></a><span class="fu">data</span>(Salaries)</span>
+<span id="cb560-3"><a href="correlation-regression.html#cb560-3" tabindex="-1"></a><span class="fu">data</span>(Teams)</span>
+<span id="cb560-4"><a href="correlation-regression.html#cb560-4" tabindex="-1"></a></span>
+<span id="cb560-5"><a href="correlation-regression.html#cb560-5" tabindex="-1"></a><span class="co"># Calculate team payroll by year</span></span>
+<span id="cb560-6"><a href="correlation-regression.html#cb560-6" tabindex="-1"></a>team_payroll <span class="ot">&lt;-</span> Salaries <span class="sc">%&gt;%</span></span>
+<span id="cb560-7"><a href="correlation-regression.html#cb560-7" tabindex="-1"></a>  <span class="fu">group_by</span>(teamID, yearID) <span class="sc">%&gt;%</span></span>
+<span id="cb560-8"><a href="correlation-regression.html#cb560-8" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_payroll =</span> <span class="fu">sum</span>(salary))</span>
+<span id="cb560-9"><a href="correlation-regression.html#cb560-9" tabindex="-1"></a></span>
+<span id="cb560-10"><a href="correlation-regression.html#cb560-10" tabindex="-1"></a><span class="co"># Merge with team performance</span></span>
+<span id="cb560-11"><a href="correlation-regression.html#cb560-11" tabindex="-1"></a>team_data <span class="ot">&lt;-</span> Teams <span class="sc">%&gt;%</span></span>
+<span id="cb560-12"><a href="correlation-regression.html#cb560-12" tabindex="-1"></a>  <span class="fu">inner_join</span>(team_payroll, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;teamID&quot;</span>, <span class="st">&quot;yearID&quot;</span>))</span>
+<span id="cb560-13"><a href="correlation-regression.html#cb560-13" tabindex="-1"></a></span>
+<span id="cb560-14"><a href="correlation-regression.html#cb560-14" tabindex="-1"></a><span class="co"># Test correlation between payroll and wins</span></span>
+<span id="cb560-15"><a href="correlation-regression.html#cb560-15" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span></code></pre></div>
 </div>
 <div id="exercise-2-simple-regression" class="section level3 hasAnchor" number="8.6.2">
 <h3><span class="header-section-number">8.6.2</span> Exercise 2: Simple Regression<a href="correlation-regression.html#exercise-2-simple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Build a regression model to predict runs scored from hits:</p>
-<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="correlation-regression.html#cb568-1" tabindex="-1"></a><span class="fu">data</span>(Teams)</span>
-<span id="cb568-2"><a href="correlation-regression.html#cb568-2" tabindex="-1"></a></span>
-<span id="cb568-3"><a href="correlation-regression.html#cb568-3" tabindex="-1"></a>recent_teams <span class="ot">&lt;-</span> Teams <span class="sc">%&gt;%</span></span>
-<span id="cb568-4"><a href="correlation-regression.html#cb568-4" tabindex="-1"></a>  <span class="fu">filter</span>(yearID <span class="sc">&gt;=</span> <span class="dv">2010</span>)</span>
-<span id="cb568-5"><a href="correlation-regression.html#cb568-5" tabindex="-1"></a></span>
-<span id="cb568-6"><a href="correlation-regression.html#cb568-6" tabindex="-1"></a><span class="co"># Build model: predict R (runs) from H (hits)</span></span>
-<span id="cb568-7"><a href="correlation-regression.html#cb568-7" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span>
-<span id="cb568-8"><a href="correlation-regression.html#cb568-8" tabindex="-1"></a></span>
-<span id="cb568-9"><a href="correlation-regression.html#cb568-9" tabindex="-1"></a><span class="co"># Interpret the coefficients</span></span>
-<span id="cb568-10"><a href="correlation-regression.html#cb568-10" tabindex="-1"></a><span class="co"># Make predictions for teams with 1400, 1500, and 1600 hits</span></span></code></pre></div>
+<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb561-1"><a href="correlation-regression.html#cb561-1" tabindex="-1"></a><span class="fu">data</span>(Teams)</span>
+<span id="cb561-2"><a href="correlation-regression.html#cb561-2" tabindex="-1"></a></span>
+<span id="cb561-3"><a href="correlation-regression.html#cb561-3" tabindex="-1"></a>recent_teams <span class="ot">&lt;-</span> Teams <span class="sc">%&gt;%</span></span>
+<span id="cb561-4"><a href="correlation-regression.html#cb561-4" tabindex="-1"></a>  <span class="fu">filter</span>(yearID <span class="sc">&gt;=</span> <span class="dv">2010</span>)</span>
+<span id="cb561-5"><a href="correlation-regression.html#cb561-5" tabindex="-1"></a></span>
+<span id="cb561-6"><a href="correlation-regression.html#cb561-6" tabindex="-1"></a><span class="co"># Build model: predict R (runs) from H (hits)</span></span>
+<span id="cb561-7"><a href="correlation-regression.html#cb561-7" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span>
+<span id="cb561-8"><a href="correlation-regression.html#cb561-8" tabindex="-1"></a></span>
+<span id="cb561-9"><a href="correlation-regression.html#cb561-9" tabindex="-1"></a><span class="co"># Interpret the coefficients</span></span>
+<span id="cb561-10"><a href="correlation-regression.html#cb561-10" tabindex="-1"></a><span class="co"># Make predictions for teams with 1400, 1500, and 1600 hits</span></span></code></pre></div>
 </div>
 <div id="exercise-3-multiple-regression" class="section level3 hasAnchor" number="8.6.3">
 <h3><span class="header-section-number">8.6.3</span> Exercise 3: Multiple Regression<a href="correlation-regression.html#exercise-3-multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Predict team wins using multiple offensive statistics:</p>
-<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="correlation-regression.html#cb569-1" tabindex="-1"></a><span class="co"># Use HR (home runs), BB (walks), and SO (strikeouts) to predict W (wins)</span></span>
-<span id="cb569-2"><a href="correlation-regression.html#cb569-2" tabindex="-1"></a><span class="co"># Build the model</span></span>
-<span id="cb569-3"><a href="correlation-regression.html#cb569-3" tabindex="-1"></a><span class="co"># Compare R² with single-predictor models</span></span>
-<span id="cb569-4"><a href="correlation-regression.html#cb569-4" tabindex="-1"></a><span class="co"># Identify which predictor is most important</span></span></code></pre></div>
+<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="correlation-regression.html#cb562-1" tabindex="-1"></a><span class="co"># Use HR (home runs), BB (walks), and SO (strikeouts) to predict W (wins)</span></span>
+<span id="cb562-2"><a href="correlation-regression.html#cb562-2" tabindex="-1"></a><span class="co"># Build the model</span></span>
+<span id="cb562-3"><a href="correlation-regression.html#cb562-3" tabindex="-1"></a><span class="co"># Compare R² with single-predictor models</span></span>
+<span id="cb562-4"><a href="correlation-regression.html#cb562-4" tabindex="-1"></a><span class="co"># Identify which predictor is most important</span></span></code></pre></div>
 </div>
 <div id="exercise-4-applied-analysis" class="section level3 hasAnchor" number="8.6.4">
 <h3><span class="header-section-number">8.6.4</span> Exercise 4: Applied Analysis<a href="correlation-regression.html#exercise-4-applied-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>

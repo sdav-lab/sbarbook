@@ -4,24 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Sampling and Research Methods | _main.knit</title>
-  <meta name="description" content="" />
+  <title>4 Sampling and Research Methods | Sport Business Analytics with R</title>
+  <meta name="description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Sampling and Research Methods | _main.knit" />
+  <meta property="og:title" content="4 Sampling and Research Methods | Sport Business Analytics with R" />
   <meta property="og:type" content="book" />
   
-  
+  <meta property="og:description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Sampling and Research Methods | _main.knit" />
+  <meta name="twitter:title" content="4 Sampling and Research Methods | Sport Business Analytics with R" />
   
-  
+  <meta name="twitter:description" content="A comprehensive guide to sport business analytics using R, designed for SPM 4703 students at the University of North Florida." />
   
 
+<meta name="author" content="Sean Davis, Ph.D." />
 
 
+<meta name="date" content="2025-11-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,6 +137,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Sport Business Analytics with R</a></li>
 
 <li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-sport-business-analytics"><i class="fa fa-check"></i>Why Sport Business Analytics?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-book"><i class="fa fa-check"></i>About This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-youll-learn"><i class="fa fa-check"></i>What You’ll Learn</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-structure"><i class="fa fa-check"></i>Course Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-requirements"><i class="fa fa-check"></i>Software Requirements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-book"><i class="fa fa-check"></i>How to Use This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dataset-information"><i class="fa fa-check"></i>Dataset Information</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#getting-help"><i class="fa fa-check"></i>Getting Help</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license-and-usage"><i class="fa fa-check"></i>License and Usage</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Sport Business Analytics</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-sport-business-analytics"><i class="fa fa-check"></i><b>1.1</b> What is Sport Business Analytics?</a>
@@ -749,7 +768,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sport Business Analytics with R</a>
           </h1>
         </div>
 
@@ -914,16 +933,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Example in Sport Analytics</strong>:</p>
 <p>You want to survey 200 season ticket holders about their satisfaction. You have a list of 2,000 season ticket holders. You use a random number generator to select 200 of them.</p>
 <p>In R, you might use:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="sampling.html#cb76-1" tabindex="-1"></a><span class="co"># Create sample frame of 2000 season ticket holders</span></span>
-<span id="cb76-2"><a href="sampling.html#cb76-2" tabindex="-1"></a>season_ticket_holders <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb76-3"><a href="sampling.html#cb76-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2000</span>,</span>
-<span id="cb76-4"><a href="sampling.html#cb76-4" tabindex="-1"></a>  <span class="at">Name =</span> <span class="fu">paste</span>(<span class="st">&quot;STH&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2000</span>)</span>
-<span id="cb76-5"><a href="sampling.html#cb76-5" tabindex="-1"></a>)</span>
-<span id="cb76-6"><a href="sampling.html#cb76-6" tabindex="-1"></a></span>
-<span id="cb76-7"><a href="sampling.html#cb76-7" tabindex="-1"></a><span class="co"># Simple random sample of 200</span></span>
-<span id="cb76-8"><a href="sampling.html#cb76-8" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb76-9"><a href="sampling.html#cb76-9" tabindex="-1"></a>sample_ids <span class="ot">&lt;-</span> <span class="fu">sample</span>(season_ticket_holders<span class="sc">$</span>ID, <span class="at">size =</span> <span class="dv">200</span>)</span>
-<span id="cb76-10"><a href="sampling.html#cb76-10" tabindex="-1"></a>selected_sample <span class="ot">&lt;-</span> season_ticket_holders[season_ticket_holders<span class="sc">$</span>ID <span class="sc">%in%</span> sample_ids, ]</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="sampling.html#cb75-1" tabindex="-1"></a><span class="co"># Create sample frame of 2000 season ticket holders</span></span>
+<span id="cb75-2"><a href="sampling.html#cb75-2" tabindex="-1"></a>season_ticket_holders <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb75-3"><a href="sampling.html#cb75-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2000</span>,</span>
+<span id="cb75-4"><a href="sampling.html#cb75-4" tabindex="-1"></a>  <span class="at">Name =</span> <span class="fu">paste</span>(<span class="st">&quot;STH&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2000</span>)</span>
+<span id="cb75-5"><a href="sampling.html#cb75-5" tabindex="-1"></a>)</span>
+<span id="cb75-6"><a href="sampling.html#cb75-6" tabindex="-1"></a></span>
+<span id="cb75-7"><a href="sampling.html#cb75-7" tabindex="-1"></a><span class="co"># Simple random sample of 200</span></span>
+<span id="cb75-8"><a href="sampling.html#cb75-8" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb75-9"><a href="sampling.html#cb75-9" tabindex="-1"></a>sample_ids <span class="ot">&lt;-</span> <span class="fu">sample</span>(season_ticket_holders<span class="sc">$</span>ID, <span class="at">size =</span> <span class="dv">200</span>)</span>
+<span id="cb75-10"><a href="sampling.html#cb75-10" tabindex="-1"></a>selected_sample <span class="ot">&lt;-</span> season_ticket_holders[season_ticket_holders<span class="sc">$</span>ID <span class="sc">%in%</span> sample_ids, ]</span></code></pre></div>
 </div>
 <div id="systematic-sampling" class="section level3 hasAnchor" number="4.5.2">
 <h3><span class="header-section-number">4.5.2</span> Systematic Sampling<a href="sampling.html#systematic-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -942,14 +961,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Random start: 7</li>
 <li>Select fans #7, 17, 27, 37, 47, … , 997</li>
 </ul>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="sampling.html#cb77-1" tabindex="-1"></a><span class="co"># Systematic sampling</span></span>
-<span id="cb77-2"><a href="sampling.html#cb77-2" tabindex="-1"></a>sample_frame_size <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb77-3"><a href="sampling.html#cb77-3" tabindex="-1"></a>target_sample_size <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb77-4"><a href="sampling.html#cb77-4" tabindex="-1"></a></span>
-<span id="cb77-5"><a href="sampling.html#cb77-5" tabindex="-1"></a>k <span class="ot">&lt;-</span> sample_frame_size <span class="sc">/</span> target_sample_size  <span class="co"># Skip interval = 10</span></span>
-<span id="cb77-6"><a href="sampling.html#cb77-6" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>k, <span class="dv">1</span>)  <span class="co"># Random start between 1 and 10</span></span>
-<span id="cb77-7"><a href="sampling.html#cb77-7" tabindex="-1"></a></span>
-<span id="cb77-8"><a href="sampling.html#cb77-8" tabindex="-1"></a>systematic_sample <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> start, <span class="at">to =</span> sample_frame_size, <span class="at">by =</span> k)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="sampling.html#cb76-1" tabindex="-1"></a><span class="co"># Systematic sampling</span></span>
+<span id="cb76-2"><a href="sampling.html#cb76-2" tabindex="-1"></a>sample_frame_size <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb76-3"><a href="sampling.html#cb76-3" tabindex="-1"></a>target_sample_size <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb76-4"><a href="sampling.html#cb76-4" tabindex="-1"></a></span>
+<span id="cb76-5"><a href="sampling.html#cb76-5" tabindex="-1"></a>k <span class="ot">&lt;-</span> sample_frame_size <span class="sc">/</span> target_sample_size  <span class="co"># Skip interval = 10</span></span>
+<span id="cb76-6"><a href="sampling.html#cb76-6" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>k, <span class="dv">1</span>)  <span class="co"># Random start between 1 and 10</span></span>
+<span id="cb76-7"><a href="sampling.html#cb76-7" tabindex="-1"></a></span>
+<span id="cb76-8"><a href="sampling.html#cb76-8" tabindex="-1"></a>systematic_sample <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> start, <span class="at">to =</span> sample_frame_size, <span class="at">by =</span> k)</span></code></pre></div>
 <p><strong>When to use</strong>: Systematic sampling ensures even representation across the sample frame, which is useful when the frame is ordered in some meaningful way (e.g., alphabetically, chronologically).</p>
 </div>
 <div id="stratified-sampling" class="section level3 hasAnchor" number="4.5.3">
@@ -964,19 +983,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>FCS schools: 120 schools</li>
 </ul>
 <p>Instead of simple random sampling (which might under-represent smaller groups), you stratify by division and sample from each:</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="sampling.html#cb78-1" tabindex="-1"></a><span class="co"># Stratified sampling example</span></span>
-<span id="cb78-2"><a href="sampling.html#cb78-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb78-3"><a href="sampling.html#cb78-3" tabindex="-1"></a></span>
-<span id="cb78-4"><a href="sampling.html#cb78-4" tabindex="-1"></a><span class="co"># Sample frame with strata</span></span>
-<span id="cb78-5"><a href="sampling.html#cb78-5" tabindex="-1"></a>schools <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb78-6"><a href="sampling.html#cb78-6" tabindex="-1"></a>  <span class="at">School =</span> <span class="fu">paste</span>(<span class="st">&quot;School&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">250</span>),</span>
-<span id="cb78-7"><a href="sampling.html#cb78-7" tabindex="-1"></a>  <span class="at">Division =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Power 5&quot;</span>, <span class="dv">65</span>), <span class="fu">rep</span>(<span class="st">&quot;Group of 5&quot;</span>, <span class="dv">65</span>), <span class="fu">rep</span>(<span class="st">&quot;FCS&quot;</span>, <span class="dv">120</span>))</span>
-<span id="cb78-8"><a href="sampling.html#cb78-8" tabindex="-1"></a>)</span>
-<span id="cb78-9"><a href="sampling.html#cb78-9" tabindex="-1"></a></span>
-<span id="cb78-10"><a href="sampling.html#cb78-10" tabindex="-1"></a><span class="co"># Sample 30 from each stratum</span></span>
-<span id="cb78-11"><a href="sampling.html#cb78-11" tabindex="-1"></a>stratified_sample <span class="ot">&lt;-</span> schools <span class="sc">%&gt;%</span></span>
-<span id="cb78-12"><a href="sampling.html#cb78-12" tabindex="-1"></a>  <span class="fu">group_by</span>(Division) <span class="sc">%&gt;%</span></span>
-<span id="cb78-13"><a href="sampling.html#cb78-13" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">30</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="sampling.html#cb77-1" tabindex="-1"></a><span class="co"># Stratified sampling example</span></span>
+<span id="cb77-2"><a href="sampling.html#cb77-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb77-3"><a href="sampling.html#cb77-3" tabindex="-1"></a></span>
+<span id="cb77-4"><a href="sampling.html#cb77-4" tabindex="-1"></a><span class="co"># Sample frame with strata</span></span>
+<span id="cb77-5"><a href="sampling.html#cb77-5" tabindex="-1"></a>schools <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb77-6"><a href="sampling.html#cb77-6" tabindex="-1"></a>  <span class="at">School =</span> <span class="fu">paste</span>(<span class="st">&quot;School&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">250</span>),</span>
+<span id="cb77-7"><a href="sampling.html#cb77-7" tabindex="-1"></a>  <span class="at">Division =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;Power 5&quot;</span>, <span class="dv">65</span>), <span class="fu">rep</span>(<span class="st">&quot;Group of 5&quot;</span>, <span class="dv">65</span>), <span class="fu">rep</span>(<span class="st">&quot;FCS&quot;</span>, <span class="dv">120</span>))</span>
+<span id="cb77-8"><a href="sampling.html#cb77-8" tabindex="-1"></a>)</span>
+<span id="cb77-9"><a href="sampling.html#cb77-9" tabindex="-1"></a></span>
+<span id="cb77-10"><a href="sampling.html#cb77-10" tabindex="-1"></a><span class="co"># Sample 30 from each stratum</span></span>
+<span id="cb77-11"><a href="sampling.html#cb77-11" tabindex="-1"></a>stratified_sample <span class="ot">&lt;-</span> schools <span class="sc">%&gt;%</span></span>
+<span id="cb77-12"><a href="sampling.html#cb77-12" tabindex="-1"></a>  <span class="fu">group_by</span>(Division) <span class="sc">%&gt;%</span></span>
+<span id="cb77-13"><a href="sampling.html#cb77-13" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">30</span>)</span></code></pre></div>
 </div>
 <div id="proportionate-vs.-disproportionate-sampling" class="section level3 hasAnchor" number="4.5.4">
 <h3><span class="header-section-number">4.5.4</span> Proportionate vs. Disproportionate Sampling<a href="sampling.html#proportionate-vs.-disproportionate-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1003,13 +1022,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Stage 2</strong>: Randomly select 3 soccer leagues within each selected county</li>
 <li><strong>Stage 3</strong>: Survey all players in selected leagues (or sample within leagues)</li>
 </ol>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="sampling.html#cb79-1" tabindex="-1"></a><span class="co"># Two-stage cluster sampling</span></span>
-<span id="cb79-2"><a href="sampling.html#cb79-2" tabindex="-1"></a><span class="co"># Stage 1: Select counties</span></span>
-<span id="cb79-3"><a href="sampling.html#cb79-3" tabindex="-1"></a>florida_counties <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;County&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">67</span>)</span>
-<span id="cb79-4"><a href="sampling.html#cb79-4" tabindex="-1"></a>selected_counties <span class="ot">&lt;-</span> <span class="fu">sample</span>(florida_counties, <span class="dv">10</span>)</span>
-<span id="cb79-5"><a href="sampling.html#cb79-5" tabindex="-1"></a></span>
-<span id="cb79-6"><a href="sampling.html#cb79-6" tabindex="-1"></a><span class="co"># Stage 2: Within each county, select leagues</span></span>
-<span id="cb79-7"><a href="sampling.html#cb79-7" tabindex="-1"></a><span class="co"># (This would require a data frame with leagues nested in counties)</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="sampling.html#cb78-1" tabindex="-1"></a><span class="co"># Two-stage cluster sampling</span></span>
+<span id="cb78-2"><a href="sampling.html#cb78-2" tabindex="-1"></a><span class="co"># Stage 1: Select counties</span></span>
+<span id="cb78-3"><a href="sampling.html#cb78-3" tabindex="-1"></a>florida_counties <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;County&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">67</span>)</span>
+<span id="cb78-4"><a href="sampling.html#cb78-4" tabindex="-1"></a>selected_counties <span class="ot">&lt;-</span> <span class="fu">sample</span>(florida_counties, <span class="dv">10</span>)</span>
+<span id="cb78-5"><a href="sampling.html#cb78-5" tabindex="-1"></a></span>
+<span id="cb78-6"><a href="sampling.html#cb78-6" tabindex="-1"></a><span class="co"># Stage 2: Within each county, select leagues</span></span>
+<span id="cb78-7"><a href="sampling.html#cb78-7" tabindex="-1"></a><span class="co"># (This would require a data frame with leagues nested in counties)</span></span></code></pre></div>
 <p><strong>When to use</strong>: Cluster sampling is most efficient for geographically dispersed populations or when creating a complete sampling frame is impractical.</p>
 </div>
 </div>
