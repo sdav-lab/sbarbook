@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10 Introduction to Tableau | _main.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10 Introduction to Tableau | _main.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10 Introduction to Tableau | _main.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-visualization.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Sport Business Analytics with R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Sport Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-sport-business-analytics"><i class="fa fa-check"></i><b>1.1</b> What is Sport Business Analytics?</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#key-components"><i class="fa fa-check"></i><b>1.1.1</b> Key Components</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-data-revolution-in-sports"><i class="fa fa-check"></i><b>1.2</b> The Data Revolution in Sports</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#historical-context"><i class="fa fa-check"></i><b>1.2.1</b> Historical Context</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#applications-across-the-sports-industry"><i class="fa fa-check"></i><b>1.3</b> Applications Across the Sports Industry</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#player-performance-analysis"><i class="fa fa-check"></i><b>1.3.1</b> 1. Player Performance Analysis</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#business-operations"><i class="fa fa-check"></i><b>1.3.2</b> 2. Business Operations</a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#marketing-and-sales"><i class="fa fa-check"></i><b>1.3.3</b> 3. Marketing and Sales</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#career-opportunities-in-sport-analytics"><i class="fa fa-check"></i><b>1.4</b> Career Opportunities in Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#common-roles"><i class="fa fa-check"></i><b>1.4.1</b> Common Roles</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#required-skills"><i class="fa fa-check"></i><b>1.4.2</b> Required Skills</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#analytical-methods-in-sports"><i class="fa fa-check"></i><b>1.5</b> Analytical Methods in Sports</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#descriptive-analytics"><i class="fa fa-check"></i><b>1.5.1</b> Descriptive Analytics</a></li>
+<li class="chapter" data-level="1.5.2" data-path="intro.html"><a href="intro.html#predictive-analytics"><i class="fa fa-check"></i><b>1.5.2</b> Predictive Analytics</a></li>
+<li class="chapter" data-level="1.5.3" data-path="intro.html"><a href="intro.html#prescriptive-analytics"><i class="fa fa-check"></i><b>1.5.3</b> Prescriptive Analytics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#case-study-the-moneyball-revolution"><i class="fa fa-check"></i><b>1.6</b> Case Study: The Moneyball Revolution</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#key-lessons"><i class="fa fa-check"></i><b>1.6.1</b> Key Lessons</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#challenges-in-sport-analytics"><i class="fa fa-check"></i><b>1.7</b> Challenges in Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#data-quality-issues"><i class="fa fa-check"></i><b>1.7.1</b> Data Quality Issues</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#organizational-barriers"><i class="fa fa-check"></i><b>1.7.2</b> Organizational Barriers</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#ethical-considerations"><i class="fa fa-check"></i><b>1.7.3</b> Ethical Considerations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#the-future-of-sport-analytics"><i class="fa fa-check"></i><b>1.8</b> The Future of Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#emerging-trends"><i class="fa fa-check"></i><b>1.8.1</b> Emerging Trends</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#technology-integration"><i class="fa fa-check"></i><b>1.8.2</b> Technology Integration</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#chapter-summary"><i class="fa fa-check"></i><b>1.9</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#key-takeaways"><i class="fa fa-check"></i><b>1.9.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="1.9.2" data-path="intro.html"><a href="intro.html#next-steps"><i class="fa fa-check"></i><b>1.9.2</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#practice-exercises"><i class="fa fa-check"></i><b>1.10</b> Practice Exercises</a></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#references"><i class="fa fa-check"></i><b>1.11</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-setup.html"><a href="r-setup.html"><i class="fa fa-check"></i><b>2</b> Getting Started with R for Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="r-setup.html"><a href="r-setup.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>2.1</b> Installing R and RStudio</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="r-setup.html"><a href="r-setup.html#r-installation"><i class="fa fa-check"></i><b>2.1.1</b> R Installation</a></li>
+<li class="chapter" data-level="2.1.2" data-path="r-setup.html"><a href="r-setup.html#rstudio-installation"><i class="fa fa-check"></i><b>2.1.2</b> RStudio Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="r-setup.html"><a href="r-setup.html#r-basics"><i class="fa fa-check"></i><b>2.2</b> R Basics</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="r-setup.html"><a href="r-setup.html#r-data-types"><i class="fa fa-check"></i><b>2.2.1</b> R Data Types</a></li>
+<li class="chapter" data-level="2.2.2" data-path="r-setup.html"><a href="r-setup.html#r-functions"><i class="fa fa-check"></i><b>2.2.2</b> R Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="r-setup.html"><a href="r-setup.html#essential-packages-for-sport-analytics"><i class="fa fa-check"></i><b>2.3</b> Essential Packages for Sport Analytics</a></li>
+<li class="chapter" data-level="2.4" data-path="r-setup.html"><a href="r-setup.html#data-import-and-manipulation"><i class="fa fa-check"></i><b>2.4</b> Data Import and Manipulation</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="r-setup.html"><a href="r-setup.html#loading-and-exploring-data"><i class="fa fa-check"></i><b>2.4.1</b> Loading and Exploring Data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="r-setup.html"><a href="r-setup.html#basic-data-manipulation"><i class="fa fa-check"></i><b>2.4.2</b> Basic Data Manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="r-setup.html"><a href="r-setup.html#working-with-the-lahman-database"><i class="fa fa-check"></i><b>2.5</b> Working with the Lahman Database</a></li>
+<li class="chapter" data-level="2.6" data-path="r-setup.html"><a href="r-setup.html#data-management-best-practices"><i class="fa fa-check"></i><b>2.6</b> Data Management Best Practices</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="r-setup.html"><a href="r-setup.html#handling-missing-data"><i class="fa fa-check"></i><b>2.6.1</b> Handling Missing Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="r-setup.html"><a href="r-setup.html#data-type-conversion"><i class="fa fa-check"></i><b>2.6.2</b> Data Type Conversion</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="r-setup.html"><a href="r-setup.html#data-visualization-basics"><i class="fa fa-check"></i><b>2.7</b> Data Visualization Basics</a></li>
+<li class="chapter" data-level="2.8" data-path="r-setup.html"><a href="r-setup.html#practice-exercises-1"><i class="fa fa-check"></i><b>2.8</b> Practice Exercises</a></li>
+<li class="chapter" data-level="2.9" data-path="r-setup.html"><a href="r-setup.html#common-r-errors-and-solutions"><i class="fa fa-check"></i><b>2.9</b> Common R Errors and Solutions</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="r-setup.html"><a href="r-setup.html#common-issues"><i class="fa fa-check"></i><b>2.9.1</b> Common Issues:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="r-setup.html"><a href="r-setup.html#chapter-summary-1"><i class="fa fa-check"></i><b>2.10</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="r-setup.html"><a href="r-setup.html#key-takeaways-1"><i class="fa fa-check"></i><b>2.10.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="2.10.2" data-path="r-setup.html"><a href="r-setup.html#next-steps-1"><i class="fa fa-check"></i><b>2.10.2</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="r-setup.html"><a href="r-setup.html#references-1"><i class="fa fa-check"></i><b>2.11</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>3</b> Sport Data Sources</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-sources.html"><a href="data-sources.html#public-sport-databases"><i class="fa fa-check"></i><b>3.1</b> Public Sport Databases</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="data-sources.html"><a href="data-sources.html#lahman-baseball-database"><i class="fa fa-check"></i><b>3.1.1</b> Lahman Baseball Database</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-sources.html"><a href="data-sources.html#nba-stats-database"><i class="fa fa-check"></i><b>3.1.2</b> NBA Stats Database</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data-sources.html"><a href="data-sources.html#web-scraping-for-sport-data"><i class="fa fa-check"></i><b>3.2</b> Web Scraping for Sport Data</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-sources.html"><a href="data-sources.html#using-rvest-for-web-scraping"><i class="fa fa-check"></i><b>3.2.1</b> Using rvest for Web Scraping</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-sources.html"><a href="data-sources.html#example-scraping-espn-data"><i class="fa fa-check"></i><b>3.2.2</b> Example: Scraping ESPN Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-sources.html"><a href="data-sources.html#api-integration-for-real-time-data"><i class="fa fa-check"></i><b>3.3</b> API Integration for Real-time Data</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="data-sources.html"><a href="data-sources.html#sportradar-api"><i class="fa fa-check"></i><b>3.3.1</b> Sportradar API</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-sources.html"><a href="data-sources.html#espn-api-access"><i class="fa fa-check"></i><b>3.3.2</b> ESPN API Access</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="data-sources.html"><a href="data-sources.html#data-quality-and-cleaning-considerations"><i class="fa fa-check"></i><b>3.4</b> Data Quality and Cleaning Considerations</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="data-sources.html"><a href="data-sources.html#missing-data-issues"><i class="fa fa-check"></i><b>3.4.1</b> Missing Data Issues</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-sources.html"><a href="data-sources.html#data-type-consistency"><i class="fa fa-check"></i><b>3.4.2</b> Data Type Consistency</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-sources.html"><a href="data-sources.html#data-storage-and-management"><i class="fa fa-check"></i><b>3.5</b> Data Storage and Management</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="data-sources.html"><a href="data-sources.html#database-connections"><i class="fa fa-check"></i><b>3.5.1</b> Database Connections</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-sources.html"><a href="data-sources.html#data-import-functions"><i class="fa fa-check"></i><b>3.5.2</b> Data Import Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-sources.html"><a href="data-sources.html#practical-examples"><i class="fa fa-check"></i><b>3.6</b> Practical Examples</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="data-sources.html"><a href="data-sources.html#loading-real-sport-data"><i class="fa fa-check"></i><b>3.6.1</b> Loading Real Sport Data</a></li>
+<li class="chapter" data-level="3.6.2" data-path="data-sources.html"><a href="data-sources.html#data-transformation"><i class="fa fa-check"></i><b>3.6.2</b> Data Transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="data-sources.html"><a href="data-sources.html#practice-exercises-2"><i class="fa fa-check"></i><b>3.7</b> Practice Exercises</a></li>
+<li class="chapter" data-level="3.8" data-path="data-sources.html"><a href="data-sources.html#chapter-summary-2"><i class="fa fa-check"></i><b>3.8</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="data-sources.html"><a href="data-sources.html#key-takeaways-2"><i class="fa fa-check"></i><b>3.8.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="3.8.2" data-path="data-sources.html"><a href="data-sources.html#next-steps-2"><i class="fa fa-check"></i><b>3.8.2</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="data-sources.html"><a href="data-sources.html#references-2"><i class="fa fa-check"></i><b>3.9</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>4</b> Sampling and Research Methods</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="sampling.html"><a href="sampling.html#overview"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2" data-path="sampling.html"><a href="sampling.html#the-role-of-sampling-in-analytics"><i class="fa fa-check"></i><b>4.2</b> The Role of Sampling in Analytics</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="sampling.html"><a href="sampling.html#what-is-statistics"><i class="fa fa-check"></i><b>4.2.1</b> What is Statistics?</a></li>
+<li class="chapter" data-level="4.2.2" data-path="sampling.html"><a href="sampling.html#why-sample-instead-of-measuring-everyone"><i class="fa fa-check"></i><b>4.2.2</b> Why Sample Instead of Measuring Everyone?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="sampling.html"><a href="sampling.html#sampling-terminology"><i class="fa fa-check"></i><b>4.3</b> Sampling Terminology</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="sampling.html"><a href="sampling.html#population"><i class="fa fa-check"></i><b>4.3.1</b> Population</a></li>
+<li class="chapter" data-level="4.3.2" data-path="sampling.html"><a href="sampling.html#sample-frame"><i class="fa fa-check"></i><b>4.3.2</b> Sample Frame</a></li>
+<li class="chapter" data-level="4.3.3" data-path="sampling.html"><a href="sampling.html#sample"><i class="fa fa-check"></i><b>4.3.3</b> Sample</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="sampling.html"><a href="sampling.html#types-of-sampling-methods"><i class="fa fa-check"></i><b>4.4</b> Types of Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="sampling.html"><a href="sampling.html#probability-sampling"><i class="fa fa-check"></i><b>4.4.1</b> Probability Sampling</a></li>
+<li class="chapter" data-level="4.4.2" data-path="sampling.html"><a href="sampling.html#non-probability-sampling"><i class="fa fa-check"></i><b>4.4.2</b> Non-Probability Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="sampling.html"><a href="sampling.html#probability-sampling-methods"><i class="fa fa-check"></i><b>4.5</b> Probability Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="sampling.html"><a href="sampling.html#simple-random-sampling"><i class="fa fa-check"></i><b>4.5.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="4.5.2" data-path="sampling.html"><a href="sampling.html#systematic-sampling"><i class="fa fa-check"></i><b>4.5.2</b> Systematic Sampling</a></li>
+<li class="chapter" data-level="4.5.3" data-path="sampling.html"><a href="sampling.html#stratified-sampling"><i class="fa fa-check"></i><b>4.5.3</b> Stratified Sampling</a></li>
+<li class="chapter" data-level="4.5.4" data-path="sampling.html"><a href="sampling.html#proportionate-vs.-disproportionate-sampling"><i class="fa fa-check"></i><b>4.5.4</b> Proportionate vs. Disproportionate Sampling</a></li>
+<li class="chapter" data-level="4.5.5" data-path="sampling.html"><a href="sampling.html#cluster-area-sampling"><i class="fa fa-check"></i><b>4.5.5</b> Cluster (Area) Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="sampling.html"><a href="sampling.html#non-probability-sampling-methods"><i class="fa fa-check"></i><b>4.6</b> Non-Probability Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="sampling.html"><a href="sampling.html#convenience-sampling"><i class="fa fa-check"></i><b>4.6.1</b> Convenience Sampling</a></li>
+<li class="chapter" data-level="4.6.2" data-path="sampling.html"><a href="sampling.html#purposive-judgment-sampling"><i class="fa fa-check"></i><b>4.6.2</b> Purposive (Judgment) Sampling</a></li>
+<li class="chapter" data-level="4.6.3" data-path="sampling.html"><a href="sampling.html#quota-sampling"><i class="fa fa-check"></i><b>4.6.3</b> Quota Sampling</a></li>
+<li class="chapter" data-level="4.6.4" data-path="sampling.html"><a href="sampling.html#snowball-sampling"><i class="fa fa-check"></i><b>4.6.4</b> Snowball Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="sampling.html"><a href="sampling.html#sampling-bias"><i class="fa fa-check"></i><b>4.7</b> Sampling Bias</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="sampling.html"><a href="sampling.html#sources-of-sampling-bias"><i class="fa fa-check"></i><b>4.7.1</b> Sources of Sampling Bias</a></li>
+<li class="chapter" data-level="4.7.2" data-path="sampling.html"><a href="sampling.html#consequences-of-sampling-bias"><i class="fa fa-check"></i><b>4.7.2</b> Consequences of Sampling Bias</a></li>
+<li class="chapter" data-level="4.7.3" data-path="sampling.html"><a href="sampling.html#reducing-sampling-bias"><i class="fa fa-check"></i><b>4.7.3</b> Reducing Sampling Bias</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="sampling.html"><a href="sampling.html#validity-and-reliability"><i class="fa fa-check"></i><b>4.8</b> Validity and Reliability</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="sampling.html"><a href="sampling.html#validity"><i class="fa fa-check"></i><b>4.8.1</b> Validity</a></li>
+<li class="chapter" data-level="4.8.2" data-path="sampling.html"><a href="sampling.html#reliability"><i class="fa fa-check"></i><b>4.8.2</b> Reliability</a></li>
+<li class="chapter" data-level="4.8.3" data-path="sampling.html"><a href="sampling.html#the-relationship-between-validity-and-reliability"><i class="fa fa-check"></i><b>4.8.3</b> The Relationship Between Validity and Reliability</a></li>
+<li class="chapter" data-level="4.8.4" data-path="sampling.html"><a href="sampling.html#assessing-validity-and-reliability"><i class="fa fa-check"></i><b>4.8.4</b> Assessing Validity and Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="sampling.html"><a href="sampling.html#practice-exercises-3"><i class="fa fa-check"></i><b>4.9</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="sampling.html"><a href="sampling.html#exercise-1-identifying-sampling-methods"><i class="fa fa-check"></i><b>4.9.1</b> Exercise 1: Identifying Sampling Methods</a></li>
+<li class="chapter" data-level="4.9.2" data-path="sampling.html"><a href="sampling.html#exercise-2-designing-a-sampling-plan"><i class="fa fa-check"></i><b>4.9.2</b> Exercise 2: Designing a Sampling Plan</a></li>
+<li class="chapter" data-level="4.9.3" data-path="sampling.html"><a href="sampling.html#exercise-3-reliability-and-validity"><i class="fa fa-check"></i><b>4.9.3</b> Exercise 3: Reliability and Validity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="sampling.html"><a href="sampling.html#summary"><i class="fa fa-check"></i><b>4.10</b> Summary</a></li>
+<li class="chapter" data-level="4.11" data-path="sampling.html"><a href="sampling.html#additional-resources"><i class="fa fa-check"></i><b>4.11</b> Additional Resources</a></li>
+<li class="chapter" data-level="4.12" data-path="sampling.html"><a href="sampling.html#key-terms"><i class="fa fa-check"></i><b>4.12</b> Key Terms</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>5</b> Data Management and Preparation in R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-management.html"><a href="data-management.html#understanding-your-r-environment"><i class="fa fa-check"></i><b>5.1</b> Understanding Your R Environment</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-management.html"><a href="data-management.html#the-rstudio-interface"><i class="fa fa-check"></i><b>5.1.1</b> The RStudio Interface</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-management.html"><a href="data-management.html#working-directory-management"><i class="fa fa-check"></i><b>5.1.2</b> Working Directory Management</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-management.html"><a href="data-management.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>5.2</b> Installing and Loading Packages</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data-management.html"><a href="data-management.html#installing-packages"><i class="fa fa-check"></i><b>5.2.1</b> Installing Packages</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-management.html"><a href="data-management.html#loading-packages"><i class="fa fa-check"></i><b>5.2.2</b> Loading Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-management.html"><a href="data-management.html#loading-and-exploring-data-1"><i class="fa fa-check"></i><b>5.3</b> Loading and Exploring Data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="data-management.html"><a href="data-management.html#reading-csv-files"><i class="fa fa-check"></i><b>5.3.1</b> Reading CSV Files</a></li>
+<li class="chapter" data-level="5.3.2" data-path="data-management.html"><a href="data-management.html#exploring-dataset-structure"><i class="fa fa-check"></i><b>5.3.2</b> Exploring Dataset Structure</a></li>
+<li class="chapter" data-level="5.3.3" data-path="data-management.html"><a href="data-management.html#practical-example-ncaa-athletic-department-data"><i class="fa fa-check"></i><b>5.3.3</b> Practical Example: NCAA Athletic Department Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="data-management.html"><a href="data-management.html#understanding-data-types-in-r"><i class="fa fa-check"></i><b>5.4</b> Understanding Data Types in R</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="data-management.html"><a href="data-management.html#basic-data-types"><i class="fa fa-check"></i><b>5.4.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="5.4.2" data-path="data-management.html"><a href="data-management.html#data-structures"><i class="fa fa-check"></i><b>5.4.2</b> Data Structures</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="data-management.html"><a href="data-management.html#checking-for-data-quality-issues"><i class="fa fa-check"></i><b>5.5</b> Checking for Data Quality Issues</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="data-management.html"><a href="data-management.html#identifying-missing-values"><i class="fa fa-check"></i><b>5.5.1</b> Identifying Missing Values</a></li>
+<li class="chapter" data-level="5.5.2" data-path="data-management.html"><a href="data-management.html#identifying-zero-values"><i class="fa fa-check"></i><b>5.5.2</b> Identifying Zero Values</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="data-management.html"><a href="data-management.html#data-manipulation-basics"><i class="fa fa-check"></i><b>5.6</b> Data Manipulation Basics</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="data-management.html"><a href="data-management.html#accessing-data-with-and-brackets"><i class="fa fa-check"></i><b>5.6.1</b> Accessing Data with $ and Brackets</a></li>
+<li class="chapter" data-level="5.6.2" data-path="data-management.html"><a href="data-management.html#creating-new-columns"><i class="fa fa-check"></i><b>5.6.2</b> Creating New Columns</a></li>
+<li class="chapter" data-level="5.6.3" data-path="data-management.html"><a href="data-management.html#more-complex-calculations"><i class="fa fa-check"></i><b>5.6.3</b> More Complex Calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="data-management.html"><a href="data-management.html#filtering-and-subsetting-data"><i class="fa fa-check"></i><b>5.7</b> Filtering and Subsetting Data</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="data-management.html"><a href="data-management.html#using-base-r-brackets"><i class="fa fa-check"></i><b>5.7.1</b> Using Base R Brackets</a></li>
+<li class="chapter" data-level="5.7.2" data-path="data-management.html"><a href="data-management.html#using-dplyr-for-cleaner-syntax"><i class="fa fa-check"></i><b>5.7.2</b> Using dplyr for Cleaner Syntax</a></li>
+<li class="chapter" data-level="5.7.3" data-path="data-management.html"><a href="data-management.html#sorting-data"><i class="fa fa-check"></i><b>5.7.3</b> Sorting Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="data-management.html"><a href="data-management.html#advanced-data-manipulation"><i class="fa fa-check"></i><b>5.8</b> Advanced Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="data-management.html"><a href="data-management.html#grouping-and-summarizing"><i class="fa fa-check"></i><b>5.8.1</b> Grouping and Summarizing</a></li>
+<li class="chapter" data-level="5.8.2" data-path="data-management.html"><a href="data-management.html#finding-topbottom-records"><i class="fa fa-check"></i><b>5.8.2</b> Finding Top/Bottom Records</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="data-management.html"><a href="data-management.html#saving-and-exporting-data"><i class="fa fa-check"></i><b>5.9</b> Saving and Exporting Data</a></li>
+<li class="chapter" data-level="5.10" data-path="data-management.html"><a href="data-management.html#data-import-from-various-sources"><i class="fa fa-check"></i><b>5.10</b> Data Import from Various Sources</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="data-management.html"><a href="data-management.html#reading-different-file-types"><i class="fa fa-check"></i><b>5.10.1</b> Reading Different File Types</a></li>
+<li class="chapter" data-level="5.10.2" data-path="data-management.html"><a href="data-management.html#handling-import-issues"><i class="fa fa-check"></i><b>5.10.2</b> Handling Import Issues</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="data-management.html"><a href="data-management.html#practical-workflow-example"><i class="fa fa-check"></i><b>5.11</b> Practical Workflow Example</a></li>
+<li class="chapter" data-level="5.12" data-path="data-management.html"><a href="data-management.html#troubleshooting-common-issues"><i class="fa fa-check"></i><b>5.12</b> Troubleshooting Common Issues</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="data-management.html"><a href="data-management.html#error-object-not-found"><i class="fa fa-check"></i><b>5.12.1</b> Error: Object Not Found</a></li>
+<li class="chapter" data-level="5.12.2" data-path="data-management.html"><a href="data-management.html#error-file-not-found"><i class="fa fa-check"></i><b>5.12.2</b> Error: File Not Found</a></li>
+<li class="chapter" data-level="5.12.3" data-path="data-management.html"><a href="data-management.html#error-package-not-available"><i class="fa fa-check"></i><b>5.12.3</b> Error: Package Not Available</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="data-management.html"><a href="data-management.html#best-practices-for-data-management"><i class="fa fa-check"></i><b>5.13</b> Best Practices for Data Management</a>
+<ul>
+<li class="chapter" data-level="5.13.1" data-path="data-management.html"><a href="data-management.html#use-descriptive-variable-names"><i class="fa fa-check"></i><b>5.13.1</b> 1. Use Descriptive Variable Names</a></li>
+<li class="chapter" data-level="5.13.2" data-path="data-management.html"><a href="data-management.html#comment-your-code"><i class="fa fa-check"></i><b>5.13.2</b> 2. Comment Your Code</a></li>
+<li class="chapter" data-level="5.13.3" data-path="data-management.html"><a href="data-management.html#keep-raw-data-separate"><i class="fa fa-check"></i><b>5.13.3</b> 3. Keep Raw Data Separate</a></li>
+<li class="chapter" data-level="5.13.4" data-path="data-management.html"><a href="data-management.html#use-consistent-file-organization"><i class="fa fa-check"></i><b>5.13.4</b> 4. Use Consistent File Organization</a></li>
+</ul></li>
+<li class="chapter" data-level="5.14" data-path="data-management.html"><a href="data-management.html#practice-exercises-4"><i class="fa fa-check"></i><b>5.14</b> Practice Exercises</a></li>
+<li class="chapter" data-level="5.15" data-path="data-management.html"><a href="data-management.html#chapter-summary-3"><i class="fa fa-check"></i><b>5.15</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="5.15.1" data-path="data-management.html"><a href="data-management.html#key-takeaways-3"><i class="fa fa-check"></i><b>5.15.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="5.15.2" data-path="data-management.html"><a href="data-management.html#next-steps-3"><i class="fa fa-check"></i><b>5.15.2</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="5.16" data-path="data-management.html"><a href="data-management.html#references-3"><i class="fa fa-check"></i><b>5.16</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="descriptive-stats.html"><a href="descriptive-stats.html"><i class="fa fa-check"></i><b>6</b> Descriptive Statistics for Sport Business Analytics</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#introduction-to-descriptive-statistics"><i class="fa fa-check"></i><b>6.1</b> Introduction to Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-role-of-descriptive-statistics"><i class="fa fa-check"></i><b>6.1.1</b> The Role of Descriptive Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#types-of-variables-and-summary-methods"><i class="fa fa-check"></i><b>6.2</b> Types of Variables and Summary Methods</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#categorical-variables"><i class="fa fa-check"></i><b>6.2.1</b> Categorical Variables</a></li>
+<li class="chapter" data-level="6.2.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#continuous-variables"><i class="fa fa-check"></i><b>6.2.2</b> Continuous Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>6.3</b> Measures of Central Tendency</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-mean-average"><i class="fa fa-check"></i><b>6.3.1</b> The Mean (Average)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-median-middle-value"><i class="fa fa-check"></i><b>6.3.2</b> The Median (Middle Value)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-mode-most-common-value"><i class="fa fa-check"></i><b>6.3.3</b> The Mode (Most Common Value)</a></li>
+<li class="chapter" data-level="6.3.4" data-path="descriptive-stats.html"><a href="descriptive-stats.html#comparing-mean-median-and-mode"><i class="fa fa-check"></i><b>6.3.4</b> Comparing Mean, Median, and Mode</a></li>
+<li class="chapter" data-level="6.3.5" data-path="descriptive-stats.html"><a href="descriptive-stats.html#distribution-shapes-and-central-tendency"><i class="fa fa-check"></i><b>6.3.5</b> Distribution Shapes and Central Tendency</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="descriptive-stats.html"><a href="descriptive-stats.html#measures-of-variability"><i class="fa fa-check"></i><b>6.4</b> Measures of Variability</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#standard-deviation-sd"><i class="fa fa-check"></i><b>6.4.1</b> Standard Deviation (SD)</a></li>
+<li class="chapter" data-level="6.4.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-standard-deviation-and-normal-distribution"><i class="fa fa-check"></i><b>6.4.2</b> The Standard Deviation and Normal Distribution</a></li>
+<li class="chapter" data-level="6.4.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#variance"><i class="fa fa-check"></i><b>6.4.3</b> Variance</a></li>
+<li class="chapter" data-level="6.4.4" data-path="descriptive-stats.html"><a href="descriptive-stats.html#range"><i class="fa fa-check"></i><b>6.4.4</b> Range</a></li>
+<li class="chapter" data-level="6.4.5" data-path="descriptive-stats.html"><a href="descriptive-stats.html#minimum-and-maximum"><i class="fa fa-check"></i><b>6.4.5</b> Minimum and Maximum</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="descriptive-stats.html"><a href="descriptive-stats.html#comprehensive-descriptive-statistics-in-r"><i class="fa fa-check"></i><b>6.5</b> Comprehensive Descriptive Statistics in R</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#using-summary-function"><i class="fa fa-check"></i><b>6.5.1</b> Using summary() Function</a></li>
+<li class="chapter" data-level="6.5.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#creating-custom-summary-tables"><i class="fa fa-check"></i><b>6.5.2</b> Creating Custom Summary Tables</a></li>
+<li class="chapter" data-level="6.5.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#using-psych-package-for-comprehensive-output"><i class="fa fa-check"></i><b>6.5.3</b> Using psych Package for Comprehensive Output</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="descriptive-stats.html"><a href="descriptive-stats.html#sport-business-applications"><i class="fa fa-check"></i><b>6.6</b> Sport Business Applications</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#example-1-analyzing-ticket-sales"><i class="fa fa-check"></i><b>6.6.1</b> Example 1: Analyzing Ticket Sales</a></li>
+<li class="chapter" data-level="6.6.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#example-2-comparing-athletic-department-budgets"><i class="fa fa-check"></i><b>6.6.2</b> Example 2: Comparing Athletic Department Budgets</a></li>
+<li class="chapter" data-level="6.6.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#example-3-player-performance-metrics"><i class="fa fa-check"></i><b>6.6.3</b> Example 3: Player Performance Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="descriptive-stats.html"><a href="descriptive-stats.html#interpreting-and-reporting-descriptive-statistics"><i class="fa fa-check"></i><b>6.7</b> Interpreting and Reporting Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#guidelines-for-reporting"><i class="fa fa-check"></i><b>6.7.1</b> Guidelines for Reporting</a></li>
+<li class="chapter" data-level="6.7.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#example-report-format"><i class="fa fa-check"></i><b>6.7.2</b> Example Report Format</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="descriptive-stats.html"><a href="descriptive-stats.html#practice-exercises-5"><i class="fa fa-check"></i><b>6.8</b> Practice Exercises</a></li>
+<li class="chapter" data-level="6.9" data-path="descriptive-stats.html"><a href="descriptive-stats.html#common-mistakes-to-avoid"><i class="fa fa-check"></i><b>6.9</b> Common Mistakes to Avoid</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#ignoring-outliers"><i class="fa fa-check"></i><b>6.9.1</b> 1. Ignoring Outliers</a></li>
+<li class="chapter" data-level="6.9.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#reporting-mean-without-standard-deviation"><i class="fa fa-check"></i><b>6.9.2</b> 2. Reporting Mean Without Standard Deviation</a></li>
+<li class="chapter" data-level="6.9.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#assuming-normal-distribution"><i class="fa fa-check"></i><b>6.9.3</b> 3. Assuming Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="descriptive-stats.html"><a href="descriptive-stats.html#chapter-summary-4"><i class="fa fa-check"></i><b>6.10</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="6.10.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#key-takeaways-4"><i class="fa fa-check"></i><b>6.10.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="6.10.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#r-functions-summary"><i class="fa fa-check"></i><b>6.10.2</b> R Functions Summary</a></li>
+<li class="chapter" data-level="6.10.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#next-steps-4"><i class="fa fa-check"></i><b>6.10.3</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="descriptive-stats.html"><a href="descriptive-stats.html#references-4"><i class="fa fa-check"></i><b>6.11</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="statistical-testing.html"><a href="statistical-testing.html"><i class="fa fa-check"></i><b>7</b> Statistical Testing: Comparing Means</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="statistical-testing.html"><a href="statistical-testing.html#introduction-to-hypothesis-testing"><i class="fa fa-check"></i><b>7.1</b> Introduction to Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.2" data-path="statistical-testing.html"><a href="statistical-testing.html#understanding-z-scores-and-t-scores"><i class="fa fa-check"></i><b>7.2</b> Understanding Z-Scores and T-Scores</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="statistical-testing.html"><a href="statistical-testing.html#z-scores"><i class="fa fa-check"></i><b>7.2.1</b> Z-Scores</a></li>
+<li class="chapter" data-level="7.2.2" data-path="statistical-testing.html"><a href="statistical-testing.html#z-scores-in-sport-analytics"><i class="fa fa-check"></i><b>7.2.2</b> Z-Scores in Sport Analytics</a></li>
+<li class="chapter" data-level="7.2.3" data-path="statistical-testing.html"><a href="statistical-testing.html#t-scores"><i class="fa fa-check"></i><b>7.2.3</b> T-Scores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="statistical-testing.html"><a href="statistical-testing.html#understanding-p-values"><i class="fa fa-check"></i><b>7.3</b> Understanding P-Values</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="statistical-testing.html"><a href="statistical-testing.html#null-and-alternative-hypotheses"><i class="fa fa-check"></i><b>7.3.1</b> Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="7.3.2" data-path="statistical-testing.html"><a href="statistical-testing.html#interpreting-p-values"><i class="fa fa-check"></i><b>7.3.2</b> Interpreting P-Values</a></li>
+<li class="chapter" data-level="7.3.3" data-path="statistical-testing.html"><a href="statistical-testing.html#important-notes-about-p-values"><i class="fa fa-check"></i><b>7.3.3</b> Important Notes About P-Values</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="statistical-testing.html"><a href="statistical-testing.html#t-tests-comparing-two-groups"><i class="fa fa-check"></i><b>7.4</b> T-Tests: Comparing Two Groups</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="statistical-testing.html"><a href="statistical-testing.html#types-of-t-tests"><i class="fa fa-check"></i><b>7.4.1</b> Types of T-Tests</a></li>
+<li class="chapter" data-level="7.4.2" data-path="statistical-testing.html"><a href="statistical-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>7.4.2</b> One-Sample T-Test</a></li>
+<li class="chapter" data-level="7.4.3" data-path="statistical-testing.html"><a href="statistical-testing.html#independent-samples-t-test"><i class="fa fa-check"></i><b>7.4.3</b> Independent Samples T-Test</a></li>
+<li class="chapter" data-level="7.4.4" data-path="statistical-testing.html"><a href="statistical-testing.html#paired-samples-t-test"><i class="fa fa-check"></i><b>7.4.4</b> Paired Samples T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="statistical-testing.html"><a href="statistical-testing.html#anova-comparing-three-or-more-groups"><i class="fa fa-check"></i><b>7.5</b> ANOVA: Comparing Three or More Groups</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="statistical-testing.html"><a href="statistical-testing.html#anova-fundamentals"><i class="fa fa-check"></i><b>7.5.1</b> ANOVA Fundamentals</a></li>
+<li class="chapter" data-level="7.5.2" data-path="statistical-testing.html"><a href="statistical-testing.html#types-of-anova"><i class="fa fa-check"></i><b>7.5.2</b> Types of ANOVA</a></li>
+<li class="chapter" data-level="7.5.3" data-path="statistical-testing.html"><a href="statistical-testing.html#anova-assumptions"><i class="fa fa-check"></i><b>7.5.3</b> ANOVA Assumptions</a></li>
+<li class="chapter" data-level="7.5.4" data-path="statistical-testing.html"><a href="statistical-testing.html#hypotheses-in-anova"><i class="fa fa-check"></i><b>7.5.4</b> Hypotheses in ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="statistical-testing.html"><a href="statistical-testing.html#one-way-anova-complete-example"><i class="fa fa-check"></i><b>7.6</b> One-Way ANOVA: Complete Example</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="statistical-testing.html"><a href="statistical-testing.html#step-1-descriptive-statistics"><i class="fa fa-check"></i><b>7.6.1</b> Step 1: Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6.2" data-path="statistical-testing.html"><a href="statistical-testing.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>7.6.2</b> Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="7.6.3" data-path="statistical-testing.html"><a href="statistical-testing.html#step-3-conduct-one-way-anova"><i class="fa fa-check"></i><b>7.6.3</b> Step 3: Conduct One-Way ANOVA</a></li>
+<li class="chapter" data-level="7.6.4" data-path="statistical-testing.html"><a href="statistical-testing.html#step-4-post-hoc-tests"><i class="fa fa-check"></i><b>7.6.4</b> Step 4: Post-Hoc Tests</a></li>
+<li class="chapter" data-level="7.6.5" data-path="statistical-testing.html"><a href="statistical-testing.html#step-5-visualize-results"><i class="fa fa-check"></i><b>7.6.5</b> Step 5: Visualize Results</a></li>
+<li class="chapter" data-level="7.6.6" data-path="statistical-testing.html"><a href="statistical-testing.html#reporting-anova-results"><i class="fa fa-check"></i><b>7.6.6</b> Reporting ANOVA Results</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="statistical-testing.html"><a href="statistical-testing.html#two-way-anova"><i class="fa fa-check"></i><b>7.7</b> Two-Way ANOVA</a></li>
+<li class="chapter" data-level="7.8" data-path="statistical-testing.html"><a href="statistical-testing.html#effect-size"><i class="fa fa-check"></i><b>7.8</b> Effect Size</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="statistical-testing.html"><a href="statistical-testing.html#cohens-d-for-t-tests"><i class="fa fa-check"></i><b>7.8.1</b> Cohen’s d for t-tests</a></li>
+<li class="chapter" data-level="7.8.2" data-path="statistical-testing.html"><a href="statistical-testing.html#eta-squared-for-anova"><i class="fa fa-check"></i><b>7.8.2</b> Eta-squared for ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="statistical-testing.html"><a href="statistical-testing.html#practical-application-complete-analysis-workflow"><i class="fa fa-check"></i><b>7.9</b> Practical Application: Complete Analysis Workflow</a></li>
+<li class="chapter" data-level="7.10" data-path="statistical-testing.html"><a href="statistical-testing.html#common-mistakes-and-how-to-avoid-them"><i class="fa fa-check"></i><b>7.10</b> Common Mistakes and How to Avoid Them</a>
+<ul>
+<li class="chapter" data-level="7.10.1" data-path="statistical-testing.html"><a href="statistical-testing.html#mistake-1-running-multiple-t-tests-instead-of-anova"><i class="fa fa-check"></i><b>7.10.1</b> Mistake 1: Running Multiple T-Tests Instead of ANOVA</a></li>
+<li class="chapter" data-level="7.10.2" data-path="statistical-testing.html"><a href="statistical-testing.html#mistake-2-ignoring-assumptions"><i class="fa fa-check"></i><b>7.10.2</b> Mistake 2: Ignoring Assumptions</a></li>
+<li class="chapter" data-level="7.10.3" data-path="statistical-testing.html"><a href="statistical-testing.html#mistake-3-confusing-significance-with-importance"><i class="fa fa-check"></i><b>7.10.3</b> Mistake 3: Confusing Significance with Importance</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="statistical-testing.html"><a href="statistical-testing.html#practice-exercises-6"><i class="fa fa-check"></i><b>7.11</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="statistical-testing.html"><a href="statistical-testing.html#exercise-1-one-sample-t-test"><i class="fa fa-check"></i><b>7.11.1</b> Exercise 1: One-Sample T-Test</a></li>
+<li class="chapter" data-level="7.11.2" data-path="statistical-testing.html"><a href="statistical-testing.html#exercise-2-independent-t-test"><i class="fa fa-check"></i><b>7.11.2</b> Exercise 2: Independent T-Test</a></li>
+<li class="chapter" data-level="7.11.3" data-path="statistical-testing.html"><a href="statistical-testing.html#exercise-3-paired-t-test"><i class="fa fa-check"></i><b>7.11.3</b> Exercise 3: Paired T-Test</a></li>
+<li class="chapter" data-level="7.11.4" data-path="statistical-testing.html"><a href="statistical-testing.html#exercise-4-one-way-anova"><i class="fa fa-check"></i><b>7.11.4</b> Exercise 4: One-Way ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="statistical-testing.html"><a href="statistical-testing.html#chapter-summary-5"><i class="fa fa-check"></i><b>7.12</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="7.12.1" data-path="statistical-testing.html"><a href="statistical-testing.html#key-takeaways-5"><i class="fa fa-check"></i><b>7.12.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="7.12.2" data-path="statistical-testing.html"><a href="statistical-testing.html#r-functions-summary-1"><i class="fa fa-check"></i><b>7.12.2</b> R Functions Summary</a></li>
+<li class="chapter" data-level="7.12.3" data-path="statistical-testing.html"><a href="statistical-testing.html#decision-tree-for-choosing-tests"><i class="fa fa-check"></i><b>7.12.3</b> Decision Tree for Choosing Tests</a></li>
+<li class="chapter" data-level="7.12.4" data-path="statistical-testing.html"><a href="statistical-testing.html#next-steps-5"><i class="fa fa-check"></i><b>7.12.4</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.13" data-path="statistical-testing.html"><a href="statistical-testing.html#references-5"><i class="fa fa-check"></i><b>7.13</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="correlation-regression.html"><a href="correlation-regression.html"><i class="fa fa-check"></i><b>8</b> Correlation and Regression</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="correlation-regression.html"><a href="correlation-regression.html#introduction-to-relationships-between-variables"><i class="fa fa-check"></i><b>8.1</b> Introduction to Relationships Between Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="correlation-regression.html"><a href="correlation-regression.html#understanding-correlation"><i class="fa fa-check"></i><b>8.2</b> Understanding Correlation</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="correlation-regression.html"><a href="correlation-regression.html#what-is-correlation"><i class="fa fa-check"></i><b>8.2.1</b> What is Correlation?</a></li>
+<li class="chapter" data-level="8.2.2" data-path="correlation-regression.html"><a href="correlation-regression.html#the-correlation-coefficient-r"><i class="fa fa-check"></i><b>8.2.2</b> The Correlation Coefficient (r)</a></li>
+<li class="chapter" data-level="8.2.3" data-path="correlation-regression.html"><a href="correlation-regression.html#interpreting-correlation-strength"><i class="fa fa-check"></i><b>8.2.3</b> Interpreting Correlation Strength</a></li>
+<li class="chapter" data-level="8.2.4" data-path="correlation-regression.html"><a href="correlation-regression.html#types-of-correlation"><i class="fa fa-check"></i><b>8.2.4</b> Types of Correlation</a></li>
+<li class="chapter" data-level="8.2.5" data-path="correlation-regression.html"><a href="correlation-regression.html#hypothesis-testing-for-correlation"><i class="fa fa-check"></i><b>8.2.5</b> Hypothesis Testing for Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="correlation-regression.html"><a href="correlation-regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>8.3</b> Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="correlation-regression.html"><a href="correlation-regression.html#what-is-simple-linear-regression"><i class="fa fa-check"></i><b>8.3.1</b> What is Simple Linear Regression?</a></li>
+<li class="chapter" data-level="8.3.2" data-path="correlation-regression.html"><a href="correlation-regression.html#conducting-simple-regression-in-r"><i class="fa fa-check"></i><b>8.3.2</b> Conducting Simple Regression in R</a></li>
+<li class="chapter" data-level="8.3.3" data-path="correlation-regression.html"><a href="correlation-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>8.3.3</b> Interpreting Regression Output</a></li>
+<li class="chapter" data-level="8.3.4" data-path="correlation-regression.html"><a href="correlation-regression.html#making-predictions"><i class="fa fa-check"></i><b>8.3.4</b> Making Predictions</a></li>
+<li class="chapter" data-level="8.3.5" data-path="correlation-regression.html"><a href="correlation-regression.html#visualizing-the-regression-line"><i class="fa fa-check"></i><b>8.3.5</b> Visualizing the Regression Line</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="correlation-regression.html"><a href="correlation-regression.html#multiple-regression"><i class="fa fa-check"></i><b>8.4</b> Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="correlation-regression.html"><a href="correlation-regression.html#what-is-multiple-regression"><i class="fa fa-check"></i><b>8.4.1</b> What is Multiple Regression?</a></li>
+<li class="chapter" data-level="8.4.2" data-path="correlation-regression.html"><a href="correlation-regression.html#why-use-multiple-regression"><i class="fa fa-check"></i><b>8.4.2</b> Why Use Multiple Regression?</a></li>
+<li class="chapter" data-level="8.4.3" data-path="correlation-regression.html"><a href="correlation-regression.html#conducting-multiple-regression-in-r"><i class="fa fa-check"></i><b>8.4.3</b> Conducting Multiple Regression in R</a></li>
+<li class="chapter" data-level="8.4.4" data-path="correlation-regression.html"><a href="correlation-regression.html#interpreting-multiple-regression-output"><i class="fa fa-check"></i><b>8.4.4</b> Interpreting Multiple Regression Output</a></li>
+<li class="chapter" data-level="8.4.5" data-path="correlation-regression.html"><a href="correlation-regression.html#standardized-coefficients"><i class="fa fa-check"></i><b>8.4.5</b> Standardized Coefficients</a></li>
+<li class="chapter" data-level="8.4.6" data-path="correlation-regression.html"><a href="correlation-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>8.4.6</b> Model Diagnostics</a></li>
+<li class="chapter" data-level="8.4.7" data-path="correlation-regression.html"><a href="correlation-regression.html#comparing-models"><i class="fa fa-check"></i><b>8.4.7</b> Comparing Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="correlation-regression.html"><a href="correlation-regression.html#sport-business-applications-1"><i class="fa fa-check"></i><b>8.5</b> Sport Business Applications</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="correlation-regression.html"><a href="correlation-regression.html#example-1-player-performance-analysis"><i class="fa fa-check"></i><b>8.5.1</b> Example 1: Player Performance Analysis</a></li>
+<li class="chapter" data-level="8.5.2" data-path="correlation-regression.html"><a href="correlation-regression.html#example-2-predicting-attendance"><i class="fa fa-check"></i><b>8.5.2</b> Example 2: Predicting Attendance</a></li>
+<li class="chapter" data-level="8.5.3" data-path="correlation-regression.html"><a href="correlation-regression.html#example-3-salary-prediction"><i class="fa fa-check"></i><b>8.5.3</b> Example 3: Salary Prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="correlation-regression.html"><a href="correlation-regression.html#practice-exercises-7"><i class="fa fa-check"></i><b>8.6</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="correlation-regression.html"><a href="correlation-regression.html#exercise-1-correlation-analysis"><i class="fa fa-check"></i><b>8.6.1</b> Exercise 1: Correlation Analysis</a></li>
+<li class="chapter" data-level="8.6.2" data-path="correlation-regression.html"><a href="correlation-regression.html#exercise-2-simple-regression"><i class="fa fa-check"></i><b>8.6.2</b> Exercise 2: Simple Regression</a></li>
+<li class="chapter" data-level="8.6.3" data-path="correlation-regression.html"><a href="correlation-regression.html#exercise-3-multiple-regression"><i class="fa fa-check"></i><b>8.6.3</b> Exercise 3: Multiple Regression</a></li>
+<li class="chapter" data-level="8.6.4" data-path="correlation-regression.html"><a href="correlation-regression.html#exercise-4-applied-analysis"><i class="fa fa-check"></i><b>8.6.4</b> Exercise 4: Applied Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="correlation-regression.html"><a href="correlation-regression.html#chapter-summary-6"><i class="fa fa-check"></i><b>8.7</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="correlation-regression.html"><a href="correlation-regression.html#key-concepts"><i class="fa fa-check"></i><b>8.7.1</b> Key Concepts</a></li>
+<li class="chapter" data-level="8.7.2" data-path="correlation-regression.html"><a href="correlation-regression.html#important-considerations"><i class="fa fa-check"></i><b>8.7.2</b> Important Considerations</a></li>
+<li class="chapter" data-level="8.7.3" data-path="correlation-regression.html"><a href="correlation-regression.html#r-functions-reference"><i class="fa fa-check"></i><b>8.7.3</b> R Functions Reference</a></li>
+<li class="chapter" data-level="8.7.4" data-path="correlation-regression.html"><a href="correlation-regression.html#next-steps-6"><i class="fa fa-check"></i><b>8.7.4</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="correlation-regression.html"><a href="correlation-regression.html#references-6"><i class="fa fa-check"></i><b>8.8</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>9</b> Data Visualization with R</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="data-visualization.html"><a href="data-visualization.html#introduction-to-data-visualization"><i class="fa fa-check"></i><b>9.1</b> Introduction to Data Visualization</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualize-data"><i class="fa fa-check"></i><b>9.1.1</b> Why Visualize Data?</a></li>
+<li class="chapter" data-level="9.1.2" data-path="data-visualization.html"><a href="data-visualization.html#principles-of-effective-visualization"><i class="fa fa-check"></i><b>9.1.2</b> Principles of Effective Visualization</a></li>
+<li class="chapter" data-level="9.1.3" data-path="data-visualization.html"><a href="data-visualization.html#common-visualization-pitfalls-to-avoid"><i class="fa fa-check"></i><b>9.1.3</b> Common Visualization Pitfalls to Avoid</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="data-visualization.html"><a href="data-visualization.html#introduction-to-ggplot2"><i class="fa fa-check"></i><b>9.2</b> Introduction to ggplot2</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="data-visualization.html"><a href="data-visualization.html#the-grammar-of-graphics"><i class="fa fa-check"></i><b>9.2.1</b> The Grammar of Graphics</a></li>
+<li class="chapter" data-level="9.2.2" data-path="data-visualization.html"><a href="data-visualization.html#building-plots-layer-by-layer"><i class="fa fa-check"></i><b>9.2.2</b> Building Plots Layer by Layer</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="data-visualization.html"><a href="data-visualization.html#essential-plot-types-for-sport-analytics"><i class="fa fa-check"></i><b>9.3</b> Essential Plot Types for Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plots"><i class="fa fa-check"></i><b>9.3.1</b> Scatter Plots</a></li>
+<li class="chapter" data-level="9.3.2" data-path="data-visualization.html"><a href="data-visualization.html#bar-charts"><i class="fa fa-check"></i><b>9.3.2</b> Bar Charts</a></li>
+<li class="chapter" data-level="9.3.3" data-path="data-visualization.html"><a href="data-visualization.html#line-charts"><i class="fa fa-check"></i><b>9.3.3</b> Line Charts</a></li>
+<li class="chapter" data-level="9.3.4" data-path="data-visualization.html"><a href="data-visualization.html#histograms"><i class="fa fa-check"></i><b>9.3.4</b> Histograms</a></li>
+<li class="chapter" data-level="9.3.5" data-path="data-visualization.html"><a href="data-visualization.html#box-plots"><i class="fa fa-check"></i><b>9.3.5</b> Box Plots</a></li>
+<li class="chapter" data-level="9.3.6" data-path="data-visualization.html"><a href="data-visualization.html#violin-plots"><i class="fa fa-check"></i><b>9.3.6</b> Violin Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="data-visualization.html"><a href="data-visualization.html#customizing-visualizations"><i class="fa fa-check"></i><b>9.4</b> Customizing Visualizations</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="data-visualization.html"><a href="data-visualization.html#colors-and-themes"><i class="fa fa-check"></i><b>9.4.1</b> Colors and Themes</a></li>
+<li class="chapter" data-level="9.4.2" data-path="data-visualization.html"><a href="data-visualization.html#custom-color-palettes-for-sport-teams"><i class="fa fa-check"></i><b>9.4.2</b> Custom Color Palettes for Sport Teams</a></li>
+<li class="chapter" data-level="9.4.3" data-path="data-visualization.html"><a href="data-visualization.html#annotations-and-labels"><i class="fa fa-check"></i><b>9.4.3</b> Annotations and Labels</a></li>
+<li class="chapter" data-level="9.4.4" data-path="data-visualization.html"><a href="data-visualization.html#faceting-small-multiples"><i class="fa fa-check"></i><b>9.4.4</b> Faceting: Small Multiples</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="data-visualization.html"><a href="data-visualization.html#sport-business-visualization-examples"><i class="fa fa-check"></i><b>9.5</b> Sport Business Visualization Examples</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="data-visualization.html"><a href="data-visualization.html#example-1-revenue-analysis"><i class="fa fa-check"></i><b>9.5.1</b> Example 1: Revenue Analysis</a></li>
+<li class="chapter" data-level="9.5.2" data-path="data-visualization.html"><a href="data-visualization.html#example-2-player-performance-metrics"><i class="fa fa-check"></i><b>9.5.2</b> Example 2: Player Performance Metrics</a></li>
+<li class="chapter" data-level="9.5.3" data-path="data-visualization.html"><a href="data-visualization.html#example-3-attendance-trends"><i class="fa fa-check"></i><b>9.5.3</b> Example 3: Attendance Trends</a></li>
+<li class="chapter" data-level="9.5.4" data-path="data-visualization.html"><a href="data-visualization.html#example-4-comparative-performance-dashboard"><i class="fa fa-check"></i><b>9.5.4</b> Example 4: Comparative Performance Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="data-visualization.html"><a href="data-visualization.html#exporting-and-sharing-visualizations"><i class="fa fa-check"></i><b>9.6</b> Exporting and Sharing Visualizations</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>9.6.1</b> Saving Plots</a></li>
+<li class="chapter" data-level="9.6.2" data-path="data-visualization.html"><a href="data-visualization.html#creating-publication-ready-plots"><i class="fa fa-check"></i><b>9.6.2</b> Creating Publication-Ready Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="data-visualization.html"><a href="data-visualization.html#best-practices-for-sport-business-visualizations"><i class="fa fa-check"></i><b>9.7</b> Best Practices for Sport Business Visualizations</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="data-visualization.html"><a href="data-visualization.html#know-your-audience"><i class="fa fa-check"></i><b>9.7.1</b> 1. Know Your Audience</a></li>
+<li class="chapter" data-level="9.7.2" data-path="data-visualization.html"><a href="data-visualization.html#choose-the-right-chart-type"><i class="fa fa-check"></i><b>9.7.2</b> 2. Choose the Right Chart Type</a></li>
+<li class="chapter" data-level="9.7.3" data-path="data-visualization.html"><a href="data-visualization.html#maintain-consistency"><i class="fa fa-check"></i><b>9.7.3</b> 3. Maintain Consistency</a></li>
+<li class="chapter" data-level="9.7.4" data-path="data-visualization.html"><a href="data-visualization.html#tell-a-story-with-data"><i class="fa fa-check"></i><b>9.7.4</b> 4. Tell a Story with Data</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="data-visualization.html"><a href="data-visualization.html#practice-exercises-8"><i class="fa fa-check"></i><b>9.8</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="data-visualization.html"><a href="data-visualization.html#exercise-1-basic-visualizations"><i class="fa fa-check"></i><b>9.8.1</b> Exercise 1: Basic Visualizations</a></li>
+<li class="chapter" data-level="9.8.2" data-path="data-visualization.html"><a href="data-visualization.html#exercise-2-customization"><i class="fa fa-check"></i><b>9.8.2</b> Exercise 2: Customization</a></li>
+<li class="chapter" data-level="9.8.3" data-path="data-visualization.html"><a href="data-visualization.html#exercise-3-multi-panel-dashboard"><i class="fa fa-check"></i><b>9.8.3</b> Exercise 3: Multi-Panel Dashboard</a></li>
+<li class="chapter" data-level="9.8.4" data-path="data-visualization.html"><a href="data-visualization.html#exercise-4-real-world-application"><i class="fa fa-check"></i><b>9.8.4</b> Exercise 4: Real-World Application</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="data-visualization.html"><a href="data-visualization.html#chapter-summary-7"><i class="fa fa-check"></i><b>9.9</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="data-visualization.html"><a href="data-visualization.html#key-concepts-1"><i class="fa fa-check"></i><b>9.9.1</b> Key Concepts</a></li>
+<li class="chapter" data-level="9.9.2" data-path="data-visualization.html"><a href="data-visualization.html#r-functions-reference-1"><i class="fa fa-check"></i><b>9.9.2</b> R Functions Reference</a></li>
+<li class="chapter" data-level="9.9.3" data-path="data-visualization.html"><a href="data-visualization.html#next-steps-7"><i class="fa fa-check"></i><b>9.9.3</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="9.10" data-path="data-visualization.html"><a href="data-visualization.html#references-7"><i class="fa fa-check"></i><b>9.10</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tableau.html"><a href="tableau.html"><i class="fa fa-check"></i><b>10</b> Introduction to Tableau</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="tableau.html"><a href="tableau.html#why-tableau-for-sport-business-analytics"><i class="fa fa-check"></i><b>10.1</b> Why Tableau for Sport Business Analytics?</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="tableau.html"><a href="tableau.html#tableaus-role-in-sport-analytics"><i class="fa fa-check"></i><b>10.1.1</b> Tableau’s Role in Sport Analytics</a></li>
+<li class="chapter" data-level="10.1.2" data-path="tableau.html"><a href="tableau.html#real-world-sport-business-applications"><i class="fa fa-check"></i><b>10.1.2</b> Real-World Sport Business Applications</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="tableau.html"><a href="tableau.html#getting-started-with-tableau"><i class="fa fa-check"></i><b>10.2</b> Getting Started with Tableau</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="tableau.html"><a href="tableau.html#installing-tableau-public"><i class="fa fa-check"></i><b>10.2.1</b> Installing Tableau Public</a></li>
+<li class="chapter" data-level="10.2.2" data-path="tableau.html"><a href="tableau.html#tableau-interface-overview"><i class="fa fa-check"></i><b>10.2.2</b> Tableau Interface Overview</a></li>
+<li class="chapter" data-level="10.2.3" data-path="tableau.html"><a href="tableau.html#understanding-tableau-terminology"><i class="fa fa-check"></i><b>10.2.3</b> Understanding Tableau Terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="tableau.html"><a href="tableau.html#connecting-to-data"><i class="fa fa-check"></i><b>10.3</b> Connecting to Data</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="tableau.html"><a href="tableau.html#loading-a-csv-file"><i class="fa fa-check"></i><b>10.3.1</b> Loading a CSV File</a></li>
+<li class="chapter" data-level="10.3.2" data-path="tableau.html"><a href="tableau.html#data-source-page"><i class="fa fa-check"></i><b>10.3.2</b> Data Source Page</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="tableau.html"><a href="tableau.html#building-your-first-visualization"><i class="fa fa-check"></i><b>10.4</b> Building Your First Visualization</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="tableau.html"><a href="tableau.html#creating-a-bar-chart"><i class="fa fa-check"></i><b>10.4.1</b> Creating a Bar Chart</a></li>
+<li class="chapter" data-level="10.4.2" data-path="tableau.html"><a href="tableau.html#creating-a-line-chart-time-series"><i class="fa fa-check"></i><b>10.4.2</b> Creating a Line Chart (Time Series)</a></li>
+<li class="chapter" data-level="10.4.3" data-path="tableau.html"><a href="tableau.html#creating-a-scatter-plot"><i class="fa fa-check"></i><b>10.4.3</b> Creating a Scatter Plot</a></li>
+<li class="chapter" data-level="10.4.4" data-path="tableau.html"><a href="tableau.html#working-with-maps"><i class="fa fa-check"></i><b>10.4.4</b> Working with Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="tableau.html"><a href="tableau.html#using-marks-and-aesthetics"><i class="fa fa-check"></i><b>10.5</b> Using Marks and Aesthetics</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="tableau.html"><a href="tableau.html#mark-type"><i class="fa fa-check"></i><b>10.5.1</b> Mark Type</a></li>
+<li class="chapter" data-level="10.5.2" data-path="tableau.html"><a href="tableau.html#color"><i class="fa fa-check"></i><b>10.5.2</b> Color</a></li>
+<li class="chapter" data-level="10.5.3" data-path="tableau.html"><a href="tableau.html#size"><i class="fa fa-check"></i><b>10.5.3</b> Size</a></li>
+<li class="chapter" data-level="10.5.4" data-path="tableau.html"><a href="tableau.html#labels"><i class="fa fa-check"></i><b>10.5.4</b> Labels</a></li>
+<li class="chapter" data-level="10.5.5" data-path="tableau.html"><a href="tableau.html#tooltip"><i class="fa fa-check"></i><b>10.5.5</b> Tooltip</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="tableau.html"><a href="tableau.html#filters-and-interactivity"><i class="fa fa-check"></i><b>10.6</b> Filters and Interactivity</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="tableau.html"><a href="tableau.html#creating-filters"><i class="fa fa-check"></i><b>10.6.1</b> Creating Filters</a></li>
+<li class="chapter" data-level="10.6.2" data-path="tableau.html"><a href="tableau.html#date-filters"><i class="fa fa-check"></i><b>10.6.2</b> Date Filters</a></li>
+<li class="chapter" data-level="10.6.3" data-path="tableau.html"><a href="tableau.html#quick-filters"><i class="fa fa-check"></i><b>10.6.3</b> Quick Filters</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="tableau.html"><a href="tableau.html#adding-analytics"><i class="fa fa-check"></i><b>10.7</b> Adding Analytics</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="tableau.html"><a href="tableau.html#reference-lines"><i class="fa fa-check"></i><b>10.7.1</b> Reference Lines</a></li>
+<li class="chapter" data-level="10.7.2" data-path="tableau.html"><a href="tableau.html#forecasting"><i class="fa fa-check"></i><b>10.7.2</b> Forecasting</a></li>
+<li class="chapter" data-level="10.7.3" data-path="tableau.html"><a href="tableau.html#calculations"><i class="fa fa-check"></i><b>10.7.3</b> Calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="tableau.html"><a href="tableau.html#creating-dashboards"><i class="fa fa-check"></i><b>10.8</b> Creating Dashboards</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="tableau.html"><a href="tableau.html#building-a-dashboard"><i class="fa fa-check"></i><b>10.8.1</b> Building a Dashboard</a></li>
+<li class="chapter" data-level="10.8.2" data-path="tableau.html"><a href="tableau.html#dashboard-best-practices"><i class="fa fa-check"></i><b>10.8.2</b> Dashboard Best Practices</a></li>
+<li class="chapter" data-level="10.8.3" data-path="tableau.html"><a href="tableau.html#dashboard-actions"><i class="fa fa-check"></i><b>10.8.3</b> Dashboard Actions</a></li>
+<li class="chapter" data-level="10.8.4" data-path="tableau.html"><a href="tableau.html#adding-dashboard-objects"><i class="fa fa-check"></i><b>10.8.4</b> Adding Dashboard Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="tableau.html"><a href="tableau.html#practical-sport-business-dashboards"><i class="fa fa-check"></i><b>10.9</b> Practical Sport Business Dashboards</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="tableau.html"><a href="tableau.html#example-1-ticket-sales-dashboard"><i class="fa fa-check"></i><b>10.9.1</b> Example 1: Ticket Sales Dashboard</a></li>
+<li class="chapter" data-level="10.9.2" data-path="tableau.html"><a href="tableau.html#example-2-fan-attendance-dashboard"><i class="fa fa-check"></i><b>10.9.2</b> Example 2: Fan Attendance Dashboard</a></li>
+<li class="chapter" data-level="10.9.3" data-path="tableau.html"><a href="tableau.html#example-3-social-media-performance"><i class="fa fa-check"></i><b>10.9.3</b> Example 3: Social Media Performance</a></li>
+<li class="chapter" data-level="10.9.4" data-path="tableau.html"><a href="tableau.html#example-4-player-performance-dashboard"><i class="fa fa-check"></i><b>10.9.4</b> Example 4: Player Performance Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="tableau.html"><a href="tableau.html#publishing-and-sharing"><i class="fa fa-check"></i><b>10.10</b> Publishing and Sharing</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="tableau.html"><a href="tableau.html#saving-to-tableau-public"><i class="fa fa-check"></i><b>10.10.1</b> Saving to Tableau Public</a></li>
+<li class="chapter" data-level="10.10.2" data-path="tableau.html"><a href="tableau.html#embedding-in-websites"><i class="fa fa-check"></i><b>10.10.2</b> Embedding in Websites</a></li>
+<li class="chapter" data-level="10.10.3" data-path="tableau.html"><a href="tableau.html#presentation-mode"><i class="fa fa-check"></i><b>10.10.3</b> Presentation Mode</a></li>
+<li class="chapter" data-level="10.10.4" data-path="tableau.html"><a href="tableau.html#exporting-options"><i class="fa fa-check"></i><b>10.10.4</b> Exporting Options</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="tableau.html"><a href="tableau.html#tableau-vs.-r-when-to-use-each"><i class="fa fa-check"></i><b>10.11</b> Tableau vs. R: When to Use Each</a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="tableau.html"><a href="tableau.html#strengths-of-r-ggplot2"><i class="fa fa-check"></i><b>10.11.1</b> Strengths of R (ggplot2)</a></li>
+<li class="chapter" data-level="10.11.2" data-path="tableau.html"><a href="tableau.html#strengths-of-tableau"><i class="fa fa-check"></i><b>10.11.2</b> Strengths of Tableau</a></li>
+<li class="chapter" data-level="10.11.3" data-path="tableau.html"><a href="tableau.html#recommended-workflow"><i class="fa fa-check"></i><b>10.11.3</b> Recommended Workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="10.12" data-path="tableau.html"><a href="tableau.html#practice-exercises-9"><i class="fa fa-check"></i><b>10.12</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="10.12.1" data-path="tableau.html"><a href="tableau.html#exercise-1-basic-visualization"><i class="fa fa-check"></i><b>10.12.1</b> Exercise 1: Basic Visualization</a></li>
+<li class="chapter" data-level="10.12.2" data-path="tableau.html"><a href="tableau.html#exercise-2-time-series-analysis"><i class="fa fa-check"></i><b>10.12.2</b> Exercise 2: Time Series Analysis</a></li>
+<li class="chapter" data-level="10.12.3" data-path="tableau.html"><a href="tableau.html#exercise-3-dashboard-creation"><i class="fa fa-check"></i><b>10.12.3</b> Exercise 3: Dashboard Creation</a></li>
+<li class="chapter" data-level="10.12.4" data-path="tableau.html"><a href="tableau.html#exercise-4-geographic-analysis"><i class="fa fa-check"></i><b>10.12.4</b> Exercise 4: Geographic Analysis</a></li>
+<li class="chapter" data-level="10.12.5" data-path="tableau.html"><a href="tableau.html#exercise-5-comparative-analysis"><i class="fa fa-check"></i><b>10.12.5</b> Exercise 5: Comparative Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="10.13" data-path="tableau.html"><a href="tableau.html#tips-for-success"><i class="fa fa-check"></i><b>10.13</b> Tips for Success</a>
+<ul>
+<li class="chapter" data-level="10.13.1" data-path="tableau.html"><a href="tableau.html#design-principles"><i class="fa fa-check"></i><b>10.13.1</b> Design Principles</a></li>
+<li class="chapter" data-level="10.13.2" data-path="tableau.html"><a href="tableau.html#common-mistakes-to-avoid-1"><i class="fa fa-check"></i><b>10.13.2</b> Common Mistakes to Avoid</a></li>
+</ul></li>
+<li class="chapter" data-level="10.14" data-path="tableau.html"><a href="tableau.html#advanced-features-optional"><i class="fa fa-check"></i><b>10.14</b> Advanced Features (Optional)</a>
+<ul>
+<li class="chapter" data-level="10.14.1" data-path="tableau.html"><a href="tableau.html#parameters"><i class="fa fa-check"></i><b>10.14.1</b> Parameters</a></li>
+<li class="chapter" data-level="10.14.2" data-path="tableau.html"><a href="tableau.html#sets"><i class="fa fa-check"></i><b>10.14.2</b> Sets</a></li>
+<li class="chapter" data-level="10.14.3" data-path="tableau.html"><a href="tableau.html#table-calculations"><i class="fa fa-check"></i><b>10.14.3</b> Table Calculations</a></li>
+<li class="chapter" data-level="10.14.4" data-path="tableau.html"><a href="tableau.html#lod-expressions"><i class="fa fa-check"></i><b>10.14.4</b> LOD Expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="10.15" data-path="tableau.html"><a href="tableau.html#chapter-summary-8"><i class="fa fa-check"></i><b>10.15</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="10.15.1" data-path="tableau.html"><a href="tableau.html#key-concepts-2"><i class="fa fa-check"></i><b>10.15.1</b> Key Concepts</a></li>
+<li class="chapter" data-level="10.15.2" data-path="tableau.html"><a href="tableau.html#tableau-vs.-r"><i class="fa fa-check"></i><b>10.15.2</b> Tableau vs. R</a></li>
+<li class="chapter" data-level="10.15.3" data-path="tableau.html"><a href="tableau.html#professional-sport-analytics-workflow"><i class="fa fa-check"></i><b>10.15.3</b> Professional Sport Analytics Workflow</a></li>
+<li class="chapter" data-level="10.15.4" data-path="tableau.html"><a href="tableau.html#real-world-applications"><i class="fa fa-check"></i><b>10.15.4</b> Real-World Applications</a></li>
+<li class="chapter" data-level="10.15.5" data-path="tableau.html"><a href="tableau.html#next-steps-8"><i class="fa fa-check"></i><b>10.15.5</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.16" data-path="tableau.html"><a href="tableau.html#references-8"><i class="fa fa-check"></i><b>10.16</b> References</a>
+<ul>
+<li class="chapter" data-level="10.16.1" data-path="tableau.html"><a href="tableau.html#additional-resources-1"><i class="fa fa-check"></i><b>10.16.1</b> Additional Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tableau" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Introduction to Tableau<a href="tableau.html#tableau" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="why-tableau-for-sport-business-analytics" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Why Tableau for Sport Business Analytics?<a href="tableau.html#why-tableau-for-sport-business-analytics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While R provides powerful statistical analysis and visualization capabilities, <strong>Tableau</strong> excels at creating interactive dashboards and sharing insights with non-technical stakeholders. In sport business, you’ll often need to present data to executives, coaches, marketing teams, and sponsors who want interactive, visual reports rather than statistical code.</p>
+<div id="tableaus-role-in-sport-analytics" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Tableau’s Role in Sport Analytics<a href="tableau.html#tableaus-role-in-sport-analytics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Use Tableau when you need to</strong>:
+- Create interactive dashboards for stakeholders
+- Share live, updating reports with executives
+- Build visualizations quickly without coding
+- Present findings to non-technical audiences
+- Allow users to explore data themselves</p>
+<p><strong>Use R when you need to</strong>:
+- Perform complex statistical analyses
+- Run predictive models and machine learning
+- Automate repetitive analytical tasks
+- Work with very large datasets
+- Create reproducible research</p>
+<p>Many sport analytics professionals use <strong>both</strong> tools: R for analysis, Tableau for presentation.</p>
+</div>
+<div id="real-world-sport-business-applications" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Real-World Sport Business Applications<a href="tableau.html#real-world-sport-business-applications" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Ticket Sales Dashboards</strong>: Track daily sales, pricing strategies, and revenue by section</li>
+<li><strong>Attendance Analytics</strong>: Visualize trends, compare against weather/opponent/promotions</li>
+<li><strong>Social Media Monitoring</strong>: Display engagement metrics, sentiment, reach</li>
+<li><strong>Player Performance</strong>: Interactive stats viewers for coaches and scouts</li>
+<li><strong>Sponsorship ROI</strong>: Show brand exposure, activation metrics, value delivered</li>
+<li><strong>Fan Demographics</strong>: Map season ticket holder locations, spending patterns</li>
+</ul>
+</div>
+</div>
+<div id="getting-started-with-tableau" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Getting Started with Tableau<a href="tableau.html#getting-started-with-tableau" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="installing-tableau-public" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Installing Tableau Public<a href="tableau.html#installing-tableau-public" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For this course, we’ll use <strong>Tableau Public</strong>, a free version of Tableau Desktop perfect for learning and sharing visualizations publicly.</p>
+<p><strong>Download Tableau Public</strong>:
+1. Visit <a href="https://public.tableau.com/">https://public.tableau.com/</a>
+2. Click “Download the App”
+3. Create a free account
+4. Install the application</p>
+<p><strong>Note</strong>: Tableau Public saves all work to the cloud publicly. For sensitive data, organizations use Tableau Desktop (paid) which allows local saving.</p>
+</div>
+<div id="tableau-interface-overview" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Tableau Interface Overview<a href="tableau.html#tableau-interface-overview" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When you open Tableau, you’ll see:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Area</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Data Source</strong></td>
+<td>Connect to data files (Excel, CSV, databases)</td>
+</tr>
+<tr class="even">
+<td><strong>Worksheets</strong></td>
+<td>Individual visualizations</td>
+</tr>
+<tr class="odd">
+<td><strong>Dashboards</strong></td>
+<td>Combine multiple worksheets</td>
+</tr>
+<tr class="even">
+<td><strong>Stories</strong></td>
+<td>Create narrative sequences of dashboards</td>
+</tr>
+<tr class="odd">
+<td><strong>Dimensions</strong></td>
+<td>Categorical fields (blue) - qualitative data</td>
+</tr>
+<tr class="even">
+<td><strong>Measures</strong></td>
+<td>Numeric fields (green) - quantitative data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="understanding-tableau-terminology" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Understanding Tableau Terminology<a href="tableau.html#understanding-tableau-terminology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="44%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Worksheet</strong></td>
+<td>A single visualization</td>
+<td>Bar chart of ticket sales by month</td>
+</tr>
+<tr class="even">
+<td><strong>Dashboard</strong></td>
+<td>Multiple worksheets combined</td>
+<td>Sales + attendance + revenue together</td>
+</tr>
+<tr class="odd">
+<td><strong>Story</strong></td>
+<td>Sequence of dashboards with narrative</td>
+<td>Season performance story</td>
+</tr>
+<tr class="even">
+<td><strong>Marks</strong></td>
+<td>Visual elements representing data points</td>
+<td>Bars, lines, circles</td>
+</tr>
+<tr class="odd">
+<td><strong>Shelves</strong></td>
+<td>Drop zones for fields (Rows, Columns, etc.)</td>
+<td>Drag “Sales” to Rows</td>
+</tr>
+<tr class="even">
+<td><strong>Cards</strong></td>
+<td>Control appearance (Color, Size, Label)</td>
+<td>Color by team, size by attendance</td>
+</tr>
+<tr class="odd">
+<td><strong>Filters</strong></td>
+<td>Limit data shown</td>
+<td>Show only 2023 season</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="connecting-to-data" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Connecting to Data<a href="tableau.html#connecting-to-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="loading-a-csv-file" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Loading a CSV File<a href="tableau.html#loading-a-csv-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s create a sample dataset and load it into Tableau:</p>
+<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb605-1"><a href="tableau.html#cb605-1" tabindex="-1"></a><span class="co"># Create sample sport business data</span></span>
+<span id="cb605-2"><a href="tableau.html#cb605-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb605-3"><a href="tableau.html#cb605-3" tabindex="-1"></a></span>
+<span id="cb605-4"><a href="tableau.html#cb605-4" tabindex="-1"></a><span class="co"># Sample ticket sales data</span></span>
+<span id="cb605-5"><a href="tableau.html#cb605-5" tabindex="-1"></a>ticket_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb605-6"><a href="tableau.html#cb605-6" tabindex="-1"></a>  <span class="at">Date =</span> <span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
+<span id="cb605-7"><a href="tableau.html#cb605-7" tabindex="-1"></a>                  <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
+<span id="cb605-8"><a href="tableau.html#cb605-8" tabindex="-1"></a>                  <span class="at">by =</span> <span class="st">&quot;day&quot;</span>),</span>
+<span id="cb605-9"><a href="tableau.html#cb605-9" tabindex="-1"></a>  <span class="at">Day_of_Week =</span> <span class="fu">weekdays</span>(<span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
+<span id="cb605-10"><a href="tableau.html#cb605-10" tabindex="-1"></a>                                   <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
+<span id="cb605-11"><a href="tableau.html#cb605-11" tabindex="-1"></a>                                   <span class="at">by =</span> <span class="st">&quot;day&quot;</span>)),</span>
+<span id="cb605-12"><a href="tableau.html#cb605-12" tabindex="-1"></a>  <span class="at">Month =</span> month.name[<span class="fu">month</span>(<span class="fu">seq.Date</span>(<span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-01-01&quot;</span>),</span>
+<span id="cb605-13"><a href="tableau.html#cb605-13" tabindex="-1"></a>                                     <span class="at">to =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-12-31&quot;</span>),</span>
+<span id="cb605-14"><a href="tableau.html#cb605-14" tabindex="-1"></a>                                     <span class="at">by =</span> <span class="st">&quot;day&quot;</span>))],</span>
+<span id="cb605-15"><a href="tableau.html#cb605-15" tabindex="-1"></a>  <span class="at">Tickets_Sold =</span> <span class="fu">sample</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">500</span>, <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb605-16"><a href="tableau.html#cb605-16" tabindex="-1"></a>  <span class="at">Revenue =</span> <span class="fu">sample</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">500</span>, <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="fu">runif</span>(<span class="dv">365</span>, <span class="dv">35</span>, <span class="dv">85</span>),</span>
+<span id="cb605-17"><a href="tableau.html#cb605-17" tabindex="-1"></a>  <span class="at">Category =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Season Tickets&quot;</span>, <span class="st">&quot;Single Game&quot;</span>, <span class="st">&quot;Group Sales&quot;</span>),</span>
+<span id="cb605-18"><a href="tableau.html#cb605-18" tabindex="-1"></a>                    <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb605-19"><a href="tableau.html#cb605-19" tabindex="-1"></a>  <span class="at">Section =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Lower Bowl&quot;</span>, <span class="st">&quot;Upper Bowl&quot;</span>, <span class="st">&quot;Club&quot;</span>, <span class="st">&quot;Suite&quot;</span>),</span>
+<span id="cb605-20"><a href="tableau.html#cb605-20" tabindex="-1"></a>                   <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb605-21"><a href="tableau.html#cb605-21" tabindex="-1"></a>)</span>
+<span id="cb605-22"><a href="tableau.html#cb605-22" tabindex="-1"></a></span>
+<span id="cb605-23"><a href="tableau.html#cb605-23" tabindex="-1"></a><span class="co"># Save to CSV</span></span>
+<span id="cb605-24"><a href="tableau.html#cb605-24" tabindex="-1"></a><span class="fu">write.csv</span>(ticket_data, <span class="st">&quot;sport_ticket_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><strong>In Tableau</strong>:
+1. Open Tableau Public
+2. Click “Connect” → “Text file”
+3. Navigate to your CSV file
+4. Tableau will preview your data
+5. Click “Sheet 1” to start visualizing</p>
+</div>
+<div id="data-source-page" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Data Source Page<a href="tableau.html#data-source-page" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before creating visualizations, review your data on the Data Source page:</p>
+<ul>
+<li><strong>Check field types</strong>: Tableau auto-detects data types (date, number, text)</li>
+<li><strong>Change if needed</strong>: Click the icon above field names to change types</li>
+<li><strong>Create calculations</strong>: Add new fields based on existing data</li>
+<li><strong>Join tables</strong>: Combine multiple data sources if needed</li>
+</ul>
+</div>
+</div>
+<div id="building-your-first-visualization" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Building Your First Visualization<a href="tableau.html#building-your-first-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="creating-a-bar-chart" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Creating a Bar Chart<a href="tableau.html#creating-a-bar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal</strong>: Show total tickets sold by category</p>
+<p><strong>Steps</strong>:
+1. Drag <strong>Category</strong> to Columns
+2. Drag <strong>Tickets_Sold</strong> to Rows
+3. Tableau creates a bar chart automatically
+4. Click <strong>SUM(Tickets_Sold)</strong> → change to desired aggregation if needed</p>
+<p><strong>Customizing</strong>:
+- <strong>Color</strong>: Drag <strong>Category</strong> to Color in Marks card
+- <strong>Labels</strong>: Drag <strong>Tickets_Sold</strong> to Label
+- <strong>Sorting</strong>: Click sort icon in toolbar or right-click axis
+- <strong>Title</strong>: Double-click title to edit</p>
+</div>
+<div id="creating-a-line-chart-time-series" class="section level3 hasAnchor" number="10.4.2">
+<h3><span class="header-section-number">10.4.2</span> Creating a Line Chart (Time Series)<a href="tableau.html#creating-a-line-chart-time-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal</strong>: Show daily ticket sales over time</p>
+<p><strong>Steps</strong>:
+1. Drag <strong>Date</strong> to Columns
+2. Drag <strong>Tickets_Sold</strong> to Rows
+3. Tableau creates a line chart
+4. Click the “+” next to <strong>YEAR(Date)</strong> to drill down to months, days</p>
+<p><strong>Important Concept</strong>: Blue vs. Green dates
+- <strong>Blue (Discrete)</strong>: Treats each value separately (e.g., individual months)
+- <strong>Green (Continuous)</strong>: Treats as a continuous timeline</p>
+<p>To switch:
+- Right-click the date field → Choose between discrete and continuous options</p>
+</div>
+<div id="creating-a-scatter-plot" class="section level3 hasAnchor" number="10.4.3">
+<h3><span class="header-section-number">10.4.3</span> Creating a Scatter Plot<a href="tableau.html#creating-a-scatter-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Goal</strong>: Show relationship between tickets sold and revenue</p>
+<p><strong>Steps</strong>:
+1. Drag <strong>Tickets_Sold</strong> to Columns
+2. Drag <strong>Revenue</strong> to Rows
+3. Each point represents a day
+4. Drag <strong>Category</strong> to Color to see patterns by type
+5. Drag <strong>Tickets_Sold</strong> to Size to vary point sizes</p>
+</div>
+<div id="working-with-maps" class="section level3 hasAnchor" number="10.4.4">
+<h3><span class="header-section-number">10.4.4</span> Working with Maps<a href="tableau.html#working-with-maps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tableau has built-in geographic recognition for countries, states, cities, and even postal codes.</p>
+<p><strong>Goal</strong>: Map ticket sales by state (if you have geographic data)</p>
+<p><strong>Steps</strong>:
+1. Drag <strong>State</strong> to the worksheet (Tableau creates a map automatically)
+2. Drag <strong>Revenue</strong> to Color
+3. Drag <strong>Tickets_Sold</strong> to Size
+4. Tableau displays a filled map with color intensity showing revenue</p>
+<p><strong>Creating Hierarchies</strong>:
+For drill-down functionality (Country → State → City):
+1. In Data pane, drag <strong>State</strong> onto <strong>Country</strong>
+2. This creates a hierarchy
+3. On map, click “+” to drill down from country to states
+4. Click “+” again to drill to cities</p>
+</div>
+</div>
+<div id="using-marks-and-aesthetics" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Using Marks and Aesthetics<a href="tableau.html#using-marks-and-aesthetics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>Marks card</strong> controls how data appears visually.</p>
+<div id="mark-type" class="section level3 hasAnchor" number="10.5.1">
+<h3><span class="header-section-number">10.5.1</span> Mark Type<a href="tableau.html#mark-type" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Change visualization type by clicking the dropdown in Marks:
+- <strong>Automatic</strong>: Tableau chooses based on data
+- <strong>Bar</strong>: Bar charts
+- <strong>Line</strong>: Line charts
+- <strong>Area</strong>: Area charts
+- <strong>Pie</strong>: Pie charts
+- <strong>Circle</strong>: Scatter plots
+- <strong>Shape</strong>: Use shapes instead of circles
+- <strong>Text</strong>: Display values as text
+- <strong>Map</strong>: Geographic visualizations</p>
+</div>
+<div id="color" class="section level3 hasAnchor" number="10.5.2">
+<h3><span class="header-section-number">10.5.2</span> Color<a href="tableau.html#color" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Color by Category</strong>:
+- Drag <strong>Category</strong> to Color
+- Tableau assigns colors automatically
+- Click Color → Edit Colors to customize palette</p>
+<p><strong>Color by Value</strong>:
+- Drag a measure like <strong>Revenue</strong> to Color
+- Tableau creates a gradient (low to high)
+- Click Color → Edit Colors to choose gradient colors</p>
+</div>
+<div id="size" class="section level3 hasAnchor" number="10.5.3">
+<h3><span class="header-section-number">10.5.3</span> Size<a href="tableau.html#size" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Size by Value</strong>:
+- Drag <strong>Tickets_Sold</strong> to Size
+- Larger values = larger marks
+- Click Size slider to adjust overall size range</p>
+</div>
+<div id="labels" class="section level3 hasAnchor" number="10.5.4">
+<h3><span class="header-section-number">10.5.4</span> Labels<a href="tableau.html#labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Show Values on Chart</strong>:
+- Drag field to Label
+- All marks will display values
+- Click Label → Font to customize appearance</p>
+</div>
+<div id="tooltip" class="section level3 hasAnchor" number="10.5.5">
+<h3><span class="header-section-number">10.5.5</span> Tooltip<a href="tableau.html#tooltip" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Custom Hover Information</strong>:
+- Click Tooltip in Marks card
+- Edit text and add dynamic fields using Insert menu
+- Include relevant metrics for user context</p>
+<p>Example tooltip:</p>
+<pre><code>Date: &lt;Date&gt;
+Tickets Sold: &lt;SUM(Tickets_Sold)&gt;
+Revenue: $&lt;SUM(Revenue)&gt;
+Category: &lt;Category&gt;</code></pre>
+</div>
+</div>
+<div id="filters-and-interactivity" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Filters and Interactivity<a href="tableau.html#filters-and-interactivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="creating-filters" class="section level3 hasAnchor" number="10.6.1">
+<h3><span class="header-section-number">10.6.1</span> Creating Filters<a href="tableau.html#creating-filters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Basic Filter</strong>:
+1. Drag <strong>Category</strong> to Filters shelf
+2. Select values to include/exclude
+3. Click OK</p>
+<p><strong>Show Filter to Users</strong>:
+1. Right-click the field in Filters shelf
+2. Select “Show Filter”
+3. Filter appears on right side of worksheet
+4. Users can now interact with it</p>
+<p><strong>Filter Types</strong>:
+- <strong>Categorical</strong>: Checkboxes for each value
+- <strong>Date</strong>: Calendar picker or relative dates
+- <strong>Numeric</strong>: Range slider or input boxes
+- <strong>Top N</strong>: Show only top/bottom N items</p>
+</div>
+<div id="date-filters" class="section level3 hasAnchor" number="10.6.2">
+<h3><span class="header-section-number">10.6.2</span> Date Filters<a href="tableau.html#date-filters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Relative Dates</strong>:
+1. Drag <strong>Date</strong> to Filters
+2. Select “Relative dates”
+3. Choose range (Last 30 days, This year, etc.)
+4. Data updates automatically as time passes</p>
+<p><strong>Date Range</strong>:
+1. Drag <strong>Date</strong> to Filters
+2. Select “Range of dates”
+3. Choose start and end dates
+4. Show filter for users to adjust</p>
+</div>
+<div id="quick-filters" class="section level3 hasAnchor" number="10.6.3">
+<h3><span class="header-section-number">10.6.3</span> Quick Filters<a href="tableau.html#quick-filters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Right-click any field and select “Show Filter” for instant filtering capability.</p>
+<p><strong>Filter Customization</strong>:
+- Right-click filter → Customize
+- Choose display type: dropdown, list, slider, etc.
+- Set default values
+- Allow multiple values or single select</p>
+</div>
+</div>
+<div id="adding-analytics" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Adding Analytics<a href="tableau.html#adding-analytics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reference-lines" class="section level3 hasAnchor" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> Reference Lines<a href="tableau.html#reference-lines" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Add Average Line</strong>:
+1. Switch to <strong>Analytics</strong> tab (next to Data tab)
+2. Drag <strong>Average Line</strong> to visualization
+3. Choose Table, Pane, or Cell level
+4. Customize appearance and label</p>
+<p><strong>Add Trend Line</strong>:
+1. From Analytics tab, drag <strong>Trend Line</strong>
+2. Tableau fits a regression line to your data
+3. Right-click trend line → Edit to see statistics
+4. Choose linear, logarithmic, exponential, polynomial, or power models</p>
+</div>
+<div id="forecasting" class="section level3 hasAnchor" number="10.7.2">
+<h3><span class="header-section-number">10.7.2</span> Forecasting<a href="tableau.html#forecasting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Automatic Forecasting</strong>:
+1. From Analytics tab, drag <strong>Forecast</strong>
+2. Tableau uses time series methods to predict future values
+3. Works best with consistent historical data
+4. Right-click forecast → Describe Forecast for details</p>
+</div>
+<div id="calculations" class="section level3 hasAnchor" number="10.7.3">
+<h3><span class="header-section-number">10.7.3</span> Calculations<a href="tableau.html#calculations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Creating Calculated Fields</strong>:
+1. Right-click in Data pane → Create Calculated Field
+2. Write formula using Tableau functions
+3. Example: <code>[Revenue] / [Tickets_Sold]</code> for average ticket price</p>
+<p><strong>Common Calculations for Sport Business</strong>:</p>
+<pre><code>// Average ticket price
+[Revenue] / [Tickets_Sold]
+
+// Percent of total
+SUM([Tickets_Sold]) / TOTAL(SUM([Tickets_Sold]))
+
+// Year-over-year growth
+(SUM([Revenue]) - LOOKUP(SUM([Revenue]), -1)) / LOOKUP(SUM([Revenue]), -1)
+
+// Attendance rate
+[Actual_Attendance] / [Capacity]
+
+// Win percentage
+[Wins] / ([Wins] + [Losses])</code></pre>
+</div>
+</div>
+<div id="creating-dashboards" class="section level2 hasAnchor" number="10.8">
+<h2><span class="header-section-number">10.8</span> Creating Dashboards<a href="tableau.html#creating-dashboards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dashboards combine multiple worksheets into a single interactive view.</p>
+<div id="building-a-dashboard" class="section level3 hasAnchor" number="10.8.1">
+<h3><span class="header-section-number">10.8.1</span> Building a Dashboard<a href="tableau.html#building-a-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Steps</strong>:
+1. Click <strong>Dashboard</strong> → <strong>New Dashboard</strong> (or icon at bottom)
+2. Choose size (Desktop, Tablet, Phone, or custom)
+3. Drag worksheets from left panel onto dashboard
+4. Arrange and resize as needed</p>
+<p><strong>Layout Options</strong>:
+- <strong>Tiled</strong>: Worksheets snap to grid, resize automatically
+- <strong>Floating</strong>: Worksheets can overlap, positioned anywhere
+- <strong>Containers</strong>: Horizontal/Vertical containers organize related items</p>
+</div>
+<div id="dashboard-best-practices" class="section level3 hasAnchor" number="10.8.2">
+<h3><span class="header-section-number">10.8.2</span> Dashboard Best Practices<a href="tableau.html#dashboard-best-practices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>1. Tell a Story</strong>:
+- Put most important metric at top-left (eye naturally goes there)
+- Arrange in logical flow
+- Use consistent color schemes across worksheets</p>
+<p><strong>2. Provide Context</strong>:
+- Include KPIs (Key Performance Indicators) prominently
+- Add titles and explanations
+- Show comparisons (vs. last year, vs. target, vs. league average)</p>
+<p><strong>3. Enable Exploration</strong>:
+- Use filter actions (clicking one chart filters others)
+- Add global filters for date ranges
+- Provide drill-down capabilities</p>
+<p><strong>4. Optimize Performance</strong>:
+- Limit number of worksheets (aim for 5-8 maximum)
+- Use extracts instead of live connections for large datasets
+- Hide unnecessary fields and calculations</p>
+</div>
+<div id="dashboard-actions" class="section level3 hasAnchor" number="10.8.3">
+<h3><span class="header-section-number">10.8.3</span> Dashboard Actions<a href="tableau.html#dashboard-actions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Filter Actions</strong> (most powerful feature):
+1. Dashboard → Actions → Add Action → Filter
+2. Choose source worksheet (user clicks here)
+3. Choose target worksheets (these get filtered)
+4. Run action on Select, Hover, or Menu</p>
+<p><strong>Example</strong>: Click a state on map → bar charts filter to show only that state’s data</p>
+<p><strong>Highlight Actions</strong>:
+- Emphasize related data points across sheets
+- Dashboard → Actions → Add Action → Highlight
+- Choose fields to highlight on</p>
+<p><strong>URL Actions</strong>:
+- Open websites or reports based on data
+- Useful for linking to player profiles, team pages, etc.</p>
+</div>
+<div id="adding-dashboard-objects" class="section level3 hasAnchor" number="10.8.4">
+<h3><span class="header-section-number">10.8.4</span> Adding Dashboard Objects<a href="tableau.html#adding-dashboard-objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Text</strong>:
+- Drag “Text” from Objects
+- Add titles, descriptions, insights
+- Format with bold, colors, size</p>
+<p><strong>Images</strong>:
+- Drag “Image” from Objects
+- Add team logos, sponsor logos, photos
+- Set image size and positioning</p>
+<p><strong>Web Page</strong>:
+- Drag “Web Page” from Objects
+- Embed live web content
+- Example: Live Twitter feed, news ticker</p>
+<p><strong>Blank</strong>:
+- Drag “Blank” for spacing
+- Creates visual separation between elements</p>
+</div>
+</div>
+<div id="practical-sport-business-dashboards" class="section level2 hasAnchor" number="10.9">
+<h2><span class="header-section-number">10.9</span> Practical Sport Business Dashboards<a href="tableau.html#practical-sport-business-dashboards" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="example-1-ticket-sales-dashboard" class="section level3 hasAnchor" number="10.9.1">
+<h3><span class="header-section-number">10.9.1</span> Example 1: Ticket Sales Dashboard<a href="tableau.html#example-1-ticket-sales-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Components</strong>:
+1. <strong>KPI Cards</strong> (top): Total Revenue, Tickets Sold, Avg Price
+2. <strong>Time Series</strong> (middle-left): Daily sales trend with forecast
+3. <strong>Category Breakdown</strong> (middle-right): Pie chart or bar chart
+4. <strong>Section Performance</strong> (bottom): Heatmap of stadium sections</p>
+<p><strong>Insights Provided</strong>:
+- Are sales trending up or down?
+- Which ticket categories drive revenue?
+- Which sections are selling well?
+- What’s the forecast for end of season?</p>
+</div>
+<div id="example-2-fan-attendance-dashboard" class="section level3 hasAnchor" number="10.9.2">
+<h3><span class="header-section-number">10.9.2</span> Example 2: Fan Attendance Dashboard<a href="tableau.html#example-2-fan-attendance-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Components</strong>:
+1. <strong>Attendance vs. Capacity</strong> (gauge chart)
+2. <strong>Game-by-Game Attendance</strong> (line chart with reference lines)
+3. <strong>Factors Analysis</strong>: Opponent quality, day of week, weather, promotions
+4. <strong>Geographic Map</strong>: Where fans travel from</p>
+<p><strong>Filters</strong>:
+- Date range
+- Opponent
+- Day of week
+- Weather conditions</p>
+<p><strong>Actions</strong>:
+- Click opponent → see all games vs. that opponent
+- Click geographic region → see attendance from that area</p>
+</div>
+<div id="example-3-social-media-performance" class="section level3 hasAnchor" number="10.9.3">
+<h3><span class="header-section-number">10.9.3</span> Example 3: Social Media Performance<a href="tableau.html#example-3-social-media-performance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Components</strong>:
+1. <strong>Engagement Metrics</strong>: Likes, shares, comments over time
+2. <strong>Top Posts</strong>: Bar chart of most engaging content
+3. <strong>Sentiment Analysis</strong>: Positive, neutral, negative breakdown
+4. <strong>Platform Comparison</strong>: Twitter vs. Facebook vs. Instagram</p>
+<p><strong>Business Value</strong>:
+- Identify what content resonates with fans
+- Track campaign effectiveness
+- Respond to negative sentiment quickly
+- Optimize posting schedule</p>
+</div>
+<div id="example-4-player-performance-dashboard" class="section level3 hasAnchor" number="10.9.4">
+<h3><span class="header-section-number">10.9.4</span> Example 4: Player Performance Dashboard<a href="tableau.html#example-4-player-performance-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Components</strong>:
+1. <strong>Player Selector</strong> (filter)
+2. <strong>Season Stats</strong>: Key metrics with sparklines showing trends
+3. <strong>Comparison</strong>: Player vs. team average vs. league average
+4. <strong>Performance by Game</strong>: Chart showing consistency
+5. <strong>Shot Chart/Heat Map</strong>: Spatial performance data</p>
+<p><strong>Users</strong>: Coaches, scouts, front office</p>
+</div>
+</div>
+<div id="publishing-and-sharing" class="section level2 hasAnchor" number="10.10">
+<h2><span class="header-section-number">10.10</span> Publishing and Sharing<a href="tableau.html#publishing-and-sharing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="saving-to-tableau-public" class="section level3 hasAnchor" number="10.10.1">
+<h3><span class="header-section-number">10.10.1</span> Saving to Tableau Public<a href="tableau.html#saving-to-tableau-public" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Steps</strong>:
+1. File → Save to Tableau Public
+2. Log in to your account
+3. Enter workbook name
+4. Workbook uploads to cloud</p>
+<p><strong>Note</strong>: All Tableau Public work is <strong>publicly visible</strong>. Do not use real sensitive data.</p>
+</div>
+<div id="embedding-in-websites" class="section level3 hasAnchor" number="10.10.2">
+<h3><span class="header-section-number">10.10.2</span> Embedding in Websites<a href="tableau.html#embedding-in-websites" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once published, you can embed dashboards in websites:</p>
+<ol style="list-style-type: decimal">
+<li>On Tableau Public, find your visualization</li>
+<li>Click “Share” icon</li>
+<li>Copy embed code</li>
+<li>Paste into website HTML</li>
+</ol>
+<p><strong>Use Cases</strong>:
+- Team website: Live stats and standings
+- Blog posts: Interactive data stories
+- Reports: Embed in online presentations</p>
+</div>
+<div id="presentation-mode" class="section level3 hasAnchor" number="10.10.3">
+<h3><span class="header-section-number">10.10.3</span> Presentation Mode<a href="tableau.html#presentation-mode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>For Live Presentations</strong>:
+1. Click “Presentation Mode” (icon in top toolbar)
+2. Dashboard displays full-screen
+3. Interact with filters and actions live
+4. Press ESC to exit</p>
+</div>
+<div id="exporting-options" class="section level3 hasAnchor" number="10.10.4">
+<h3><span class="header-section-number">10.10.4</span> Exporting Options<a href="tableau.html#exporting-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Export as Image</strong>:
+- Worksheet → Export → Image
+- Save as PNG for reports, presentations
+- Loses interactivity</p>
+<p><strong>Export as PDF</strong>:
+- Dashboard → Export as PDF
+- Print-friendly version
+- Includes all dashboard elements</p>
+<p><strong>Export Data</strong>:
+- Right-click worksheet → View Data → Export All
+- Download underlying or aggregated data as CSV</p>
+</div>
+</div>
+<div id="tableau-vs.-r-when-to-use-each" class="section level2 hasAnchor" number="10.11">
+<h2><span class="header-section-number">10.11</span> Tableau vs. R: When to Use Each<a href="tableau.html#tableau-vs.-r-when-to-use-each" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="strengths-of-r-ggplot2" class="section level3 hasAnchor" number="10.11.1">
+<h3><span class="header-section-number">10.11.1</span> Strengths of R (ggplot2)<a href="tableau.html#strengths-of-r-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Complex statistical visualizations</strong>: Regression diagnostics, residual plots</li>
+<li><strong>Reproducibility</strong>: Code-based, version controlled</li>
+<li><strong>Customization</strong>: Infinite control over every element</li>
+<li><strong>Integration</strong>: Works seamlessly with statistical analyses</li>
+<li><strong>Publication</strong>: Create publication-quality static graphics</li>
+<li><strong>Automation</strong>: Generate hundreds of reports automatically</li>
+</ul>
+</div>
+<div id="strengths-of-tableau" class="section level3 hasAnchor" number="10.11.2">
+<h3><span class="header-section-number">10.11.2</span> Strengths of Tableau<a href="tableau.html#strengths-of-tableau" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Interactivity</strong>: Built-in filters, drill-down, tooltips</li>
+<li><strong>Speed</strong>: Create visualizations in minutes without code</li>
+<li><strong>Sharing</strong>: Easy to share live dashboards with stakeholders</li>
+<li><strong>Exploration</strong>: Non-technical users can explore data themselves</li>
+<li><strong>Real-time</strong>: Connect to live databases for auto-updating dashboards</li>
+<li><strong>Presentation</strong>: Polished, professional appearance by default</li>
+</ul>
+</div>
+<div id="recommended-workflow" class="section level3 hasAnchor" number="10.11.3">
+<h3><span class="header-section-number">10.11.3</span> Recommended Workflow<a href="tableau.html#recommended-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Typical Sport Analytics Project</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Data Collection &amp; Cleaning</strong> → R</li>
+<li><strong>Statistical Analysis</strong> → R</li>
+<li><strong>Initial Exploration</strong> → R (ggplot2)</li>
+<li><strong>Dashboard Creation</strong> → Tableau</li>
+<li><strong>Stakeholder Presentation</strong> → Tableau</li>
+<li><strong>Ongoing Monitoring</strong> → Tableau (live dashboard)</li>
+<li><strong>Deep Dives &amp; Updates</strong> → Back to R as needed</li>
+</ol>
+<p><strong>Example</strong>: Season Ticket Sales Analysis
+- <strong>R</strong>: Calculate retention rates, identify at-risk accounts, build predictive model
+- <strong>Tableau</strong>: Create dashboard showing renewal status, demographics, segment performance
+- <strong>Result</strong>: Leadership monitors dashboard daily, data team updates model weekly in R</p>
+</div>
+</div>
+<div id="practice-exercises-9" class="section level2 hasAnchor" number="10.12">
+<h2><span class="header-section-number">10.12</span> Practice Exercises<a href="tableau.html#practice-exercises-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercise-1-basic-visualization" class="section level3 hasAnchor" number="10.12.1">
+<h3><span class="header-section-number">10.12.1</span> Exercise 1: Basic Visualization<a href="tableau.html#exercise-1-basic-visualization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the sample ticket data created earlier:</p>
+<ol style="list-style-type: decimal">
+<li>Create a bar chart showing total revenue by category</li>
+<li>Add color by category</li>
+<li>Sort bars from highest to lowest</li>
+<li>Add data labels showing exact revenue values</li>
+<li>Give it a descriptive title</li>
+</ol>
+</div>
+<div id="exercise-2-time-series-analysis" class="section level3 hasAnchor" number="10.12.2">
+<h3><span class="header-section-number">10.12.2</span> Exercise 2: Time Series Analysis<a href="tableau.html#exercise-2-time-series-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Create a line chart of tickets sold over time</li>
+<li>Add a reference line showing the average</li>
+<li>Add a trend line</li>
+<li>Create a forecast for the next 30 days</li>
+<li>Add annotations highlighting important dates (promotions, rival games, etc.)</li>
+</ol>
+</div>
+<div id="exercise-3-dashboard-creation" class="section level3 hasAnchor" number="10.12.3">
+<h3><span class="header-section-number">10.12.3</span> Exercise 3: Dashboard Creation<a href="tableau.html#exercise-3-dashboard-creation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Build a “Ticket Sales Performance Dashboard” with:</p>
+<ol style="list-style-type: decimal">
+<li><strong>KPI Section</strong>: Show total revenue, total tickets sold, average price</li>
+<li><strong>Trend Chart</strong>: Daily sales with average line</li>
+<li><strong>Category Breakdown</strong>: Which categories are driving sales?</li>
+<li><strong>Section Performance</strong>: Which seating areas are most popular?</li>
+<li><strong>Filters</strong>: Add date range and category filters</li>
+<li><strong>Actions</strong>: Set up filter action so clicking a category filters all charts</li>
+</ol>
+</div>
+<div id="exercise-4-geographic-analysis" class="section level3 hasAnchor" number="10.12.4">
+<h3><span class="header-section-number">10.12.4</span> Exercise 4: Geographic Analysis<a href="tableau.html#exercise-4-geographic-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you have location data:</p>
+<ol style="list-style-type: decimal">
+<li>Create a map showing ticket sales by state/region</li>
+<li>Use color for revenue, size for quantity</li>
+<li>Add a filter for ticket category</li>
+<li>Include a tooltip showing detailed metrics</li>
+<li>Create a hierarchy allowing drill-down from country → state → city</li>
+</ol>
+</div>
+<div id="exercise-5-comparative-analysis" class="section level3 hasAnchor" number="10.12.5">
+<h3><span class="header-section-number">10.12.5</span> Exercise 5: Comparative Analysis<a href="tableau.html#exercise-5-comparative-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create visualizations comparing:</p>
+<ol style="list-style-type: decimal">
+<li>This year vs. last year revenue (dual-axis chart)</li>
+<li>Weekday vs. weekend ticket sales</li>
+<li>Performance by month (heatmap or calendar view)</li>
+<li>Top 10 best-selling games</li>
+<li>Combine into a “Year-Over-Year Performance” dashboard</li>
+</ol>
+</div>
+</div>
+<div id="tips-for-success" class="section level2 hasAnchor" number="10.13">
+<h2><span class="header-section-number">10.13</span> Tips for Success<a href="tableau.html#tips-for-success" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="design-principles" class="section level3 hasAnchor" number="10.13.1">
+<h3><span class="header-section-number">10.13.1</span> Design Principles<a href="tableau.html#design-principles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>1. Keep It Simple</strong>:
+- Don’t overload dashboards with too many charts
+- Focus on key metrics that drive decisions
+- Use white space effectively</p>
+<p><strong>2. Be Consistent</strong>:
+- Use same colors for same categories across charts
+- Maintain consistent fonts and sizes
+- Keep layout patterns familiar</p>
+<p><strong>3. Prioritize Information</strong>:
+- Most important metrics at top-left
+- Supporting details below or to the right
+- Use size to indicate importance</p>
+<p><strong>4. Guide the User</strong>:
+- Clear titles explaining what’s shown
+- Axis labels with units
+- Instructions for interactive elements
+- Annotations for key insights</p>
+</div>
+<div id="common-mistakes-to-avoid-1" class="section level3 hasAnchor" number="10.13.2">
+<h3><span class="header-section-number">10.13.2</span> Common Mistakes to Avoid<a href="tableau.html#common-mistakes-to-avoid-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>1. Misleading Axes</strong>:
+- Don’t truncate y-axis to exaggerate differences (unless clearly noted)
+- Start at zero for bar charts
+- Use consistent scales when comparing multiple charts</p>
+<p><strong>2. Too Much Interactivity</strong>:
+- Every filter/action should have a clear purpose
+- Don’t make users hunt for insights
+- Provide default views showing key findings</p>
+<p><strong>3. Poor Color Choices</strong>:
+- Avoid rainbow gradients (hard to interpret)
+- Use colorblind-friendly palettes
+- Don’t use color as only indicator (add patterns/shapes too)</p>
+<p><strong>4. Information Overload</strong>:
+- Maximum 7-8 worksheets per dashboard
+- Hide irrelevant fields
+- Aggregate when appropriate</p>
+<p><strong>5. Ignoring Context</strong>:
+- Always provide comparison (vs. last year, vs. target)
+- Show sample sizes (100% of what?)
+- Include data source and date updated</p>
+</div>
+</div>
+<div id="advanced-features-optional" class="section level2 hasAnchor" number="10.14">
+<h2><span class="header-section-number">10.14</span> Advanced Features (Optional)<a href="tableau.html#advanced-features-optional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="parameters" class="section level3 hasAnchor" number="10.14.1">
+<h3><span class="header-section-number">10.14.1</span> Parameters<a href="tableau.html#parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>What</strong>: User-controlled values that can modify calculations, filters, reference lines</p>
+<p><strong>Example</strong>: Create a “Target Revenue” parameter
+- Users adjust target value
+- Dashboard shows actual vs. target
+- Colors change based on meeting target</p>
+</div>
+<div id="sets" class="section level3 hasAnchor" number="10.14.2">
+<h3><span class="header-section-number">10.14.2</span> Sets<a href="tableau.html#sets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>What</strong>: Custom groups of dimension members</p>
+<p><strong>Example</strong>: “Top 10 Customers” set
+- Automatically updates as data changes
+- Use in filters or calculated fields
+- Create in/out groups dynamically</p>
+</div>
+<div id="table-calculations" class="section level3 hasAnchor" number="10.14.3">
+<h3><span class="header-section-number">10.14.3</span> Table Calculations<a href="tableau.html#table-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>What</strong>: Calculations performed on query results, not source data</p>
+<p><strong>Examples</strong>:
+- Running total
+- Percent of total
+- Year-over-year growth
+- Moving average
+- Rank</p>
+<p><strong>Use</strong>: Show trends, growth rates, rankings without modifying source data</p>
+</div>
+<div id="lod-expressions" class="section level3 hasAnchor" number="10.14.4">
+<h3><span class="header-section-number">10.14.4</span> LOD Expressions<a href="tableau.html#lod-expressions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>What</strong>: Level of Detail expressions for calculations at different granularities</p>
+<p><strong>Example</strong>:</p>
+<pre><code>{FIXED [Customer] : SUM([Revenue])}</code></pre>
+<p>Calculates total revenue per customer, regardless of view granularity</p>
+</div>
+</div>
+<div id="chapter-summary-8" class="section level2 hasAnchor" number="10.15">
+<h2><span class="header-section-number">10.15</span> Chapter Summary<a href="tableau.html#chapter-summary-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-concepts-2" class="section level3 hasAnchor" number="10.15.1">
+<h3><span class="header-section-number">10.15.1</span> Key Concepts<a href="tableau.html#key-concepts-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Tableau Strengths</strong>:
+- Interactive dashboards for stakeholders
+- Quick visualization without coding
+- Built-in geographic capabilities
+- Easy sharing and embedding
+- Real-time data connections</p>
+<p><strong>Core Components</strong>:
+- <strong>Worksheets</strong>: Individual visualizations
+- <strong>Dashboards</strong>: Multiple worksheets combined
+- <strong>Dimensions</strong>: Categorical fields (blue)
+- <strong>Measures</strong>: Numeric fields (green)
+- <strong>Marks</strong>: Control appearance (color, size, label)
+- <strong>Filters</strong>: Limit data displayed</p>
+<p><strong>Visualization Types</strong>:
+- Bar/column charts for comparisons
+- Line charts for time series
+- Scatter plots for relationships
+- Maps for geographic data
+- Tables for detailed data
+- Dual-axis for multiple measures</p>
+<p><strong>Interactivity Features</strong>:
+- Filters allow data exploration
+- Actions link worksheets together
+- Drill-down hierarchies reveal detail
+- Tooltips provide context
+- Parameters let users control values</p>
+<p><strong>Best Practices</strong>:
+- Keep dashboards simple and focused
+- Use consistent colors and formatting
+- Provide context with comparisons
+- Guide users with clear titles and labels
+- Test on actual users before sharing</p>
+</div>
+<div id="tableau-vs.-r" class="section level3 hasAnchor" number="10.15.2">
+<h3><span class="header-section-number">10.15.2</span> Tableau vs. R<a href="tableau.html#tableau-vs.-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Preferred Tool</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Statistical analysis</td>
+<td>R</td>
+<td>More statistical methods available</td>
+</tr>
+<tr class="even">
+<td>Predictive modeling</td>
+<td>R</td>
+<td>Full control over algorithms</td>
+</tr>
+<tr class="odd">
+<td>Interactive dashboards</td>
+<td>Tableau</td>
+<td>Built for interactivity</td>
+</tr>
+<tr class="even">
+<td>Stakeholder presentations</td>
+<td>Tableau</td>
+<td>Polished, interactive</td>
+</tr>
+<tr class="odd">
+<td>Reproducible research</td>
+<td>R</td>
+<td>Code-based, version controlled</td>
+</tr>
+<tr class="even">
+<td>One-off exploration</td>
+<td>Tableau</td>
+<td>Faster to create</td>
+</tr>
+<tr class="odd">
+<td>Scheduled reporting</td>
+<td>R</td>
+<td>Automate with scripts</td>
+</tr>
+<tr class="even">
+<td>Live monitoring</td>
+<td>Tableau</td>
+<td>Real-time connections</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="professional-sport-analytics-workflow" class="section level3 hasAnchor" number="10.15.3">
+<h3><span class="header-section-number">10.15.3</span> Professional Sport Analytics Workflow<a href="tableau.html#professional-sport-analytics-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Data Collection</strong>: R or database queries</li>
+<li><strong>Data Cleaning</strong>: R (tidyverse)</li>
+<li><strong>Analysis</strong>: R (statistical tests, models)</li>
+<li><strong>Initial Viz</strong>: R (ggplot2) for exploration</li>
+<li><strong>Dashboard</strong>: Tableau for stakeholders</li>
+<li><strong>Monitoring</strong>: Tableau (auto-refreshing)</li>
+<li><strong>Updates</strong>: Return to R as needed</li>
+</ol>
+</div>
+<div id="real-world-applications" class="section level3 hasAnchor" number="10.15.4">
+<h3><span class="header-section-number">10.15.4</span> Real-World Applications<a href="tableau.html#real-world-applications" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Ticket Operations</strong>:
+- Daily sales dashboards
+- Pricing optimization views
+- Inventory management
+- Renewal tracking</p>
+<p><strong>Marketing</strong>:
+- Campaign performance
+- Fan segmentation
+- Social media engagement
+- Promotional effectiveness</p>
+<p><strong>Business Intelligence</strong>:
+- Revenue tracking
+- Sponsorship ROI
+- Concessions sales
+- Merchandise performance</p>
+<p><strong>Player Performance</strong>:
+- Scouting dashboards
+- In-game statistics
+- Training metrics
+- Injury tracking</p>
+</div>
+<div id="next-steps-8" class="section level3 hasAnchor" number="10.15.5">
+<h3><span class="header-section-number">10.15.5</span> Next Steps<a href="tableau.html#next-steps-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Continue Learning</strong>:
+- Explore Tableau Public Gallery for inspiration
+- Complete Tableau’s free training videos
+- Practice with real sport datasets
+- Rebuild visualizations you see in sports media
+- Join Tableau community forums</p>
+<p><strong>Apply to Your Work</strong>:
+- Identify recurring reports in your organization
+- Convert static reports to interactive dashboards
+- Share with stakeholders and gather feedback
+- Iterate based on actual use cases
+- Document best practices for your team</p>
+</div>
+</div>
+<div id="references-8" class="section level2 hasAnchor" number="10.16">
+<h2><span class="header-section-number">10.16</span> References<a href="tableau.html#references-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Tableau Software. (2024). <em>Tableau Public</em>. Retrieved from <a href="https://public.tableau.com/" class="uri">https://public.tableau.com/</a></li>
+<li>Murray, D. G. (2013). <em>Tableau Your Data!: Fast and Easy Visual Analysis with Tableau Software</em>. Wiley.</li>
+<li>Sleeper, R. (2018). <em>Practical Tableau: 100 Tips, Tutorials, and Strategies from a Tableau Zen Master</em>. O’Reilly Media.</li>
+<li>Alexander, M. &amp; Walkenbach, J. (2013). <em>Data Visualization for Dummies</em>. Wiley.</li>
+<li>Few, S. (2013). <em>Information Dashboard Design: Displaying Data for At-a-Glance Monitoring</em> (2nd ed.). Analytics Press.</li>
+<li>Tableau Community Forums. <em>Best Practices for Dashboard Design</em>. <a href="https://community.tableau.com/" class="uri">https://community.tableau.com/</a></li>
+</ul>
+<div id="additional-resources-1" class="section level3 hasAnchor" number="10.16.1">
+<h3><span class="header-section-number">10.16.1</span> Additional Resources<a href="tableau.html#additional-resources-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Tableau Public Gallery</strong>: <a href="https://public.tableau.com/gallery" class="uri">https://public.tableau.com/gallery</a></li>
+<li><strong>Makeover Monday</strong>: Weekly data viz challenge community</li>
+<li><strong>Sports Viz Sunday</strong>: Sport-specific visualization community</li>
+<li><strong>Tableau Tim</strong>: YouTube channel with tutorials</li>
+<li><strong>Andy Kriebel</strong>: Tableau Zen Master with extensive tutorials</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-visualization.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

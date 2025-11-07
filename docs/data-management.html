@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Data Management and Preparation in R | _main.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Data Management and Preparation in R | _main.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Data Management and Preparation in R | _main.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sampling.html"/>
+<link rel="next" href="descriptive-stats.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Sport Business Analytics with R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Sport Business Analytics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-sport-business-analytics"><i class="fa fa-check"></i><b>1.1</b> What is Sport Business Analytics?</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#key-components"><i class="fa fa-check"></i><b>1.1.1</b> Key Components</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#the-data-revolution-in-sports"><i class="fa fa-check"></i><b>1.2</b> The Data Revolution in Sports</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#historical-context"><i class="fa fa-check"></i><b>1.2.1</b> Historical Context</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#applications-across-the-sports-industry"><i class="fa fa-check"></i><b>1.3</b> Applications Across the Sports Industry</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#player-performance-analysis"><i class="fa fa-check"></i><b>1.3.1</b> 1. Player Performance Analysis</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#business-operations"><i class="fa fa-check"></i><b>1.3.2</b> 2. Business Operations</a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#marketing-and-sales"><i class="fa fa-check"></i><b>1.3.3</b> 3. Marketing and Sales</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#career-opportunities-in-sport-analytics"><i class="fa fa-check"></i><b>1.4</b> Career Opportunities in Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="intro.html"><a href="intro.html#common-roles"><i class="fa fa-check"></i><b>1.4.1</b> Common Roles</a></li>
+<li class="chapter" data-level="1.4.2" data-path="intro.html"><a href="intro.html#required-skills"><i class="fa fa-check"></i><b>1.4.2</b> Required Skills</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#analytical-methods-in-sports"><i class="fa fa-check"></i><b>1.5</b> Analytical Methods in Sports</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#descriptive-analytics"><i class="fa fa-check"></i><b>1.5.1</b> Descriptive Analytics</a></li>
+<li class="chapter" data-level="1.5.2" data-path="intro.html"><a href="intro.html#predictive-analytics"><i class="fa fa-check"></i><b>1.5.2</b> Predictive Analytics</a></li>
+<li class="chapter" data-level="1.5.3" data-path="intro.html"><a href="intro.html#prescriptive-analytics"><i class="fa fa-check"></i><b>1.5.3</b> Prescriptive Analytics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#case-study-the-moneyball-revolution"><i class="fa fa-check"></i><b>1.6</b> Case Study: The Moneyball Revolution</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#key-lessons"><i class="fa fa-check"></i><b>1.6.1</b> Key Lessons</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#challenges-in-sport-analytics"><i class="fa fa-check"></i><b>1.7</b> Challenges in Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#data-quality-issues"><i class="fa fa-check"></i><b>1.7.1</b> Data Quality Issues</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#organizational-barriers"><i class="fa fa-check"></i><b>1.7.2</b> Organizational Barriers</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#ethical-considerations"><i class="fa fa-check"></i><b>1.7.3</b> Ethical Considerations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#the-future-of-sport-analytics"><i class="fa fa-check"></i><b>1.8</b> The Future of Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#emerging-trends"><i class="fa fa-check"></i><b>1.8.1</b> Emerging Trends</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#technology-integration"><i class="fa fa-check"></i><b>1.8.2</b> Technology Integration</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#chapter-summary"><i class="fa fa-check"></i><b>1.9</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#key-takeaways"><i class="fa fa-check"></i><b>1.9.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="1.9.2" data-path="intro.html"><a href="intro.html#next-steps"><i class="fa fa-check"></i><b>1.9.2</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#practice-exercises"><i class="fa fa-check"></i><b>1.10</b> Practice Exercises</a></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#references"><i class="fa fa-check"></i><b>1.11</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-setup.html"><a href="r-setup.html"><i class="fa fa-check"></i><b>2</b> Getting Started with R for Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="r-setup.html"><a href="r-setup.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>2.1</b> Installing R and RStudio</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="r-setup.html"><a href="r-setup.html#r-installation"><i class="fa fa-check"></i><b>2.1.1</b> R Installation</a></li>
+<li class="chapter" data-level="2.1.2" data-path="r-setup.html"><a href="r-setup.html#rstudio-installation"><i class="fa fa-check"></i><b>2.1.2</b> RStudio Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="r-setup.html"><a href="r-setup.html#r-basics"><i class="fa fa-check"></i><b>2.2</b> R Basics</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="r-setup.html"><a href="r-setup.html#r-data-types"><i class="fa fa-check"></i><b>2.2.1</b> R Data Types</a></li>
+<li class="chapter" data-level="2.2.2" data-path="r-setup.html"><a href="r-setup.html#r-functions"><i class="fa fa-check"></i><b>2.2.2</b> R Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="r-setup.html"><a href="r-setup.html#essential-packages-for-sport-analytics"><i class="fa fa-check"></i><b>2.3</b> Essential Packages for Sport Analytics</a></li>
+<li class="chapter" data-level="2.4" data-path="r-setup.html"><a href="r-setup.html#data-import-and-manipulation"><i class="fa fa-check"></i><b>2.4</b> Data Import and Manipulation</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="r-setup.html"><a href="r-setup.html#loading-and-exploring-data"><i class="fa fa-check"></i><b>2.4.1</b> Loading and Exploring Data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="r-setup.html"><a href="r-setup.html#basic-data-manipulation"><i class="fa fa-check"></i><b>2.4.2</b> Basic Data Manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="r-setup.html"><a href="r-setup.html#working-with-the-lahman-database"><i class="fa fa-check"></i><b>2.5</b> Working with the Lahman Database</a></li>
+<li class="chapter" data-level="2.6" data-path="r-setup.html"><a href="r-setup.html#data-management-best-practices"><i class="fa fa-check"></i><b>2.6</b> Data Management Best Practices</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="r-setup.html"><a href="r-setup.html#handling-missing-data"><i class="fa fa-check"></i><b>2.6.1</b> Handling Missing Data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="r-setup.html"><a href="r-setup.html#data-type-conversion"><i class="fa fa-check"></i><b>2.6.2</b> Data Type Conversion</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="r-setup.html"><a href="r-setup.html#data-visualization-basics"><i class="fa fa-check"></i><b>2.7</b> Data Visualization Basics</a></li>
+<li class="chapter" data-level="2.8" data-path="r-setup.html"><a href="r-setup.html#practice-exercises-1"><i class="fa fa-check"></i><b>2.8</b> Practice Exercises</a></li>
+<li class="chapter" data-level="2.9" data-path="r-setup.html"><a href="r-setup.html#common-r-errors-and-solutions"><i class="fa fa-check"></i><b>2.9</b> Common R Errors and Solutions</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="r-setup.html"><a href="r-setup.html#common-issues"><i class="fa fa-check"></i><b>2.9.1</b> Common Issues:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="r-setup.html"><a href="r-setup.html#chapter-summary-1"><i class="fa fa-check"></i><b>2.10</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="r-setup.html"><a href="r-setup.html#key-takeaways-1"><i class="fa fa-check"></i><b>2.10.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="2.10.2" data-path="r-setup.html"><a href="r-setup.html#next-steps-1"><i class="fa fa-check"></i><b>2.10.2</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="r-setup.html"><a href="r-setup.html#references-1"><i class="fa fa-check"></i><b>2.11</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>3</b> Sport Data Sources</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-sources.html"><a href="data-sources.html#public-sport-databases"><i class="fa fa-check"></i><b>3.1</b> Public Sport Databases</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="data-sources.html"><a href="data-sources.html#lahman-baseball-database"><i class="fa fa-check"></i><b>3.1.1</b> Lahman Baseball Database</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-sources.html"><a href="data-sources.html#nba-stats-database"><i class="fa fa-check"></i><b>3.1.2</b> NBA Stats Database</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data-sources.html"><a href="data-sources.html#web-scraping-for-sport-data"><i class="fa fa-check"></i><b>3.2</b> Web Scraping for Sport Data</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-sources.html"><a href="data-sources.html#using-rvest-for-web-scraping"><i class="fa fa-check"></i><b>3.2.1</b> Using rvest for Web Scraping</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-sources.html"><a href="data-sources.html#example-scraping-espn-data"><i class="fa fa-check"></i><b>3.2.2</b> Example: Scraping ESPN Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-sources.html"><a href="data-sources.html#api-integration-for-real-time-data"><i class="fa fa-check"></i><b>3.3</b> API Integration for Real-time Data</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="data-sources.html"><a href="data-sources.html#sportradar-api"><i class="fa fa-check"></i><b>3.3.1</b> Sportradar API</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-sources.html"><a href="data-sources.html#espn-api-access"><i class="fa fa-check"></i><b>3.3.2</b> ESPN API Access</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="data-sources.html"><a href="data-sources.html#data-quality-and-cleaning-considerations"><i class="fa fa-check"></i><b>3.4</b> Data Quality and Cleaning Considerations</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="data-sources.html"><a href="data-sources.html#missing-data-issues"><i class="fa fa-check"></i><b>3.4.1</b> Missing Data Issues</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-sources.html"><a href="data-sources.html#data-type-consistency"><i class="fa fa-check"></i><b>3.4.2</b> Data Type Consistency</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-sources.html"><a href="data-sources.html#data-storage-and-management"><i class="fa fa-check"></i><b>3.5</b> Data Storage and Management</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="data-sources.html"><a href="data-sources.html#database-connections"><i class="fa fa-check"></i><b>3.5.1</b> Database Connections</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-sources.html"><a href="data-sources.html#data-import-functions"><i class="fa fa-check"></i><b>3.5.2</b> Data Import Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-sources.html"><a href="data-sources.html#practical-examples"><i class="fa fa-check"></i><b>3.6</b> Practical Examples</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="data-sources.html"><a href="data-sources.html#loading-real-sport-data"><i class="fa fa-check"></i><b>3.6.1</b> Loading Real Sport Data</a></li>
+<li class="chapter" data-level="3.6.2" data-path="data-sources.html"><a href="data-sources.html#data-transformation"><i class="fa fa-check"></i><b>3.6.2</b> Data Transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="data-sources.html"><a href="data-sources.html#practice-exercises-2"><i class="fa fa-check"></i><b>3.7</b> Practice Exercises</a></li>
+<li class="chapter" data-level="3.8" data-path="data-sources.html"><a href="data-sources.html#chapter-summary-2"><i class="fa fa-check"></i><b>3.8</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="data-sources.html"><a href="data-sources.html#key-takeaways-2"><i class="fa fa-check"></i><b>3.8.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="3.8.2" data-path="data-sources.html"><a href="data-sources.html#next-steps-2"><i class="fa fa-check"></i><b>3.8.2</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="data-sources.html"><a href="data-sources.html#references-2"><i class="fa fa-check"></i><b>3.9</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="sampling.html"><a href="sampling.html"><i class="fa fa-check"></i><b>4</b> Sampling and Research Methods</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="sampling.html"><a href="sampling.html#overview"><i class="fa fa-check"></i><b>4.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2" data-path="sampling.html"><a href="sampling.html#the-role-of-sampling-in-analytics"><i class="fa fa-check"></i><b>4.2</b> The Role of Sampling in Analytics</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="sampling.html"><a href="sampling.html#what-is-statistics"><i class="fa fa-check"></i><b>4.2.1</b> What is Statistics?</a></li>
+<li class="chapter" data-level="4.2.2" data-path="sampling.html"><a href="sampling.html#why-sample-instead-of-measuring-everyone"><i class="fa fa-check"></i><b>4.2.2</b> Why Sample Instead of Measuring Everyone?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="sampling.html"><a href="sampling.html#sampling-terminology"><i class="fa fa-check"></i><b>4.3</b> Sampling Terminology</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="sampling.html"><a href="sampling.html#population"><i class="fa fa-check"></i><b>4.3.1</b> Population</a></li>
+<li class="chapter" data-level="4.3.2" data-path="sampling.html"><a href="sampling.html#sample-frame"><i class="fa fa-check"></i><b>4.3.2</b> Sample Frame</a></li>
+<li class="chapter" data-level="4.3.3" data-path="sampling.html"><a href="sampling.html#sample"><i class="fa fa-check"></i><b>4.3.3</b> Sample</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="sampling.html"><a href="sampling.html#types-of-sampling-methods"><i class="fa fa-check"></i><b>4.4</b> Types of Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="sampling.html"><a href="sampling.html#probability-sampling"><i class="fa fa-check"></i><b>4.4.1</b> Probability Sampling</a></li>
+<li class="chapter" data-level="4.4.2" data-path="sampling.html"><a href="sampling.html#non-probability-sampling"><i class="fa fa-check"></i><b>4.4.2</b> Non-Probability Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="sampling.html"><a href="sampling.html#probability-sampling-methods"><i class="fa fa-check"></i><b>4.5</b> Probability Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="sampling.html"><a href="sampling.html#simple-random-sampling"><i class="fa fa-check"></i><b>4.5.1</b> Simple Random Sampling</a></li>
+<li class="chapter" data-level="4.5.2" data-path="sampling.html"><a href="sampling.html#systematic-sampling"><i class="fa fa-check"></i><b>4.5.2</b> Systematic Sampling</a></li>
+<li class="chapter" data-level="4.5.3" data-path="sampling.html"><a href="sampling.html#stratified-sampling"><i class="fa fa-check"></i><b>4.5.3</b> Stratified Sampling</a></li>
+<li class="chapter" data-level="4.5.4" data-path="sampling.html"><a href="sampling.html#proportionate-vs.-disproportionate-sampling"><i class="fa fa-check"></i><b>4.5.4</b> Proportionate vs. Disproportionate Sampling</a></li>
+<li class="chapter" data-level="4.5.5" data-path="sampling.html"><a href="sampling.html#cluster-area-sampling"><i class="fa fa-check"></i><b>4.5.5</b> Cluster (Area) Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="sampling.html"><a href="sampling.html#non-probability-sampling-methods"><i class="fa fa-check"></i><b>4.6</b> Non-Probability Sampling Methods</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="sampling.html"><a href="sampling.html#convenience-sampling"><i class="fa fa-check"></i><b>4.6.1</b> Convenience Sampling</a></li>
+<li class="chapter" data-level="4.6.2" data-path="sampling.html"><a href="sampling.html#purposive-judgment-sampling"><i class="fa fa-check"></i><b>4.6.2</b> Purposive (Judgment) Sampling</a></li>
+<li class="chapter" data-level="4.6.3" data-path="sampling.html"><a href="sampling.html#quota-sampling"><i class="fa fa-check"></i><b>4.6.3</b> Quota Sampling</a></li>
+<li class="chapter" data-level="4.6.4" data-path="sampling.html"><a href="sampling.html#snowball-sampling"><i class="fa fa-check"></i><b>4.6.4</b> Snowball Sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="sampling.html"><a href="sampling.html#sampling-bias"><i class="fa fa-check"></i><b>4.7</b> Sampling Bias</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="sampling.html"><a href="sampling.html#sources-of-sampling-bias"><i class="fa fa-check"></i><b>4.7.1</b> Sources of Sampling Bias</a></li>
+<li class="chapter" data-level="4.7.2" data-path="sampling.html"><a href="sampling.html#consequences-of-sampling-bias"><i class="fa fa-check"></i><b>4.7.2</b> Consequences of Sampling Bias</a></li>
+<li class="chapter" data-level="4.7.3" data-path="sampling.html"><a href="sampling.html#reducing-sampling-bias"><i class="fa fa-check"></i><b>4.7.3</b> Reducing Sampling Bias</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="sampling.html"><a href="sampling.html#validity-and-reliability"><i class="fa fa-check"></i><b>4.8</b> Validity and Reliability</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="sampling.html"><a href="sampling.html#validity"><i class="fa fa-check"></i><b>4.8.1</b> Validity</a></li>
+<li class="chapter" data-level="4.8.2" data-path="sampling.html"><a href="sampling.html#reliability"><i class="fa fa-check"></i><b>4.8.2</b> Reliability</a></li>
+<li class="chapter" data-level="4.8.3" data-path="sampling.html"><a href="sampling.html#the-relationship-between-validity-and-reliability"><i class="fa fa-check"></i><b>4.8.3</b> The Relationship Between Validity and Reliability</a></li>
+<li class="chapter" data-level="4.8.4" data-path="sampling.html"><a href="sampling.html#assessing-validity-and-reliability"><i class="fa fa-check"></i><b>4.8.4</b> Assessing Validity and Reliability</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="sampling.html"><a href="sampling.html#practice-exercises-3"><i class="fa fa-check"></i><b>4.9</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="sampling.html"><a href="sampling.html#exercise-1-identifying-sampling-methods"><i class="fa fa-check"></i><b>4.9.1</b> Exercise 1: Identifying Sampling Methods</a></li>
+<li class="chapter" data-level="4.9.2" data-path="sampling.html"><a href="sampling.html#exercise-2-designing-a-sampling-plan"><i class="fa fa-check"></i><b>4.9.2</b> Exercise 2: Designing a Sampling Plan</a></li>
+<li class="chapter" data-level="4.9.3" data-path="sampling.html"><a href="sampling.html#exercise-3-reliability-and-validity"><i class="fa fa-check"></i><b>4.9.3</b> Exercise 3: Reliability and Validity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="sampling.html"><a href="sampling.html#summary"><i class="fa fa-check"></i><b>4.10</b> Summary</a></li>
+<li class="chapter" data-level="4.11" data-path="sampling.html"><a href="sampling.html#additional-resources"><i class="fa fa-check"></i><b>4.11</b> Additional Resources</a></li>
+<li class="chapter" data-level="4.12" data-path="sampling.html"><a href="sampling.html#key-terms"><i class="fa fa-check"></i><b>4.12</b> Key Terms</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>5</b> Data Management and Preparation in R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-management.html"><a href="data-management.html#understanding-your-r-environment"><i class="fa fa-check"></i><b>5.1</b> Understanding Your R Environment</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-management.html"><a href="data-management.html#the-rstudio-interface"><i class="fa fa-check"></i><b>5.1.1</b> The RStudio Interface</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-management.html"><a href="data-management.html#working-directory-management"><i class="fa fa-check"></i><b>5.1.2</b> Working Directory Management</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-management.html"><a href="data-management.html#installing-and-loading-packages"><i class="fa fa-check"></i><b>5.2</b> Installing and Loading Packages</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data-management.html"><a href="data-management.html#installing-packages"><i class="fa fa-check"></i><b>5.2.1</b> Installing Packages</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-management.html"><a href="data-management.html#loading-packages"><i class="fa fa-check"></i><b>5.2.2</b> Loading Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="data-management.html"><a href="data-management.html#loading-and-exploring-data-1"><i class="fa fa-check"></i><b>5.3</b> Loading and Exploring Data</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="data-management.html"><a href="data-management.html#reading-csv-files"><i class="fa fa-check"></i><b>5.3.1</b> Reading CSV Files</a></li>
+<li class="chapter" data-level="5.3.2" data-path="data-management.html"><a href="data-management.html#exploring-dataset-structure"><i class="fa fa-check"></i><b>5.3.2</b> Exploring Dataset Structure</a></li>
+<li class="chapter" data-level="5.3.3" data-path="data-management.html"><a href="data-management.html#practical-example-ncaa-athletic-department-data"><i class="fa fa-check"></i><b>5.3.3</b> Practical Example: NCAA Athletic Department Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="data-management.html"><a href="data-management.html#understanding-data-types-in-r"><i class="fa fa-check"></i><b>5.4</b> Understanding Data Types in R</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="data-management.html"><a href="data-management.html#basic-data-types"><i class="fa fa-check"></i><b>5.4.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="5.4.2" data-path="data-management.html"><a href="data-management.html#data-structures"><i class="fa fa-check"></i><b>5.4.2</b> Data Structures</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="data-management.html"><a href="data-management.html#checking-for-data-quality-issues"><i class="fa fa-check"></i><b>5.5</b> Checking for Data Quality Issues</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="data-management.html"><a href="data-management.html#identifying-missing-values"><i class="fa fa-check"></i><b>5.5.1</b> Identifying Missing Values</a></li>
+<li class="chapter" data-level="5.5.2" data-path="data-management.html"><a href="data-management.html#identifying-zero-values"><i class="fa fa-check"></i><b>5.5.2</b> Identifying Zero Values</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="data-management.html"><a href="data-management.html#data-manipulation-basics"><i class="fa fa-check"></i><b>5.6</b> Data Manipulation Basics</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="data-management.html"><a href="data-management.html#accessing-data-with-and-brackets"><i class="fa fa-check"></i><b>5.6.1</b> Accessing Data with $ and Brackets</a></li>
+<li class="chapter" data-level="5.6.2" data-path="data-management.html"><a href="data-management.html#creating-new-columns"><i class="fa fa-check"></i><b>5.6.2</b> Creating New Columns</a></li>
+<li class="chapter" data-level="5.6.3" data-path="data-management.html"><a href="data-management.html#more-complex-calculations"><i class="fa fa-check"></i><b>5.6.3</b> More Complex Calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="data-management.html"><a href="data-management.html#filtering-and-subsetting-data"><i class="fa fa-check"></i><b>5.7</b> Filtering and Subsetting Data</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="data-management.html"><a href="data-management.html#using-base-r-brackets"><i class="fa fa-check"></i><b>5.7.1</b> Using Base R Brackets</a></li>
+<li class="chapter" data-level="5.7.2" data-path="data-management.html"><a href="data-management.html#using-dplyr-for-cleaner-syntax"><i class="fa fa-check"></i><b>5.7.2</b> Using dplyr for Cleaner Syntax</a></li>
+<li class="chapter" data-level="5.7.3" data-path="data-management.html"><a href="data-management.html#sorting-data"><i class="fa fa-check"></i><b>5.7.3</b> Sorting Data</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="data-management.html"><a href="data-management.html#advanced-data-manipulation"><i class="fa fa-check"></i><b>5.8</b> Advanced Data Manipulation</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="data-management.html"><a href="data-management.html#grouping-and-summarizing"><i class="fa fa-check"></i><b>5.8.1</b> Grouping and Summarizing</a></li>
+<li class="chapter" data-level="5.8.2" data-path="data-management.html"><a href="data-management.html#finding-topbottom-records"><i class="fa fa-check"></i><b>5.8.2</b> Finding Top/Bottom Records</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="data-management.html"><a href="data-management.html#saving-and-exporting-data"><i class="fa fa-check"></i><b>5.9</b> Saving and Exporting Data</a></li>
+<li class="chapter" data-level="5.10" data-path="data-management.html"><a href="data-management.html#data-import-from-various-sources"><i class="fa fa-check"></i><b>5.10</b> Data Import from Various Sources</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="data-management.html"><a href="data-management.html#reading-different-file-types"><i class="fa fa-check"></i><b>5.10.1</b> Reading Different File Types</a></li>
+<li class="chapter" data-level="5.10.2" data-path="data-management.html"><a href="data-management.html#handling-import-issues"><i class="fa fa-check"></i><b>5.10.2</b> Handling Import Issues</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="data-management.html"><a href="data-management.html#practical-workflow-example"><i class="fa fa-check"></i><b>5.11</b> Practical Workflow Example</a></li>
+<li class="chapter" data-level="5.12" data-path="data-management.html"><a href="data-management.html#troubleshooting-common-issues"><i class="fa fa-check"></i><b>5.12</b> Troubleshooting Common Issues</a>
+<ul>
+<li class="chapter" data-level="5.12.1" data-path="data-management.html"><a href="data-management.html#error-object-not-found"><i class="fa fa-check"></i><b>5.12.1</b> Error: Object Not Found</a></li>
+<li class="chapter" data-level="5.12.2" data-path="data-management.html"><a href="data-management.html#error-file-not-found"><i class="fa fa-check"></i><b>5.12.2</b> Error: File Not Found</a></li>
+<li class="chapter" data-level="5.12.3" data-path="data-management.html"><a href="data-management.html#error-package-not-available"><i class="fa fa-check"></i><b>5.12.3</b> Error: Package Not Available</a></li>
+</ul></li>
+<li class="chapter" data-level="5.13" data-path="data-management.html"><a href="data-management.html#best-practices-for-data-management"><i class="fa fa-check"></i><b>5.13</b> Best Practices for Data Management</a>
+<ul>
+<li class="chapter" data-level="5.13.1" data-path="data-management.html"><a href="data-management.html#use-descriptive-variable-names"><i class="fa fa-check"></i><b>5.13.1</b> 1. Use Descriptive Variable Names</a></li>
+<li class="chapter" data-level="5.13.2" data-path="data-management.html"><a href="data-management.html#comment-your-code"><i class="fa fa-check"></i><b>5.13.2</b> 2. Comment Your Code</a></li>
+<li class="chapter" data-level="5.13.3" data-path="data-management.html"><a href="data-management.html#keep-raw-data-separate"><i class="fa fa-check"></i><b>5.13.3</b> 3. Keep Raw Data Separate</a></li>
+<li class="chapter" data-level="5.13.4" data-path="data-management.html"><a href="data-management.html#use-consistent-file-organization"><i class="fa fa-check"></i><b>5.13.4</b> 4. Use Consistent File Organization</a></li>
+</ul></li>
+<li class="chapter" data-level="5.14" data-path="data-management.html"><a href="data-management.html#practice-exercises-4"><i class="fa fa-check"></i><b>5.14</b> Practice Exercises</a></li>
+<li class="chapter" data-level="5.15" data-path="data-management.html"><a href="data-management.html#chapter-summary-3"><i class="fa fa-check"></i><b>5.15</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="5.15.1" data-path="data-management.html"><a href="data-management.html#key-takeaways-3"><i class="fa fa-check"></i><b>5.15.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="5.15.2" data-path="data-management.html"><a href="data-management.html#next-steps-3"><i class="fa fa-check"></i><b>5.15.2</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="5.16" data-path="data-management.html"><a href="data-management.html#references-3"><i class="fa fa-check"></i><b>5.16</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="descriptive-stats.html"><a href="descriptive-stats.html"><i class="fa fa-check"></i><b>6</b> Descriptive Statistics for Sport Business Analytics</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#introduction-to-descriptive-statistics"><i class="fa fa-check"></i><b>6.1</b> Introduction to Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-role-of-descriptive-statistics"><i class="fa fa-check"></i><b>6.1.1</b> The Role of Descriptive Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#types-of-variables-and-summary-methods"><i class="fa fa-check"></i><b>6.2</b> Types of Variables and Summary Methods</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#categorical-variables"><i class="fa fa-check"></i><b>6.2.1</b> Categorical Variables</a></li>
+<li class="chapter" data-level="6.2.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#continuous-variables"><i class="fa fa-check"></i><b>6.2.2</b> Continuous Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>6.3</b> Measures of Central Tendency</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-mean-average"><i class="fa fa-check"></i><b>6.3.1</b> The Mean (Average)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-median-middle-value"><i class="fa fa-check"></i><b>6.3.2</b> The Median (Middle Value)</a></li>
+<li class="chapter" data-level="6.3.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-mode-most-common-value"><i class="fa fa-check"></i><b>6.3.3</b> The Mode (Most Common Value)</a></li>
+<li class="chapter" data-level="6.3.4" data-path="descriptive-stats.html"><a href="descriptive-stats.html#comparing-mean-median-and-mode"><i class="fa fa-check"></i><b>6.3.4</b> Comparing Mean, Median, and Mode</a></li>
+<li class="chapter" data-level="6.3.5" data-path="descriptive-stats.html"><a href="descriptive-stats.html#distribution-shapes-and-central-tendency"><i class="fa fa-check"></i><b>6.3.5</b> Distribution Shapes and Central Tendency</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="descriptive-stats.html"><a href="descriptive-stats.html#measures-of-variability"><i class="fa fa-check"></i><b>6.4</b> Measures of Variability</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#standard-deviation-sd"><i class="fa fa-check"></i><b>6.4.1</b> Standard Deviation (SD)</a></li>
+<li class="chapter" data-level="6.4.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#the-standard-deviation-and-normal-distribution"><i class="fa fa-check"></i><b>6.4.2</b> The Standard Deviation and Normal Distribution</a></li>
+<li class="chapter" data-level="6.4.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#variance"><i class="fa fa-check"></i><b>6.4.3</b> Variance</a></li>
+<li class="chapter" data-level="6.4.4" data-path="descriptive-stats.html"><a href="descriptive-stats.html#range"><i class="fa fa-check"></i><b>6.4.4</b> Range</a></li>
+<li class="chapter" data-level="6.4.5" data-path="descriptive-stats.html"><a href="descriptive-stats.html#minimum-and-maximum"><i class="fa fa-check"></i><b>6.4.5</b> Minimum and Maximum</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="descriptive-stats.html"><a href="descriptive-stats.html#comprehensive-descriptive-statistics-in-r"><i class="fa fa-check"></i><b>6.5</b> Comprehensive Descriptive Statistics in R</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#using-summary-function"><i class="fa fa-check"></i><b>6.5.1</b> Using summary() Function</a></li>
+<li class="chapter" data-level="6.5.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#creating-custom-summary-tables"><i class="fa fa-check"></i><b>6.5.2</b> Creating Custom Summary Tables</a></li>
+<li class="chapter" data-level="6.5.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#using-psych-package-for-comprehensive-output"><i class="fa fa-check"></i><b>6.5.3</b> Using psych Package for Comprehensive Output</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="descriptive-stats.html"><a href="descriptive-stats.html#sport-business-applications"><i class="fa fa-check"></i><b>6.6</b> Sport Business Applications</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#example-1-analyzing-ticket-sales"><i class="fa fa-check"></i><b>6.6.1</b> Example 1: Analyzing Ticket Sales</a></li>
+<li class="chapter" data-level="6.6.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#example-2-comparing-athletic-department-budgets"><i class="fa fa-check"></i><b>6.6.2</b> Example 2: Comparing Athletic Department Budgets</a></li>
+<li class="chapter" data-level="6.6.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#example-3-player-performance-metrics"><i class="fa fa-check"></i><b>6.6.3</b> Example 3: Player Performance Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="descriptive-stats.html"><a href="descriptive-stats.html#interpreting-and-reporting-descriptive-statistics"><i class="fa fa-check"></i><b>6.7</b> Interpreting and Reporting Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#guidelines-for-reporting"><i class="fa fa-check"></i><b>6.7.1</b> Guidelines for Reporting</a></li>
+<li class="chapter" data-level="6.7.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#example-report-format"><i class="fa fa-check"></i><b>6.7.2</b> Example Report Format</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="descriptive-stats.html"><a href="descriptive-stats.html#practice-exercises-5"><i class="fa fa-check"></i><b>6.8</b> Practice Exercises</a></li>
+<li class="chapter" data-level="6.9" data-path="descriptive-stats.html"><a href="descriptive-stats.html#common-mistakes-to-avoid"><i class="fa fa-check"></i><b>6.9</b> Common Mistakes to Avoid</a>
+<ul>
+<li class="chapter" data-level="6.9.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#ignoring-outliers"><i class="fa fa-check"></i><b>6.9.1</b> 1. Ignoring Outliers</a></li>
+<li class="chapter" data-level="6.9.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#reporting-mean-without-standard-deviation"><i class="fa fa-check"></i><b>6.9.2</b> 2. Reporting Mean Without Standard Deviation</a></li>
+<li class="chapter" data-level="6.9.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#assuming-normal-distribution"><i class="fa fa-check"></i><b>6.9.3</b> 3. Assuming Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="6.10" data-path="descriptive-stats.html"><a href="descriptive-stats.html#chapter-summary-4"><i class="fa fa-check"></i><b>6.10</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="6.10.1" data-path="descriptive-stats.html"><a href="descriptive-stats.html#key-takeaways-4"><i class="fa fa-check"></i><b>6.10.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="6.10.2" data-path="descriptive-stats.html"><a href="descriptive-stats.html#r-functions-summary"><i class="fa fa-check"></i><b>6.10.2</b> R Functions Summary</a></li>
+<li class="chapter" data-level="6.10.3" data-path="descriptive-stats.html"><a href="descriptive-stats.html#next-steps-4"><i class="fa fa-check"></i><b>6.10.3</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="6.11" data-path="descriptive-stats.html"><a href="descriptive-stats.html#references-4"><i class="fa fa-check"></i><b>6.11</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="statistical-testing.html"><a href="statistical-testing.html"><i class="fa fa-check"></i><b>7</b> Statistical Testing: Comparing Means</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="statistical-testing.html"><a href="statistical-testing.html#introduction-to-hypothesis-testing"><i class="fa fa-check"></i><b>7.1</b> Introduction to Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.2" data-path="statistical-testing.html"><a href="statistical-testing.html#understanding-z-scores-and-t-scores"><i class="fa fa-check"></i><b>7.2</b> Understanding Z-Scores and T-Scores</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="statistical-testing.html"><a href="statistical-testing.html#z-scores"><i class="fa fa-check"></i><b>7.2.1</b> Z-Scores</a></li>
+<li class="chapter" data-level="7.2.2" data-path="statistical-testing.html"><a href="statistical-testing.html#z-scores-in-sport-analytics"><i class="fa fa-check"></i><b>7.2.2</b> Z-Scores in Sport Analytics</a></li>
+<li class="chapter" data-level="7.2.3" data-path="statistical-testing.html"><a href="statistical-testing.html#t-scores"><i class="fa fa-check"></i><b>7.2.3</b> T-Scores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="statistical-testing.html"><a href="statistical-testing.html#understanding-p-values"><i class="fa fa-check"></i><b>7.3</b> Understanding P-Values</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="statistical-testing.html"><a href="statistical-testing.html#null-and-alternative-hypotheses"><i class="fa fa-check"></i><b>7.3.1</b> Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="7.3.2" data-path="statistical-testing.html"><a href="statistical-testing.html#interpreting-p-values"><i class="fa fa-check"></i><b>7.3.2</b> Interpreting P-Values</a></li>
+<li class="chapter" data-level="7.3.3" data-path="statistical-testing.html"><a href="statistical-testing.html#important-notes-about-p-values"><i class="fa fa-check"></i><b>7.3.3</b> Important Notes About P-Values</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="statistical-testing.html"><a href="statistical-testing.html#t-tests-comparing-two-groups"><i class="fa fa-check"></i><b>7.4</b> T-Tests: Comparing Two Groups</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="statistical-testing.html"><a href="statistical-testing.html#types-of-t-tests"><i class="fa fa-check"></i><b>7.4.1</b> Types of T-Tests</a></li>
+<li class="chapter" data-level="7.4.2" data-path="statistical-testing.html"><a href="statistical-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>7.4.2</b> One-Sample T-Test</a></li>
+<li class="chapter" data-level="7.4.3" data-path="statistical-testing.html"><a href="statistical-testing.html#independent-samples-t-test"><i class="fa fa-check"></i><b>7.4.3</b> Independent Samples T-Test</a></li>
+<li class="chapter" data-level="7.4.4" data-path="statistical-testing.html"><a href="statistical-testing.html#paired-samples-t-test"><i class="fa fa-check"></i><b>7.4.4</b> Paired Samples T-Test</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="statistical-testing.html"><a href="statistical-testing.html#anova-comparing-three-or-more-groups"><i class="fa fa-check"></i><b>7.5</b> ANOVA: Comparing Three or More Groups</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="statistical-testing.html"><a href="statistical-testing.html#anova-fundamentals"><i class="fa fa-check"></i><b>7.5.1</b> ANOVA Fundamentals</a></li>
+<li class="chapter" data-level="7.5.2" data-path="statistical-testing.html"><a href="statistical-testing.html#types-of-anova"><i class="fa fa-check"></i><b>7.5.2</b> Types of ANOVA</a></li>
+<li class="chapter" data-level="7.5.3" data-path="statistical-testing.html"><a href="statistical-testing.html#anova-assumptions"><i class="fa fa-check"></i><b>7.5.3</b> ANOVA Assumptions</a></li>
+<li class="chapter" data-level="7.5.4" data-path="statistical-testing.html"><a href="statistical-testing.html#hypotheses-in-anova"><i class="fa fa-check"></i><b>7.5.4</b> Hypotheses in ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="statistical-testing.html"><a href="statistical-testing.html#one-way-anova-complete-example"><i class="fa fa-check"></i><b>7.6</b> One-Way ANOVA: Complete Example</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="statistical-testing.html"><a href="statistical-testing.html#step-1-descriptive-statistics"><i class="fa fa-check"></i><b>7.6.1</b> Step 1: Descriptive Statistics</a></li>
+<li class="chapter" data-level="7.6.2" data-path="statistical-testing.html"><a href="statistical-testing.html#step-2-check-assumptions"><i class="fa fa-check"></i><b>7.6.2</b> Step 2: Check Assumptions</a></li>
+<li class="chapter" data-level="7.6.3" data-path="statistical-testing.html"><a href="statistical-testing.html#step-3-conduct-one-way-anova"><i class="fa fa-check"></i><b>7.6.3</b> Step 3: Conduct One-Way ANOVA</a></li>
+<li class="chapter" data-level="7.6.4" data-path="statistical-testing.html"><a href="statistical-testing.html#step-4-post-hoc-tests"><i class="fa fa-check"></i><b>7.6.4</b> Step 4: Post-Hoc Tests</a></li>
+<li class="chapter" data-level="7.6.5" data-path="statistical-testing.html"><a href="statistical-testing.html#step-5-visualize-results"><i class="fa fa-check"></i><b>7.6.5</b> Step 5: Visualize Results</a></li>
+<li class="chapter" data-level="7.6.6" data-path="statistical-testing.html"><a href="statistical-testing.html#reporting-anova-results"><i class="fa fa-check"></i><b>7.6.6</b> Reporting ANOVA Results</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="statistical-testing.html"><a href="statistical-testing.html#two-way-anova"><i class="fa fa-check"></i><b>7.7</b> Two-Way ANOVA</a></li>
+<li class="chapter" data-level="7.8" data-path="statistical-testing.html"><a href="statistical-testing.html#effect-size"><i class="fa fa-check"></i><b>7.8</b> Effect Size</a>
+<ul>
+<li class="chapter" data-level="7.8.1" data-path="statistical-testing.html"><a href="statistical-testing.html#cohens-d-for-t-tests"><i class="fa fa-check"></i><b>7.8.1</b> Cohen’s d for t-tests</a></li>
+<li class="chapter" data-level="7.8.2" data-path="statistical-testing.html"><a href="statistical-testing.html#eta-squared-for-anova"><i class="fa fa-check"></i><b>7.8.2</b> Eta-squared for ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="7.9" data-path="statistical-testing.html"><a href="statistical-testing.html#practical-application-complete-analysis-workflow"><i class="fa fa-check"></i><b>7.9</b> Practical Application: Complete Analysis Workflow</a></li>
+<li class="chapter" data-level="7.10" data-path="statistical-testing.html"><a href="statistical-testing.html#common-mistakes-and-how-to-avoid-them"><i class="fa fa-check"></i><b>7.10</b> Common Mistakes and How to Avoid Them</a>
+<ul>
+<li class="chapter" data-level="7.10.1" data-path="statistical-testing.html"><a href="statistical-testing.html#mistake-1-running-multiple-t-tests-instead-of-anova"><i class="fa fa-check"></i><b>7.10.1</b> Mistake 1: Running Multiple T-Tests Instead of ANOVA</a></li>
+<li class="chapter" data-level="7.10.2" data-path="statistical-testing.html"><a href="statistical-testing.html#mistake-2-ignoring-assumptions"><i class="fa fa-check"></i><b>7.10.2</b> Mistake 2: Ignoring Assumptions</a></li>
+<li class="chapter" data-level="7.10.3" data-path="statistical-testing.html"><a href="statistical-testing.html#mistake-3-confusing-significance-with-importance"><i class="fa fa-check"></i><b>7.10.3</b> Mistake 3: Confusing Significance with Importance</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="statistical-testing.html"><a href="statistical-testing.html#practice-exercises-6"><i class="fa fa-check"></i><b>7.11</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="7.11.1" data-path="statistical-testing.html"><a href="statistical-testing.html#exercise-1-one-sample-t-test"><i class="fa fa-check"></i><b>7.11.1</b> Exercise 1: One-Sample T-Test</a></li>
+<li class="chapter" data-level="7.11.2" data-path="statistical-testing.html"><a href="statistical-testing.html#exercise-2-independent-t-test"><i class="fa fa-check"></i><b>7.11.2</b> Exercise 2: Independent T-Test</a></li>
+<li class="chapter" data-level="7.11.3" data-path="statistical-testing.html"><a href="statistical-testing.html#exercise-3-paired-t-test"><i class="fa fa-check"></i><b>7.11.3</b> Exercise 3: Paired T-Test</a></li>
+<li class="chapter" data-level="7.11.4" data-path="statistical-testing.html"><a href="statistical-testing.html#exercise-4-one-way-anova"><i class="fa fa-check"></i><b>7.11.4</b> Exercise 4: One-Way ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="7.12" data-path="statistical-testing.html"><a href="statistical-testing.html#chapter-summary-5"><i class="fa fa-check"></i><b>7.12</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="7.12.1" data-path="statistical-testing.html"><a href="statistical-testing.html#key-takeaways-5"><i class="fa fa-check"></i><b>7.12.1</b> Key Takeaways</a></li>
+<li class="chapter" data-level="7.12.2" data-path="statistical-testing.html"><a href="statistical-testing.html#r-functions-summary-1"><i class="fa fa-check"></i><b>7.12.2</b> R Functions Summary</a></li>
+<li class="chapter" data-level="7.12.3" data-path="statistical-testing.html"><a href="statistical-testing.html#decision-tree-for-choosing-tests"><i class="fa fa-check"></i><b>7.12.3</b> Decision Tree for Choosing Tests</a></li>
+<li class="chapter" data-level="7.12.4" data-path="statistical-testing.html"><a href="statistical-testing.html#next-steps-5"><i class="fa fa-check"></i><b>7.12.4</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="7.13" data-path="statistical-testing.html"><a href="statistical-testing.html#references-5"><i class="fa fa-check"></i><b>7.13</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="correlation-regression.html"><a href="correlation-regression.html"><i class="fa fa-check"></i><b>8</b> Correlation and Regression</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="correlation-regression.html"><a href="correlation-regression.html#introduction-to-relationships-between-variables"><i class="fa fa-check"></i><b>8.1</b> Introduction to Relationships Between Variables</a></li>
+<li class="chapter" data-level="8.2" data-path="correlation-regression.html"><a href="correlation-regression.html#understanding-correlation"><i class="fa fa-check"></i><b>8.2</b> Understanding Correlation</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="correlation-regression.html"><a href="correlation-regression.html#what-is-correlation"><i class="fa fa-check"></i><b>8.2.1</b> What is Correlation?</a></li>
+<li class="chapter" data-level="8.2.2" data-path="correlation-regression.html"><a href="correlation-regression.html#the-correlation-coefficient-r"><i class="fa fa-check"></i><b>8.2.2</b> The Correlation Coefficient (r)</a></li>
+<li class="chapter" data-level="8.2.3" data-path="correlation-regression.html"><a href="correlation-regression.html#interpreting-correlation-strength"><i class="fa fa-check"></i><b>8.2.3</b> Interpreting Correlation Strength</a></li>
+<li class="chapter" data-level="8.2.4" data-path="correlation-regression.html"><a href="correlation-regression.html#types-of-correlation"><i class="fa fa-check"></i><b>8.2.4</b> Types of Correlation</a></li>
+<li class="chapter" data-level="8.2.5" data-path="correlation-regression.html"><a href="correlation-regression.html#hypothesis-testing-for-correlation"><i class="fa fa-check"></i><b>8.2.5</b> Hypothesis Testing for Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="correlation-regression.html"><a href="correlation-regression.html#simple-linear-regression"><i class="fa fa-check"></i><b>8.3</b> Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="correlation-regression.html"><a href="correlation-regression.html#what-is-simple-linear-regression"><i class="fa fa-check"></i><b>8.3.1</b> What is Simple Linear Regression?</a></li>
+<li class="chapter" data-level="8.3.2" data-path="correlation-regression.html"><a href="correlation-regression.html#conducting-simple-regression-in-r"><i class="fa fa-check"></i><b>8.3.2</b> Conducting Simple Regression in R</a></li>
+<li class="chapter" data-level="8.3.3" data-path="correlation-regression.html"><a href="correlation-regression.html#interpreting-regression-output"><i class="fa fa-check"></i><b>8.3.3</b> Interpreting Regression Output</a></li>
+<li class="chapter" data-level="8.3.4" data-path="correlation-regression.html"><a href="correlation-regression.html#making-predictions"><i class="fa fa-check"></i><b>8.3.4</b> Making Predictions</a></li>
+<li class="chapter" data-level="8.3.5" data-path="correlation-regression.html"><a href="correlation-regression.html#visualizing-the-regression-line"><i class="fa fa-check"></i><b>8.3.5</b> Visualizing the Regression Line</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="correlation-regression.html"><a href="correlation-regression.html#multiple-regression"><i class="fa fa-check"></i><b>8.4</b> Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="correlation-regression.html"><a href="correlation-regression.html#what-is-multiple-regression"><i class="fa fa-check"></i><b>8.4.1</b> What is Multiple Regression?</a></li>
+<li class="chapter" data-level="8.4.2" data-path="correlation-regression.html"><a href="correlation-regression.html#why-use-multiple-regression"><i class="fa fa-check"></i><b>8.4.2</b> Why Use Multiple Regression?</a></li>
+<li class="chapter" data-level="8.4.3" data-path="correlation-regression.html"><a href="correlation-regression.html#conducting-multiple-regression-in-r"><i class="fa fa-check"></i><b>8.4.3</b> Conducting Multiple Regression in R</a></li>
+<li class="chapter" data-level="8.4.4" data-path="correlation-regression.html"><a href="correlation-regression.html#interpreting-multiple-regression-output"><i class="fa fa-check"></i><b>8.4.4</b> Interpreting Multiple Regression Output</a></li>
+<li class="chapter" data-level="8.4.5" data-path="correlation-regression.html"><a href="correlation-regression.html#standardized-coefficients"><i class="fa fa-check"></i><b>8.4.5</b> Standardized Coefficients</a></li>
+<li class="chapter" data-level="8.4.6" data-path="correlation-regression.html"><a href="correlation-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>8.4.6</b> Model Diagnostics</a></li>
+<li class="chapter" data-level="8.4.7" data-path="correlation-regression.html"><a href="correlation-regression.html#comparing-models"><i class="fa fa-check"></i><b>8.4.7</b> Comparing Models</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="correlation-regression.html"><a href="correlation-regression.html#sport-business-applications-1"><i class="fa fa-check"></i><b>8.5</b> Sport Business Applications</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="correlation-regression.html"><a href="correlation-regression.html#example-1-player-performance-analysis"><i class="fa fa-check"></i><b>8.5.1</b> Example 1: Player Performance Analysis</a></li>
+<li class="chapter" data-level="8.5.2" data-path="correlation-regression.html"><a href="correlation-regression.html#example-2-predicting-attendance"><i class="fa fa-check"></i><b>8.5.2</b> Example 2: Predicting Attendance</a></li>
+<li class="chapter" data-level="8.5.3" data-path="correlation-regression.html"><a href="correlation-regression.html#example-3-salary-prediction"><i class="fa fa-check"></i><b>8.5.3</b> Example 3: Salary Prediction</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="correlation-regression.html"><a href="correlation-regression.html#practice-exercises-7"><i class="fa fa-check"></i><b>8.6</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="correlation-regression.html"><a href="correlation-regression.html#exercise-1-correlation-analysis"><i class="fa fa-check"></i><b>8.6.1</b> Exercise 1: Correlation Analysis</a></li>
+<li class="chapter" data-level="8.6.2" data-path="correlation-regression.html"><a href="correlation-regression.html#exercise-2-simple-regression"><i class="fa fa-check"></i><b>8.6.2</b> Exercise 2: Simple Regression</a></li>
+<li class="chapter" data-level="8.6.3" data-path="correlation-regression.html"><a href="correlation-regression.html#exercise-3-multiple-regression"><i class="fa fa-check"></i><b>8.6.3</b> Exercise 3: Multiple Regression</a></li>
+<li class="chapter" data-level="8.6.4" data-path="correlation-regression.html"><a href="correlation-regression.html#exercise-4-applied-analysis"><i class="fa fa-check"></i><b>8.6.4</b> Exercise 4: Applied Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="correlation-regression.html"><a href="correlation-regression.html#chapter-summary-6"><i class="fa fa-check"></i><b>8.7</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="correlation-regression.html"><a href="correlation-regression.html#key-concepts"><i class="fa fa-check"></i><b>8.7.1</b> Key Concepts</a></li>
+<li class="chapter" data-level="8.7.2" data-path="correlation-regression.html"><a href="correlation-regression.html#important-considerations"><i class="fa fa-check"></i><b>8.7.2</b> Important Considerations</a></li>
+<li class="chapter" data-level="8.7.3" data-path="correlation-regression.html"><a href="correlation-regression.html#r-functions-reference"><i class="fa fa-check"></i><b>8.7.3</b> R Functions Reference</a></li>
+<li class="chapter" data-level="8.7.4" data-path="correlation-regression.html"><a href="correlation-regression.html#next-steps-6"><i class="fa fa-check"></i><b>8.7.4</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="correlation-regression.html"><a href="correlation-regression.html#references-6"><i class="fa fa-check"></i><b>8.8</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>9</b> Data Visualization with R</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="data-visualization.html"><a href="data-visualization.html#introduction-to-data-visualization"><i class="fa fa-check"></i><b>9.1</b> Introduction to Data Visualization</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="data-visualization.html"><a href="data-visualization.html#why-visualize-data"><i class="fa fa-check"></i><b>9.1.1</b> Why Visualize Data?</a></li>
+<li class="chapter" data-level="9.1.2" data-path="data-visualization.html"><a href="data-visualization.html#principles-of-effective-visualization"><i class="fa fa-check"></i><b>9.1.2</b> Principles of Effective Visualization</a></li>
+<li class="chapter" data-level="9.1.3" data-path="data-visualization.html"><a href="data-visualization.html#common-visualization-pitfalls-to-avoid"><i class="fa fa-check"></i><b>9.1.3</b> Common Visualization Pitfalls to Avoid</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="data-visualization.html"><a href="data-visualization.html#introduction-to-ggplot2"><i class="fa fa-check"></i><b>9.2</b> Introduction to ggplot2</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="data-visualization.html"><a href="data-visualization.html#the-grammar-of-graphics"><i class="fa fa-check"></i><b>9.2.1</b> The Grammar of Graphics</a></li>
+<li class="chapter" data-level="9.2.2" data-path="data-visualization.html"><a href="data-visualization.html#building-plots-layer-by-layer"><i class="fa fa-check"></i><b>9.2.2</b> Building Plots Layer by Layer</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="data-visualization.html"><a href="data-visualization.html#essential-plot-types-for-sport-analytics"><i class="fa fa-check"></i><b>9.3</b> Essential Plot Types for Sport Analytics</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plots"><i class="fa fa-check"></i><b>9.3.1</b> Scatter Plots</a></li>
+<li class="chapter" data-level="9.3.2" data-path="data-visualization.html"><a href="data-visualization.html#bar-charts"><i class="fa fa-check"></i><b>9.3.2</b> Bar Charts</a></li>
+<li class="chapter" data-level="9.3.3" data-path="data-visualization.html"><a href="data-visualization.html#line-charts"><i class="fa fa-check"></i><b>9.3.3</b> Line Charts</a></li>
+<li class="chapter" data-level="9.3.4" data-path="data-visualization.html"><a href="data-visualization.html#histograms"><i class="fa fa-check"></i><b>9.3.4</b> Histograms</a></li>
+<li class="chapter" data-level="9.3.5" data-path="data-visualization.html"><a href="data-visualization.html#box-plots"><i class="fa fa-check"></i><b>9.3.5</b> Box Plots</a></li>
+<li class="chapter" data-level="9.3.6" data-path="data-visualization.html"><a href="data-visualization.html#violin-plots"><i class="fa fa-check"></i><b>9.3.6</b> Violin Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="data-visualization.html"><a href="data-visualization.html#customizing-visualizations"><i class="fa fa-check"></i><b>9.4</b> Customizing Visualizations</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="data-visualization.html"><a href="data-visualization.html#colors-and-themes"><i class="fa fa-check"></i><b>9.4.1</b> Colors and Themes</a></li>
+<li class="chapter" data-level="9.4.2" data-path="data-visualization.html"><a href="data-visualization.html#custom-color-palettes-for-sport-teams"><i class="fa fa-check"></i><b>9.4.2</b> Custom Color Palettes for Sport Teams</a></li>
+<li class="chapter" data-level="9.4.3" data-path="data-visualization.html"><a href="data-visualization.html#annotations-and-labels"><i class="fa fa-check"></i><b>9.4.3</b> Annotations and Labels</a></li>
+<li class="chapter" data-level="9.4.4" data-path="data-visualization.html"><a href="data-visualization.html#faceting-small-multiples"><i class="fa fa-check"></i><b>9.4.4</b> Faceting: Small Multiples</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="data-visualization.html"><a href="data-visualization.html#sport-business-visualization-examples"><i class="fa fa-check"></i><b>9.5</b> Sport Business Visualization Examples</a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="data-visualization.html"><a href="data-visualization.html#example-1-revenue-analysis"><i class="fa fa-check"></i><b>9.5.1</b> Example 1: Revenue Analysis</a></li>
+<li class="chapter" data-level="9.5.2" data-path="data-visualization.html"><a href="data-visualization.html#example-2-player-performance-metrics"><i class="fa fa-check"></i><b>9.5.2</b> Example 2: Player Performance Metrics</a></li>
+<li class="chapter" data-level="9.5.3" data-path="data-visualization.html"><a href="data-visualization.html#example-3-attendance-trends"><i class="fa fa-check"></i><b>9.5.3</b> Example 3: Attendance Trends</a></li>
+<li class="chapter" data-level="9.5.4" data-path="data-visualization.html"><a href="data-visualization.html#example-4-comparative-performance-dashboard"><i class="fa fa-check"></i><b>9.5.4</b> Example 4: Comparative Performance Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="data-visualization.html"><a href="data-visualization.html#exporting-and-sharing-visualizations"><i class="fa fa-check"></i><b>9.6</b> Exporting and Sharing Visualizations</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="data-visualization.html"><a href="data-visualization.html#saving-plots"><i class="fa fa-check"></i><b>9.6.1</b> Saving Plots</a></li>
+<li class="chapter" data-level="9.6.2" data-path="data-visualization.html"><a href="data-visualization.html#creating-publication-ready-plots"><i class="fa fa-check"></i><b>9.6.2</b> Creating Publication-Ready Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="data-visualization.html"><a href="data-visualization.html#best-practices-for-sport-business-visualizations"><i class="fa fa-check"></i><b>9.7</b> Best Practices for Sport Business Visualizations</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="data-visualization.html"><a href="data-visualization.html#know-your-audience"><i class="fa fa-check"></i><b>9.7.1</b> 1. Know Your Audience</a></li>
+<li class="chapter" data-level="9.7.2" data-path="data-visualization.html"><a href="data-visualization.html#choose-the-right-chart-type"><i class="fa fa-check"></i><b>9.7.2</b> 2. Choose the Right Chart Type</a></li>
+<li class="chapter" data-level="9.7.3" data-path="data-visualization.html"><a href="data-visualization.html#maintain-consistency"><i class="fa fa-check"></i><b>9.7.3</b> 3. Maintain Consistency</a></li>
+<li class="chapter" data-level="9.7.4" data-path="data-visualization.html"><a href="data-visualization.html#tell-a-story-with-data"><i class="fa fa-check"></i><b>9.7.4</b> 4. Tell a Story with Data</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="data-visualization.html"><a href="data-visualization.html#practice-exercises-8"><i class="fa fa-check"></i><b>9.8</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="data-visualization.html"><a href="data-visualization.html#exercise-1-basic-visualizations"><i class="fa fa-check"></i><b>9.8.1</b> Exercise 1: Basic Visualizations</a></li>
+<li class="chapter" data-level="9.8.2" data-path="data-visualization.html"><a href="data-visualization.html#exercise-2-customization"><i class="fa fa-check"></i><b>9.8.2</b> Exercise 2: Customization</a></li>
+<li class="chapter" data-level="9.8.3" data-path="data-visualization.html"><a href="data-visualization.html#exercise-3-multi-panel-dashboard"><i class="fa fa-check"></i><b>9.8.3</b> Exercise 3: Multi-Panel Dashboard</a></li>
+<li class="chapter" data-level="9.8.4" data-path="data-visualization.html"><a href="data-visualization.html#exercise-4-real-world-application"><i class="fa fa-check"></i><b>9.8.4</b> Exercise 4: Real-World Application</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="data-visualization.html"><a href="data-visualization.html#chapter-summary-7"><i class="fa fa-check"></i><b>9.9</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="data-visualization.html"><a href="data-visualization.html#key-concepts-1"><i class="fa fa-check"></i><b>9.9.1</b> Key Concepts</a></li>
+<li class="chapter" data-level="9.9.2" data-path="data-visualization.html"><a href="data-visualization.html#r-functions-reference-1"><i class="fa fa-check"></i><b>9.9.2</b> R Functions Reference</a></li>
+<li class="chapter" data-level="9.9.3" data-path="data-visualization.html"><a href="data-visualization.html#next-steps-7"><i class="fa fa-check"></i><b>9.9.3</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="9.10" data-path="data-visualization.html"><a href="data-visualization.html#references-7"><i class="fa fa-check"></i><b>9.10</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tableau.html"><a href="tableau.html"><i class="fa fa-check"></i><b>10</b> Introduction to Tableau</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="tableau.html"><a href="tableau.html#why-tableau-for-sport-business-analytics"><i class="fa fa-check"></i><b>10.1</b> Why Tableau for Sport Business Analytics?</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="tableau.html"><a href="tableau.html#tableaus-role-in-sport-analytics"><i class="fa fa-check"></i><b>10.1.1</b> Tableau’s Role in Sport Analytics</a></li>
+<li class="chapter" data-level="10.1.2" data-path="tableau.html"><a href="tableau.html#real-world-sport-business-applications"><i class="fa fa-check"></i><b>10.1.2</b> Real-World Sport Business Applications</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="tableau.html"><a href="tableau.html#getting-started-with-tableau"><i class="fa fa-check"></i><b>10.2</b> Getting Started with Tableau</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="tableau.html"><a href="tableau.html#installing-tableau-public"><i class="fa fa-check"></i><b>10.2.1</b> Installing Tableau Public</a></li>
+<li class="chapter" data-level="10.2.2" data-path="tableau.html"><a href="tableau.html#tableau-interface-overview"><i class="fa fa-check"></i><b>10.2.2</b> Tableau Interface Overview</a></li>
+<li class="chapter" data-level="10.2.3" data-path="tableau.html"><a href="tableau.html#understanding-tableau-terminology"><i class="fa fa-check"></i><b>10.2.3</b> Understanding Tableau Terminology</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="tableau.html"><a href="tableau.html#connecting-to-data"><i class="fa fa-check"></i><b>10.3</b> Connecting to Data</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="tableau.html"><a href="tableau.html#loading-a-csv-file"><i class="fa fa-check"></i><b>10.3.1</b> Loading a CSV File</a></li>
+<li class="chapter" data-level="10.3.2" data-path="tableau.html"><a href="tableau.html#data-source-page"><i class="fa fa-check"></i><b>10.3.2</b> Data Source Page</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="tableau.html"><a href="tableau.html#building-your-first-visualization"><i class="fa fa-check"></i><b>10.4</b> Building Your First Visualization</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="tableau.html"><a href="tableau.html#creating-a-bar-chart"><i class="fa fa-check"></i><b>10.4.1</b> Creating a Bar Chart</a></li>
+<li class="chapter" data-level="10.4.2" data-path="tableau.html"><a href="tableau.html#creating-a-line-chart-time-series"><i class="fa fa-check"></i><b>10.4.2</b> Creating a Line Chart (Time Series)</a></li>
+<li class="chapter" data-level="10.4.3" data-path="tableau.html"><a href="tableau.html#creating-a-scatter-plot"><i class="fa fa-check"></i><b>10.4.3</b> Creating a Scatter Plot</a></li>
+<li class="chapter" data-level="10.4.4" data-path="tableau.html"><a href="tableau.html#working-with-maps"><i class="fa fa-check"></i><b>10.4.4</b> Working with Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="tableau.html"><a href="tableau.html#using-marks-and-aesthetics"><i class="fa fa-check"></i><b>10.5</b> Using Marks and Aesthetics</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="tableau.html"><a href="tableau.html#mark-type"><i class="fa fa-check"></i><b>10.5.1</b> Mark Type</a></li>
+<li class="chapter" data-level="10.5.2" data-path="tableau.html"><a href="tableau.html#color"><i class="fa fa-check"></i><b>10.5.2</b> Color</a></li>
+<li class="chapter" data-level="10.5.3" data-path="tableau.html"><a href="tableau.html#size"><i class="fa fa-check"></i><b>10.5.3</b> Size</a></li>
+<li class="chapter" data-level="10.5.4" data-path="tableau.html"><a href="tableau.html#labels"><i class="fa fa-check"></i><b>10.5.4</b> Labels</a></li>
+<li class="chapter" data-level="10.5.5" data-path="tableau.html"><a href="tableau.html#tooltip"><i class="fa fa-check"></i><b>10.5.5</b> Tooltip</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="tableau.html"><a href="tableau.html#filters-and-interactivity"><i class="fa fa-check"></i><b>10.6</b> Filters and Interactivity</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="tableau.html"><a href="tableau.html#creating-filters"><i class="fa fa-check"></i><b>10.6.1</b> Creating Filters</a></li>
+<li class="chapter" data-level="10.6.2" data-path="tableau.html"><a href="tableau.html#date-filters"><i class="fa fa-check"></i><b>10.6.2</b> Date Filters</a></li>
+<li class="chapter" data-level="10.6.3" data-path="tableau.html"><a href="tableau.html#quick-filters"><i class="fa fa-check"></i><b>10.6.3</b> Quick Filters</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="tableau.html"><a href="tableau.html#adding-analytics"><i class="fa fa-check"></i><b>10.7</b> Adding Analytics</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="tableau.html"><a href="tableau.html#reference-lines"><i class="fa fa-check"></i><b>10.7.1</b> Reference Lines</a></li>
+<li class="chapter" data-level="10.7.2" data-path="tableau.html"><a href="tableau.html#forecasting"><i class="fa fa-check"></i><b>10.7.2</b> Forecasting</a></li>
+<li class="chapter" data-level="10.7.3" data-path="tableau.html"><a href="tableau.html#calculations"><i class="fa fa-check"></i><b>10.7.3</b> Calculations</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="tableau.html"><a href="tableau.html#creating-dashboards"><i class="fa fa-check"></i><b>10.8</b> Creating Dashboards</a>
+<ul>
+<li class="chapter" data-level="10.8.1" data-path="tableau.html"><a href="tableau.html#building-a-dashboard"><i class="fa fa-check"></i><b>10.8.1</b> Building a Dashboard</a></li>
+<li class="chapter" data-level="10.8.2" data-path="tableau.html"><a href="tableau.html#dashboard-best-practices"><i class="fa fa-check"></i><b>10.8.2</b> Dashboard Best Practices</a></li>
+<li class="chapter" data-level="10.8.3" data-path="tableau.html"><a href="tableau.html#dashboard-actions"><i class="fa fa-check"></i><b>10.8.3</b> Dashboard Actions</a></li>
+<li class="chapter" data-level="10.8.4" data-path="tableau.html"><a href="tableau.html#adding-dashboard-objects"><i class="fa fa-check"></i><b>10.8.4</b> Adding Dashboard Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="10.9" data-path="tableau.html"><a href="tableau.html#practical-sport-business-dashboards"><i class="fa fa-check"></i><b>10.9</b> Practical Sport Business Dashboards</a>
+<ul>
+<li class="chapter" data-level="10.9.1" data-path="tableau.html"><a href="tableau.html#example-1-ticket-sales-dashboard"><i class="fa fa-check"></i><b>10.9.1</b> Example 1: Ticket Sales Dashboard</a></li>
+<li class="chapter" data-level="10.9.2" data-path="tableau.html"><a href="tableau.html#example-2-fan-attendance-dashboard"><i class="fa fa-check"></i><b>10.9.2</b> Example 2: Fan Attendance Dashboard</a></li>
+<li class="chapter" data-level="10.9.3" data-path="tableau.html"><a href="tableau.html#example-3-social-media-performance"><i class="fa fa-check"></i><b>10.9.3</b> Example 3: Social Media Performance</a></li>
+<li class="chapter" data-level="10.9.4" data-path="tableau.html"><a href="tableau.html#example-4-player-performance-dashboard"><i class="fa fa-check"></i><b>10.9.4</b> Example 4: Player Performance Dashboard</a></li>
+</ul></li>
+<li class="chapter" data-level="10.10" data-path="tableau.html"><a href="tableau.html#publishing-and-sharing"><i class="fa fa-check"></i><b>10.10</b> Publishing and Sharing</a>
+<ul>
+<li class="chapter" data-level="10.10.1" data-path="tableau.html"><a href="tableau.html#saving-to-tableau-public"><i class="fa fa-check"></i><b>10.10.1</b> Saving to Tableau Public</a></li>
+<li class="chapter" data-level="10.10.2" data-path="tableau.html"><a href="tableau.html#embedding-in-websites"><i class="fa fa-check"></i><b>10.10.2</b> Embedding in Websites</a></li>
+<li class="chapter" data-level="10.10.3" data-path="tableau.html"><a href="tableau.html#presentation-mode"><i class="fa fa-check"></i><b>10.10.3</b> Presentation Mode</a></li>
+<li class="chapter" data-level="10.10.4" data-path="tableau.html"><a href="tableau.html#exporting-options"><i class="fa fa-check"></i><b>10.10.4</b> Exporting Options</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="tableau.html"><a href="tableau.html#tableau-vs.-r-when-to-use-each"><i class="fa fa-check"></i><b>10.11</b> Tableau vs. R: When to Use Each</a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="tableau.html"><a href="tableau.html#strengths-of-r-ggplot2"><i class="fa fa-check"></i><b>10.11.1</b> Strengths of R (ggplot2)</a></li>
+<li class="chapter" data-level="10.11.2" data-path="tableau.html"><a href="tableau.html#strengths-of-tableau"><i class="fa fa-check"></i><b>10.11.2</b> Strengths of Tableau</a></li>
+<li class="chapter" data-level="10.11.3" data-path="tableau.html"><a href="tableau.html#recommended-workflow"><i class="fa fa-check"></i><b>10.11.3</b> Recommended Workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="10.12" data-path="tableau.html"><a href="tableau.html#practice-exercises-9"><i class="fa fa-check"></i><b>10.12</b> Practice Exercises</a>
+<ul>
+<li class="chapter" data-level="10.12.1" data-path="tableau.html"><a href="tableau.html#exercise-1-basic-visualization"><i class="fa fa-check"></i><b>10.12.1</b> Exercise 1: Basic Visualization</a></li>
+<li class="chapter" data-level="10.12.2" data-path="tableau.html"><a href="tableau.html#exercise-2-time-series-analysis"><i class="fa fa-check"></i><b>10.12.2</b> Exercise 2: Time Series Analysis</a></li>
+<li class="chapter" data-level="10.12.3" data-path="tableau.html"><a href="tableau.html#exercise-3-dashboard-creation"><i class="fa fa-check"></i><b>10.12.3</b> Exercise 3: Dashboard Creation</a></li>
+<li class="chapter" data-level="10.12.4" data-path="tableau.html"><a href="tableau.html#exercise-4-geographic-analysis"><i class="fa fa-check"></i><b>10.12.4</b> Exercise 4: Geographic Analysis</a></li>
+<li class="chapter" data-level="10.12.5" data-path="tableau.html"><a href="tableau.html#exercise-5-comparative-analysis"><i class="fa fa-check"></i><b>10.12.5</b> Exercise 5: Comparative Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="10.13" data-path="tableau.html"><a href="tableau.html#tips-for-success"><i class="fa fa-check"></i><b>10.13</b> Tips for Success</a>
+<ul>
+<li class="chapter" data-level="10.13.1" data-path="tableau.html"><a href="tableau.html#design-principles"><i class="fa fa-check"></i><b>10.13.1</b> Design Principles</a></li>
+<li class="chapter" data-level="10.13.2" data-path="tableau.html"><a href="tableau.html#common-mistakes-to-avoid-1"><i class="fa fa-check"></i><b>10.13.2</b> Common Mistakes to Avoid</a></li>
+</ul></li>
+<li class="chapter" data-level="10.14" data-path="tableau.html"><a href="tableau.html#advanced-features-optional"><i class="fa fa-check"></i><b>10.14</b> Advanced Features (Optional)</a>
+<ul>
+<li class="chapter" data-level="10.14.1" data-path="tableau.html"><a href="tableau.html#parameters"><i class="fa fa-check"></i><b>10.14.1</b> Parameters</a></li>
+<li class="chapter" data-level="10.14.2" data-path="tableau.html"><a href="tableau.html#sets"><i class="fa fa-check"></i><b>10.14.2</b> Sets</a></li>
+<li class="chapter" data-level="10.14.3" data-path="tableau.html"><a href="tableau.html#table-calculations"><i class="fa fa-check"></i><b>10.14.3</b> Table Calculations</a></li>
+<li class="chapter" data-level="10.14.4" data-path="tableau.html"><a href="tableau.html#lod-expressions"><i class="fa fa-check"></i><b>10.14.4</b> LOD Expressions</a></li>
+</ul></li>
+<li class="chapter" data-level="10.15" data-path="tableau.html"><a href="tableau.html#chapter-summary-8"><i class="fa fa-check"></i><b>10.15</b> Chapter Summary</a>
+<ul>
+<li class="chapter" data-level="10.15.1" data-path="tableau.html"><a href="tableau.html#key-concepts-2"><i class="fa fa-check"></i><b>10.15.1</b> Key Concepts</a></li>
+<li class="chapter" data-level="10.15.2" data-path="tableau.html"><a href="tableau.html#tableau-vs.-r"><i class="fa fa-check"></i><b>10.15.2</b> Tableau vs. R</a></li>
+<li class="chapter" data-level="10.15.3" data-path="tableau.html"><a href="tableau.html#professional-sport-analytics-workflow"><i class="fa fa-check"></i><b>10.15.3</b> Professional Sport Analytics Workflow</a></li>
+<li class="chapter" data-level="10.15.4" data-path="tableau.html"><a href="tableau.html#real-world-applications"><i class="fa fa-check"></i><b>10.15.4</b> Real-World Applications</a></li>
+<li class="chapter" data-level="10.15.5" data-path="tableau.html"><a href="tableau.html#next-steps-8"><i class="fa fa-check"></i><b>10.15.5</b> Next Steps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.16" data-path="tableau.html"><a href="tableau.html#references-8"><i class="fa fa-check"></i><b>10.16</b> References</a>
+<ul>
+<li class="chapter" data-level="10.16.1" data-path="tableau.html"><a href="tableau.html#additional-resources-1"><i class="fa fa-check"></i><b>10.16.1</b> Additional Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-management" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Data Management and Preparation in R<a href="data-management.html#data-management" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="understanding-your-r-environment" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Understanding Your R Environment<a href="data-management.html#understanding-your-r-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before we dive into data analysis, it’s essential to understand how to manage your R environment effectively. This includes setting up your workspace, understanding file paths, and organizing your analytical projects.</p>
+<div id="the-rstudio-interface" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> The RStudio Interface<a href="data-management.html#the-rstudio-interface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>RStudio provides four main panes that help you work efficiently:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Source Editor</strong> (top-left): Where you write and edit R scripts</li>
+<li><strong>Console</strong> (bottom-left): Where R executes commands and displays output</li>
+<li><strong>Environment/History</strong> (top-right): Shows loaded datasets and command history</li>
+<li><strong>Files/Plots/Packages/Help</strong> (bottom-right): File browser, plot viewer, and help documentation</li>
+</ol>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="data-management.html#cb80-1" tabindex="-1"></a><span class="co"># You can run code from the Source Editor by:</span></span>
+<span id="cb80-2"><a href="data-management.html#cb80-2" tabindex="-1"></a><span class="co"># 1. Placing cursor on the line and pressing Ctrl+Enter (Windows) or Cmd+Enter (Mac)</span></span>
+<span id="cb80-3"><a href="data-management.html#cb80-3" tabindex="-1"></a><span class="co"># 2. Selecting multiple lines and pressing Ctrl+Enter or Cmd+Enter</span></span>
+<span id="cb80-4"><a href="data-management.html#cb80-4" tabindex="-1"></a><span class="co"># 3. Clicking the &quot;Run&quot; button in RStudio</span></span></code></pre></div>
+</div>
+<div id="working-directory-management" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Working Directory Management<a href="data-management.html#working-directory-management" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Your <strong>working directory</strong> is the folder where R looks for files and saves output by default.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="data-management.html#cb81-1" tabindex="-1"></a><span class="co"># Check your current working directory</span></span>
+<span id="cb81-2"><a href="data-management.html#cb81-2" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;/home/sean/Documents/claude/Course Books/SPM 4703&quot;</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="data-management.html#cb83-1" tabindex="-1"></a><span class="co"># Set a new working directory (modify path as needed)</span></span>
+<span id="cb83-2"><a href="data-management.html#cb83-2" tabindex="-1"></a><span class="co"># setwd(&quot;~/Documents/Sport_Analytics&quot;)  # Mac/Linux</span></span>
+<span id="cb83-3"><a href="data-management.html#cb83-3" tabindex="-1"></a><span class="co"># setwd(&quot;C:/Users/YourName/Documents/Sport_Analytics&quot;)  # Windows</span></span></code></pre></div>
+<p><strong>Best Practice</strong>: Create a dedicated folder for each R project and set it as your working directory at the start of each session.</p>
+</div>
+</div>
+<div id="installing-and-loading-packages" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Installing and Loading Packages<a href="data-management.html#installing-and-loading-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R’s functionality extends through <strong>packages</strong> - collections of functions, data, and documentation created by the R community.</p>
+<div id="installing-packages" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Installing Packages<a href="data-management.html#installing-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You only need to install a package once on your computer:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="data-management.html#cb84-1" tabindex="-1"></a><span class="co"># Install the tidyverse suite of packages</span></span>
+<span id="cb84-2"><a href="data-management.html#cb84-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb84-3"><a href="data-management.html#cb84-3" tabindex="-1"></a></span>
+<span id="cb84-4"><a href="data-management.html#cb84-4" tabindex="-1"></a><span class="co"># Install ggplot2 for data visualization</span></span>
+<span id="cb84-5"><a href="data-management.html#cb84-5" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb84-6"><a href="data-management.html#cb84-6" tabindex="-1"></a></span>
+<span id="cb84-7"><a href="data-management.html#cb84-7" tabindex="-1"></a><span class="co"># Install multiple packages at once</span></span>
+<span id="cb84-8"><a href="data-management.html#cb84-8" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;readr&quot;</span>, <span class="st">&quot;tidyr&quot;</span>))</span></code></pre></div>
+</div>
+<div id="loading-packages" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Loading Packages<a href="data-management.html#loading-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After installation, you must load packages in each R session before using them:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="data-management.html#cb85-1" tabindex="-1"></a><span class="co"># Load tidyverse (includes dplyr, ggplot2, readr, and more)</span></span>
+<span id="cb85-2"><a href="data-management.html#cb85-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb85-3"><a href="data-management.html#cb85-3" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="data-management.html#cb85-4" tabindex="-1"></a><span class="co"># Load ggplot2 specifically</span></span>
+<span id="cb85-5"><a href="data-management.html#cb85-5" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p><strong>Important</strong>: You install once but load every session.</p>
+</div>
+</div>
+<div id="loading-and-exploring-data-1" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Loading and Exploring Data<a href="data-management.html#loading-and-exploring-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reading-csv-files" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Reading CSV Files<a href="data-management.html#reading-csv-files" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>CSV (Comma-Separated Values) files are the most common format for sport analytics data.</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="data-management.html#cb86-1" tabindex="-1"></a><span class="co"># Basic method - assumes file is in working directory</span></span>
+<span id="cb86-2"><a href="data-management.html#cb86-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Chapter 2 data.csv&quot;</span>)</span>
+<span id="cb86-3"><a href="data-management.html#cb86-3" tabindex="-1"></a></span>
+<span id="cb86-4"><a href="data-management.html#cb86-4" tabindex="-1"></a><span class="co"># Using file.choose() - opens file browser dialog</span></span>
+<span id="cb86-5"><a href="data-management.html#cb86-5" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">file.choose</span>())</span>
+<span id="cb86-6"><a href="data-management.html#cb86-6" tabindex="-1"></a></span>
+<span id="cb86-7"><a href="data-management.html#cb86-7" tabindex="-1"></a><span class="co"># Using full file path</span></span>
+<span id="cb86-8"><a href="data-management.html#cb86-8" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;~/Documents/Sport_Analytics/Chapter 2 data.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="exploring-dataset-structure" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Exploring Dataset Structure<a href="data-management.html#exploring-dataset-structure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once data is loaded, explore its structure using these essential functions:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="data-management.html#cb87-1" tabindex="-1"></a><span class="co"># Display first 6 rows</span></span>
+<span id="cb87-2"><a href="data-management.html#cb87-2" tabindex="-1"></a><span class="fu">head</span>(data)</span>
+<span id="cb87-3"><a href="data-management.html#cb87-3" tabindex="-1"></a></span>
+<span id="cb87-4"><a href="data-management.html#cb87-4" tabindex="-1"></a><span class="co"># Display last 6 rows</span></span>
+<span id="cb87-5"><a href="data-management.html#cb87-5" tabindex="-1"></a><span class="fu">tail</span>(data)</span>
+<span id="cb87-6"><a href="data-management.html#cb87-6" tabindex="-1"></a></span>
+<span id="cb87-7"><a href="data-management.html#cb87-7" tabindex="-1"></a><span class="co"># Show data structure and types</span></span>
+<span id="cb87-8"><a href="data-management.html#cb87-8" tabindex="-1"></a><span class="fu">str</span>(data)</span>
+<span id="cb87-9"><a href="data-management.html#cb87-9" tabindex="-1"></a></span>
+<span id="cb87-10"><a href="data-management.html#cb87-10" tabindex="-1"></a><span class="co"># Get summary statistics for all variables</span></span>
+<span id="cb87-11"><a href="data-management.html#cb87-11" tabindex="-1"></a><span class="fu">summary</span>(data)</span>
+<span id="cb87-12"><a href="data-management.html#cb87-12" tabindex="-1"></a></span>
+<span id="cb87-13"><a href="data-management.html#cb87-13" tabindex="-1"></a><span class="co"># Display column names</span></span>
+<span id="cb87-14"><a href="data-management.html#cb87-14" tabindex="-1"></a><span class="fu">colnames</span>(data)</span>
+<span id="cb87-15"><a href="data-management.html#cb87-15" tabindex="-1"></a></span>
+<span id="cb87-16"><a href="data-management.html#cb87-16" tabindex="-1"></a><span class="co"># Check number of rows</span></span>
+<span id="cb87-17"><a href="data-management.html#cb87-17" tabindex="-1"></a><span class="fu">nrow</span>(data)</span>
+<span id="cb87-18"><a href="data-management.html#cb87-18" tabindex="-1"></a></span>
+<span id="cb87-19"><a href="data-management.html#cb87-19" tabindex="-1"></a><span class="co"># Check number of columns</span></span>
+<span id="cb87-20"><a href="data-management.html#cb87-20" tabindex="-1"></a><span class="fu">ncol</span>(data)</span>
+<span id="cb87-21"><a href="data-management.html#cb87-21" tabindex="-1"></a></span>
+<span id="cb87-22"><a href="data-management.html#cb87-22" tabindex="-1"></a><span class="co"># Get dimensions (rows, columns)</span></span>
+<span id="cb87-23"><a href="data-management.html#cb87-23" tabindex="-1"></a><span class="fu">dim</span>(data)</span></code></pre></div>
+</div>
+<div id="practical-example-ncaa-athletic-department-data" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Practical Example: NCAA Athletic Department Data<a href="data-management.html#practical-example-ncaa-athletic-department-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s work with sample NCAA Division I athletic department financial data:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="data-management.html#cb88-1" tabindex="-1"></a><span class="co"># Create sample athletic department data</span></span>
+<span id="cb88-2"><a href="data-management.html#cb88-2" tabindex="-1"></a>athletic_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb88-3"><a href="data-management.html#cb88-3" tabindex="-1"></a>  <span class="at">school =</span> <span class="fu">c</span>(<span class="st">&quot;University A&quot;</span>, <span class="st">&quot;University B&quot;</span>, <span class="st">&quot;University C&quot;</span>, <span class="st">&quot;University D&quot;</span>, <span class="st">&quot;University E&quot;</span>),</span>
+<span id="cb88-4"><a href="data-management.html#cb88-4" tabindex="-1"></a>  <span class="at">state =</span> <span class="fu">c</span>(<span class="st">&quot;FL&quot;</span>, <span class="st">&quot;GA&quot;</span>, <span class="st">&quot;AL&quot;</span>, <span class="st">&quot;FL&quot;</span>, <span class="st">&quot;TX&quot;</span>),</span>
+<span id="cb88-5"><a href="data-management.html#cb88-5" tabindex="-1"></a>  <span class="at">division =</span> <span class="fu">c</span>(<span class="st">&quot;Power 5&quot;</span>, <span class="st">&quot;Power 5&quot;</span>, <span class="st">&quot;Group of 5&quot;</span>, <span class="st">&quot;Group of 5&quot;</span>, <span class="st">&quot;Power 5&quot;</span>),</span>
+<span id="cb88-6"><a href="data-management.html#cb88-6" tabindex="-1"></a>  <span class="at">total_expenses =</span> <span class="fu">c</span>(<span class="fl">125.5</span>, <span class="fl">98.3</span>, <span class="fl">45.2</span>, <span class="fl">52.8</span>, <span class="fl">110.4</span>),</span>
+<span id="cb88-7"><a href="data-management.html#cb88-7" tabindex="-1"></a>  <span class="at">total_revenue =</span> <span class="fu">c</span>(<span class="fl">128.2</span>, <span class="fl">102.1</span>, <span class="fl">43.8</span>, <span class="fl">51.5</span>, <span class="fl">115.6</span>),</span>
+<span id="cb88-8"><a href="data-management.html#cb88-8" tabindex="-1"></a>  <span class="at">male_athletes =</span> <span class="fu">c</span>(<span class="dv">285</span>, <span class="dv">245</span>, <span class="dv">180</span>, <span class="dv">195</span>, <span class="dv">270</span>),</span>
+<span id="cb88-9"><a href="data-management.html#cb88-9" tabindex="-1"></a>  <span class="at">female_athletes =</span> <span class="fu">c</span>(<span class="dv">315</span>, <span class="dv">260</span>, <span class="dv">190</span>, <span class="dv">205</span>, <span class="dv">290</span>),</span>
+<span id="cb88-10"><a href="data-management.html#cb88-10" tabindex="-1"></a>  <span class="at">mens_sports =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">9</span>),</span>
+<span id="cb88-11"><a href="data-management.html#cb88-11" tabindex="-1"></a>  <span class="at">womens_sports =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">11</span>),</span>
+<span id="cb88-12"><a href="data-management.html#cb88-12" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb88-13"><a href="data-management.html#cb88-13" tabindex="-1"></a>)</span>
+<span id="cb88-14"><a href="data-management.html#cb88-14" tabindex="-1"></a></span>
+<span id="cb88-15"><a href="data-management.html#cb88-15" tabindex="-1"></a><span class="co"># Explore the data</span></span>
+<span id="cb88-16"><a href="data-management.html#cb88-16" tabindex="-1"></a><span class="fu">head</span>(athletic_data)</span></code></pre></div>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL    Power 5          125.5         128.2           285             315           9
+## 2 University B    GA    Power 5           98.3         102.1           245             260           8
+## 3 University C    AL Group of 5           45.2          43.8           180             190           7
+## 4 University D    FL Group of 5           52.8          51.5           195             205           7
+## 5 University E    TX    Power 5          110.4         115.6           270             290           9
+##   womens_sports
+## 1            11
+## 2            10
+## 3             9
+## 4             9
+## 5            11</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="data-management.html#cb90-1" tabindex="-1"></a><span class="fu">str</span>(athletic_data)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  9 variables:
+##  $ school         : chr  &quot;University A&quot; &quot;University B&quot; &quot;University C&quot; &quot;University D&quot; ...
+##  $ state          : chr  &quot;FL&quot; &quot;GA&quot; &quot;AL&quot; &quot;FL&quot; ...
+##  $ division       : chr  &quot;Power 5&quot; &quot;Power 5&quot; &quot;Group of 5&quot; &quot;Group of 5&quot; ...
+##  $ total_expenses : num  125.5 98.3 45.2 52.8 110.4
+##  $ total_revenue  : num  128.2 102.1 43.8 51.5 115.6
+##  $ male_athletes  : num  285 245 180 195 270
+##  $ female_athletes: num  315 260 190 205 290
+##  $ mens_sports    : num  9 8 7 7 9
+##  $ womens_sports  : num  11 10 9 9 11</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="data-management.html#cb92-1" tabindex="-1"></a><span class="fu">summary</span>(athletic_data)</span></code></pre></div>
+<pre><code>##     school             state             division         total_expenses   total_revenue    male_athletes
+##  Length:5           Length:5           Length:5           Min.   : 45.20   Min.   : 43.80   Min.   :180  
+##  Class :character   Class :character   Class :character   1st Qu.: 52.80   1st Qu.: 51.50   1st Qu.:195  
+##  Mode  :character   Mode  :character   Mode  :character   Median : 98.30   Median :102.10   Median :245  
+##                                                           Mean   : 86.44   Mean   : 88.24   Mean   :235  
+##                                                           3rd Qu.:110.40   3rd Qu.:115.60   3rd Qu.:270  
+##                                                           Max.   :125.50   Max.   :128.20   Max.   :285  
+##  female_athletes  mens_sports womens_sports
+##  Min.   :190     Min.   :7    Min.   : 9   
+##  1st Qu.:205     1st Qu.:7    1st Qu.: 9   
+##  Median :260     Median :8    Median :10   
+##  Mean   :252     Mean   :8    Mean   :10   
+##  3rd Qu.:290     3rd Qu.:9    3rd Qu.:11   
+##  Max.   :315     Max.   :9    Max.   :11</code></pre>
+</div>
+</div>
+<div id="understanding-data-types-in-r" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Understanding Data Types in R<a href="data-management.html#understanding-data-types-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R has several fundamental data types that you’ll encounter regularly:</p>
+<div id="basic-data-types" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Basic Data Types<a href="data-management.html#basic-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="data-management.html#cb94-1" tabindex="-1"></a><span class="co"># Numeric (numbers with decimals)</span></span>
+<span id="cb94-2"><a href="data-management.html#cb94-2" tabindex="-1"></a>revenue <span class="ot">&lt;-</span> <span class="fl">125.5</span></span>
+<span id="cb94-3"><a href="data-management.html#cb94-3" tabindex="-1"></a><span class="fu">class</span>(revenue)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="data-management.html#cb96-1" tabindex="-1"></a><span class="co"># Integer (whole numbers)</span></span>
+<span id="cb96-2"><a href="data-management.html#cb96-2" tabindex="-1"></a>num_athletes <span class="ot">&lt;-</span> <span class="dv">285</span><span class="dt">L</span></span>
+<span id="cb96-3"><a href="data-management.html#cb96-3" tabindex="-1"></a><span class="fu">class</span>(num_athletes)</span></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="data-management.html#cb98-1" tabindex="-1"></a><span class="co"># Character (text)</span></span>
+<span id="cb98-2"><a href="data-management.html#cb98-2" tabindex="-1"></a>school_name <span class="ot">&lt;-</span> <span class="st">&quot;University of North Florida&quot;</span></span>
+<span id="cb98-3"><a href="data-management.html#cb98-3" tabindex="-1"></a><span class="fu">class</span>(school_name)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="data-management.html#cb100-1" tabindex="-1"></a><span class="co"># Logical (TRUE/FALSE)</span></span>
+<span id="cb100-2"><a href="data-management.html#cb100-2" tabindex="-1"></a>is_power5 <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb100-3"><a href="data-management.html#cb100-3" tabindex="-1"></a><span class="fu">class</span>(is_power5)</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="data-management.html#cb102-1" tabindex="-1"></a><span class="co"># Factor (categorical data)</span></span>
+<span id="cb102-2"><a href="data-management.html#cb102-2" tabindex="-1"></a>conference <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">&quot;SEC&quot;</span>, <span class="st">&quot;ACC&quot;</span>, <span class="st">&quot;Big Ten&quot;</span>, <span class="st">&quot;SEC&quot;</span>))</span>
+<span id="cb102-3"><a href="data-management.html#cb102-3" tabindex="-1"></a><span class="fu">class</span>(conference)</span></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="data-management.html#cb104-1" tabindex="-1"></a><span class="fu">levels</span>(conference)</span></code></pre></div>
+<pre><code>## [1] &quot;ACC&quot;     &quot;Big Ten&quot; &quot;SEC&quot;</code></pre>
+</div>
+<div id="data-structures" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Data Structures<a href="data-management.html#data-structures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="data-management.html#cb106-1" tabindex="-1"></a><span class="co"># Vector - collection of same type</span></span>
+<span id="cb106-2"><a href="data-management.html#cb106-2" tabindex="-1"></a>expenses <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">125.5</span>, <span class="fl">98.3</span>, <span class="fl">45.2</span>, <span class="fl">52.8</span>, <span class="fl">110.4</span>)</span>
+<span id="cb106-3"><a href="data-management.html#cb106-3" tabindex="-1"></a>expenses</span></code></pre></div>
+<pre><code>## [1] 125.5  98.3  45.2  52.8 110.4</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="data-management.html#cb108-1" tabindex="-1"></a><span class="co"># Data Frame - like a spreadsheet</span></span>
+<span id="cb108-2"><a href="data-management.html#cb108-2" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb108-3"><a href="data-management.html#cb108-3" tabindex="-1"></a>  <span class="at">school =</span> <span class="fu">c</span>(<span class="st">&quot;School A&quot;</span>, <span class="st">&quot;School B&quot;</span>, <span class="st">&quot;School C&quot;</span>),</span>
+<span id="cb108-4"><a href="data-management.html#cb108-4" tabindex="-1"></a>  <span class="at">budget =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">85</span>, <span class="dv">70</span>),</span>
+<span id="cb108-5"><a href="data-management.html#cb108-5" tabindex="-1"></a>  <span class="at">wins =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">10</span>)</span>
+<span id="cb108-6"><a href="data-management.html#cb108-6" tabindex="-1"></a>)</span>
+<span id="cb108-7"><a href="data-management.html#cb108-7" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##     school budget wins
+## 1 School A    100    8
+## 2 School B     85    6
+## 3 School C     70   10</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="data-management.html#cb110-1" tabindex="-1"></a><span class="co"># List - can contain different types</span></span>
+<span id="cb110-2"><a href="data-management.html#cb110-2" tabindex="-1"></a>sport_info <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb110-3"><a href="data-management.html#cb110-3" tabindex="-1"></a>  <span class="at">sport =</span> <span class="st">&quot;Football&quot;</span>,</span>
+<span id="cb110-4"><a href="data-management.html#cb110-4" tabindex="-1"></a>  <span class="at">revenue =</span> <span class="dv">50000000</span>,</span>
+<span id="cb110-5"><a href="data-management.html#cb110-5" tabindex="-1"></a>  <span class="at">attendance =</span> <span class="fu">c</span>(<span class="dv">82000</span>, <span class="dv">79000</span>, <span class="dv">85000</span>, <span class="dv">80000</span>)</span>
+<span id="cb110-6"><a href="data-management.html#cb110-6" tabindex="-1"></a>)</span>
+<span id="cb110-7"><a href="data-management.html#cb110-7" tabindex="-1"></a>sport_info</span></code></pre></div>
+<pre><code>## $sport
+## [1] &quot;Football&quot;
+## 
+## $revenue
+## [1] 5e+07
+## 
+## $attendance
+## [1] 82000 79000 85000 80000</code></pre>
+</div>
+</div>
+<div id="checking-for-data-quality-issues" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Checking for Data Quality Issues<a href="data-management.html#checking-for-data-quality-issues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="identifying-missing-values" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Identifying Missing Values<a href="data-management.html#identifying-missing-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Missing data (represented as <code>NA</code> in R) is common in real-world datasets:</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="data-management.html#cb112-1" tabindex="-1"></a><span class="co"># Create sample data with missing values</span></span>
+<span id="cb112-2"><a href="data-management.html#cb112-2" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb112-3"><a href="data-management.html#cb112-3" tabindex="-1"></a>  <span class="at">player =</span> <span class="fu">c</span>(<span class="st">&quot;Player A&quot;</span>, <span class="st">&quot;Player B&quot;</span>, <span class="st">&quot;Player C&quot;</span>, <span class="st">&quot;Player D&quot;</span>),</span>
+<span id="cb112-4"><a href="data-management.html#cb112-4" tabindex="-1"></a>  <span class="at">points =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">18</span>, <span class="cn">NA</span>, <span class="dv">25</span>),</span>
+<span id="cb112-5"><a href="data-management.html#cb112-5" tabindex="-1"></a>  <span class="at">assists =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="cn">NA</span>, <span class="dv">8</span>, <span class="dv">6</span>),</span>
+<span id="cb112-6"><a href="data-management.html#cb112-6" tabindex="-1"></a>  <span class="at">rebounds =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="cn">NA</span>)</span>
+<span id="cb112-7"><a href="data-management.html#cb112-7" tabindex="-1"></a>)</span>
+<span id="cb112-8"><a href="data-management.html#cb112-8" tabindex="-1"></a></span>
+<span id="cb112-9"><a href="data-management.html#cb112-9" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
+<span id="cb112-10"><a href="data-management.html#cb112-10" tabindex="-1"></a><span class="fu">is.na</span>(sample_data)</span></code></pre></div>
+<pre><code>##      player points assists rebounds
+## [1,]  FALSE  FALSE   FALSE    FALSE
+## [2,]  FALSE  FALSE    TRUE    FALSE
+## [3,]  FALSE   TRUE   FALSE    FALSE
+## [4,]  FALSE  FALSE   FALSE     TRUE</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="data-management.html#cb114-1" tabindex="-1"></a><span class="co"># Count total missing values</span></span>
+<span id="cb114-2"><a href="data-management.html#cb114-2" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(sample_data))</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="data-management.html#cb116-1" tabindex="-1"></a><span class="co"># Count missing values per column</span></span>
+<span id="cb116-2"><a href="data-management.html#cb116-2" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(sample_data))</span></code></pre></div>
+<pre><code>##   player   points  assists rebounds 
+##        0        1        1        1</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="data-management.html#cb118-1" tabindex="-1"></a><span class="co"># Show only columns with missing values</span></span>
+<span id="cb118-2"><a href="data-management.html#cb118-2" tabindex="-1"></a>missing_per_column <span class="ot">&lt;-</span> <span class="fu">colSums</span>(<span class="fu">is.na</span>(sample_data))</span>
+<span id="cb118-3"><a href="data-management.html#cb118-3" tabindex="-1"></a>missing_per_column[missing_per_column <span class="sc">&gt;</span> <span class="dv">0</span>]</span></code></pre></div>
+<pre><code>##   points  assists rebounds 
+##        1        1        1</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="data-management.html#cb120-1" tabindex="-1"></a><span class="co"># Find rows with complete cases (no missing values)</span></span>
+<span id="cb120-2"><a href="data-management.html#cb120-2" tabindex="-1"></a><span class="fu">complete.cases</span>(sample_data)</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE FALSE FALSE</code></pre>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="data-management.html#cb122-1" tabindex="-1"></a><span class="co"># Keep only complete cases</span></span>
+<span id="cb122-2"><a href="data-management.html#cb122-2" tabindex="-1"></a>complete_data <span class="ot">&lt;-</span> sample_data[<span class="fu">complete.cases</span>(sample_data), ]</span>
+<span id="cb122-3"><a href="data-management.html#cb122-3" tabindex="-1"></a>complete_data</span></code></pre></div>
+<pre><code>##     player points assists rebounds
+## 1 Player A     22       5        4</code></pre>
+</div>
+<div id="identifying-zero-values" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Identifying Zero Values<a href="data-management.html#identifying-zero-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Zero values may indicate missing or invalid data in certain contexts:</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="data-management.html#cb124-1" tabindex="-1"></a><span class="co"># Using our athletic_data example</span></span>
+<span id="cb124-2"><a href="data-management.html#cb124-2" tabindex="-1"></a><span class="co"># Count total zero values</span></span>
+<span id="cb124-3"><a href="data-management.html#cb124-3" tabindex="-1"></a>total_zeros <span class="ot">&lt;-</span> <span class="fu">sum</span>(athletic_data <span class="sc">==</span> <span class="dv">0</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb124-4"><a href="data-management.html#cb124-4" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Total Zero Values:&quot;</span>, total_zeros, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## Total Zero Values: 0</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="data-management.html#cb126-1" tabindex="-1"></a><span class="co"># Check zero values per column</span></span>
+<span id="cb126-2"><a href="data-management.html#cb126-2" tabindex="-1"></a>zero_per_column <span class="ot">&lt;-</span> <span class="fu">colSums</span>(athletic_data <span class="sc">==</span> <span class="dv">0</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb126-3"><a href="data-management.html#cb126-3" tabindex="-1"></a>zero_per_column[zero_per_column <span class="sc">&gt;</span> <span class="dv">0</span>]</span></code></pre></div>
+<pre><code>## named numeric(0)</code></pre>
+</div>
+</div>
+<div id="data-manipulation-basics" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Data Manipulation Basics<a href="data-management.html#data-manipulation-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="accessing-data-with-and-brackets" class="section level3 hasAnchor" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Accessing Data with $ and Brackets<a href="data-management.html#accessing-data-with-and-brackets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="data-management.html#cb128-1" tabindex="-1"></a><span class="co"># Access a single column using $</span></span>
+<span id="cb128-2"><a href="data-management.html#cb128-2" tabindex="-1"></a>athletic_data<span class="sc">$</span>school</span></code></pre></div>
+<pre><code>## [1] &quot;University A&quot; &quot;University B&quot; &quot;University C&quot; &quot;University D&quot; &quot;University E&quot;</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="data-management.html#cb130-1" tabindex="-1"></a><span class="co"># Access using brackets [row, column]</span></span>
+<span id="cb130-2"><a href="data-management.html#cb130-2" tabindex="-1"></a>athletic_data[<span class="dv">1</span>, <span class="dv">2</span>]  <span class="co"># First row, second column</span></span></code></pre></div>
+<pre><code>## [1] &quot;FL&quot;</code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="data-management.html#cb132-1" tabindex="-1"></a><span class="co"># Access entire row</span></span>
+<span id="cb132-2"><a href="data-management.html#cb132-2" tabindex="-1"></a>athletic_data[<span class="dv">1</span>, ]  <span class="co"># First row, all columns</span></span></code></pre></div>
+<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL  Power 5          125.5         128.2           285             315           9
+##   womens_sports
+## 1            11</code></pre>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="data-management.html#cb134-1" tabindex="-1"></a><span class="co"># Access entire column</span></span>
+<span id="cb134-2"><a href="data-management.html#cb134-2" tabindex="-1"></a>athletic_data[, <span class="dv">3</span>]  <span class="co"># All rows, third column</span></span></code></pre></div>
+<pre><code>## [1] &quot;Power 5&quot;    &quot;Power 5&quot;    &quot;Group of 5&quot; &quot;Group of 5&quot; &quot;Power 5&quot;</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="data-management.html#cb136-1" tabindex="-1"></a><span class="co"># Access multiple columns by name</span></span>
+<span id="cb136-2"><a href="data-management.html#cb136-2" tabindex="-1"></a>athletic_data[, <span class="fu">c</span>(<span class="st">&quot;school&quot;</span>, <span class="st">&quot;total_expenses&quot;</span>)]</span></code></pre></div>
+<pre><code>##         school total_expenses
+## 1 University A          125.5
+## 2 University B           98.3
+## 3 University C           45.2
+## 4 University D           52.8
+## 5 University E          110.4</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="data-management.html#cb138-1" tabindex="-1"></a><span class="co"># Access using logical conditions</span></span>
+<span id="cb138-2"><a href="data-management.html#cb138-2" tabindex="-1"></a>athletic_data[athletic_data<span class="sc">$</span>total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>, ]</span></code></pre></div>
+<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL  Power 5          125.5         128.2           285             315           9
+## 5 University E    TX  Power 5          110.4         115.6           270             290           9
+##   womens_sports
+## 1            11
+## 5            11</code></pre>
+</div>
+<div id="creating-new-columns" class="section level3 hasAnchor" number="5.6.2">
+<h3><span class="header-section-number">5.6.2</span> Creating New Columns<a href="data-management.html#creating-new-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Often you’ll need to create new variables based on existing data:</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="data-management.html#cb140-1" tabindex="-1"></a><span class="co"># Calculate total athletes</span></span>
+<span id="cb140-2"><a href="data-management.html#cb140-2" tabindex="-1"></a>athletic_data<span class="sc">$</span>total_athletes <span class="ot">&lt;-</span> athletic_data<span class="sc">$</span>male_athletes <span class="sc">+</span> athletic_data<span class="sc">$</span>female_athletes</span>
+<span id="cb140-3"><a href="data-management.html#cb140-3" tabindex="-1"></a></span>
+<span id="cb140-4"><a href="data-management.html#cb140-4" tabindex="-1"></a><span class="co"># Calculate total sports offered</span></span>
+<span id="cb140-5"><a href="data-management.html#cb140-5" tabindex="-1"></a>athletic_data<span class="sc">$</span>total_sports <span class="ot">&lt;-</span> athletic_data<span class="sc">$</span>mens_sports <span class="sc">+</span> athletic_data<span class="sc">$</span>womens_sports</span>
+<span id="cb140-6"><a href="data-management.html#cb140-6" tabindex="-1"></a></span>
+<span id="cb140-7"><a href="data-management.html#cb140-7" tabindex="-1"></a><span class="co"># Calculate profit/loss</span></span>
+<span id="cb140-8"><a href="data-management.html#cb140-8" tabindex="-1"></a>athletic_data<span class="sc">$</span>net_revenue <span class="ot">&lt;-</span> athletic_data<span class="sc">$</span>total_revenue <span class="sc">-</span> athletic_data<span class="sc">$</span>total_expenses</span>
+<span id="cb140-9"><a href="data-management.html#cb140-9" tabindex="-1"></a></span>
+<span id="cb140-10"><a href="data-management.html#cb140-10" tabindex="-1"></a><span class="co"># Calculate expense per athlete</span></span>
+<span id="cb140-11"><a href="data-management.html#cb140-11" tabindex="-1"></a>athletic_data<span class="sc">$</span>expense_per_athlete <span class="ot">&lt;-</span> <span class="fu">round</span>(</span>
+<span id="cb140-12"><a href="data-management.html#cb140-12" tabindex="-1"></a>  (athletic_data<span class="sc">$</span>total_expenses <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">/</span> athletic_data<span class="sc">$</span>total_athletes,</span>
+<span id="cb140-13"><a href="data-management.html#cb140-13" tabindex="-1"></a>  <span class="dv">0</span></span>
+<span id="cb140-14"><a href="data-management.html#cb140-14" tabindex="-1"></a>)</span>
+<span id="cb140-15"><a href="data-management.html#cb140-15" tabindex="-1"></a></span>
+<span id="cb140-16"><a href="data-management.html#cb140-16" tabindex="-1"></a><span class="co"># View results</span></span>
+<span id="cb140-17"><a href="data-management.html#cb140-17" tabindex="-1"></a><span class="fu">head</span>(athletic_data)</span></code></pre></div>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL    Power 5          125.5         128.2           285             315           9
+## 2 University B    GA    Power 5           98.3         102.1           245             260           8
+## 3 University C    AL Group of 5           45.2          43.8           180             190           7
+## 4 University D    FL Group of 5           52.8          51.5           195             205           7
+## 5 University E    TX    Power 5          110.4         115.6           270             290           9
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete
+## 1            11            600           20         2.7              209167
+## 2            10            505           18         3.8              194653
+## 3             9            370           16        -1.4              122162
+## 4             9            400           16        -1.3              132000
+## 5            11            560           20         5.2              197143</code></pre>
+</div>
+<div id="more-complex-calculations" class="section level3 hasAnchor" number="5.6.3">
+<h3><span class="header-section-number">5.6.3</span> More Complex Calculations<a href="data-management.html#more-complex-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="data-management.html#cb142-1" tabindex="-1"></a><span class="co"># Percentage calculations</span></span>
+<span id="cb142-2"><a href="data-management.html#cb142-2" tabindex="-1"></a>athletic_data<span class="sc">$</span>female_athlete_pct <span class="ot">&lt;-</span> <span class="fu">round</span>(</span>
+<span id="cb142-3"><a href="data-management.html#cb142-3" tabindex="-1"></a>  (athletic_data<span class="sc">$</span>female_athletes <span class="sc">/</span> athletic_data<span class="sc">$</span>total_athletes) <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb142-4"><a href="data-management.html#cb142-4" tabindex="-1"></a>  <span class="dv">1</span></span>
+<span id="cb142-5"><a href="data-management.html#cb142-5" tabindex="-1"></a>)</span>
+<span id="cb142-6"><a href="data-management.html#cb142-6" tabindex="-1"></a></span>
+<span id="cb142-7"><a href="data-management.html#cb142-7" tabindex="-1"></a><span class="co"># Ratio calculations</span></span>
+<span id="cb142-8"><a href="data-management.html#cb142-8" tabindex="-1"></a>athletic_data<span class="sc">$</span>sports_ratio <span class="ot">&lt;-</span> <span class="fu">round</span>(</span>
+<span id="cb142-9"><a href="data-management.html#cb142-9" tabindex="-1"></a>  athletic_data<span class="sc">$</span>mens_sports <span class="sc">/</span> athletic_data<span class="sc">$</span>womens_sports,</span>
+<span id="cb142-10"><a href="data-management.html#cb142-10" tabindex="-1"></a>  <span class="dv">2</span></span>
+<span id="cb142-11"><a href="data-management.html#cb142-11" tabindex="-1"></a>)</span>
+<span id="cb142-12"><a href="data-management.html#cb142-12" tabindex="-1"></a></span>
+<span id="cb142-13"><a href="data-management.html#cb142-13" tabindex="-1"></a><span class="co"># Conditional calculations</span></span>
+<span id="cb142-14"><a href="data-management.html#cb142-14" tabindex="-1"></a>athletic_data<span class="sc">$</span>budget_category <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
+<span id="cb142-15"><a href="data-management.html#cb142-15" tabindex="-1"></a>  athletic_data<span class="sc">$</span>total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>,</span>
+<span id="cb142-16"><a href="data-management.html#cb142-16" tabindex="-1"></a>  <span class="st">&quot;High Budget&quot;</span>,</span>
+<span id="cb142-17"><a href="data-management.html#cb142-17" tabindex="-1"></a>  <span class="st">&quot;Lower Budget&quot;</span></span>
+<span id="cb142-18"><a href="data-management.html#cb142-18" tabindex="-1"></a>)</span>
+<span id="cb142-19"><a href="data-management.html#cb142-19" tabindex="-1"></a></span>
+<span id="cb142-20"><a href="data-management.html#cb142-20" tabindex="-1"></a><span class="co"># Display new columns</span></span>
+<span id="cb142-21"><a href="data-management.html#cb142-21" tabindex="-1"></a>athletic_data[, <span class="fu">c</span>(<span class="st">&quot;school&quot;</span>, <span class="st">&quot;female_athlete_pct&quot;</span>, <span class="st">&quot;sports_ratio&quot;</span>, <span class="st">&quot;budget_category&quot;</span>)]</span></code></pre></div>
+<pre><code>##         school female_athlete_pct sports_ratio budget_category
+## 1 University A               52.5         0.82     High Budget
+## 2 University B               51.5         0.80    Lower Budget
+## 3 University C               51.4         0.78    Lower Budget
+## 4 University D               51.2         0.78    Lower Budget
+## 5 University E               51.8         0.82     High Budget</code></pre>
+</div>
+</div>
+<div id="filtering-and-subsetting-data" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Filtering and Subsetting Data<a href="data-management.html#filtering-and-subsetting-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="using-base-r-brackets" class="section level3 hasAnchor" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Using Base R Brackets<a href="data-management.html#using-base-r-brackets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="data-management.html#cb144-1" tabindex="-1"></a><span class="co"># Filter schools with expenses greater than $100M</span></span>
+<span id="cb144-2"><a href="data-management.html#cb144-2" tabindex="-1"></a>high_budget <span class="ot">&lt;-</span> athletic_data[athletic_data<span class="sc">$</span>total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>, ]</span>
+<span id="cb144-3"><a href="data-management.html#cb144-3" tabindex="-1"></a>high_budget</span></code></pre></div>
+<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL  Power 5          125.5         128.2           285             315           9
+## 5 University E    TX  Power 5          110.4         115.6           270             290           9
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1            11            600           20         2.7              209167               52.5         0.82
+## 5            11            560           20         5.2              197143               51.8         0.82
+##   budget_category
+## 1     High Budget
+## 5     High Budget</code></pre>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="data-management.html#cb146-1" tabindex="-1"></a><span class="co"># Filter schools in Florida</span></span>
+<span id="cb146-2"><a href="data-management.html#cb146-2" tabindex="-1"></a>florida_schools <span class="ot">&lt;-</span> athletic_data[athletic_data<span class="sc">$</span>state <span class="sc">==</span> <span class="st">&quot;FL&quot;</span>, ]</span>
+<span id="cb146-3"><a href="data-management.html#cb146-3" tabindex="-1"></a>florida_schools</span></code></pre></div>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL    Power 5          125.5         128.2           285             315           9
+## 4 University D    FL Group of 5           52.8          51.5           195             205           7
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1            11            600           20         2.7              209167               52.5         0.82
+## 4             9            400           16        -1.3              132000               51.2         0.78
+##   budget_category
+## 1     High Budget
+## 4    Lower Budget</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="data-management.html#cb148-1" tabindex="-1"></a><span class="co"># Multiple conditions using &amp; (AND)</span></span>
+<span id="cb148-2"><a href="data-management.html#cb148-2" tabindex="-1"></a>power5_florida <span class="ot">&lt;-</span> athletic_data[</span>
+<span id="cb148-3"><a href="data-management.html#cb148-3" tabindex="-1"></a>  athletic_data<span class="sc">$</span>state <span class="sc">==</span> <span class="st">&quot;FL&quot;</span> <span class="sc">&amp;</span> athletic_data<span class="sc">$</span>division <span class="sc">==</span> <span class="st">&quot;Power 5&quot;</span>,</span>
+<span id="cb148-4"><a href="data-management.html#cb148-4" tabindex="-1"></a>]</span>
+<span id="cb148-5"><a href="data-management.html#cb148-5" tabindex="-1"></a>power5_florida</span></code></pre></div>
+<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL  Power 5          125.5         128.2           285             315           9
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1            11            600           20         2.7              209167               52.5         0.82
+##   budget_category
+## 1     High Budget</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="data-management.html#cb150-1" tabindex="-1"></a><span class="co"># Multiple conditions using | (OR)</span></span>
+<span id="cb150-2"><a href="data-management.html#cb150-2" tabindex="-1"></a>fl_or_ga <span class="ot">&lt;-</span> athletic_data[</span>
+<span id="cb150-3"><a href="data-management.html#cb150-3" tabindex="-1"></a>  athletic_data<span class="sc">$</span>state <span class="sc">==</span> <span class="st">&quot;FL&quot;</span> <span class="sc">|</span> athletic_data<span class="sc">$</span>state <span class="sc">==</span> <span class="st">&quot;GA&quot;</span>,</span>
+<span id="cb150-4"><a href="data-management.html#cb150-4" tabindex="-1"></a>]</span>
+<span id="cb150-5"><a href="data-management.html#cb150-5" tabindex="-1"></a>fl_or_ga</span></code></pre></div>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL    Power 5          125.5         128.2           285             315           9
+## 2 University B    GA    Power 5           98.3         102.1           245             260           8
+## 4 University D    FL Group of 5           52.8          51.5           195             205           7
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1            11            600           20         2.7              209167               52.5         0.82
+## 2            10            505           18         3.8              194653               51.5         0.80
+## 4             9            400           16        -1.3              132000               51.2         0.78
+##   budget_category
+## 1     High Budget
+## 2    Lower Budget
+## 4    Lower Budget</code></pre>
+</div>
+<div id="using-dplyr-for-cleaner-syntax" class="section level3 hasAnchor" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> Using dplyr for Cleaner Syntax<a href="data-management.html#using-dplyr-for-cleaner-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>dplyr</code> package (part of tidyverse) provides more readable syntax:</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="data-management.html#cb152-1" tabindex="-1"></a><span class="co"># Filter using dplyr</span></span>
+<span id="cb152-2"><a href="data-management.html#cb152-2" tabindex="-1"></a>high_budget_dplyr <span class="ot">&lt;-</span> athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb152-3"><a href="data-management.html#cb152-3" tabindex="-1"></a>  <span class="fu">filter</span>(total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>)</span>
+<span id="cb152-4"><a href="data-management.html#cb152-4" tabindex="-1"></a></span>
+<span id="cb152-5"><a href="data-management.html#cb152-5" tabindex="-1"></a><span class="co"># Multiple conditions</span></span>
+<span id="cb152-6"><a href="data-management.html#cb152-6" tabindex="-1"></a>power5_high_budget <span class="ot">&lt;-</span> athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb152-7"><a href="data-management.html#cb152-7" tabindex="-1"></a>  <span class="fu">filter</span>(division <span class="sc">==</span> <span class="st">&quot;Power 5&quot;</span> <span class="sc">&amp;</span> total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>)</span>
+<span id="cb152-8"><a href="data-management.html#cb152-8" tabindex="-1"></a></span>
+<span id="cb152-9"><a href="data-management.html#cb152-9" tabindex="-1"></a><span class="co"># Select specific columns</span></span>
+<span id="cb152-10"><a href="data-management.html#cb152-10" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb152-11"><a href="data-management.html#cb152-11" tabindex="-1"></a>  <span class="fu">select</span>(school, state, total_expenses)</span></code></pre></div>
+<pre><code>##         school state total_expenses
+## 1 University A    FL          125.5
+## 2 University B    GA           98.3
+## 3 University C    AL           45.2
+## 4 University D    FL           52.8
+## 5 University E    TX          110.4</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="data-management.html#cb154-1" tabindex="-1"></a><span class="co"># Combine filtering and selecting</span></span>
+<span id="cb154-2"><a href="data-management.html#cb154-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb154-3"><a href="data-management.html#cb154-3" tabindex="-1"></a>  <span class="fu">filter</span>(total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb154-4"><a href="data-management.html#cb154-4" tabindex="-1"></a>  <span class="fu">select</span>(school, total_expenses, net_revenue)</span></code></pre></div>
+<pre><code>##         school total_expenses net_revenue
+## 1 University A          125.5         2.7
+## 2 University E          110.4         5.2</code></pre>
+</div>
+<div id="sorting-data" class="section level3 hasAnchor" number="5.7.3">
+<h3><span class="header-section-number">5.7.3</span> Sorting Data<a href="data-management.html#sorting-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="data-management.html#cb156-1" tabindex="-1"></a><span class="co"># Sort by total expenses (ascending)</span></span>
+<span id="cb156-2"><a href="data-management.html#cb156-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb156-3"><a href="data-management.html#cb156-3" tabindex="-1"></a>  <span class="fu">arrange</span>(total_expenses)</span></code></pre></div>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University C    AL Group of 5           45.2          43.8           180             190           7
+## 2 University D    FL Group of 5           52.8          51.5           195             205           7
+## 3 University B    GA    Power 5           98.3         102.1           245             260           8
+## 4 University E    TX    Power 5          110.4         115.6           270             290           9
+## 5 University A    FL    Power 5          125.5         128.2           285             315           9
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1             9            370           16        -1.4              122162               51.4         0.78
+## 2             9            400           16        -1.3              132000               51.2         0.78
+## 3            10            505           18         3.8              194653               51.5         0.80
+## 4            11            560           20         5.2              197143               51.8         0.82
+## 5            11            600           20         2.7              209167               52.5         0.82
+##   budget_category
+## 1    Lower Budget
+## 2    Lower Budget
+## 3    Lower Budget
+## 4     High Budget
+## 5     High Budget</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="data-management.html#cb158-1" tabindex="-1"></a><span class="co"># Sort by total expenses (descending)</span></span>
+<span id="cb158-2"><a href="data-management.html#cb158-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb158-3"><a href="data-management.html#cb158-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_expenses))</span></code></pre></div>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL    Power 5          125.5         128.2           285             315           9
+## 2 University E    TX    Power 5          110.4         115.6           270             290           9
+## 3 University B    GA    Power 5           98.3         102.1           245             260           8
+## 4 University D    FL Group of 5           52.8          51.5           195             205           7
+## 5 University C    AL Group of 5           45.2          43.8           180             190           7
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1            11            600           20         2.7              209167               52.5         0.82
+## 2            11            560           20         5.2              197143               51.8         0.82
+## 3            10            505           18         3.8              194653               51.5         0.80
+## 4             9            400           16        -1.3              132000               51.2         0.78
+## 5             9            370           16        -1.4              122162               51.4         0.78
+##   budget_category
+## 1     High Budget
+## 2     High Budget
+## 3    Lower Budget
+## 4    Lower Budget
+## 5    Lower Budget</code></pre>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="data-management.html#cb160-1" tabindex="-1"></a><span class="co"># Sort by multiple columns</span></span>
+<span id="cb160-2"><a href="data-management.html#cb160-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb160-3"><a href="data-management.html#cb160-3" tabindex="-1"></a>  <span class="fu">arrange</span>(state, <span class="fu">desc</span>(total_expenses))</span></code></pre></div>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University C    AL Group of 5           45.2          43.8           180             190           7
+## 2 University A    FL    Power 5          125.5         128.2           285             315           9
+## 3 University D    FL Group of 5           52.8          51.5           195             205           7
+## 4 University B    GA    Power 5           98.3         102.1           245             260           8
+## 5 University E    TX    Power 5          110.4         115.6           270             290           9
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1             9            370           16        -1.4              122162               51.4         0.78
+## 2            11            600           20         2.7              209167               52.5         0.82
+## 3             9            400           16        -1.3              132000               51.2         0.78
+## 4            10            505           18         3.8              194653               51.5         0.80
+## 5            11            560           20         5.2              197143               51.8         0.82
+##   budget_category
+## 1    Lower Budget
+## 2     High Budget
+## 3    Lower Budget
+## 4    Lower Budget
+## 5     High Budget</code></pre>
+</div>
+</div>
+<div id="advanced-data-manipulation" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Advanced Data Manipulation<a href="data-management.html#advanced-data-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="grouping-and-summarizing" class="section level3 hasAnchor" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> Grouping and Summarizing<a href="data-management.html#grouping-and-summarizing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="data-management.html#cb162-1" tabindex="-1"></a><span class="co"># Calculate average expenses by division</span></span>
+<span id="cb162-2"><a href="data-management.html#cb162-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb162-3"><a href="data-management.html#cb162-3" tabindex="-1"></a>  <span class="fu">group_by</span>(division) <span class="sc">%&gt;%</span></span>
+<span id="cb162-4"><a href="data-management.html#cb162-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb162-5"><a href="data-management.html#cb162-5" tabindex="-1"></a>    <span class="at">avg_expenses =</span> <span class="fu">mean</span>(total_expenses),</span>
+<span id="cb162-6"><a href="data-management.html#cb162-6" tabindex="-1"></a>    <span class="at">avg_revenue =</span> <span class="fu">mean</span>(total_revenue),</span>
+<span id="cb162-7"><a href="data-management.html#cb162-7" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>()</span>
+<span id="cb162-8"><a href="data-management.html#cb162-8" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 2 × 4
+##   division   avg_expenses avg_revenue count
+##   &lt;chr&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;int&gt;
+## 1 Group of 5          49         47.6     2
+## 2 Power 5            111.       115.      3</code></pre>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="data-management.html#cb164-1" tabindex="-1"></a><span class="co"># Multiple grouping variables</span></span>
+<span id="cb164-2"><a href="data-management.html#cb164-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb164-3"><a href="data-management.html#cb164-3" tabindex="-1"></a>  <span class="fu">group_by</span>(division, state) <span class="sc">%&gt;%</span></span>
+<span id="cb164-4"><a href="data-management.html#cb164-4" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb164-5"><a href="data-management.html#cb164-5" tabindex="-1"></a>    <span class="at">total_schools =</span> <span class="fu">n</span>(),</span>
+<span id="cb164-6"><a href="data-management.html#cb164-6" tabindex="-1"></a>    <span class="at">avg_expenses =</span> <span class="fu">mean</span>(total_expenses)</span>
+<span id="cb164-7"><a href="data-management.html#cb164-7" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;division&#39;. You can override using the `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 5 × 4
+## # Groups:   division [2]
+##   division   state total_schools avg_expenses
+##   &lt;chr&gt;      &lt;chr&gt;         &lt;int&gt;        &lt;dbl&gt;
+## 1 Group of 5 AL                1         45.2
+## 2 Group of 5 FL                1         52.8
+## 3 Power 5    FL                1        126. 
+## 4 Power 5    GA                1         98.3
+## 5 Power 5    TX                1        110.</code></pre>
+</div>
+<div id="finding-topbottom-records" class="section level3 hasAnchor" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> Finding Top/Bottom Records<a href="data-management.html#finding-topbottom-records" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="data-management.html#cb167-1" tabindex="-1"></a><span class="co"># Top 3 schools by total expenses</span></span>
+<span id="cb167-2"><a href="data-management.html#cb167-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb167-3"><a href="data-management.html#cb167-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_expenses)) <span class="sc">%&gt;%</span></span>
+<span id="cb167-4"><a href="data-management.html#cb167-4" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University A    FL  Power 5          125.5         128.2           285             315           9
+## 2 University E    TX  Power 5          110.4         115.6           270             290           9
+## 3 University B    GA  Power 5           98.3         102.1           245             260           8
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1            11            600           20         2.7              209167               52.5         0.82
+## 2            11            560           20         5.2              197143               51.8         0.82
+## 3            10            505           18         3.8              194653               51.5         0.80
+##   budget_category
+## 1     High Budget
+## 2     High Budget
+## 3    Lower Budget</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="data-management.html#cb169-1" tabindex="-1"></a><span class="co"># Bottom 2 schools by revenue</span></span>
+<span id="cb169-2"><a href="data-management.html#cb169-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb169-3"><a href="data-management.html#cb169-3" tabindex="-1"></a>  <span class="fu">arrange</span>(total_revenue) <span class="sc">%&gt;%</span></span>
+<span id="cb169-4"><a href="data-management.html#cb169-4" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
+## 1 University C    AL Group of 5           45.2          43.8           180             190           7
+## 2 University D    FL Group of 5           52.8          51.5           195             205           7
+##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1             9            370           16        -1.4              122162               51.4         0.78
+## 2             9            400           16        -1.3              132000               51.2         0.78
+##   budget_category
+## 1    Lower Budget
+## 2    Lower Budget</code></pre>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="data-management.html#cb171-1" tabindex="-1"></a><span class="co"># Schools with highest expense per athlete</span></span>
+<span id="cb171-2"><a href="data-management.html#cb171-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb171-3"><a href="data-management.html#cb171-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(expense_per_athlete)) <span class="sc">%&gt;%</span></span>
+<span id="cb171-4"><a href="data-management.html#cb171-4" tabindex="-1"></a>  <span class="fu">select</span>(school, expense_per_athlete) <span class="sc">%&gt;%</span></span>
+<span id="cb171-5"><a href="data-management.html#cb171-5" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##         school expense_per_athlete
+## 1 University A              209167
+## 2 University E              197143
+## 3 University B              194653</code></pre>
+</div>
+</div>
+<div id="saving-and-exporting-data" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Saving and Exporting Data<a href="data-management.html#saving-and-exporting-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>After manipulating data, you’ll often want to save your work:</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="data-management.html#cb173-1" tabindex="-1"></a><span class="co"># Save as CSV</span></span>
+<span id="cb173-2"><a href="data-management.html#cb173-2" tabindex="-1"></a><span class="fu">write.csv</span>(athletic_data, <span class="st">&quot;processed_athletic_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb173-3"><a href="data-management.html#cb173-3" tabindex="-1"></a></span>
+<span id="cb173-4"><a href="data-management.html#cb173-4" tabindex="-1"></a><span class="co"># Save as RDS (R-specific format, preserves data types)</span></span>
+<span id="cb173-5"><a href="data-management.html#cb173-5" tabindex="-1"></a><span class="fu">saveRDS</span>(athletic_data, <span class="st">&quot;athletic_data.rds&quot;</span>)</span>
+<span id="cb173-6"><a href="data-management.html#cb173-6" tabindex="-1"></a></span>
+<span id="cb173-7"><a href="data-management.html#cb173-7" tabindex="-1"></a><span class="co"># Load RDS file</span></span>
+<span id="cb173-8"><a href="data-management.html#cb173-8" tabindex="-1"></a>loaded_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;athletic_data.rds&quot;</span>)</span>
+<span id="cb173-9"><a href="data-management.html#cb173-9" tabindex="-1"></a></span>
+<span id="cb173-10"><a href="data-management.html#cb173-10" tabindex="-1"></a><span class="co"># Export specific subset</span></span>
+<span id="cb173-11"><a href="data-management.html#cb173-11" tabindex="-1"></a>high_budget_schools <span class="ot">&lt;-</span> athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb173-12"><a href="data-management.html#cb173-12" tabindex="-1"></a>  <span class="fu">filter</span>(total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>)</span>
+<span id="cb173-13"><a href="data-management.html#cb173-13" tabindex="-1"></a><span class="fu">write.csv</span>(high_budget_schools, <span class="st">&quot;high_budget_schools.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+</div>
+<div id="data-import-from-various-sources" class="section level2 hasAnchor" number="5.10">
+<h2><span class="header-section-number">5.10</span> Data Import from Various Sources<a href="data-management.html#data-import-from-various-sources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reading-different-file-types" class="section level3 hasAnchor" number="5.10.1">
+<h3><span class="header-section-number">5.10.1</span> Reading Different File Types<a href="data-management.html#reading-different-file-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="data-management.html#cb174-1" tabindex="-1"></a><span class="co"># CSV files</span></span>
+<span id="cb174-2"><a href="data-management.html#cb174-2" tabindex="-1"></a>data_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>)</span>
+<span id="cb174-3"><a href="data-management.html#cb174-3" tabindex="-1"></a></span>
+<span id="cb174-4"><a href="data-management.html#cb174-4" tabindex="-1"></a><span class="co"># Tab-delimited files</span></span>
+<span id="cb174-5"><a href="data-management.html#cb174-5" tabindex="-1"></a>data_txt <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">&quot;data.txt&quot;</span>)</span>
+<span id="cb174-6"><a href="data-management.html#cb174-6" tabindex="-1"></a></span>
+<span id="cb174-7"><a href="data-management.html#cb174-7" tabindex="-1"></a><span class="co"># Excel files (requires readxl package)</span></span>
+<span id="cb174-8"><a href="data-management.html#cb174-8" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb174-9"><a href="data-management.html#cb174-9" tabindex="-1"></a>data_excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Sheet1&quot;</span>)</span>
+<span id="cb174-10"><a href="data-management.html#cb174-10" tabindex="-1"></a></span>
+<span id="cb174-11"><a href="data-management.html#cb174-11" tabindex="-1"></a><span class="co"># From URLs</span></span>
+<span id="cb174-12"><a href="data-management.html#cb174-12" tabindex="-1"></a>url_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://example.com/sports_data.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="handling-import-issues" class="section level3 hasAnchor" number="5.10.2">
+<h3><span class="header-section-number">5.10.2</span> Handling Import Issues<a href="data-management.html#handling-import-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="data-management.html#cb175-1" tabindex="-1"></a><span class="co"># Specify column types</span></span>
+<span id="cb175-2"><a href="data-management.html#cb175-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>, <span class="at">colClasses =</span> <span class="fu">c</span>(<span class="st">&quot;character&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>))</span>
+<span id="cb175-3"><a href="data-management.html#cb175-3" tabindex="-1"></a></span>
+<span id="cb175-4"><a href="data-management.html#cb175-4" tabindex="-1"></a><span class="co"># Skip header rows</span></span>
+<span id="cb175-5"><a href="data-management.html#cb175-5" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>, <span class="at">skip =</span> <span class="dv">2</span>)</span>
+<span id="cb175-6"><a href="data-management.html#cb175-6" tabindex="-1"></a></span>
+<span id="cb175-7"><a href="data-management.html#cb175-7" tabindex="-1"></a><span class="co"># Specify missing value codes</span></span>
+<span id="cb175-8"><a href="data-management.html#cb175-8" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>, <span class="at">na.strings =</span> <span class="fu">c</span>(<span class="st">&quot;NA&quot;</span>, <span class="st">&quot;N/A&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;.&quot;</span>))</span>
+<span id="cb175-9"><a href="data-management.html#cb175-9" tabindex="-1"></a></span>
+<span id="cb175-10"><a href="data-management.html#cb175-10" tabindex="-1"></a><span class="co"># Set string columns as character (not factor)</span></span>
+<span id="cb175-11"><a href="data-management.html#cb175-11" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data.csv&quot;</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="practical-workflow-example" class="section level2 hasAnchor" number="5.11">
+<h2><span class="header-section-number">5.11</span> Practical Workflow Example<a href="data-management.html#practical-workflow-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s put it all together with a complete workflow:</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="data-management.html#cb176-1" tabindex="-1"></a><span class="co"># 1. Load packages</span></span>
+<span id="cb176-2"><a href="data-management.html#cb176-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb176-3"><a href="data-management.html#cb176-3" tabindex="-1"></a></span>
+<span id="cb176-4"><a href="data-management.html#cb176-4" tabindex="-1"></a><span class="co"># 2. Load data</span></span>
+<span id="cb176-5"><a href="data-management.html#cb176-5" tabindex="-1"></a><span class="co"># data &lt;- read.csv(&quot;Chapter 2 data.csv&quot;)  # In real analysis</span></span>
+<span id="cb176-6"><a href="data-management.html#cb176-6" tabindex="-1"></a></span>
+<span id="cb176-7"><a href="data-management.html#cb176-7" tabindex="-1"></a><span class="co"># 3. Explore data</span></span>
+<span id="cb176-8"><a href="data-management.html#cb176-8" tabindex="-1"></a><span class="co"># str(data)</span></span>
+<span id="cb176-9"><a href="data-management.html#cb176-9" tabindex="-1"></a><span class="co"># summary(data)</span></span>
+<span id="cb176-10"><a href="data-management.html#cb176-10" tabindex="-1"></a><span class="co"># head(data)</span></span>
+<span id="cb176-11"><a href="data-management.html#cb176-11" tabindex="-1"></a></span>
+<span id="cb176-12"><a href="data-management.html#cb176-12" tabindex="-1"></a><span class="co"># 4. Check data quality</span></span>
+<span id="cb176-13"><a href="data-management.html#cb176-13" tabindex="-1"></a><span class="co"># sum(is.na(data))</span></span>
+<span id="cb176-14"><a href="data-management.html#cb176-14" tabindex="-1"></a><span class="co"># colSums(is.na(data))</span></span>
+<span id="cb176-15"><a href="data-management.html#cb176-15" tabindex="-1"></a></span>
+<span id="cb176-16"><a href="data-management.html#cb176-16" tabindex="-1"></a><span class="co"># 5. Create new variables</span></span>
+<span id="cb176-17"><a href="data-management.html#cb176-17" tabindex="-1"></a>athletic_data <span class="ot">&lt;-</span> athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb176-18"><a href="data-management.html#cb176-18" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb176-19"><a href="data-management.html#cb176-19" tabindex="-1"></a>    <span class="at">revenue_per_athlete =</span> <span class="fu">round</span>((total_revenue <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">/</span> total_athletes, <span class="dv">0</span>),</span>
+<span id="cb176-20"><a href="data-management.html#cb176-20" tabindex="-1"></a>    <span class="at">profit_margin =</span> <span class="fu">round</span>((net_revenue <span class="sc">/</span> total_revenue) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>)</span>
+<span id="cb176-21"><a href="data-management.html#cb176-21" tabindex="-1"></a>  )</span>
+<span id="cb176-22"><a href="data-management.html#cb176-22" tabindex="-1"></a></span>
+<span id="cb176-23"><a href="data-management.html#cb176-23" tabindex="-1"></a><span class="co"># 6. Filter and analyze</span></span>
+<span id="cb176-24"><a href="data-management.html#cb176-24" tabindex="-1"></a>power5_analysis <span class="ot">&lt;-</span> athletic_data <span class="sc">%&gt;%</span></span>
+<span id="cb176-25"><a href="data-management.html#cb176-25" tabindex="-1"></a>  <span class="fu">filter</span>(division <span class="sc">==</span> <span class="st">&quot;Power 5&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb176-26"><a href="data-management.html#cb176-26" tabindex="-1"></a>  <span class="fu">select</span>(school, total_expenses, revenue_per_athlete, profit_margin) <span class="sc">%&gt;%</span></span>
+<span id="cb176-27"><a href="data-management.html#cb176-27" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(profit_margin))</span>
+<span id="cb176-28"><a href="data-management.html#cb176-28" tabindex="-1"></a></span>
+<span id="cb176-29"><a href="data-management.html#cb176-29" tabindex="-1"></a><span class="co"># 7. View results</span></span>
+<span id="cb176-30"><a href="data-management.html#cb176-30" tabindex="-1"></a><span class="fu">print</span>(power5_analysis)</span></code></pre></div>
+<pre><code>##         school total_expenses revenue_per_athlete profit_margin
+## 1 University E          110.4              206429          4.50
+## 2 University B           98.3              202178          3.72
+## 3 University A          125.5              213667          2.11</code></pre>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="data-management.html#cb178-1" tabindex="-1"></a><span class="co"># 8. Export results</span></span>
+<span id="cb178-2"><a href="data-management.html#cb178-2" tabindex="-1"></a><span class="co"># write.csv(power5_analysis, &quot;power5_analysis.csv&quot;, row.names = FALSE)</span></span></code></pre></div>
+</div>
+<div id="troubleshooting-common-issues" class="section level2 hasAnchor" number="5.12">
+<h2><span class="header-section-number">5.12</span> Troubleshooting Common Issues<a href="data-management.html#troubleshooting-common-issues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="error-object-not-found" class="section level3 hasAnchor" number="5.12.1">
+<h3><span class="header-section-number">5.12.1</span> Error: Object Not Found<a href="data-management.html#error-object-not-found" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="data-management.html#cb179-1" tabindex="-1"></a><span class="co"># Error: object &#39;mydata&#39; not found</span></span>
+<span id="cb179-2"><a href="data-management.html#cb179-2" tabindex="-1"></a><span class="co"># Check:</span></span>
+<span id="cb179-3"><a href="data-management.html#cb179-3" tabindex="-1"></a><span class="co"># 1. Did you load the data?</span></span>
+<span id="cb179-4"><a href="data-management.html#cb179-4" tabindex="-1"></a><span class="co"># 2. Is the name spelled correctly? (R is case-sensitive)</span></span>
+<span id="cb179-5"><a href="data-management.html#cb179-5" tabindex="-1"></a><span class="co"># 3. Did you run the line that creates the object?</span></span></code></pre></div>
+</div>
+<div id="error-file-not-found" class="section level3 hasAnchor" number="5.12.2">
+<h3><span class="header-section-number">5.12.2</span> Error: File Not Found<a href="data-management.html#error-file-not-found" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="data-management.html#cb180-1" tabindex="-1"></a><span class="co"># Error: cannot open file &#39;data.csv&#39;: No such file or directory</span></span>
+<span id="cb180-2"><a href="data-management.html#cb180-2" tabindex="-1"></a><span class="co"># Solutions:</span></span>
+<span id="cb180-3"><a href="data-management.html#cb180-3" tabindex="-1"></a><span class="co"># 1. Check working directory: getwd()</span></span>
+<span id="cb180-4"><a href="data-management.html#cb180-4" tabindex="-1"></a><span class="co"># 2. Verify file name spelling</span></span>
+<span id="cb180-5"><a href="data-management.html#cb180-5" tabindex="-1"></a><span class="co"># 3. Use full file path</span></span>
+<span id="cb180-6"><a href="data-management.html#cb180-6" tabindex="-1"></a><span class="co"># 4. Use file.choose() to browse for file</span></span></code></pre></div>
+</div>
+<div id="error-package-not-available" class="section level3 hasAnchor" number="5.12.3">
+<h3><span class="header-section-number">5.12.3</span> Error: Package Not Available<a href="data-management.html#error-package-not-available" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="data-management.html#cb181-1" tabindex="-1"></a><span class="co"># Error: there is no package called &#39;dplyr&#39;</span></span>
+<span id="cb181-2"><a href="data-management.html#cb181-2" tabindex="-1"></a><span class="co"># Solution: Install it first</span></span>
+<span id="cb181-3"><a href="data-management.html#cb181-3" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span>
+<span id="cb181-4"><a href="data-management.html#cb181-4" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+</div>
+</div>
+<div id="best-practices-for-data-management" class="section level2 hasAnchor" number="5.13">
+<h2><span class="header-section-number">5.13</span> Best Practices for Data Management<a href="data-management.html#best-practices-for-data-management" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="use-descriptive-variable-names" class="section level3 hasAnchor" number="5.13.1">
+<h3><span class="header-section-number">5.13.1</span> 1. Use Descriptive Variable Names<a href="data-management.html#use-descriptive-variable-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="data-management.html#cb182-1" tabindex="-1"></a><span class="co"># Good</span></span>
+<span id="cb182-2"><a href="data-management.html#cb182-2" tabindex="-1"></a>total_athletic_expenses <span class="ot">&lt;-</span> <span class="fl">125.5</span></span>
+<span id="cb182-3"><a href="data-management.html#cb182-3" tabindex="-1"></a>avg_male_athletic_aid <span class="ot">&lt;-</span> <span class="dv">15000</span></span>
+<span id="cb182-4"><a href="data-management.html#cb182-4" tabindex="-1"></a></span>
+<span id="cb182-5"><a href="data-management.html#cb182-5" tabindex="-1"></a><span class="co"># Avoid</span></span>
+<span id="cb182-6"><a href="data-management.html#cb182-6" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">125.5</span></span>
+<span id="cb182-7"><a href="data-management.html#cb182-7" tabindex="-1"></a>var1 <span class="ot">&lt;-</span> <span class="dv">15000</span></span></code></pre></div>
+</div>
+<div id="comment-your-code" class="section level3 hasAnchor" number="5.13.2">
+<h3><span class="header-section-number">5.13.2</span> 2. Comment Your Code<a href="data-management.html#comment-your-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="data-management.html#cb183-1" tabindex="-1"></a><span class="co"># Calculate expense per athlete (converting millions to dollars)</span></span>
+<span id="cb183-2"><a href="data-management.html#cb183-2" tabindex="-1"></a>athletic_data<span class="sc">$</span>expense_per_athlete <span class="ot">&lt;-</span> <span class="fu">round</span>(</span>
+<span id="cb183-3"><a href="data-management.html#cb183-3" tabindex="-1"></a>  (athletic_data<span class="sc">$</span>total_expenses <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">/</span> athletic_data<span class="sc">$</span>total_athletes,</span>
+<span id="cb183-4"><a href="data-management.html#cb183-4" tabindex="-1"></a>  <span class="dv">0</span>  <span class="co"># Round to nearest dollar</span></span>
+<span id="cb183-5"><a href="data-management.html#cb183-5" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="keep-raw-data-separate" class="section level3 hasAnchor" number="5.13.3">
+<h3><span class="header-section-number">5.13.3</span> 3. Keep Raw Data Separate<a href="data-management.html#keep-raw-data-separate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="data-management.html#cb184-1" tabindex="-1"></a><span class="co"># Load raw data</span></span>
+<span id="cb184-2"><a href="data-management.html#cb184-2" tabindex="-1"></a>raw_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;raw_athletic_data.csv&quot;</span>)</span>
+<span id="cb184-3"><a href="data-management.html#cb184-3" tabindex="-1"></a></span>
+<span id="cb184-4"><a href="data-management.html#cb184-4" tabindex="-1"></a><span class="co"># Create working copy for manipulation</span></span>
+<span id="cb184-5"><a href="data-management.html#cb184-5" tabindex="-1"></a>working_data <span class="ot">&lt;-</span> raw_data</span>
+<span id="cb184-6"><a href="data-management.html#cb184-6" tabindex="-1"></a></span>
+<span id="cb184-7"><a href="data-management.html#cb184-7" tabindex="-1"></a><span class="co"># Make changes to working_data, keep raw_data untouched</span></span></code></pre></div>
+</div>
+<div id="use-consistent-file-organization" class="section level3 hasAnchor" number="5.13.4">
+<h3><span class="header-section-number">5.13.4</span> 4. Use Consistent File Organization<a href="data-management.html#use-consistent-file-organization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>Sport_Analytics_Project/
+├── data/
+│   ├── raw/
+│   │   └── Chapter 2 data.csv
+│   └── processed/
+│       └── cleaned_data.csv
+├── scripts/
+│   ├── 01_data_import.R
+│   └── 02_data_cleaning.R
+└── output/
+    ├── figures/
+    └── tables/</code></pre>
+</div>
+</div>
+<div id="practice-exercises-4" class="section level2 hasAnchor" number="5.14">
+<h2><span class="header-section-number">5.14</span> Practice Exercises<a href="data-management.html#practice-exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><strong>Environment Setup</strong>:
+<ul>
+<li>Create a new folder for a sport analytics project</li>
+<li>Set your working directory to this folder</li>
+<li>Install and load the tidyverse package</li>
+</ul></li>
+<li><strong>Data Import and Exploration</strong>:
+<ul>
+<li>Create a data frame with 10 fictional NCAA schools</li>
+<li>Include columns: school name, conference, total budget, total athletes</li>
+<li>Use <code>str()</code>, <code>summary()</code>, and <code>head()</code> to explore the data</li>
+</ul></li>
+<li><strong>Data Quality</strong>:
+<ul>
+<li>Add some missing values (NA) to your dataset</li>
+<li>Count the total missing values</li>
+<li>Identify which columns have missing values</li>
+<li>Remove rows with missing values</li>
+</ul></li>
+<li><strong>Data Manipulation</strong>:
+<ul>
+<li>Create a new column calculating budget per athlete</li>
+<li>Filter schools with budgets over $100M</li>
+<li>Sort schools by budget (descending)</li>
+<li>Calculate average budget by conference</li>
+</ul></li>
+<li><strong>Export Data</strong>:
+<ul>
+<li>Save your filtered dataset as a CSV file</li>
+<li>Save the complete dataset as an RDS file</li>
+</ul></li>
+</ol>
+</div>
+<div id="chapter-summary-3" class="section level2 hasAnchor" number="5.15">
+<h2><span class="header-section-number">5.15</span> Chapter Summary<a href="data-management.html#chapter-summary-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="key-takeaways-3" class="section level3 hasAnchor" number="5.15.1">
+<h3><span class="header-section-number">5.15.1</span> Key Takeaways<a href="data-management.html#key-takeaways-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Environment Management</strong>: Understanding working directories and the RStudio interface is fundamental</li>
+<li><strong>Package Installation</strong>: Install packages once, load them each session</li>
+<li><strong>Data Import</strong>: Use <code>read.csv()</code> and related functions to load data</li>
+<li><strong>Data Exploration</strong>: Use <code>str()</code>, <code>summary()</code>, <code>head()</code>, <code>tail()</code> to understand data structure</li>
+<li><strong>Data Quality</strong>: Check for missing values (<code>is.na()</code>) and zero values</li>
+<li><strong>Data Access</strong>: Use <code>$</code> for columns and <code>[]</code> for rows/columns</li>
+<li><strong>Creating Variables</strong>: Use <code>$</code> or <code>mutate()</code> to create new columns</li>
+<li><strong>Filtering</strong>: Use brackets or <code>filter()</code> to subset data</li>
+<li><strong>Sorting</strong>: Use <code>arrange()</code> to order data</li>
+<li><strong>Export</strong>: Use <code>write.csv()</code> to save processed data</li>
+</ol>
+</div>
+<div id="next-steps-3" class="section level3 hasAnchor" number="5.15.2">
+<h3><span class="header-section-number">5.15.2</span> Next Steps<a href="data-management.html#next-steps-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In Chapter 6, we’ll apply these data management skills to calculate and interpret descriptive statistics for sport business analytics.</p>
+</div>
+</div>
+<div id="references-3" class="section level2 hasAnchor" number="5.16">
+<h2><span class="header-section-number">5.16</span> References<a href="data-management.html#references-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Wickham, H. (2016). <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. O’Reilly Media.</li>
+<li>Wickham, H., &amp; Grolemund, G. (2017). <em>R for Data Science</em>. Available at: <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></li>
+<li>RStudio Team. (2020). <em>RStudio: Integrated Development Environment for R</em>. RStudio, PBC.</li>
+<li>Peng, R. D. (2016). <em>R Programming for Data Science</em>. Leanpub.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sampling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="descriptive-stats.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
