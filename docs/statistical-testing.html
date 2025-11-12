@@ -23,7 +23,7 @@
 <meta name="author" content="Sean Davis, Ph.D." />
 
 
-<meta name="date" content="2025-11-10" />
+<meta name="date" content="2025-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -121,7 +120,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -134,9 +132,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Sport Business Analytics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
@@ -839,9 +834,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.16.1" data-path="tableau.html"><a href="tableau.html#additional-resources-1"><i class="fa fa-check"></i><b>10.16.1</b> Additional Resources</a></li>
 </ul></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -1527,9 +1519,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## 
 ## Significant Pairwise Comparisons (p &lt; 0.05):</code></pre>
 <div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="statistical-testing.html#cb560-1" tabindex="-1"></a><span class="fu">print</span>(tukey_df[tukey_df<span class="sc">$</span>significant, <span class="fu">c</span>(<span class="st">&quot;comparison&quot;</span>, <span class="st">&quot;diff&quot;</span>, <span class="st">&quot;p adj&quot;</span>)])</span></code></pre></div>
-<pre><code>##                                                comparison      diff        p adj
-## Text with Illustrations-Text Text with Illustrations-Text -5.637942 0.0263416497
-## Video-Text                                     Video-Text -8.582800 0.0003435372</code></pre>
+<pre><code>##                                                comparison      diff
+## Text with Illustrations-Text Text with Illustrations-Text -5.637942
+## Video-Text                                     Video-Text -8.582800
+##                                     p adj
+## Text with Illustrations-Text 0.0263416497
+## Video-Text                   0.0003435372</code></pre>
 </div>
 <div id="step-5-visualize-results" class="section level3 hasAnchor" number="7.6.5">
 <h3><span class="header-section-number">7.6.5</span> Step 5: Visualize Results<a href="statistical-testing.html#step-5-visualize-results" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -2218,14 +2213,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## P value adjustment method: bonferroni 
 ## 
 ## === BUSINESS RECOMMENDATIONS ===
-##          Promotion Avg_Attendance Cost_Per_Game Revenue_Per_Additional_Fan Attendance_Lift Additional_Revenue
-## 1     No Promotion       48841.73             0                         12           0.000                0.0
-## 2 T-Shirt Giveaway       42377.87         25000                         12       -6463.867           -77566.4
-## 3 Bobblehead Night       46709.07         45000                         12       -2132.667           -25592.0
-##   Net_Benefit ROI_Percent
-## 1         0.0         NaN
-## 2   -102566.4      -410.3
-## 3    -70592.0      -156.9
+##          Promotion Avg_Attendance Cost_Per_Game Revenue_Per_Additional_Fan
+## 1     No Promotion       48841.73             0                         12
+## 2 T-Shirt Giveaway       42377.87         25000                         12
+## 3 Bobblehead Night       46709.07         45000                         12
+##   Attendance_Lift Additional_Revenue Net_Benefit ROI_Percent
+## 1           0.000                0.0         0.0         NaN
+## 2       -6463.867           -77566.4   -102566.4      -410.3
+## 3       -2132.667           -25592.0    -70592.0      -156.9
 ## 
 ## Optimal promotion: No Promotion</code></pre>
 </div>
@@ -2793,7 +2788,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

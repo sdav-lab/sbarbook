@@ -23,7 +23,7 @@
 <meta name="author" content="Sean Davis, Ph.D." />
 
 
-<meta name="date" content="2025-11-10" />
+<meta name="date" content="2025-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -121,7 +120,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -134,9 +132,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Sport Business Analytics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
@@ -839,9 +834,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.16.1" data-path="tableau.html"><a href="tableau.html#additional-resources-1"><i class="fa fa-check"></i><b>10.16.1</b> Additional Resources</a></li>
 </ul></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -995,13 +987,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 Player C     25       6        3  BOS
 ## 4 Player D     20       7        5  LAL</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="r-setup.html#cb24-1" tabindex="-1"></a><span class="fu">summary</span>(player_data)</span></code></pre></div>
-<pre><code>##      name               points         assists        rebounds        team          
-##  Length:4           Min.   :18.00   Min.   :5.00   Min.   :3.00   Length:4          
-##  Class :character   1st Qu.:19.50   1st Qu.:5.75   1st Qu.:3.75   Class :character  
-##  Mode  :character   Median :21.00   Median :6.50   Median :4.50   Mode  :character  
-##                     Mean   :21.25   Mean   :6.50   Mean   :4.50                     
-##                     3rd Qu.:22.75   3rd Qu.:7.25   3rd Qu.:5.25                     
-##                     Max.   :25.00   Max.   :8.00   Max.   :6.00</code></pre>
+<pre><code>##      name               points         assists        rebounds   
+##  Length:4           Min.   :18.00   Min.   :5.00   Min.   :3.00  
+##  Class :character   1st Qu.:19.50   1st Qu.:5.75   1st Qu.:3.75  
+##  Mode  :character   Median :21.00   Median :6.50   Median :4.50  
+##                     Mean   :21.25   Mean   :6.50   Mean   :4.50  
+##                     3rd Qu.:22.75   3rd Qu.:7.25   3rd Qu.:5.25  
+##                     Max.   :25.00   Max.   :8.00   Max.   :6.00  
+##      team          
+##  Length:4          
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+## </code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="r-setup.html#cb26-1" tabindex="-1"></a><span class="fu">str</span>(player_data)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    4 obs. of  5 variables:
 ##  $ name    : chr  &quot;Player A&quot; &quot;Player B&quot; &quot;Player C&quot; &quot;Player D&quot;
@@ -1123,13 +1122,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="r-setup.html#cb45-1" tabindex="-1"></a><span class="co"># Check for inconsistent data  </span></span>
 <span id="cb45-2"><a href="r-setup.html#cb45-2" tabindex="-1"></a><span class="fu">summary</span>(player_data)</span></code></pre></div>
-<pre><code>##      name               points         assists        rebounds        team          
-##  Length:4           Min.   :18.00   Min.   :5.00   Min.   :3.00   Length:4          
-##  Class :character   1st Qu.:19.50   1st Qu.:5.75   1st Qu.:3.75   Class :character  
-##  Mode  :character   Median :21.00   Median :6.50   Median :4.50   Mode  :character  
-##                     Mean   :21.25   Mean   :6.50   Mean   :4.50                     
-##                     3rd Qu.:22.75   3rd Qu.:7.25   3rd Qu.:5.25                     
-##                     Max.   :25.00   Max.   :8.00   Max.   :6.00</code></pre>
+<pre><code>##      name               points         assists        rebounds   
+##  Length:4           Min.   :18.00   Min.   :5.00   Min.   :3.00  
+##  Class :character   1st Qu.:19.50   1st Qu.:5.75   1st Qu.:3.75  
+##  Mode  :character   Median :21.00   Median :6.50   Median :4.50  
+##                     Mean   :21.25   Mean   :6.50   Mean   :4.50  
+##                     3rd Qu.:22.75   3rd Qu.:7.25   3rd Qu.:5.25  
+##                     Max.   :25.00   Max.   :8.00   Max.   :6.00  
+##      team          
+##  Length:4          
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+## </code></pre>
 </div>
 </div>
 <div id="data-visualization-basics" class="section level2 hasAnchor" number="2.7">
@@ -1281,7 +1287,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

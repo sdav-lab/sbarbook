@@ -23,7 +23,7 @@
 <meta name="author" content="Sean Davis, Ph.D." />
 
 
-<meta name="date" content="2025-11-10" />
+<meta name="date" content="2025-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -121,7 +120,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -134,9 +132,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Sport Business Analytics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
@@ -839,9 +834,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.16.1" data-path="tableau.html"><a href="tableau.html#additional-resources-1"><i class="fa fa-check"></i><b>10.16.1</b> Additional Resources</a></li>
 </ul></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -1395,13 +1387,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   38000   43250   46500   47500   51500   61000</code></pre>
 <div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="descriptive-stats.html#cb313-1" tabindex="-1"></a><span class="co"># Summary of entire dataset</span></span>
 <span id="cb313-2"><a href="descriptive-stats.html#cb313-2" tabindex="-1"></a><span class="fu">summary</span>(sport_data)</span></code></pre></div>
-<pre><code>##      team           avg_attendance  ticket_revenue       wins        conference       
-##  Length:10          Min.   :38000   Min.   :1.800   Min.   : 6.00   Length:10         
-##  Class :character   1st Qu.:43250   1st Qu.:2.325   1st Qu.: 7.25   Class :character  
-##  Mode  :character   Median :46500   Median :2.600   Median : 8.50   Mode  :character  
-##                     Mean   :47500   Mean   :2.670   Mean   : 8.40                     
-##                     3rd Qu.:51500   3rd Qu.:3.050   3rd Qu.: 9.75                     
-##                     Max.   :61000   Max.   :3.800   Max.   :11.00</code></pre>
+<pre><code>##      team           avg_attendance  ticket_revenue       wins      
+##  Length:10          Min.   :38000   Min.   :1.800   Min.   : 6.00  
+##  Class :character   1st Qu.:43250   1st Qu.:2.325   1st Qu.: 7.25  
+##  Mode  :character   Median :46500   Median :2.600   Median : 8.50  
+##                     Mean   :47500   Mean   :2.670   Mean   : 8.40  
+##                     3rd Qu.:51500   3rd Qu.:3.050   3rd Qu.: 9.75  
+##                     Max.   :61000   Max.   :3.800   Max.   :11.00  
+##   conference       
+##  Length:10         
+##  Class :character  
+##  Mode  :character  
+##                    
+##                    
+## </code></pre>
 </div>
 <div id="creating-custom-summary-tables" class="section level3 hasAnchor" number="6.5.2">
 <h3><span class="header-section-number">6.5.2</span> Creating Custom Summary Tables<a href="descriptive-stats.html#creating-custom-summary-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -2466,7 +2465,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

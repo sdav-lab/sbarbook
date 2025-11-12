@@ -23,7 +23,7 @@
 <meta name="author" content="Sean Davis, Ph.D." />
 
 
-<meta name="date" content="2025-11-10" />
+<meta name="date" content="2025-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -121,7 +120,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -134,9 +132,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Sport Business Analytics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
@@ -839,9 +834,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.16.1" data-path="tableau.html"><a href="tableau.html#additional-resources-1"><i class="fa fa-check"></i><b>10.16.1</b> Additional Resources</a></li>
 </ul></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -1049,18 +1041,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb120-14"><a href="data-management.html#cb120-14" tabindex="-1"></a></span>
 <span id="cb120-15"><a href="data-management.html#cb120-15" tabindex="-1"></a><span class="co"># Explore the data</span></span>
 <span id="cb120-16"><a href="data-management.html#cb120-16" tabindex="-1"></a><span class="fu">head</span>(athletic_data)</span></code></pre></div>
-<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL    Power 5          125.5         128.2           285             315           9
-## 2 University B    GA    Power 5           98.3         102.1           245             260           8
-## 3 University C    AL Group of 5           45.2          43.8           180             190           7
-## 4 University D    FL Group of 5           52.8          51.5           195             205           7
-## 5 University E    TX    Power 5          110.4         115.6           270             290           9
-##   womens_sports
-## 1            11
-## 2            10
-## 3             9
-## 4             9
-## 5            11</code></pre>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes
+## 1 University A    FL    Power 5          125.5         128.2           285
+## 2 University B    GA    Power 5           98.3         102.1           245
+## 3 University C    AL Group of 5           45.2          43.8           180
+## 4 University D    FL Group of 5           52.8          51.5           195
+## 5 University E    TX    Power 5          110.4         115.6           270
+##   female_athletes mens_sports womens_sports
+## 1             315           9            11
+## 2             260           8            10
+## 3             190           7             9
+## 4             205           7             9
+## 5             290           9            11</code></pre>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="data-management.html#cb122-1" tabindex="-1"></a><span class="fu">str</span>(athletic_data)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    5 obs. of  9 variables:
 ##  $ school         : chr  &quot;University A&quot; &quot;University B&quot; &quot;University C&quot; &quot;University D&quot; ...
@@ -1073,20 +1065,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ mens_sports    : num  9 8 7 7 9
 ##  $ womens_sports  : num  11 10 9 9 11</code></pre>
 <div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="data-management.html#cb124-1" tabindex="-1"></a><span class="fu">summary</span>(athletic_data)</span></code></pre></div>
-<pre><code>##     school             state             division         total_expenses   total_revenue    male_athletes
-##  Length:5           Length:5           Length:5           Min.   : 45.20   Min.   : 43.80   Min.   :180  
-##  Class :character   Class :character   Class :character   1st Qu.: 52.80   1st Qu.: 51.50   1st Qu.:195  
-##  Mode  :character   Mode  :character   Mode  :character   Median : 98.30   Median :102.10   Median :245  
-##                                                           Mean   : 86.44   Mean   : 88.24   Mean   :235  
-##                                                           3rd Qu.:110.40   3rd Qu.:115.60   3rd Qu.:270  
-##                                                           Max.   :125.50   Max.   :128.20   Max.   :285  
-##  female_athletes  mens_sports womens_sports
-##  Min.   :190     Min.   :7    Min.   : 9   
-##  1st Qu.:205     1st Qu.:7    1st Qu.: 9   
-##  Median :260     Median :8    Median :10   
-##  Mean   :252     Mean   :8    Mean   :10   
-##  3rd Qu.:290     3rd Qu.:9    3rd Qu.:11   
-##  Max.   :315     Max.   :9    Max.   :11</code></pre>
+<pre><code>##     school             state             division         total_expenses  
+##  Length:5           Length:5           Length:5           Min.   : 45.20  
+##  Class :character   Class :character   Class :character   1st Qu.: 52.80  
+##  Mode  :character   Mode  :character   Mode  :character   Median : 98.30  
+##                                                           Mean   : 86.44  
+##                                                           3rd Qu.:110.40  
+##                                                           Max.   :125.50  
+##  total_revenue    male_athletes female_athletes  mens_sports womens_sports
+##  Min.   : 43.80   Min.   :180   Min.   :190     Min.   :7    Min.   : 9   
+##  1st Qu.: 51.50   1st Qu.:195   1st Qu.:205     1st Qu.:7    1st Qu.: 9   
+##  Median :102.10   Median :245   Median :260     Median :8    Median :10   
+##  Mean   : 88.24   Mean   :235   Mean   :252     Mean   :8    Mean   :10   
+##  3rd Qu.:115.60   3rd Qu.:270   3rd Qu.:290     3rd Qu.:9    3rd Qu.:11   
+##  Max.   :128.20   Max.   :285   Max.   :315     Max.   :9    Max.   :11</code></pre>
 </div>
 </div>
 <div id="understanding-data-types-in-r" class="section level2 hasAnchor" number="5.4">
@@ -1235,10 +1227,10 @@ This prevents R from automatically converting text to factors. In older R versio
 <pre><code>## [1] &quot;FL&quot;</code></pre>
 <div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="data-management.html#cb165-1" tabindex="-1"></a><span class="co"># Access entire row</span></span>
 <span id="cb165-2"><a href="data-management.html#cb165-2" tabindex="-1"></a>athletic_data[<span class="dv">1</span>, ]  <span class="co"># First row, all columns</span></span></code></pre></div>
-<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL  Power 5          125.5         128.2           285             315           9
-##   womens_sports
-## 1            11</code></pre>
+<pre><code>##         school state division total_expenses total_revenue male_athletes
+## 1 University A    FL  Power 5          125.5         128.2           285
+##   female_athletes mens_sports womens_sports
+## 1             315           9            11</code></pre>
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="data-management.html#cb167-1" tabindex="-1"></a><span class="co"># Access entire column</span></span>
 <span id="cb167-2"><a href="data-management.html#cb167-2" tabindex="-1"></a>athletic_data[, <span class="dv">3</span>]  <span class="co"># All rows, third column</span></span></code></pre></div>
 <pre><code>## [1] &quot;Power 5&quot;    &quot;Power 5&quot;    &quot;Group of 5&quot; &quot;Group of 5&quot; &quot;Power 5&quot;</code></pre>
@@ -1252,12 +1244,12 @@ This prevents R from automatically converting text to factors. In older R versio
 ## 5 University E          110.4</code></pre>
 <div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="data-management.html#cb171-1" tabindex="-1"></a><span class="co"># Access using logical conditions</span></span>
 <span id="cb171-2"><a href="data-management.html#cb171-2" tabindex="-1"></a>athletic_data[athletic_data<span class="sc">$</span>total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>, ]</span></code></pre></div>
-<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL  Power 5          125.5         128.2           285             315           9
-## 5 University E    TX  Power 5          110.4         115.6           270             290           9
-##   womens_sports
-## 1            11
-## 5            11</code></pre>
+<pre><code>##         school state division total_expenses total_revenue male_athletes
+## 1 University A    FL  Power 5          125.5         128.2           285
+## 5 University E    TX  Power 5          110.4         115.6           270
+##   female_athletes mens_sports womens_sports
+## 1             315           9            11
+## 5             290           9            11</code></pre>
 </div>
 <div id="creating-new-columns" class="section level3 hasAnchor" number="5.6.2">
 <h3><span class="header-section-number">5.6.2</span> Creating New Columns<a href="data-management.html#creating-new-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1279,18 +1271,24 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb173-15"><a href="data-management.html#cb173-15" tabindex="-1"></a></span>
 <span id="cb173-16"><a href="data-management.html#cb173-16" tabindex="-1"></a><span class="co"># View results</span></span>
 <span id="cb173-17"><a href="data-management.html#cb173-17" tabindex="-1"></a><span class="fu">head</span>(athletic_data)</span></code></pre></div>
-<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL    Power 5          125.5         128.2           285             315           9
-## 2 University B    GA    Power 5           98.3         102.1           245             260           8
-## 3 University C    AL Group of 5           45.2          43.8           180             190           7
-## 4 University D    FL Group of 5           52.8          51.5           195             205           7
-## 5 University E    TX    Power 5          110.4         115.6           270             290           9
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete
-## 1            11            600           20         2.7              209167
-## 2            10            505           18         3.8              194653
-## 3             9            370           16        -1.4              122162
-## 4             9            400           16        -1.3              132000
-## 5            11            560           20         5.2              197143</code></pre>
+<pre><code>##         school state   division total_expenses total_revenue male_athletes
+## 1 University A    FL    Power 5          125.5         128.2           285
+## 2 University B    GA    Power 5           98.3         102.1           245
+## 3 University C    AL Group of 5           45.2          43.8           180
+## 4 University D    FL Group of 5           52.8          51.5           195
+## 5 University E    TX    Power 5          110.4         115.6           270
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             315           9            11            600           20
+## 2             260           8            10            505           18
+## 3             190           7             9            370           16
+## 4             205           7             9            400           16
+## 5             290           9            11            560           20
+##   net_revenue expense_per_athlete
+## 1         2.7              209167
+## 2         3.8              194653
+## 3        -1.4              122162
+## 4        -1.3              132000
+## 5         5.2              197143</code></pre>
 </div>
 <div id="more-complex-calculations" class="section level3 hasAnchor" number="5.6.3">
 <h3><span class="header-section-number">5.6.3</span> More Complex Calculations<a href="data-management.html#more-complex-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1330,24 +1328,30 @@ This prevents R from automatically converting text to factors. In older R versio
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="data-management.html#cb177-1" tabindex="-1"></a><span class="co"># Filter schools with expenses greater than $100M</span></span>
 <span id="cb177-2"><a href="data-management.html#cb177-2" tabindex="-1"></a>high_budget <span class="ot">&lt;-</span> athletic_data[athletic_data<span class="sc">$</span>total_expenses <span class="sc">&gt;</span> <span class="dv">100</span>, ]</span>
 <span id="cb177-3"><a href="data-management.html#cb177-3" tabindex="-1"></a>high_budget</span></code></pre></div>
-<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL  Power 5          125.5         128.2           285             315           9
-## 5 University E    TX  Power 5          110.4         115.6           270             290           9
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1            11            600           20         2.7              209167               52.5         0.82
-## 5            11            560           20         5.2              197143               51.8         0.82
+<pre><code>##         school state division total_expenses total_revenue male_athletes
+## 1 University A    FL  Power 5          125.5         128.2           285
+## 5 University E    TX  Power 5          110.4         115.6           270
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             315           9            11            600           20
+## 5             290           9            11            560           20
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1         2.7              209167               52.5         0.82
+## 5         5.2              197143               51.8         0.82
 ##   budget_category
 ## 1     High Budget
 ## 5     High Budget</code></pre>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="data-management.html#cb179-1" tabindex="-1"></a><span class="co"># Filter schools in Florida</span></span>
 <span id="cb179-2"><a href="data-management.html#cb179-2" tabindex="-1"></a>florida_schools <span class="ot">&lt;-</span> athletic_data[athletic_data<span class="sc">$</span>state <span class="sc">==</span> <span class="st">&quot;FL&quot;</span>, ]</span>
 <span id="cb179-3"><a href="data-management.html#cb179-3" tabindex="-1"></a>florida_schools</span></code></pre></div>
-<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL    Power 5          125.5         128.2           285             315           9
-## 4 University D    FL Group of 5           52.8          51.5           195             205           7
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1            11            600           20         2.7              209167               52.5         0.82
-## 4             9            400           16        -1.3              132000               51.2         0.78
+<pre><code>##         school state   division total_expenses total_revenue male_athletes
+## 1 University A    FL    Power 5          125.5         128.2           285
+## 4 University D    FL Group of 5           52.8          51.5           195
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             315           9            11            600           20
+## 4             205           7             9            400           16
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1         2.7              209167               52.5         0.82
+## 4        -1.3              132000               51.2         0.78
 ##   budget_category
 ## 1     High Budget
 ## 4    Lower Budget</code></pre>
@@ -1356,10 +1360,12 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb181-3"><a href="data-management.html#cb181-3" tabindex="-1"></a>  athletic_data<span class="sc">$</span>state <span class="sc">==</span> <span class="st">&quot;FL&quot;</span> <span class="sc">&amp;</span> athletic_data<span class="sc">$</span>division <span class="sc">==</span> <span class="st">&quot;Power 5&quot;</span>,</span>
 <span id="cb181-4"><a href="data-management.html#cb181-4" tabindex="-1"></a>]</span>
 <span id="cb181-5"><a href="data-management.html#cb181-5" tabindex="-1"></a>power5_florida</span></code></pre></div>
-<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL  Power 5          125.5         128.2           285             315           9
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1            11            600           20         2.7              209167               52.5         0.82
+<pre><code>##         school state division total_expenses total_revenue male_athletes
+## 1 University A    FL  Power 5          125.5         128.2           285
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             315           9            11            600           20
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1         2.7              209167               52.5         0.82
 ##   budget_category
 ## 1     High Budget</code></pre>
 <div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="data-management.html#cb183-1" tabindex="-1"></a><span class="co"># Multiple conditions using | (OR)</span></span>
@@ -1367,14 +1373,18 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb183-3"><a href="data-management.html#cb183-3" tabindex="-1"></a>  athletic_data<span class="sc">$</span>state <span class="sc">==</span> <span class="st">&quot;FL&quot;</span> <span class="sc">|</span> athletic_data<span class="sc">$</span>state <span class="sc">==</span> <span class="st">&quot;GA&quot;</span>,</span>
 <span id="cb183-4"><a href="data-management.html#cb183-4" tabindex="-1"></a>]</span>
 <span id="cb183-5"><a href="data-management.html#cb183-5" tabindex="-1"></a>fl_or_ga</span></code></pre></div>
-<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL    Power 5          125.5         128.2           285             315           9
-## 2 University B    GA    Power 5           98.3         102.1           245             260           8
-## 4 University D    FL Group of 5           52.8          51.5           195             205           7
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1            11            600           20         2.7              209167               52.5         0.82
-## 2            10            505           18         3.8              194653               51.5         0.80
-## 4             9            400           16        -1.3              132000               51.2         0.78
+<pre><code>##         school state   division total_expenses total_revenue male_athletes
+## 1 University A    FL    Power 5          125.5         128.2           285
+## 2 University B    GA    Power 5           98.3         102.1           245
+## 4 University D    FL Group of 5           52.8          51.5           195
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             315           9            11            600           20
+## 2             260           8            10            505           18
+## 4             205           7             9            400           16
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1         2.7              209167               52.5         0.82
+## 2         3.8              194653               51.5         0.80
+## 4        -1.3              132000               51.2         0.78
 ##   budget_category
 ## 1     High Budget
 ## 2    Lower Budget
@@ -1413,18 +1423,24 @@ This prevents R from automatically converting text to factors. In older R versio
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="data-management.html#cb189-1" tabindex="-1"></a><span class="co"># Sort by total expenses (ascending)</span></span>
 <span id="cb189-2"><a href="data-management.html#cb189-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
 <span id="cb189-3"><a href="data-management.html#cb189-3" tabindex="-1"></a>  <span class="fu">arrange</span>(total_expenses)</span></code></pre></div>
-<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University C    AL Group of 5           45.2          43.8           180             190           7
-## 2 University D    FL Group of 5           52.8          51.5           195             205           7
-## 3 University B    GA    Power 5           98.3         102.1           245             260           8
-## 4 University E    TX    Power 5          110.4         115.6           270             290           9
-## 5 University A    FL    Power 5          125.5         128.2           285             315           9
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1             9            370           16        -1.4              122162               51.4         0.78
-## 2             9            400           16        -1.3              132000               51.2         0.78
-## 3            10            505           18         3.8              194653               51.5         0.80
-## 4            11            560           20         5.2              197143               51.8         0.82
-## 5            11            600           20         2.7              209167               52.5         0.82
+<pre><code>##         school state   division total_expenses total_revenue male_athletes
+## 1 University C    AL Group of 5           45.2          43.8           180
+## 2 University D    FL Group of 5           52.8          51.5           195
+## 3 University B    GA    Power 5           98.3         102.1           245
+## 4 University E    TX    Power 5          110.4         115.6           270
+## 5 University A    FL    Power 5          125.5         128.2           285
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             190           7             9            370           16
+## 2             205           7             9            400           16
+## 3             260           8            10            505           18
+## 4             290           9            11            560           20
+## 5             315           9            11            600           20
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1        -1.4              122162               51.4         0.78
+## 2        -1.3              132000               51.2         0.78
+## 3         3.8              194653               51.5         0.80
+## 4         5.2              197143               51.8         0.82
+## 5         2.7              209167               52.5         0.82
 ##   budget_category
 ## 1    Lower Budget
 ## 2    Lower Budget
@@ -1434,18 +1450,24 @@ This prevents R from automatically converting text to factors. In older R versio
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="data-management.html#cb191-1" tabindex="-1"></a><span class="co"># Sort by total expenses (descending)</span></span>
 <span id="cb191-2"><a href="data-management.html#cb191-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
 <span id="cb191-3"><a href="data-management.html#cb191-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_expenses))</span></code></pre></div>
-<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL    Power 5          125.5         128.2           285             315           9
-## 2 University E    TX    Power 5          110.4         115.6           270             290           9
-## 3 University B    GA    Power 5           98.3         102.1           245             260           8
-## 4 University D    FL Group of 5           52.8          51.5           195             205           7
-## 5 University C    AL Group of 5           45.2          43.8           180             190           7
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1            11            600           20         2.7              209167               52.5         0.82
-## 2            11            560           20         5.2              197143               51.8         0.82
-## 3            10            505           18         3.8              194653               51.5         0.80
-## 4             9            400           16        -1.3              132000               51.2         0.78
-## 5             9            370           16        -1.4              122162               51.4         0.78
+<pre><code>##         school state   division total_expenses total_revenue male_athletes
+## 1 University A    FL    Power 5          125.5         128.2           285
+## 2 University E    TX    Power 5          110.4         115.6           270
+## 3 University B    GA    Power 5           98.3         102.1           245
+## 4 University D    FL Group of 5           52.8          51.5           195
+## 5 University C    AL Group of 5           45.2          43.8           180
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             315           9            11            600           20
+## 2             290           9            11            560           20
+## 3             260           8            10            505           18
+## 4             205           7             9            400           16
+## 5             190           7             9            370           16
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1         2.7              209167               52.5         0.82
+## 2         5.2              197143               51.8         0.82
+## 3         3.8              194653               51.5         0.80
+## 4        -1.3              132000               51.2         0.78
+## 5        -1.4              122162               51.4         0.78
 ##   budget_category
 ## 1     High Budget
 ## 2     High Budget
@@ -1455,18 +1477,24 @@ This prevents R from automatically converting text to factors. In older R versio
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="data-management.html#cb193-1" tabindex="-1"></a><span class="co"># Sort by multiple columns</span></span>
 <span id="cb193-2"><a href="data-management.html#cb193-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
 <span id="cb193-3"><a href="data-management.html#cb193-3" tabindex="-1"></a>  <span class="fu">arrange</span>(state, <span class="fu">desc</span>(total_expenses))</span></code></pre></div>
-<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University C    AL Group of 5           45.2          43.8           180             190           7
-## 2 University A    FL    Power 5          125.5         128.2           285             315           9
-## 3 University D    FL Group of 5           52.8          51.5           195             205           7
-## 4 University B    GA    Power 5           98.3         102.1           245             260           8
-## 5 University E    TX    Power 5          110.4         115.6           270             290           9
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1             9            370           16        -1.4              122162               51.4         0.78
-## 2            11            600           20         2.7              209167               52.5         0.82
-## 3             9            400           16        -1.3              132000               51.2         0.78
-## 4            10            505           18         3.8              194653               51.5         0.80
-## 5            11            560           20         5.2              197143               51.8         0.82
+<pre><code>##         school state   division total_expenses total_revenue male_athletes
+## 1 University C    AL Group of 5           45.2          43.8           180
+## 2 University A    FL    Power 5          125.5         128.2           285
+## 3 University D    FL Group of 5           52.8          51.5           195
+## 4 University B    GA    Power 5           98.3         102.1           245
+## 5 University E    TX    Power 5          110.4         115.6           270
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             190           7             9            370           16
+## 2             315           9            11            600           20
+## 3             205           7             9            400           16
+## 4             260           8            10            505           18
+## 5             290           9            11            560           20
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1        -1.4              122162               51.4         0.78
+## 2         2.7              209167               52.5         0.82
+## 3        -1.3              132000               51.2         0.78
+## 4         3.8              194653               51.5         0.80
+## 5         5.2              197143               51.8         0.82
 ##   budget_category
 ## 1    Lower Budget
 ## 2     High Budget
@@ -1515,14 +1543,18 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb199-2"><a href="data-management.html#cb199-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
 <span id="cb199-3"><a href="data-management.html#cb199-3" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_expenses)) <span class="sc">%&gt;%</span></span>
 <span id="cb199-4"><a href="data-management.html#cb199-4" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code></pre></div>
-<pre><code>##         school state division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University A    FL  Power 5          125.5         128.2           285             315           9
-## 2 University E    TX  Power 5          110.4         115.6           270             290           9
-## 3 University B    GA  Power 5           98.3         102.1           245             260           8
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1            11            600           20         2.7              209167               52.5         0.82
-## 2            11            560           20         5.2              197143               51.8         0.82
-## 3            10            505           18         3.8              194653               51.5         0.80
+<pre><code>##         school state division total_expenses total_revenue male_athletes
+## 1 University A    FL  Power 5          125.5         128.2           285
+## 2 University E    TX  Power 5          110.4         115.6           270
+## 3 University B    GA  Power 5           98.3         102.1           245
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             315           9            11            600           20
+## 2             290           9            11            560           20
+## 3             260           8            10            505           18
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1         2.7              209167               52.5         0.82
+## 2         5.2              197143               51.8         0.82
+## 3         3.8              194653               51.5         0.80
 ##   budget_category
 ## 1     High Budget
 ## 2     High Budget
@@ -1531,12 +1563,15 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb201-2"><a href="data-management.html#cb201-2" tabindex="-1"></a>athletic_data <span class="sc">%&gt;%</span></span>
 <span id="cb201-3"><a href="data-management.html#cb201-3" tabindex="-1"></a>  <span class="fu">arrange</span>(total_revenue) <span class="sc">%&gt;%</span></span>
 <span id="cb201-4"><a href="data-management.html#cb201-4" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">2</span>)</span></code></pre></div>
-<pre><code>##         school state   division total_expenses total_revenue male_athletes female_athletes mens_sports
-## 1 University C    AL Group of 5           45.2          43.8           180             190           7
-## 2 University D    FL Group of 5           52.8          51.5           195             205           7
-##   womens_sports total_athletes total_sports net_revenue expense_per_athlete female_athlete_pct sports_ratio
-## 1             9            370           16        -1.4              122162               51.4         0.78
-## 2             9            400           16        -1.3              132000               51.2         0.78
+<pre><code>##         school state   division total_expenses total_revenue male_athletes
+## 1 University C    AL Group of 5           45.2          43.8           180
+## 2 University D    FL Group of 5           52.8          51.5           195
+##   female_athletes mens_sports womens_sports total_athletes total_sports
+## 1             190           7             9            370           16
+## 2             205           7             9            400           16
+##   net_revenue expense_per_athlete female_athlete_pct sports_ratio
+## 1        -1.4              122162               51.4         0.78
+## 2        -1.3              132000               51.2         0.78
 ##   budget_category
 ## 1    Lower Budget
 ## 2    Lower Budget</code></pre>
@@ -1886,16 +1921,16 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb223-25"><a href="data-management.html#cb223-25" tabindex="-1"></a>  <span class="fu">select</span>(date, tickets_sold, sales_7day_avg, cumulative_sales) <span class="sc">%&gt;%</span></span>
 <span id="cb223-26"><a href="data-management.html#cb223-26" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
 <pre><code>##          date tickets_sold sales_7day_avg cumulative_sales
-## 22 2024-01-22          543       505.0000            11314
-## 23 2024-01-23          502       495.5714            11816
-## 24 2024-01-24          333       491.7143            12149
-## 25 2024-01-25          574       490.1429            12723
-## 26 2024-01-26          539       502.1429            13262
-## 27 2024-01-27          473       495.8571            13735
-## 28 2024-01-28          512       496.5714            14247
-## 29 2024-01-29          513       492.2857            14760
-## 30 2024-01-30          522       495.1429            15282
-## 31 2024-01-31          664       542.4286            15946</code></pre>
+## 22 2024-01-22          645       451.1429            10967
+## 23 2024-01-23          432       458.5714            11399
+## 24 2024-01-24          515       491.2857            11914
+## 25 2024-01-25          354       481.0000            12268
+## 26 2024-01-26          612       492.5714            12880
+## 27 2024-01-27          552       500.8571            13432
+## 28 2024-01-28          325       490.7143            13757
+## 29 2024-01-29          524       473.4286            14281
+## 30 2024-01-30          266       449.7143            14547
+## 31 2024-01-31          565       456.8571            15112</code></pre>
 </div>
 </div>
 <div id="customer-behavior-features" class="section level3 hasAnchor" number="5.16.3">
@@ -1995,18 +2030,19 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb227-24"><a href="data-management.html#cb227-24" tabindex="-1"></a>  <span class="fu">select</span>(customer_id, total_transactions, total_spend, projected_annual_value, projected_5yr_clv) <span class="sc">%&gt;%</span></span>
 <span id="cb227-25"><a href="data-management.html#cb227-25" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 5
-##    customer_id total_transactions total_spend projected_annual_value projected_5yr_clv
-##    &lt;chr&gt;                    &lt;int&gt;       &lt;dbl&gt;                  &lt;dbl&gt;             &lt;dbl&gt;
-##  1 C1003                        3       1236.                  1236.             6180.
-##  2 C1013                        3       1171.                  1171.             5853.
-##  3 C1011                        3       1140.                  1140.             5702.
-##  4 C1007                        3       1025.                  1025.             5124.
-##  5 C1012                        3       1019.                  1019.             5095.
-##  6 C1002                        3       1017.                  1017.             5084.
-##  7 C1018                        3        930.                   930.             4649 
-##  8 C1014                        3        929.                   929.             4645.
-##  9 C1009                        3        858.                   858.             4290.
-## 10 C1004                        3        822.                   822.             4109.</code></pre>
+##    customer_id total_transactions total_spend projected_annual_value
+##    &lt;chr&gt;                    &lt;int&gt;       &lt;dbl&gt;                  &lt;dbl&gt;
+##  1 C1003                        3       1236.                  1236.
+##  2 C1013                        3       1171.                  1171.
+##  3 C1011                        3       1140.                  1140.
+##  4 C1007                        3       1025.                  1025.
+##  5 C1012                        3       1019.                  1019.
+##  6 C1002                        3       1017.                  1017.
+##  7 C1018                        3        930.                   930.
+##  8 C1014                        3        929.                   929.
+##  9 C1009                        3        858.                   858.
+## 10 C1004                        3        822.                   822.
+## # ℹ 1 more variable: projected_5yr_clv &lt;dbl&gt;</code></pre>
 </div>
 </div>
 <div id="revenue-and-financial-features" class="section level3 hasAnchor" number="5.16.4">
@@ -2049,13 +2085,20 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb229-34"><a href="data-management.html#cb229-34" tabindex="-1"></a>  <span class="fu">select</span>(game_id, attendance, total_revenue, per_cap_total,</span>
 <span id="cb229-35"><a href="data-management.html#cb229-35" tabindex="-1"></a>         per_cap_concession, per_cap_merch) <span class="sc">%&gt;%</span></span>
 <span id="cb229-36"><a href="data-management.html#cb229-36" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
-<pre><code>##   game_id attendance total_revenue per_cap_total per_cap_concession per_cap_merch
-## 1       1      38150       3483627         91.31               7.32          2.47
-## 2       2      44809       3234199         72.18               4.85          1.70
-## 3       3      47829       3179827         66.48               5.50          1.92
-## 4       4      46173       3098748         67.11               5.36          1.48
-## 5       5      44910       2690426         59.91               4.83          1.45
-## 6       6      40207       2961069         73.65               6.44          1.94</code></pre>
+<pre><code>##   game_id attendance total_revenue per_cap_total per_cap_concession
+## 1       1      38150       3483627         91.31               7.32
+## 2       2      44809       3234199         72.18               4.85
+## 3       3      47829       3179827         66.48               5.50
+## 4       4      46173       3098748         67.11               5.36
+## 5       5      44910       2690426         59.91               4.83
+## 6       6      40207       2961069         73.65               6.44
+##   per_cap_merch
+## 1          2.47
+## 2          1.70
+## 3          1.92
+## 4          1.48
+## 5          1.45
+## 6          1.94</code></pre>
 </div>
 <div id="profitability-metrics" class="section level4 hasAnchor" number="5.16.4.2">
 <h4><span class="header-section-number">5.16.4.2</span> Profitability Metrics<a href="data-management.html#profitability-metrics" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -2150,12 +2193,12 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb233-46"><a href="data-management.html#cb233-46" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb233-47"><a href="data-management.html#cb233-47" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(renewal_rate))</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 5
-##   tenure_category         accounts renewal_rate avg_annual_value avg_lifetime_value
-##   &lt;chr&gt;                      &lt;int&gt;        &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;
-## 1 New (1 year)                  10        100             32189.             32189.
-## 2 Established (4-7 years)       17         88.2           42428.            217702.
-## 3 Long-term (8+ years)           8         87.5           56253.            488363.
-## 4 Developing (2-3 years)        15         86.7           40240.            105048.</code></pre>
+##   tenure_category      accounts renewal_rate avg_annual_value avg_lifetime_value
+##   &lt;chr&gt;                   &lt;int&gt;        &lt;dbl&gt;            &lt;dbl&gt;              &lt;dbl&gt;
+## 1 New (1 year)               10        100             32189.             32189.
+## 2 Established (4-7 ye…       17         88.2           42428.            217702.
+## 3 Long-term (8+ years)        8         87.5           56253.            488363.
+## 4 Developing (2-3 yea…       15         86.7           40240.            105048.</code></pre>
 </div>
 </div>
 <div id="marketing-campaign-features" class="section level3 hasAnchor" number="5.16.6">
@@ -2212,12 +2255,13 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb235-48"><a href="data-management.html#cb235-48" tabindex="-1"></a>    <span class="at">total_revenue =</span> <span class="fu">sum</span>(revenue_generated)</span>
 <span id="cb235-49"><a href="data-management.html#cb235-49" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 6
-##   performance       campaigns avg_open_rate avg_click_rate avg_conversion_rate total_revenue
-##   &lt;chr&gt;                 &lt;int&gt;         &lt;dbl&gt;          &lt;dbl&gt;               &lt;dbl&gt;         &lt;dbl&gt;
-## 1 Average                   9          27.8           6.55                0.76       229563.
-## 2 Excellent                 2          23.1           5.54                1.66        69290.
-## 3 Good                      6          35.1           9.15                1.18       178166.
-## 4 Needs Improvement         3          34.0           6.42                0.39        83528.</code></pre>
+##   performance       campaigns avg_open_rate avg_click_rate avg_conversion_rate
+##   &lt;chr&gt;                 &lt;int&gt;         &lt;dbl&gt;          &lt;dbl&gt;               &lt;dbl&gt;
+## 1 Average                   9          27.8           6.55                0.76
+## 2 Excellent                 2          23.1           5.54                1.66
+## 3 Good                      6          35.1           9.15                1.18
+## 4 Needs Improvement         3          34.0           6.42                0.39
+## # ℹ 1 more variable: total_revenue &lt;dbl&gt;</code></pre>
 </div>
 </div>
 <div id="attendance-and-utilization-features" class="section level3 hasAnchor" number="5.16.7">
@@ -2403,17 +2447,28 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb243-23"><a href="data-management.html#cb243-23" tabindex="-1"></a>  )</span>
 <span id="cb243-24"><a href="data-management.html#cb243-24" tabindex="-1"></a></span>
 <span id="cb243-25"><a href="data-management.html#cb243-25" tabindex="-1"></a>incomplete_data</span></code></pre></div>
-<pre><code>##    customer_id total_purchases total_spend avg_purchase_value purchases_imputed has_missing_data
-## 1            1               5         500           100.0000               5.0            FALSE
-## 2            2               8         850           106.2500               8.0            FALSE
-## 3            3              NA          NA                 NA               8.5             TRUE
-## 4            4              12        1200           100.0000              12.0            FALSE
-## 5            5               4         420           105.0000               4.0            FALSE
-## 6            6              15          NA                 NA              15.0             TRUE
-## 7            7              NA         780                 NA               8.5             TRUE
-## 8            8               9         920           102.2222               9.0            FALSE
-## 9            9              11        1100           100.0000              11.0            FALSE
-## 10          10               6         640           106.6667               6.0            FALSE</code></pre>
+<pre><code>##    customer_id total_purchases total_spend avg_purchase_value purchases_imputed
+## 1            1               5         500           100.0000               5.0
+## 2            2               8         850           106.2500               8.0
+## 3            3              NA          NA                 NA               8.5
+## 4            4              12        1200           100.0000              12.0
+## 5            5               4         420           105.0000               4.0
+## 6            6              15          NA                 NA              15.0
+## 7            7              NA         780                 NA               8.5
+## 8            8               9         920           102.2222               9.0
+## 9            9              11        1100           100.0000              11.0
+## 10          10               6         640           106.6667               6.0
+##    has_missing_data
+## 1             FALSE
+## 2             FALSE
+## 3              TRUE
+## 4             FALSE
+## 5             FALSE
+## 6              TRUE
+## 7              TRUE
+## 8             FALSE
+## 9             FALSE
+## 10            FALSE</code></pre>
 </div>
 <div id="create-reusable-feature-engineering-functions" class="section level4 hasAnchor" number="5.16.9.3">
 <h4><span class="header-section-number">5.16.9.3</span> 3. Create Reusable Feature Engineering Functions<a href="data-management.html#create-reusable-feature-engineering-functions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -2446,12 +2501,18 @@ This prevents R from automatically converting text to factors. In older R versio
 <span id="cb245-27"><a href="data-management.html#cb245-27" tabindex="-1"></a></span>
 <span id="cb245-28"><a href="data-management.html#cb245-28" tabindex="-1"></a>enriched_data <span class="ot">&lt;-</span> <span class="fu">sport_business_features</span>(sample_game_data)</span>
 <span id="cb245-29"><a href="data-management.html#cb245-29" tabindex="-1"></a>enriched_data</span></code></pre></div>
-<pre><code>##   game_id  game_date attendance capacity total_revenue revenue_per_fan capacity_pct is_weekend
-## 1       1 2024-03-01      45000    50000       3200000           71.11           90      FALSE
-## 2       2 2024-03-02      38000    50000       2800000           73.68           76       TRUE
-## 3       3 2024-03-03      42000    50000       3000000           71.43           84       TRUE
-## 4       4 2024-03-04      51000    50000       3600000           70.59          102      FALSE
-## 5       5 2024-03-05      47000    50000       3300000           70.21           94      FALSE</code></pre>
+<pre><code>##   game_id  game_date attendance capacity total_revenue revenue_per_fan
+## 1       1 2024-03-01      45000    50000       3200000           71.11
+## 2       2 2024-03-02      38000    50000       2800000           73.68
+## 3       3 2024-03-03      42000    50000       3000000           71.43
+## 4       4 2024-03-04      51000    50000       3600000           70.59
+## 5       5 2024-03-05      47000    50000       3300000           70.21
+##   capacity_pct is_weekend
+## 1           90      FALSE
+## 2           76       TRUE
+## 3           84       TRUE
+## 4          102      FALSE
+## 5           94      FALSE</code></pre>
 </div>
 </div>
 </div>
@@ -2554,7 +2615,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

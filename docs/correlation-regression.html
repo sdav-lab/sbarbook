@@ -23,7 +23,7 @@
 <meta name="author" content="Sean Davis, Ph.D." />
 
 
-<meta name="date" content="2025-11-10" />
+<meta name="date" content="2025-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -121,7 +120,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -134,9 +132,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Sport Business Analytics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
@@ -839,9 +834,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.16.1" data-path="tableau.html"><a href="tableau.html#additional-resources-1"><i class="fa fa-check"></i><b>10.16.1</b> Additional Resources</a></li>
 </ul></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -1277,7 +1269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="r-squared-r²" class="section level4 hasAnchor" number="8.3.3.2">
-<h4><span class="header-section-number">8.3.3.2</span> 2. R-squared (R²)<a href="#r-squared-r%C2%B2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">8.3.3.2</span> 2. R-squared (R²)<a href="correlation-regression.html#r-squared-r²" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>R-squared indicates the proportion of variance in the dependent variable explained by the independent variable.</p>
 <div class="sourceCode" id="cb781"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb781-1"><a href="correlation-regression.html#cb781-1" tabindex="-1"></a><span class="co"># Extract R-squared</span></span>
 <span id="cb781-2"><a href="correlation-regression.html#cb781-2" tabindex="-1"></a>r_squared <span class="ot">&lt;-</span> <span class="fu">summary</span>(model1)<span class="sc">$</span>r.squared</span>
@@ -1473,8 +1465,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb814-11"><a href="correlation-regression.html#cb814-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Standardized Coefficients:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Standardized Coefficients:</code></pre>
 <div class="sourceCode" id="cb816"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb816-1"><a href="correlation-regression.html#cb816-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(<span class="fu">coef</span>(model3), <span class="dv">4</span>))</span></code></pre></div>
-<pre><code>##        (Intercept)        team_wins_z    opponent_rank_z     ticket_price_z day_of_weekWeekend 
-##            -0.4314             0.4899            -0.0747            -0.3119             1.0785</code></pre>
+<pre><code>##        (Intercept)        team_wins_z    opponent_rank_z     ticket_price_z 
+##            -0.4314             0.4899            -0.0747            -0.3119 
+## day_of_weekWeekend 
+##             1.0785</code></pre>
 <div class="sourceCode" id="cb818"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb818-1"><a href="correlation-regression.html#cb818-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Interpretation:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Interpretation:</code></pre>
@@ -2219,7 +2213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb915-4"><a href="correlation-regression.html#cb915-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">utilization_pct =</span> <span class="fu">round</span>(utilization_pct <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
 <span id="cb915-5"><a href="correlation-regression.html#cb915-5" tabindex="-1"></a>         <span class="at">recommendation =</span> <span class="st">&quot;HIGH DEMAND: Test price increase&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb915-6"><a href="correlation-regression.html#cb915-6" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
-<pre><code>## [1] section         price_level     avg_price       utilization_pct recommendation 
+<pre><code>## [1] section         price_level     avg_price       utilization_pct
+## [5] recommendation 
 ## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <div class="sourceCode" id="cb917"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb917-1"><a href="correlation-regression.html#cb917-1" tabindex="-1"></a>section_data <span class="sc">%&gt;%</span></span>
 <span id="cb917-2"><a href="correlation-regression.html#cb917-2" tabindex="-1"></a>  <span class="fu">filter</span>(utilization_pct <span class="sc">&lt;</span> <span class="fl">0.75</span>) <span class="sc">%&gt;%</span></span>
@@ -2227,8 +2222,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb917-4"><a href="correlation-regression.html#cb917-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">utilization_pct =</span> <span class="fu">round</span>(utilization_pct <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
 <span id="cb917-5"><a href="correlation-regression.html#cb917-5" tabindex="-1"></a>         <span class="at">recommendation =</span> <span class="st">&quot;LOW DEMAND: Test price decrease or bundle&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb917-6"><a href="correlation-regression.html#cb917-6" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
-<pre><code>##      section price_level avg_price utilization_pct                            recommendation
-## 1 Upper Bowl     Premium        45            74.2 LOW DEMAND: Test price decrease or bundle</code></pre>
+<pre><code>##      section price_level avg_price utilization_pct
+## 1 Upper Bowl     Premium        45            74.2
+##                              recommendation
+## 1 LOW DEMAND: Test price decrease or bundle</code></pre>
 </div>
 <div id="season-ticket-pricing-analytics" class="section level3 hasAnchor" number="8.6.8">
 <h3><span class="header-section-number">8.6.8</span> Season Ticket Pricing Analytics<a href="correlation-regression.html#season-ticket-pricing-analytics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -2465,8 +2462,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##     local_gdp_growth + playoff_appearance + star_player, data = historical_revenue)
 ## 
 ## Residuals:
-##        1        2        3        4        5        6        7        8        9       10 
-##  2.18668 -1.22621 -0.51702 -0.38507 -0.96047  0.46183  0.13215  0.02985 -1.44201  1.72026 
+##        1        2        3        4        5        6        7        8 
+##  2.18668 -1.22621 -0.51702 -0.38507 -0.96047  0.46183  0.13215  0.02985 
+##        9       10 
+## -1.44201  1.72026 
 ## 
 ## Coefficients: (1 not defined because of singularities)
 ##                    Estimate Std. Error t value Pr(&gt;|t|)    
@@ -2762,14 +2761,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1004-6"><a href="correlation-regression.html#cb1004-6" tabindex="-1"></a>    <span class="at">projected_sth_revenue =</span> <span class="fu">round</span>(projected_sth_revenue, <span class="dv">2</span>)</span>
 <span id="cb1004-7"><a href="correlation-regression.html#cb1004-7" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb1004-8"><a href="correlation-regression.html#cb1004-8" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
-<pre><code>##       scenario predicted_renewal_rate predicted_renewals estimated_new_accounts total_2025_accounts
-## 1 Conservative                   82.8               7160                    250                7410
-## 2         Base                   83.9               7254                    275                7529
-## 3   Optimistic                   89.3               7724                    325                8049
-##   projected_sth_revenue
-## 1                 25.56
-## 2                 25.98
-## 3                 27.77</code></pre>
+<pre><code>##       scenario predicted_renewal_rate predicted_renewals estimated_new_accounts
+## 1 Conservative                   82.8               7160                    250
+## 2         Base                   83.9               7254                    275
+## 3   Optimistic                   89.3               7724                    325
+##   total_2025_accounts projected_sth_revenue
+## 1                7410                 25.56
+## 2                7529                 25.98
+## 3                8049                 27.77</code></pre>
 </div>
 <div id="comprehensive-revenue-forecast-dashboard" class="section level3 hasAnchor" number="8.7.6">
 <h3><span class="header-section-number">8.7.6</span> Comprehensive Revenue Forecast Dashboard<a href="correlation-regression.html#comprehensive-revenue-forecast-dashboard" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -2805,14 +2804,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1008"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1008-1"><a href="correlation-regression.html#cb1008-1" tabindex="-1"></a>comprehensive_forecast <span class="sc">%&gt;%</span></span>
 <span id="cb1008-2"><a href="correlation-regression.html#cb1008-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="sc">~</span><span class="fu">round</span>(., <span class="dv">2</span>))) <span class="sc">%&gt;%</span></span>
 <span id="cb1008-3"><a href="correlation-regression.html#cb1008-3" tabindex="-1"></a>  <span class="fu">print</span>()</span></code></pre></div>
-<pre><code>##       scenario ticket_revenue concession_forecast merch_forecast season_ticket_revenue sponsorship_revenue
-## 1 Conservative          95.84               10.65          38.10                 25.56               15.21
-## 2    Base Case          99.33               11.12          37.70                    NA               14.64
-## 3   Optimistic         108.79               11.89          37.39                 27.77               15.76
-##   parking_revenue total_revenue
-## 1            4.28        189.65
-## 2            4.09            NA
-## 3            4.63        206.22</code></pre>
+<pre><code>##       scenario ticket_revenue concession_forecast merch_forecast
+## 1 Conservative          95.84               10.65          38.10
+## 2    Base Case          99.33               11.12          37.70
+## 3   Optimistic         108.79               11.89          37.39
+##   season_ticket_revenue sponsorship_revenue parking_revenue total_revenue
+## 1                 25.56               15.21            4.28        189.65
+## 2                    NA               14.64            4.09            NA
+## 3                 27.77               15.76            4.63        206.22</code></pre>
 <div class="sourceCode" id="cb1010"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1010-1"><a href="correlation-regression.html#cb1010-1" tabindex="-1"></a><span class="co"># Revenue composition</span></span>
 <span id="cb1010-2"><a href="correlation-regression.html#cb1010-2" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">=== REVENUE BREAKDOWN (Base Case) ===</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
@@ -2871,12 +2870,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## 
 ## === FORECAST ACCURACY ANALYSIS ===</code></pre>
 <div class="sourceCode" id="cb1017"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1017-1"><a href="correlation-regression.html#cb1017-1" tabindex="-1"></a><span class="fu">print</span>(forecast_accuracy)</span></code></pre></div>
-<pre><code>##   season forecasted_revenue actual_revenue forecast_error absolute_error percent_error absolute_percent_error
-## 1   2020               78.5           76.2           -2.3            2.3     -3.018373               3.018373
-## 2   2021               72.3           70.8           -1.5            1.5     -2.118644               2.118644
-## 3   2022               85.2           87.5            2.3            2.3      2.628571               2.628571
-## 4   2023               88.1           86.9           -1.2            1.2     -1.380898               1.380898
-## 5   2024               92.5           94.2            1.7            1.7      1.804671               1.804671</code></pre>
+<pre><code>##   season forecasted_revenue actual_revenue forecast_error absolute_error
+## 1   2020               78.5           76.2           -2.3            2.3
+## 2   2021               72.3           70.8           -1.5            1.5
+## 3   2022               85.2           87.5            2.3            2.3
+## 4   2023               88.1           86.9           -1.2            1.2
+## 5   2024               92.5           94.2            1.7            1.7
+##   percent_error absolute_percent_error
+## 1     -3.018373               3.018373
+## 2     -2.118644               2.118644
+## 3      2.628571               2.628571
+## 4     -1.380898               1.380898
+## 5      1.804671               1.804671</code></pre>
 <div class="sourceCode" id="cb1019"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1019-1"><a href="correlation-regression.html#cb1019-1" tabindex="-1"></a><span class="co"># Calculate accuracy metrics</span></span>
 <span id="cb1019-2"><a href="correlation-regression.html#cb1019-2" tabindex="-1"></a>mae <span class="ot">&lt;-</span> <span class="fu">mean</span>(forecast_accuracy<span class="sc">$</span>absolute_error)  <span class="co"># Mean Absolute Error</span></span>
 <span id="cb1019-3"><a href="correlation-regression.html#cb1019-3" tabindex="-1"></a>mape <span class="ot">&lt;-</span> <span class="fu">mean</span>(forecast_accuracy<span class="sc">$</span>absolute_percent_error)  <span class="co"># Mean Absolute Percentage Error</span></span>
@@ -3257,7 +3262,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

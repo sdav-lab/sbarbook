@@ -23,7 +23,7 @@
 <meta name="author" content="Sean Davis, Ph.D." />
 
 
-<meta name="date" content="2025-11-10" />
+<meta name="date" content="2025-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -121,7 +120,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -134,9 +132,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Sport Business Analytics with R</a></li>
-
-<li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Sport Business Analytics with R</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-textbook"><i class="fa fa-check"></i>About This Textbook</a>
@@ -839,9 +834,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.16.1" data-path="tableau.html"><a href="tableau.html#additional-resources-1"><i class="fa fa-check"></i><b>10.16.1</b> Additional Resources</a></li>
 </ul></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -905,10 +897,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb56-9"><a href="data-sources.html#cb56-9" tabindex="-1"></a>)</span>
 <span id="cb56-10"><a href="data-sources.html#cb56-10" tabindex="-1"></a></span>
 <span id="cb56-11"><a href="data-sources.html#cb56-11" tabindex="-1"></a><span class="fu">head</span>(nba_sample)</span></code></pre></div>
-<pre><code>##          player team points_per_game assists_per_game rebounds_per_game games_played
-## 1  LeBron James  LAL            25.7              7.4               7.5           78
-## 2 Stephen Curry  GSW            26.3              5.8               4.9           79
-## 3  Kevin Durant  PHX            27.1              4.4               8.0           75</code></pre>
+<pre><code>##          player team points_per_game assists_per_game rebounds_per_game
+## 1  LeBron James  LAL            25.7              7.4               7.5
+## 2 Stephen Curry  GSW            26.3              5.8               4.9
+## 3  Kevin Durant  PHX            27.1              4.4               8.0
+##   games_played
+## 1           78
+## 2           79
+## 3           75</code></pre>
 </div>
 </div>
 <div id="web-scraping-for-sport-data" class="section level2 hasAnchor" number="3.2">
@@ -1140,20 +1136,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb72-17"><a href="data-sources.html#cb72-17" tabindex="-1"></a>)</span>
 <span id="cb72-18"><a href="data-sources.html#cb72-18" tabindex="-1"></a></span>
 <span id="cb72-19"><a href="data-sources.html#cb72-19" tabindex="-1"></a><span class="fu">head</span>(ticket_sales)</span></code></pre></div>
-<pre><code>##   transaction_id purchase_date  game_date customer_id ticket_type    section quantity unit_price total_price
-## 1           1001    2024-01-15 2024-03-15        C001      Season Lower Bowl        2         75         150
-## 2           1002    2024-01-16 2024-03-15        C002      Single Upper Bowl        4         35         140
-## 3           1003    2024-01-17 2024-03-15        C003       Group       Club       15         28         420
-## 4           1004    2024-01-18 2024-03-15        C002      Season Lower Bowl        2         75         150
-## 5           1005    2024-01-19 2024-03-15        C004      Single Upper Bowl        2         35          70
-## 6           1006    2024-01-20 2024-03-15        C005       Group Lower Bowl       20         28         560
-##       channel
-## 1      Online
-## 2       Phone
-## 3 Group Sales
-## 4      Online
-## 5  Box Office
-## 6 Group Sales</code></pre>
+<pre><code>##   transaction_id purchase_date  game_date customer_id ticket_type    section
+## 1           1001    2024-01-15 2024-03-15        C001      Season Lower Bowl
+## 2           1002    2024-01-16 2024-03-15        C002      Single Upper Bowl
+## 3           1003    2024-01-17 2024-03-15        C003       Group       Club
+## 4           1004    2024-01-18 2024-03-15        C002      Season Lower Bowl
+## 5           1005    2024-01-19 2024-03-15        C004      Single Upper Bowl
+## 6           1006    2024-01-20 2024-03-15        C005       Group Lower Bowl
+##   quantity unit_price total_price     channel
+## 1        2         75         150      Online
+## 2        4         35         140       Phone
+## 3       15         28         420 Group Sales
+## 4        2         75         150      Online
+## 5        2         35          70  Box Office
+## 6       20         28         560 Group Sales</code></pre>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="data-sources.html#cb74-1" tabindex="-1"></a><span class="co"># Calculate key business metrics</span></span>
 <span id="cb74-2"><a href="data-sources.html#cb74-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb74-3"><a href="data-sources.html#cb74-3" tabindex="-1"></a></span>
@@ -1232,10 +1228,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 4 × 4
 ##   item_category total_sales avg_transaction pct_of_total
 ##   &lt;chr&gt;               &lt;dbl&gt;           &lt;dbl&gt;        &lt;dbl&gt;
-## 1 Food                 196.            32.7         28.9
-## 2 Alcohol              193.            32.2         28.4
-## 3 Merchandise          163.            40.8         24.0
-## 4 Beverage             127.            31.7         18.6</code></pre>
+## 1 Beverage            250.             41.7         31.0
+## 2 Food                239.             34.2         29.6
+## 3 Merchandise         235.             47.0         29.1
+## 4 Alcohol              82.6            41.3         10.2</code></pre>
 <p><strong>Key business applications:</strong>
 - <strong>Per-capita spending</strong>: Industry benchmark for concession revenue
 - <strong>Inventory optimization</strong>: Stock the right items at the right locations
@@ -1279,12 +1275,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb82-32"><a href="data-sources.html#cb82-32" tabindex="-1"></a>    <span class="at">avg_games_attended =</span> <span class="fu">mean</span>(games_attended_lifetime),</span>
 <span id="cb82-33"><a href="data-sources.html#cb82-33" tabindex="-1"></a>    <span class="at">pct_opted_in =</span> <span class="fu">mean</span>(marketing_opt_in) <span class="sc">*</span> <span class="dv">100</span></span>
 <span id="cb82-34"><a href="data-sources.html#cb82-34" tabindex="-1"></a>  )</span></code></pre></div>
-<pre><code>## # A tibble: 3 × 5
-##   value_segment customer_count avg_lifetime_value avg_games_attended pct_opted_in
-##   &lt;chr&gt;                  &lt;int&gt;              &lt;dbl&gt;              &lt;dbl&gt;        &lt;dbl&gt;
-## 1 High Value                 9             12138.               32.7         77.8
-## 2 Low Value                  3              2371.               26           33.3
-## 3 Medium Value               8              6743.               47.4         87.5</code></pre>
+<pre><code>## # A tibble: 2 × 5
+##   value_segment customer_count avg_lifetime_value avg_games_attended
+##   &lt;chr&gt;                  &lt;int&gt;              &lt;dbl&gt;              &lt;dbl&gt;
+## 1 High Value                 6             11251.               39  
+## 2 Medium Value              14              5912.               40.8
+## # ℹ 1 more variable: pct_opted_in &lt;dbl&gt;</code></pre>
 <p><strong>Common CRM platforms in sport:</strong>
 - <strong>Salesforce</strong>: Enterprise CRM, highly customizable
 - <strong>Microsoft Dynamics</strong>: Integrated with other Microsoft tools
@@ -1323,7 +1319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## # A tibble: 1 × 5
 ##   platform total_posts avg_impressions avg_engagement_rate total_follower_growth
 ##   &lt;chr&gt;          &lt;int&gt;           &lt;dbl&gt;               &lt;dbl&gt;                 &lt;int&gt;
-## 1 Twitter           80         281744.                6.62                  6100</code></pre>
+## 1 Twitter           97         297184.                6.68                  8874</code></pre>
 <p><strong>Data sources:</strong>
 - <strong>Twitter API</strong>: Tweet data, follower counts, engagement metrics
 - <strong>Instagram Graph API</strong>: Post performance, stories, reels
@@ -1368,15 +1364,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb86-33"><a href="data-sources.html#cb86-33" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Revenue Composition:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Revenue Composition:</code></pre>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="data-sources.html#cb88-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Tickets:&quot;</span>, <span class="fu">round</span>(revenue_breakdown<span class="sc">$</span>ticket_pct, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<pre><code>## Tickets: 82.2 %</code></pre>
+<pre><code>## Tickets: 80.3 %</code></pre>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="data-sources.html#cb90-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Concessions:&quot;</span>, <span class="fu">round</span>(revenue_breakdown<span class="sc">$</span>concession_pct, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<pre><code>## Concessions: 8.2 %</code></pre>
+<pre><code>## Concessions: 9.4 %</code></pre>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="data-sources.html#cb92-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Merchandise:&quot;</span>, <span class="fu">round</span>(revenue_breakdown<span class="sc">$</span>merch_pct, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<pre><code>## Merchandise: 2.4 %</code></pre>
+<pre><code>## Merchandise: 2.7 %</code></pre>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="data-sources.html#cb94-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Parking:&quot;</span>, <span class="fu">round</span>(revenue_breakdown<span class="sc">$</span>parking_pct, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<pre><code>## Parking: 3 %</code></pre>
+<pre><code>## Parking: 3.3 %</code></pre>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="data-sources.html#cb96-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Suites:&quot;</span>, <span class="fu">round</span>(revenue_breakdown<span class="sc">$</span>suite_pct, <span class="dv">1</span>), <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
-<pre><code>## Suites: 4.3 %</code></pre>
+<pre><code>## Suites: 4.4 %</code></pre>
 </div>
 <div id="accessing-business-data-best-practices" class="section level3 hasAnchor" number="3.6.7">
 <h3><span class="header-section-number">3.6.7</span> Accessing Business Data: Best Practices<a href="data-sources.html#accessing-business-data-best-practices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1717,7 +1713,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf", "_main.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
